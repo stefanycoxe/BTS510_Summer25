@@ -1,0 +1,24 @@
+---
+title: "Week 1: Introduction"
+---
+
+## Learning objectives
+
+* Review the course topics, structure, and goals
+* Start using **R** and **Rstudio**
+* Start using [Quarto documents](https://quarto.org/) in R as a **reproducible** method to present analyses along with **narrative text**
+
+## Before class: Lecture 
+
+* [Lecture 1](https://youtu.be/M7bNtrjm4XI){target="_blank"} 
+* [Lecture survey](https://forms.gle/zSk1R4FS9XqaXYaX9){target="_blank"}: Complete by Wednesday, May 7 at 8pm
+* [Slides (html)](../slides/BTS510-25-1.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 1 (html with link to code)](../lab/BTS510-25-lab1.qmd){target="_blank"}
+
+## After class: Assignment 
+
+* **No homework this week**
+

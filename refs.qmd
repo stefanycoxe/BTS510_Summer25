@@ -1,0 +1,79 @@
+---
+title: "References"
+---
+
+## General resources
+
+* UCLA Statistical Consulting: [https://stats.oarc.ucla.edu/](https://stats.oarc.ucla.edu/)
+
+* Statistics for Biologists portfolio: [https://www.nature.com/collections/qghhqm](https://www.nature.com/collections/qghhqm)
+
+* Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.
+
+## Software
+
+### R and Rstudio
+
+* R: [https://cran.r-project.org/](https://cran.r-project.org/)
+
+* Rstudio: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+* Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. "O'Reilly Media, Inc.". 
+    * Full book available here: [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
+    
+* [Commonly used R packages for different tasks](https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+
+* Cheatsheets on various topics: [https://posit.co/resources/cheatsheets/](https://posit.co/resources/cheatsheets/)
+
+### tidyverse
+
+* R packages in the [**tidyverse**](https://www.tidyverse.org/), which includes:
+    * **dplyr**: [https://dplyr.tidyverse.org/](https://dplyr.tidyverse.org/)
+    * **ggplot2**: [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+    * **tidyr**: [https://tidyr.tidyverse.org/](https://tidyr.tidyverse.org/)
+
+* Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
+
+* Wickham, H. (2010). A layered grammar of graphics. *Journal of computational and graphical statistics, 19*(1), 3-28.
+
+* Wickham, H. (2016). *ggplot2: elegant graphics for data analysis*.
+Springer.
+
+* Wilkinson, L. (2005). *The Grammar of Graphics (2nd ed.)*. Statistics and Computing, New York: Springer.
+
+### markdown and Quarto
+    
+* [Quarto](https://quarto.org/): "Next gen" of markdown
+
+* Xie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC. 
+    * Full book available here: [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)  
+
+## Linear models
+
+### Linear regression
+
+### Logistic regression
+
+### Poisson regression
+
+## Miscellaneous
+    
+### Genomics
+
+* [Computational Genomics with R](https://compgenomr.github.io/book/)
+
+* Bareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.
+
+### Missing data
+
+* Enders, C. K. (2022). Applied missing data analysis. Guilford Publications.
+
+* Enders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. <https://doi.org/10.1037/met0000563>
+
+* Little, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.
+
+* National Research Council (US) Panel on Handling Missing Data in Clinical Trials. (2010). The Prevention and Treatment of Missing Data in Clinical Trials. National Academies Press (US).
+
+* Rubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.
+
+
