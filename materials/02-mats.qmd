@@ -1,0 +1,25 @@
+---
+title: "Week 2: Data manipulation"
+---
+
+## Learning objectives
+
+* Read data into R from external formats (e.g., Excel, .csv, SPSS)
+* Use [**dplyr** functions](https://dplyr.tidyverse.org/) in R to manipulate datasets (e.g., create new variables)
+* Use [**tidyr** functions](https://tidyr.tidyverse.org/) in R to organize and re-structure datasets
+
+## Before class: Lecture 
+
+* [Lecture 2](){target="_blank"} 
+* [Lecture survey](){target="_blank"}: Complete by Wednesday, May 14 at 8pm
+* [Slides (html)](../slides/BTS510-25-2.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [CSV file of `gapminder` data](../lab/gapminder.csv){target="_blank"}
+* [SPSS file of `gapminder` data](../lab/gapminder.sav){target="_blank"}
+* [Lab 2 (html with link to code)](../lab/BTS510-25-lab2.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 1](../assignments/hw1.qmd)
