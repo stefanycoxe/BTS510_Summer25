@@ -1413,9 +1413,9 @@ margin-right: 0; }
 <li>Column 1: Combination of the variable name and the year variable</li>
 <li>Column 2: Actual value for that combination</li>
 </ul></li>
-<li>A few more steps to get it back (if that’s what you wanted – it might not be)
+<li>See Lab 2 supplement
 <ul>
-<li>Chance to learn a couple more functions (woo!)</li>
+<li>A few more steps to get it back (if that’s what you wanted – it might not be)</li>
 </ul></li>
 </ul>
 </div>
@@ -1571,25 +1571,19 @@ margin-right: 0; }
 </section>
 <section id="missing-values" class="slide level2" data-number="3.15">
 <h2><span class="header-section-number">3.15</span> Missing values</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>The <strong>tidyr</strong> functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is <strong>NOT</strong> a good choice in experimental data. We don’t have time to go in much depth with this but check the <a href="https://stefanycoxe.github.io/BTS510_Summer24/refs.html">References</a> for more info on handling missing data.</p>
-</div>
-</div>
-</div>
 <ul>
-<li>I know that it’s common practice in some fields to do single imputation or list-wise deletion – but those are <strong>not good methods</strong> and introduce bias in your later analysis
+<li>Some <strong>tidyr</strong> functions related to missing values</li>
+<li>See the <a href="https://stefanycoxe.github.io/BTS510_Summer25/refs.html">References</a> page for more info on handling missing data
 <ul>
-<li>Sometimes there aren’t a lot of good options, but <strong>be aware</strong> of these major limitations</li>
+<li>TL:DR version: Many people are using <strong>listwise deletion</strong> or <strong>single imputation</strong>, but these methods introduce <strong>bias</strong> into analysis</li>
 </ul></li>
 </ul>
+<!-- ## Missing values -->
+<!-- ::: {.callout-note} -->
+<!-- The **tidyr** functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is **NOT** a good choice in experimental data. We don't have time to go in much depth with this but check the [References](https://stefanycoxe.github.io/BTS510_Summer24/refs.html) for more info on handling missing data. -->
+<!-- ::: -->
+<!-- * I know that it's common practice in some fields to do single imputation or list-wise deletion -- but those are **not good methods** and introduce bias in your later analysis -->
+<!--   * Sometimes there aren't a lot of good options, but **be aware** of these major limitations -->
 </section>
 <section id="replacing-missing-values" class="slide level2" data-number="3.16">
 <h2><span class="header-section-number">3.16</span> Replacing missing values</h2>
@@ -1631,7 +1625,10 @@ margin-right: 0; }
 <span id="cb27-2"><a></a>gap1 <span class="ot">&lt;-</span> gap <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">gdp =</span> gdpPercap <span class="sc">*</span> pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Can create multiple new variables in same <code>mutate()</code> statement</li>
+<li>Can create multiple new variables in same <code>mutate()</code> statement
+<ul>
+<li>Separate with a comma</li>
+</ul></li>
 </ul>
 </section>
 <section id="mutate-create-new-variables-1" class="slide level2" data-number="4.2">
@@ -1725,7 +1722,7 @@ margin-right: 0; }
 <section id="summarise-summarize-data" class="slide level2" data-number="4.7">
 <h2><span class="header-section-number">4.7</span> <code>summarise()</code>: Summarize data</h2>
 <ul>
-<li>Create a new data frame with summary statistics, such as the mean</li>
+<li>Create a <strong>new data frame</strong> with summary statistics, such as the mean</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">library</span>(dplyr)</span>
@@ -1748,7 +1745,7 @@ margin-right: 0; }
 </div>
 </div>
 <ul>
-<li>New data frame with the mean of <code>lifeExp</code>
+<li><strong>New data frame</strong> with the mean of <code>lifeExp</code>
 <ul>
 <li>Is this really useful? The mean for the whole dataset?</li>
 <li>Stay tuned</li>
@@ -1786,7 +1783,7 @@ margin-right: 0; }
 <section id="group_by-separately-by-group" class="slide level2" data-number="4.11">
 <h2><span class="header-section-number">4.11</span> <code>group_by()</code>: Separately by group</h2>
 <ul>
-<li>Do any of the above operations separately for each group</li>
+<li>Do any of the above operations <strong>separately for each group</strong></li>
 <li>Get mean life expectancy <strong>for each continent</strong></li>
 </ul>
 <div class="cell">

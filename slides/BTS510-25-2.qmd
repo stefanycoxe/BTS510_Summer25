@@ -1,27 +1,11 @@
 ---
 title: "Introduction to Biostatistics"
 format:
-  # html: 
-  #   toc: true
-  #   toc-location: left
-  #   slide-level: 3
-  #   number-sections: true
-  #   toc-depth: 2
-  #   self-contained: true
-  #   #output-file: "Mult22-1-handout"
-  # pdf: 
-  #   toc: true
-  #   number-sections: true
-  #   #slide-level: 3
-  #   toc-depth: 2
-  #   shift-heading-level-by: 0
-  #   number-offset: [2]
   revealjs:
     toc: false
     number-sections: true
-    #slide-level: 3
     scrollable: true
-    self-contained: true
+    embed-resources: true
     slide-number: true
     width: 1200
 knitr: 
@@ -205,8 +189,8 @@ gap_tall <- gap_wide %>% pivot_longer(cols = 3:38,
 * Instead, we get two columns
   * Column 1: Combination of the variable name and the year variable
   * Column 2: Actual value for that combination
-* A few more steps to get it back (if that's what you wanted -- it might not be)
-  * Chance to learn a couple more functions (woo!)
+* See Lab 2 supplement 
+  * A few more steps to get it back (if that's what you wanted -- it might not be)
 :::
 
 ## `pivot_longer()`: Now tall(ish)
@@ -280,12 +264,18 @@ unite(data, site, ID, col = "newID", sep = "")
 
 ## Missing values
 
-::: {.callout-note}
-The **tidyr** functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is **NOT** a good choice in experimental data. We don't have time to go in much depth with this but check the [References](https://stefanycoxe.github.io/BTS510_Summer24/refs.html) for more info on handling missing data.
-:::
+* Some **tidyr** functions related to missing values
+* See the [References](https://stefanycoxe.github.io/BTS510_Summer25/refs.html) page for more info on handling missing data
+  * TL:DR version: Many people are using **listwise deletion** or **single imputation**, but these methods introduce **bias** into analysis
 
-* I know that it's common practice in some fields to do single imputation or list-wise deletion -- but those are **not good methods** and introduce bias in your later analysis
-  * Sometimes there aren't a lot of good options, but **be aware** of these major limitations
+<!-- ## Missing values -->
+
+<!-- ::: {.callout-note} -->
+<!-- The **tidyr** functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is **NOT** a good choice in experimental data. We don't have time to go in much depth with this but check the [References](https://stefanycoxe.github.io/BTS510_Summer24/refs.html) for more info on handling missing data. -->
+<!-- ::: -->
+
+<!-- * I know that it's common practice in some fields to do single imputation or list-wise deletion -- but those are **not good methods** and introduce bias in your later analysis -->
+<!--   * Sometimes there aren't a lot of good options, but **be aware** of these major limitations -->
 
 ## Replacing missing values
 
@@ -318,6 +308,7 @@ gap1 <- gap %>% mutate(gdp = gdpPercap * pop)
 ```
 
 * Can create multiple new variables in same `mutate()` statement
+  * Separate with a comma
 
 ## `mutate()`: Create new variables
 
@@ -365,7 +356,7 @@ head(gap3, n = 15)
 
 ## `summarise()`: Summarize data
 
-* Create a new data frame with summary statistics, such as the mean
+* Create a **new data frame** with summary statistics, such as the mean
 
 ```{r}
 library(dplyr)
@@ -381,7 +372,7 @@ gap4 <- gap %>% summarize(meanlifeExp = mean(lifeExp))
 head(gap4)
 ```
 
-* New data frame with the mean of `lifeExp`
+* **New data frame** with the mean of `lifeExp`
   * Is this really useful? The mean for the whole dataset?
   * Stay tuned
 
@@ -404,7 +395,7 @@ head(gap5)
 
 ## `group_by()`: Separately by group
 
-* Do any of the above operations separately for each group 
+* Do any of the above operations **separately for each group** 
 * Get mean life expectancy **for each continent**
 
 ```{r}

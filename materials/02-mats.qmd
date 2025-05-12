@@ -10,8 +10,8 @@ title: "Week 2: Data manipulation"
 
 ## Before class: Lecture 
 
-* [Lecture 2](){target="_blank"} 
-* [Lecture survey](){target="_blank"}: Complete by Wednesday, May 14 at 8pm
+* [Lecture 2](https://youtu.be/3oeb6sRvb6E){target="_blank"} 
+* [Lecture survey](https://forms.gle/w1jYAUJk5APegmgq6){target="_blank"}: Complete by Wednesday, May 14 at 8pm
 * [Slides (html)](../slides/BTS510-25-2.qmd){target="_blank"}
     
 ## During class: Lab
@@ -19,6 +19,7 @@ title: "Week 2: Data manipulation"
 * [CSV file of `gapminder` data](../lab/gapminder.csv){target="_blank"}
 * [SPSS file of `gapminder` data](../lab/gapminder.sav){target="_blank"}
 * [Lab 2 (html with link to code)](../lab/BTS510-25-lab2.qmd){target="_blank"}
+  * [Supplement to lab 2](../lab/BTS510-25-lab2supp.qmd){target="_blank"}
 
 ## After class: Assignment
 

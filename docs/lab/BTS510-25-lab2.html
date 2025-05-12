@@ -4820,11 +4820,30 @@ vertical-align: -.125em;
  <span class="menu-text">Week 1: Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-mats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Data manipulation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Assignments</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/hw1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -5092,8 +5111,8 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <li><strong>For each task, start with the original data, <code>gap</code></strong>, and use appropriate functions (e.g., <code>print()</code>, <code>head()</code>, <code>str()</code>, <code>glimpse()</code>) to <em>check that you have the data you were trying to get</em>.</li>
 </ul>
 <ol type="1">
-<li><p>Keep only observations from countries in Asia and Europe.</p></li>
-<li><p>Create a new variable that is the ratio of life expectancy to GDP.</p></li>
+<li><p>Keep only observations from countries in Asia <strong>and</strong> Europe.</p></li>
+<li><p>Create a new variable that is the <em>ratio</em> of life expectancy to GDP.</p></li>
 <li><p>Create a new data frame with the mean GDP per capita for each continent.</p></li>
 <li><p>Find the country in the Americas with the largest population. What country was it and what year was it?</p></li>
 <li><p>Keep only data from Asia prior to 1975 and sort it according to population.</p></li>
@@ -5578,7 +5597,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 2&quot;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
@@ -5693,9 +5712,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**For each task, start with the original data, `gap`**, and use appropriate functions (e.g., <span class="in">`print()`</span>, <span class="in">`head()`</span>, <span class="in">`str()`</span>, <span class="in">`glimpse()`</span>) to *check that you have the data you were trying to get*.</span>
 <span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Keep only observations from countries in Asia and Europe.</span>
+<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Keep only observations from countries in Asia **and** Europe.</span>
 <span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Create a new variable that is the ratio of life expectancy to GDP. </span>
+<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Create a new variable that is the *ratio* of life expectancy to GDP. </span>
 <span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a new data frame with the mean GDP per capita for each continent.</span>
 <span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a></span>

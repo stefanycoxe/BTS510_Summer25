@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 2: Data manipulation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/02-mats.html">Week 2: Data manipulation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,13 +125,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materials/00-mats.html" class="sidebar-item-text sidebar-link">
@@ -144,11 +144,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 1: Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02-mats.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 2: Data manipulation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Assignments</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/hw1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -176,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/02-mats.html">Week 2: Data manipulation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 2: Data manipulation</h1>
 </div>
@@ -206,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="before-class-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="before-class-lecture">Before class: Lecture</h2>
 <ul>
-<li><a href="" target="_blank">Lecture 2</a></li>
-<li><a href="" target="_blank">Lecture survey</a>: Complete by Wednesday, May 14 at 8pm</li>
+<li><a href="https://youtu.be/3oeb6sRvb6E" target="_blank">Lecture 2</a></li>
+<li><a href="https://forms.gle/w1jYAUJk5APegmgq6" target="_blank">Lecture survey</a>: Complete by Wednesday, May 14 at 8pm</li>
 <li><a href="../slides/BTS510-25-2.html" target="_blank">Slides (html)</a></li>
 </ul>
 </section>
@@ -216,7 +235,10 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="../lab/gapminder.csv" target="_blank">CSV file of <code>gapminder</code> data</a></li>
 <li><a href="../lab/gapminder.sav" target="_blank">SPSS file of <code>gapminder</code> data</a></li>
-<li><a href="../lab/BTS510-25-lab2.html" target="_blank">Lab 2 (html with link to code)</a></li>
+<li><a href="../lab/BTS510-25-lab2.html" target="_blank">Lab 2 (html with link to code)</a>
+<ul>
+<li><a href="../lab/BTS510-25-lab2supp.html" target="_blank">Supplement to lab 2</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="after-class-assignment" class="level2">

@@ -18,13 +18,13 @@ format:
 
 * Use the `gapminder` dataset that we've been working with. You can read it in via the **gapminder** package or via the external files. Either way, show the code for reading in the data.
 
-1. What is the mean GDP (not GDP per capita) for each continent in 2002?
+1. What is the mean GDP (not GDP per capita) for each continent in 2007?
 
-2. How many countries had a life expectancy greater than 80 in 2007?
+2. How many countries had a life expectancy greater than 80 in 2002?
 
 3. What was the population of Japan in 1977?
 
-4. What continent had the highest mean life expectancy in 2007?
+4. What continent had the highest mean life expectancy in 2002?
 
-5. Which country had the highest GDP per capita in 2002, among countries with a population of at least 20 million?
+5. Which country had the highest GDP per capita in 2007, among countries with a population of at least 20 million?
 
