@@ -1,0 +1,23 @@
+---
+title: "Final Project"
+---
+
+**Big picture**: You will select a dataset, propose some research questions that can be answered using linear models (i.e., regression), write up the results, and present your findings to the class.
+
+* Data assignment: **Email to Stefany by midnight on Sunday, June 1, 2025**
+  * Select a **dataset** to use for your project
+  * The dataset should include **at least 5 variables** 
+    * The variables can be continuous or categorical 
+  * The dataset should include **at least 50 subjects** (people, animals, etc.)
+    * If you work in a subfield that typically has much smaller samples than this, send me an email so we can talk about it. You can run these models with smaller samples, but you're more likely to have problems
+  * For the assignment, **briefly describe the dataset**
+    * How many subjects?
+    * What are the variables? Continuous, categorical? 
+    * What is the study design? Randomized groups, observational?
+    * Any other design or study details that might be important, like repeated measures, clustering of units within higher levels (e.g., people in neighborhoods)
+
+* Proposal assignment: Due July 6, 2025
+
+
+    
+    

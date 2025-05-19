@@ -1,0 +1,24 @@
+---
+title: "Week 3: Sampling distributions"
+---
+
+## Learning objectives
+
+* Understand **probability** as a measure of **uncertainty**
+* Describe the difference between **population** and **sample**
+* Think about **uncertainty** in sampling
+* **Summarize** uncertainty in sampling: **Sampling distribution**
+
+## Before class: Lecture 
+
+* [Lecture 3](https://youtu.be/4Y5jtBJqR2A){target="_blank"} 
+* [Lecture survey](https://forms.gle/bFwavnrGj4PN4AGp9){target="_blank"}: Complete by Wednesday, May 21 at 8pm
+* [Slides (html)](../slides/BTS510-25-3.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 3 (html with link to code)](../lab/BTS510-25-lab3.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

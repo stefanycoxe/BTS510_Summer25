@@ -4,7 +4,7 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Stefany Coxe, Ph.D. \n\nstefany.coxe@cshs.org\n\nOffice hours: By appointment (send me an email to schedule)\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\nOffice hours: TBD\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org\nOffice hours: TBD\n\n\n\n\n\n\n\nThis course covers linear models (i.e., regression) with an emphasis on experimental studies. Topics include using and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nSelect the appropriate linear model for the research question\nAnalyze data with the appropriate linear model\nDescribe your findings for scientific and non-scientific audiences\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be eight (8) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will select a dataset, propose some research questions that can be answered using linear models, write up the results, and present your findings to the class. More details to follow throughout the semester.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99\n\n\n\n\n\n\n\n\n\nAttendance is not explicitly part of your grade in this course, but activities completed during the in-person portion of the course will be very helpful. If you need to miss class (such as for illness, religious event, professional activity, university-sanctioned event, or any other reason), please contact me to make any necessary arrangements.\n\n\n\nPlease refer to your policy handbook for a description of what constitutes academic dishonesty.\n\nWhile you may work with other students on your homework assignments, I expect all students to complete and turn in their own work.",
+    "text": "Stefany Coxe, Ph.D. \n\nstefany.coxe@cshs.org\n\nOffice hours: By appointment (send me an email to schedule)\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\nOffice hours: TBD\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org\nOffice hours: TBD\n\n\n\n\n\n\n\nThis course covers linear models (i.e., regression) with an emphasis on experimental studies. Topics include using and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nSelect the appropriate linear model for the research question\nAnalyze data with the appropriate linear model\nDescribe your findings for scientific and non-scientific audiences\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be eight (8) seven (7) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will select a dataset, propose some research questions that can be answered using linear models, write up the results, and present your findings to the class. More details to follow throughout the semester.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99\n\n\n\n\n\n\n\n\n\nAttendance is not explicitly part of your grade in this course, but activities completed during the in-person portion of the course will be very helpful. If you need to miss class (such as for illness, religious event, professional activity, university-sanctioned event, or any other reason), please contact me to make any necessary arrangements.\n\n\n\nPlease refer to your policy handbook for a description of what constitutes academic dishonesty.\n\nWhile you may work with other students on your homework assignments, I expect all students to complete and turn in their own work.",
     "crumbs": [
       "Syllabus"
     ]
@@ -24,7 +24,7 @@
     "href": "syllabus.html#course-information",
     "title": "Syllabus",
     "section": "",
-    "text": "This course covers linear models (i.e., regression) with an emphasis on experimental studies. Topics include using and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nSelect the appropriate linear model for the research question\nAnalyze data with the appropriate linear model\nDescribe your findings for scientific and non-scientific audiences\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be eight (8) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will select a dataset, propose some research questions that can be answered using linear models, write up the results, and present your findings to the class. More details to follow throughout the semester.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99",
+    "text": "This course covers linear models (i.e., regression) with an emphasis on experimental studies. Topics include using and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nSelect the appropriate linear model for the research question\nAnalyze data with the appropriate linear model\nDescribe your findings for scientific and non-scientific audiences\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be eight (8) seven (7) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will select a dataset, propose some research questions that can be answered using linear models, write up the results, and present your findings to the class. More details to follow throughout the semester.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99",
     "crumbs": [
       "Syllabus"
     ]
@@ -38,646 +38,6 @@
     "crumbs": [
       "Syllabus"
     ]
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#learning-objectives-1",
-    "href": "slides/BTS510-25-1.html#learning-objectives-1",
-    "title": "Introduction to Biostatistics",
-    "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives\n\nReview the course topics and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-statistics-interdisciplinary",
-    "href": "slides/BTS510-25-1.html#what-is-statistics-interdisciplinary",
-    "title": "Introduction to Biostatistics",
-    "section": "2.1 What is statistics? Interdisciplinary",
-    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nDecision making\nProgramming / computer science\nStudy design and methodology\nIntegrated into science"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-statistics-people",
-    "href": "slides/BTS510-25-1.html#what-is-statistics-people",
-    "title": "Introduction to Biostatistics",
-    "section": "2.2 What is statistics? People",
-    "text": "2.2 What is statistics? People\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-statistics-context",
-    "href": "slides/BTS510-25-1.html#what-is-statistics-context",
-    "title": "Introduction to Biostatistics",
-    "section": "2.3 What is statistics? Context",
-    "text": "2.3 What is statistics? Context\n\nhttps://www.instagram.com/p/Bx8p0Pih6qs/"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-statistics-context-1",
-    "href": "slides/BTS510-25-1.html#what-is-statistics-context-1",
-    "title": "Introduction to Biostatistics",
-    "section": "2.4 What is statistics? Context",
-    "text": "2.4 What is statistics? Context\n\nThis thing is 8 feet tall. Is that tall?\n\nFor a person: Yes\nFor a building: No\n\nThese two things are 12 inches different in height. Is that a lot?\n\nFor people: Yes\nFor buildings: No"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#when-to-think-about-statistics",
-    "href": "slides/BTS510-25-1.html#when-to-think-about-statistics",
-    "title": "Introduction to Biostatistics",
-    "section": "2.5 When to think about statistics?",
-    "text": "2.5 When to think about statistics?\n\n\nStudy design\nData collection\n\n\n\nData analysis\n\n\n\n\nInterpretation\n\n\n\n\nRonald Fisher:   To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#topics",
-    "href": "slides/BTS510-25-1.html#topics",
-    "title": "Introduction to Biostatistics",
-    "section": "2.6 Topics",
-    "text": "2.6 Topics\n\nReading in and manipulating data in R\nMaking plots in R\nSampling distributions and uncertainty\nLinear regression\nLogistic regression\nPoisson regression"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-youll-learn-about",
-    "href": "slides/BTS510-25-1.html#what-youll-learn-about",
-    "title": "Introduction to Biostatistics",
-    "section": "2.7 What you’ll learn about",
-    "text": "2.7 What you’ll learn about\n\nProgramming (in R)\nProbability and mathematics underlying statistical methods\nConducting linear models\nPresenting results of statistical analyses\nThinking about issues in science related to statistics"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-r",
-    "href": "slides/BTS510-25-1.html#what-is-r",
-    "title": "Introduction to Biostatistics",
-    "section": "3.1 What is R?",
-    "text": "3.1 What is R?\n\nFree, open source software\n\nWindows, Mac, Unix, cloud\n\nObject-oriented programming language\nBuilt-in capabilities (“packages”)\nUsers can write their own packages and functions"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-r-1",
-    "href": "slides/BTS510-25-1.html#what-is-r-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.2 What is R?",
-    "text": "3.2 What is R?"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-does-object-oriented-mean",
-    "href": "slides/BTS510-25-1.html#what-does-object-oriented-mean",
-    "title": "Introduction to Biostatistics",
-    "section": "3.3 What does “object-oriented” mean?",
-    "text": "3.3 What does “object-oriented” mean?\n\nProgramming built on the idea of “objects”\nEverything is an object\n\nIf you have an object’s name, you can do something with it\n\nObjects: Datasets, variables, analyses, plots"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-does-object-oriented-mean-1",
-    "href": "slides/BTS510-25-1.html#what-does-object-oriented-mean-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.4 What does “object-oriented” mean?",
-    "text": "3.4 What does “object-oriented” mean?\n\nx &lt;- c(1, 1, 2, 3, 5, 8)\nx\n\n[1] 1 1 2 3 5 8\n\n\n\nLine 1\n\nDefine an object called x that is this set of numbers\n&lt;- is the assignment operator\n\nLine 2\n\nPrint the object x"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-a-function",
-    "href": "slides/BTS510-25-1.html#what-is-a-function",
-    "title": "Introduction to Biostatistics",
-    "section": "3.5 What is a function?",
-    "text": "3.5 What is a function?\n\nPre-written piece of code that\n\nTakes one or more inputs (or arguments)\nProduces one or more outputs"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-a-function-1",
-    "href": "slides/BTS510-25-1.html#what-is-a-function-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.6 What is a function?",
-    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nFunction: mean()\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-a-package",
-    "href": "slides/BTS510-25-1.html#what-is-a-package",
-    "title": "Introduction to Biostatistics",
-    "section": "3.7 What is a package?",
-    "text": "3.7 What is a package?\n\nCollection of functions (that work together in some way)\n\ndplyr package is a set of functions to manipulate data\nggplot package is a set of functions to create plots\nstats package (built-in) is a set of functions to perform basic statistical operations"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-a-package-1",
-    "href": "slides/BTS510-25-1.html#what-is-a-package-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.8 What is a package?",
-    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / R install\n\nLoad or library() the package\n\nEvery time you use it"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-rstudio",
-    "href": "slides/BTS510-25-1.html#what-is-rstudio",
-    "title": "Introduction to Biostatistics",
-    "section": "3.9 What is Rstudio?",
-    "text": "3.9 What is Rstudio?\n\nIntegrated development environment (IDE) for R\nGraphical user interface to use R\n\nManage installed packages\nConnect to git / github\nEasily see loaded datasets"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-rstudio-1",
-    "href": "slides/BTS510-25-1.html#what-is-rstudio-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.10 What is Rstudio?",
-    "text": "3.10 What is Rstudio?"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#what-is-markdown",
-    "href": "slides/BTS510-25-1.html#what-is-markdown",
-    "title": "Introduction to Biostatistics",
-    "section": "4.1 What is “markdown”?",
-    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: Hyper-Text Markup Language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#markdown-example",
-    "href": "slides/BTS510-25-1.html#markdown-example",
-    "title": "Introduction to Biostatistics",
-    "section": "4.2 markdown example",
-    "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#markdown-example-organization",
-    "href": "slides/BTS510-25-1.html#markdown-example-organization",
-    "title": "Introduction to Biostatistics",
-    "section": "4.3 markdown example: Organization",
-    "text": "4.3 markdown example: Organization\n\nOrganize document with headings\n\n# Level 1 heading\n## Level 2 heading\n### Level 3 heading\n\nMost documents can have a table of contents, which will use these headings\n\nSlides have a table of contents accessed from bottom left"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#markdown-example-format-text",
-    "href": "slides/BTS510-25-1.html#markdown-example-format-text",
-    "title": "Introduction to Biostatistics",
-    "section": "4.4 markdown example: Format text",
-    "text": "4.4 markdown example: Format text\n\n*italics* turns into italics\n**bold** turns into bold\nMathematical text in between pairs of $\n\n$R^2_{multiple}$ turns into \\(R^2_{multiple}\\)\n$\\hat{Y} = b_0 + b_1 X_1$ turns into \\(\\hat{Y} = b_0 + b_1 X_1\\)"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#markdown-example-code-chunks",
-    "href": "slides/BTS510-25-1.html#markdown-example-code-chunks",
-    "title": "Introduction to Biostatistics",
-    "section": "4.5 markdown example: Code chunks",
-    "text": "4.5 markdown example: Code chunks\n```{r, echo = TRUE}\nx &lt;- c(1, 1, 2, 3, 5, 8)\nmean(x)\n```\n\nIntersperse text and code in the same document\n\nDescription of data and analysis\nAnalysis\nSummarize the results"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#rmarkdown-package",
-    "href": "slides/BTS510-25-1.html#rmarkdown-package",
-    "title": "Introduction to Biostatistics",
-    "section": "4.6 rmarkdown package",
-    "text": "4.6 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#quarto",
-    "href": "slides/BTS510-25-1.html#quarto",
-    "title": "Introduction to Biostatistics",
-    "section": "4.7 Quarto",
-    "text": "4.7 Quarto\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document)\n\nR, Python, Julia\n\nAdditional features\nInstall Quarto from here\n\nMore general info here"
-  },
-  {
-    "objectID": "slides/BTS510-25-1.html#in-class-activities-1",
-    "href": "slides/BTS510-25-1.html#in-class-activities-1",
-    "title": "Introduction to Biostatistics",
-    "section": "5.1 In-class activities",
-    "text": "5.1 In-class activities\n\nAny questions on the course topics and goals\nStart using R and Rstudio\nStart using Quarto in R as a reproducible method to present analyses along with narrative text"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "L: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project\n\nData: Description of data due by June 1\n\nProposal: Proposal of final project due by July 6\n\nPresentation: Presentation in class on August 21\n\nPaper: Final paper due by August 24\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nMay 08\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 15*\nData manipulation\n2\n1\n\n\n3\nMay 22\nSamples, sampling distribution\n3\n2\n\n\n4\nMay 29*\nNO CLASS\n\nData\n\n\n5\nJune 05\nggplot\n4\n\n\n\n6\nJune 12\nggplot\n5\n3\n\n\n7\nJune 19\nLinear regression\n6\n\n\n\n8\nJune 26\nLinear regression\n7\n4\n\n\n9\nJuly 03*\nNO CLASS\n\nProposal\n\n\n10\nJuly 10\nLinear regression\n8\n\n\n\n11\nJuly 17\nLinear regression\n9\n5\n\n\n12\nJuly 24\nLinear regression\n10\n\n\n\n13\nJuly 31\nLinear regression\n11\n6\n\n\n14\nAugust 07\nLogistic regression\n12\n7\n\n\n15\nAugust 14*\nPoisson regression\n13\n8\n\n\n16\nAugust 21\nPresentations\n\nFinal\n\n\n\n\nAdjusted days\n\nMay 15: Late start\nMay 29: Holiday / Stefany at conference\n\nJuly 3: Holiday\n\nAugust 14: Late start\n\nAll due dates subject to change due to weather, emergency, scheduling changes, etc.",
-    "crumbs": [
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "materials/index.html",
-    "href": "materials/index.html",
-    "title": "Materials overview",
-    "section": "",
-    "text": "Week by week materials are listed in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\n\nNote\n\n\n\n\nRight click (or control click) and select “Save link as…” to download html files"
-  },
-  {
-    "objectID": "materials/01-mats.html",
-    "href": "materials/01-mats.html",
-    "title": "Week 1: Introduction",
-    "section": "",
-    "text": "Review the course topics, structure, and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text",
-    "crumbs": [
-      "Materials",
-      "Week 1: Introduction"
-    ]
-  },
-  {
-    "objectID": "materials/01-mats.html#learning-objectives",
-    "href": "materials/01-mats.html#learning-objectives",
-    "title": "Week 1: Introduction",
-    "section": "",
-    "text": "Review the course topics, structure, and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text",
-    "crumbs": [
-      "Materials",
-      "Week 1: Introduction"
-    ]
-  },
-  {
-    "objectID": "materials/01-mats.html#before-class-lecture",
-    "href": "materials/01-mats.html#before-class-lecture",
-    "title": "Week 1: Introduction",
-    "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\nLecture 1\nLecture survey: Complete by Wednesday, May 7 at 8pm\nSlides (html)",
-    "crumbs": [
-      "Materials",
-      "Week 1: Introduction"
-    ]
-  },
-  {
-    "objectID": "materials/01-mats.html#during-class-lab",
-    "href": "materials/01-mats.html#during-class-lab",
-    "title": "Week 1: Introduction",
-    "section": "During class: Lab",
-    "text": "During class: Lab\n\nLab 1 (html with link to code)",
-    "crumbs": [
-      "Materials",
-      "Week 1: Introduction"
-    ]
-  },
-  {
-    "objectID": "materials/01-mats.html#after-class-assignment",
-    "href": "materials/01-mats.html#after-class-assignment",
-    "title": "Week 1: Introduction",
-    "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nNo homework this week",
-    "crumbs": [
-      "Materials",
-      "Week 1: Introduction"
-    ]
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html",
-    "href": "lab/BTS510-25-lab2supp.html",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "",
-    "text": "library(gapminder)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#read-in-and-view-data",
-    "href": "lab/BTS510-25-lab2supp.html#read-in-and-view-data",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "1 Read in and view data",
-    "text": "1 Read in and view data\n\ndata(gapminder)\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#full-wide-dataset-with-pivot_wider",
-    "href": "lab/BTS510-25-lab2supp.html#full-wide-dataset-with-pivot_wider",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "2 Full wide dataset with pivot_wider()",
-    "text": "2 Full wide dataset with pivot_wider()\n\ngap_wide &lt;- gapminder %&gt;% pivot_wider(names_from = year, \n                                values_from = c(lifeExp, pop, gdpPercap))\n\nhead(gap_wide)\n\n# A tibble: 6 × 38\n  country     continent lifeExp_1952 lifeExp_1957 lifeExp_1962 lifeExp_1967\n  &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 Afghanistan Asia              28.8         30.3         32.0         34.0\n2 Albania     Europe            55.2         59.3         64.8         66.2\n3 Algeria     Africa            43.1         45.7         48.3         51.4\n4 Angola      Africa            30.0         32.0         34           36.0\n5 Argentina   Americas          62.5         64.4         65.1         65.6\n6 Australia   Oceania           69.1         70.3         70.9         71.1\n# ℹ 32 more variables: lifeExp_1972 &lt;dbl&gt;, lifeExp_1977 &lt;dbl&gt;,\n#   lifeExp_1982 &lt;dbl&gt;, lifeExp_1987 &lt;dbl&gt;, lifeExp_1992 &lt;dbl&gt;,\n#   lifeExp_1997 &lt;dbl&gt;, lifeExp_2002 &lt;dbl&gt;, lifeExp_2007 &lt;dbl&gt;, pop_1952 &lt;int&gt;,\n#   pop_1957 &lt;int&gt;, pop_1962 &lt;int&gt;, pop_1967 &lt;int&gt;, pop_1972 &lt;int&gt;,\n#   pop_1977 &lt;int&gt;, pop_1982 &lt;int&gt;, pop_1987 &lt;int&gt;, pop_1992 &lt;int&gt;,\n#   pop_1997 &lt;int&gt;, pop_2002 &lt;int&gt;, pop_2007 &lt;int&gt;, gdpPercap_1952 &lt;dbl&gt;,\n#   gdpPercap_1957 &lt;dbl&gt;, gdpPercap_1962 &lt;dbl&gt;, gdpPercap_1967 &lt;dbl&gt;, …\n\n\n\nOne column per variable (lifeExp, pop, gdpPercap) per year"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#step-1-reverse-part-way-with-pivot_longer",
-    "href": "lab/BTS510-25-lab2supp.html#step-1-reverse-part-way-with-pivot_longer",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "3 Step 1: Reverse part way with pivot_longer()",
-    "text": "3 Step 1: Reverse part way with pivot_longer()\n\ngap_tall &lt;- gap_wide %&gt;% pivot_longer(cols = 3:38, \n                                      names_to = \"var_year\", \n                                      values_to = \"value\")\n\nhead(gap_tall) \n\n# A tibble: 6 × 4\n  country     continent var_year     value\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;        &lt;dbl&gt;\n1 Afghanistan Asia      lifeExp_1952  28.8\n2 Afghanistan Asia      lifeExp_1957  30.3\n3 Afghanistan Asia      lifeExp_1962  32.0\n4 Afghanistan Asia      lifeExp_1967  34.0\n5 Afghanistan Asia      lifeExp_1972  36.1\n6 Afghanistan Asia      lifeExp_1977  38.4\n\n\n\nvar_year contains both variable and year information\nvalue has the actual number value\nMany rows!"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#step-2-split-var_year-into-two-variables-with-separate",
-    "href": "lab/BTS510-25-lab2supp.html#step-2-split-var_year-into-two-variables-with-separate",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "4 Step 2: Split var_year into two variables with separate()",
-    "text": "4 Step 2: Split var_year into two variables with separate()\n\ngap_tall2 &lt;- gap_tall %&gt;% separate(var_year, \n                                   sep = \"_\", \n                                   into = c(\"variable\", \"year\"))\n\nhead(gap_tall2)\n\n# A tibble: 6 × 5\n  country     continent variable year  value\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 Afghanistan Asia      lifeExp  1952   28.8\n2 Afghanistan Asia      lifeExp  1957   30.3\n3 Afghanistan Asia      lifeExp  1962   32.0\n4 Afghanistan Asia      lifeExp  1967   34.0\n5 Afghanistan Asia      lifeExp  1972   36.1\n6 Afghanistan Asia      lifeExp  1977   38.4\n\n\n\nStill many rows, but the variable name and year are split into 2 variables now"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#step-3-finish-converting-back-to-tall-data-with-another-pivot_wider",
-    "href": "lab/BTS510-25-lab2supp.html#step-3-finish-converting-back-to-tall-data-with-another-pivot_wider",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "5 Step 3: Finish converting back to tall data with another pivot_wider()",
-    "text": "5 Step 3: Finish converting back to tall data with another pivot_wider()\n\nWeird to have to use pivot_wider() to get back to the tall dataset…\n\n\ngap_tall3 &lt;- gap_tall2 %&gt;% pivot_wider(names_from = variable,\n                                       values_from = value)\n\nhead(gap_tall3)\n\n# A tibble: 6 × 6\n  country     continent year  lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8  8425333      779.\n2 Afghanistan Asia      1957     30.3  9240934      821.\n3 Afghanistan Asia      1962     32.0 10267083      853.\n4 Afghanistan Asia      1967     34.0 11537966      836.\n5 Afghanistan Asia      1972     36.1 13079460      740.\n6 Afghanistan Asia      1977     38.4 14880372      786."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2supp.html#compare-to-original-data",
-    "href": "lab/BTS510-25-lab2supp.html#compare-to-original-data",
-    "title": "Pivot wider then reverse back to tall data",
-    "section": "6 Compare to original data",
-    "text": "6 Compare to original data\n\nhead(gapminder) \n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\nhead(gap_tall3)\n\n# A tibble: 6 × 6\n  country     continent year  lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8  8425333      779.\n2 Afghanistan Asia      1957     30.3  9240934      821.\n3 Afghanistan Asia      1962     32.0 10267083      853.\n4 Afghanistan Asia      1967     34.0 11537966      836.\n5 Afghanistan Asia      1972     36.1 13079460      740.\n6 Afghanistan Asia      1977     38.4 14880372      786."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html",
-    "href": "lab/BTS510-25-lab1.html",
-    "title": "BTS 510 Lab 1",
-    "section": "",
-    "text": "set.seed(12345)"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#learning-objectives",
-    "href": "lab/BTS510-25-lab1.html#learning-objectives",
-    "title": "BTS 510 Lab 1",
-    "section": "1 Learning objectives",
-    "text": "1 Learning objectives\n\nStart using R and Rstudio\nStart using Quarto documents as a reproducible method to present analyses along with narrative text"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
-    "href": "lab/BTS510-25-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
-    "title": "BTS 510 Lab 1",
-    "section": "2 A few miscellaneous things about R and Quarto",
-    "text": "2 A few miscellaneous things about R and Quarto\n\n2.1 About R\n\nR is case sensitive\n\nmean is not the same as Mean\nThe object b is not the same as the object B\n\nExtra returns don’t matter\n\nExtra spaces generally don’t matter either\nI often add extra spaces, tabs, and returns to make the code more readable\n\nThe assignment operator is &lt;-\n\n“Put whatever is on the right side in the object named on the left side”\n\nSometimes, equal isn’t equal\n\nIf you’re talking about assigning something to a value, you can use =\nIf you want to compare two values and make a decision based on it, you use ==\n\nThere isn’t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent\n\nIn general, variable names must start with a letter – no numbers or special characters\nThere are some options for multi-word variable naming\n\nvariablename: Just smush it all together\nvariableName or VariableName: Camel case\nvariable_name or Variable_Name: Snake case\nvariable-name or Variable-Name: Kebab case\n\nIn general, make the variable names as short as possible while keeping each name unique\n\n\n\n\n2.2 About Quarto\n\nLook at the top of the Quarto file. The section with --- at the top and bottom. This is the YAML (pronounced “yam-ull”). It provides options for the overall document.\n\ntitle: is pretty obvious\nformat: tells R which output format to produce when you knit the document together\nThis is an html document, but you can specify different or multiple output formats, like both HTML and PDF\n\nThere are additional options that are specific to this format\nembed-resources: true (older version: self-contained: true) and self-contained-math: true make sure that any additional files that are created, like figures, are part of the HTML file. If I didn’t include this and sent you to the HTML file, the figures etc. would be missing.\nhtml-math-method: katex is an option about the equations and math text. It’s probably not necessary, but I include it anyway.\nnumber-sections: true and toc: true produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate\ncode-tools: true adds the &lt;/&gt; Code button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R\ncode-block-bg: true and code-block-border-left: \"#31BAE9\" make the code chunks a little more noticeable – they blended into the background too much otherwise.\nThe YAML is one of the few places that spacing matters. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run\nRead more about YAML options here\n\n\nYou can label each code chunk in the document\n\nThis is a very smart thing to do\n\nI don’t do it consistently :( but I’m trying\n\nIf you have an error, R will tell you which chunk has the problem\n\nIf the chunks are named, it will use the name so it’s easy to find\nIf they’re not named, it will tell you something like “Unnamed chunk 52”, which is way less helpful\n\nName your chunks with #| label: name-of-this-chunk\n\nSee the setup chunk above – that’s just its name, “setup”\n\n\nThere are other options for code chunks. Here are some useful ones\n\necho: true: Repeats the code in the output\nwarning: false: Suppress any warnings from R (not recommended)\neval: false: Don’t run this code, just print it (useful for teaching)\nFor any of these, you can swap from true to false or vice versa and get the opposite effect\nfig-cap: \"My figure caption is cool\": Adds a caption to the figure produced in that chunk – useful for accessibility\nMore info here and here\n\nYou may be used to running small chunks of code individually, even in a large file of R code\n\nQuarto (and markdown) are more about rendering the whole document into an external (html or pdf or doc) file\nClick the “Render” button at the top of the window to render\n\nDepending on the size of the file and what it needs to do, this can take a few minutes\nThe console shows a progress bar with percentage complete"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#installing-packages",
-    "href": "lab/BTS510-25-lab1.html#installing-packages",
-    "title": "BTS 510 Lab 1",
-    "section": "3 Installing packages",
-    "text": "3 Installing packages\nYou must install a new package the first time you use it\n\n#install.packages(gapminder)\n\nYou only need to do this once. I have commented out this part of the code by putting # at the start of the line because I already have the package installed. If you try to install a package that is already installed, you will probably get an error.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually install packages via the Rstudio graphical user interface (GUI). I’m doing it this way for pedagogical reasons.\n\n\nAlternatively, if you’re using Rstudio, you can quickly install packages in the “Packages” pane using the “Install” button, and exclude this code."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#loading-packages",
-    "href": "lab/BTS510-25-lab1.html#loading-packages",
-    "title": "BTS 510 Lab 1",
-    "section": "4 Loading packages",
-    "text": "4 Loading packages\nYou must load or library() a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.\n\nlibrary(gapminder)\n\nThis allows us to use the functions in these packages. If you’re loading multiple packages, just list each on it’s own line.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually load all packages in the “setup” chunk at the top of the document. I’m doing it this way for pedagogical reasons.\n\n\nThe gapminder package is a data package. It provides a subset of the data available at gapminder.org. You may have heard about this data from Hans Rosling’s very famous TED talk."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#reading-in-data",
-    "href": "lab/BTS510-25-lab1.html#reading-in-data",
-    "title": "BTS 510 Lab 1",
-    "section": "5 Reading in data",
-    "text": "5 Reading in data\n\n5.1 External data\nYou can read in data from almost any source.\n\nComma-separated values (CSV) file: Use read.csv() (built-in)\nExcel: Use read_excel() function from readxl package\nSAS, SPSS, Stata: Use the appropriate function from the haven package\nSAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the foreign package\n\nIf you’re using Rstudio, you can read in most types of data using “Import Dataset” in the “Environment” tab in the upper right pane.\nWe’ll focus on this more next week. You’ll almost always be using external data (not internal R data) in your own research, so this is really important.\n\n\n5.2 Data from a package\nSome packages contain data. We will use the gapminder dataset from the gapminder package. Another great source of dataset is the datasets package, which includes commonly used datasets such as iris and mtcars. (Note that if you want to use iris or mtcars, you’ll need to load it – it is installed with R by default, so you don’t need to install it.)\nTo load a dataset, use the data() function\n\ndata(gapminder)"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#looking-at-your-data",
-    "href": "lab/BTS510-25-lab1.html#looking-at-your-data",
-    "title": "BTS 510 Lab 1",
-    "section": "6 Looking at your data",
-    "text": "6 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n6.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n6.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n6.3 str() function\nThe str() function (“str” = “structure”) tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\n#|label: str\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n6.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
-  },
-  {
-    "objectID": "lab/BTS510-25-lab1.html#activities",
-    "href": "lab/BTS510-25-lab1.html#activities",
-    "title": "BTS 510 Lab 1",
-    "section": "7 Activities",
-    "text": "7 Activities\nClick on the &lt;/&gt; Code button at the top of the screen, select and copy the text into a new quarto (.qmd) file in Rstudio, and complete these tasks.\n\nRender / knit the file together into an HTML file.\nRender / knit the file together into a PDF file. You’ll need to install the tinytex package for this to work (or have LaTeX installed on your computer).\nHow many rows are in the gapminder dataset? Where did you find that out?\nHow many columns are in the gapminder dataset? Where did you find that out?\nHow many countries are represented in the gapminder dataset? Where did you find that out?\nThe gapminder dataset is longitudinal. Is it organized as tall or wide?"
-  },
-  {
-    "objectID": "final.html",
-    "href": "final.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "Blah blah blah"
-  },
-  {
-    "objectID": "assignments/hw1.html",
-    "href": "assignments/hw1.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Due Sunday, May 18 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2007?\nHow many countries had a life expectancy greater than 80 in 2002?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2002?\nWhich country had the highest GDP per capita in 2007, among countries with a population of at least 20 million?",
-    "crumbs": [
-      "Assignments",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
-    "href": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Due Sunday, May 18 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2007?\nHow many countries had a life expectancy greater than 80 in 2002?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2002?\nWhich country had the highest GDP per capita in 2007, among countries with a population of at least 20 million?",
-    "crumbs": [
-      "Assignments",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2025!\n\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in Picasso conference room in PDC\nLinks to the syllabus, schedule, and other course materials are in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nTo download html files: Right click (or control click) and select “Save link as…”",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2.html",
-    "href": "lab/BTS510-25-lab2.html",
-    "title": "BTS 510 Lab 2",
-    "section": "",
-    "text": "set.seed(12345)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2.html#learning-objectives",
-    "href": "lab/BTS510-25-lab2.html#learning-objectives",
-    "title": "BTS 510 Lab 2",
-    "section": "1 Learning objectives",
-    "text": "1 Learning objectives\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2.html#read-in-data",
-    "href": "lab/BTS510-25-lab2.html#read-in-data",
-    "title": "BTS 510 Lab 2",
-    "section": "2 Read in data",
-    "text": "2 Read in data\n\nRead in the “gapminder.csv” file\n\nYou’ll need to either\n\nSave it in the same folder as your .qmd file OR\nSupply the entire path to the file\n\nI have it saved in the same folder, so I’ll just give the file name\n\n\n\ngap &lt;- read.csv(\"gapminder.csv\")\n\n\nBecause I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up\n\nSpecifically, the country and continent variables were originally “factor” variables but have read in here as “character” variables\nSo I’m going to force them to be factor variables using the as.factor() function\nAmong other things, this will make some of the “data view” functions show us the number of levels of the variable\n\n\n\ngap$country &lt;- as.factor(gap$country)\ngap$continent &lt;- as.factor(gap$continent)\n\n\n2.1 Check out the data\n\nhead() function\n\n\nhead(gap)\n\n      country continent year lifeExp      pop gdpPercap\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134\n\n\n\nstr() function\n\n\nstr(gap)\n\n'data.frame':   1704 obs. of  6 variables:\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num  28.8 30.3 32 34 36.1 ...\n $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num  779 821 853 836 740 ...\n\n\n\nglimpse() function\n\n\nglimpse(gap)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\nData looks like it read in correctly\n\nHow many countries?\nHow many years?\nHow many variables (besides country, continent, and year)?"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2.html#convert-from-tall-to-wide-and-back-successfully",
-    "href": "lab/BTS510-25-lab2.html#convert-from-tall-to-wide-and-back-successfully",
-    "title": "BTS 510 Lab 2",
-    "section": "3 Convert from tall to wide and back successfully",
-    "text": "3 Convert from tall to wide and back successfully\n\nPart of the issue in the lecture with going back and forth easily is that we were converting multiple variables\n\nThis made it too complicated\n\n(Although, of course, that’s what real data is like…)\n\nSo let’s make this a little simpler and use only 1 variable: lifeExp\n\n\n\n3.1 Step 1: select() only some variables (lifeExp)\n\ngap1 &lt;- gap %&gt;% select(country, continent, year, lifeExp)\nhead(gap1)\n\n      country continent year lifeExp\n1 Afghanistan      Asia 1952  28.801\n2 Afghanistan      Asia 1957  30.332\n3 Afghanistan      Asia 1962  31.997\n4 Afghanistan      Asia 1967  34.020\n5 Afghanistan      Asia 1972  36.088\n6 Afghanistan      Asia 1977  38.438\n\n\n\n\n3.2 Step 2: pivot_wider() to convert to a wide dataset\n\ngap1_wide &lt;- gap1 %&gt;% pivot_wider(names_from = year, \n                                  values_from = lifeExp)\nhead(gap1_wide)\n\n# A tibble: 6 × 14\n  country     continent `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987`\n  &lt;fct&gt;       &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan Asia        28.8   30.3   32.0   34.0   36.1   38.4   39.9   40.8\n2 Albania     Europe      55.2   59.3   64.8   66.2   67.7   68.9   70.4   72  \n3 Algeria     Africa      43.1   45.7   48.3   51.4   54.5   58.0   61.4   65.8\n4 Angola      Africa      30.0   32.0   34     36.0   37.9   39.5   39.9   39.9\n5 Argentina   Americas    62.5   64.4   65.1   65.6   67.1   68.5   69.9   70.8\n6 Australia   Oceania     69.1   70.3   70.9   71.1   71.9   73.5   74.7   76.3\n# ℹ 4 more variables: `1992` &lt;dbl&gt;, `1997` &lt;dbl&gt;, `2002` &lt;dbl&gt;, `2007` &lt;dbl&gt;\n\n\n\nHow many years of data are in this dataset?\n\n\n\n3.3 Step 3: pivot_longer() to convert back to a tall dataset\n\ngap1_tall &lt;- gap1_wide %&gt;% pivot_longer(cols = 3:14, \n                                        names_to = \"year\", \n                                        values_to = \"lifeExp\")\nhead(gap1_tall)\n\n# A tibble: 6 × 4\n  country     continent year  lifeExp\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8\n2 Afghanistan Asia      1957     30.3\n3 Afghanistan Asia      1962     32.0\n4 Afghanistan Asia      1967     34.0\n5 Afghanistan Asia      1972     36.1\n6 Afghanistan Asia      1977     38.4\n\n\n\nBeautiful!\n\nThough notice that R decided that year is now a character variable…\nIf you wanted to, you could change that with the as.numeric() function as we did to convert variables to factors"
-  },
-  {
-    "objectID": "lab/BTS510-25-lab2.html#manipulate-some-data",
-    "href": "lab/BTS510-25-lab2.html#manipulate-some-data",
-    "title": "BTS 510 Lab 2",
-    "section": "4 Manipulate some data",
-    "text": "4 Manipulate some data\n\nFor each task, start with the original data, gap, and use appropriate functions (e.g., print(), head(), str(), glimpse()) to check that you have the data you were trying to get.\n\n\nKeep only observations from countries in Asia and Europe.\nCreate a new variable that is the ratio of life expectancy to GDP.\nCreate a new data frame with the mean GDP per capita for each continent.\nFind the country in the Americas with the largest population. What country was it and what year was it?\nKeep only data from Asia prior to 1975 and sort it according to population.\nHow many countries have a life expectancy greater than 80 in 2007?"
-  },
-  {
-    "objectID": "materials/00-mats.html",
-    "href": "materials/00-mats.html",
-    "title": "Week 0: Read me first!",
-    "section": "",
-    "text": "This course will be dependent on software and technology. Therefore, in preparation for the first class meeting:\n\nInstall R from here\nInstall Rstudio from here (optional but will make your life easier)\nInstall Quarto from here\nMake sure to bring your laptop to class on Thursday\n\nSyllabus\n\nTake a look at the syllabus\n\nIntroduction\n\nHere is a short video (Lecture 0) to orient you to the course and the flipped format\nHere are the slides from the video\n\nWeek 1 materials here\n\nWatch lecture video 1\nComplete the lecture survey\nThis will prepare you for our first in-person meeting on Thursday morning",
-    "crumbs": [
-      "Materials",
-      "Week 0: Read me first!"
-    ]
-  },
-  {
-    "objectID": "materials/02-mats.html",
-    "href": "materials/02-mats.html",
-    "title": "Week 2: Data manipulation",
-    "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
-    "crumbs": [
-      "Materials",
-      "Week 2: Data manipulation"
-    ]
-  },
-  {
-    "objectID": "materials/02-mats.html#learning-objectives",
-    "href": "materials/02-mats.html#learning-objectives",
-    "title": "Week 2: Data manipulation",
-    "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
-    "crumbs": [
-      "Materials",
-      "Week 2: Data manipulation"
-    ]
-  },
-  {
-    "objectID": "materials/02-mats.html#before-class-lecture",
-    "href": "materials/02-mats.html#before-class-lecture",
-    "title": "Week 2: Data manipulation",
-    "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\nLecture 2\nLecture survey: Complete by Wednesday, May 14 at 8pm\nSlides (html)",
-    "crumbs": [
-      "Materials",
-      "Week 2: Data manipulation"
-    ]
-  },
-  {
-    "objectID": "materials/02-mats.html#during-class-lab",
-    "href": "materials/02-mats.html#during-class-lab",
-    "title": "Week 2: Data manipulation",
-    "section": "During class: Lab",
-    "text": "During class: Lab\n\nCSV file of gapminder data\nSPSS file of gapminder data\nLab 2 (html with link to code)\n\nSupplement to lab 2",
-    "crumbs": [
-      "Materials",
-      "Week 2: Data manipulation"
-    ]
-  },
-  {
-    "objectID": "materials/02-mats.html#after-class-assignment",
-    "href": "materials/02-mats.html#after-class-assignment",
-    "title": "Week 2: Data manipulation",
-    "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nHomework 1",
-    "crumbs": [
-      "Materials",
-      "Week 2: Data manipulation"
-    ]
-  },
-  {
-    "objectID": "refs.html",
-    "href": "refs.html",
-    "title": "References",
-    "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#general-resources",
-    "href": "refs.html#general-resources",
-    "title": "References",
-    "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#software",
-    "href": "refs.html#software",
-    "title": "References",
-    "section": "Software",
-    "text": "Software\n\nR and Rstudio\n\nR: https://cran.r-project.org/\nRstudio: https://posit.co/download/rstudio-desktop/\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nCommonly used R packages for different tasks\nCheatsheets on various topics: https://posit.co/resources/cheatsheets/\n\n\n\ntidyverse\n\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.\nWickham, H. (2010). A layered grammar of graphics. Journal of computational and graphical statistics, 19(1), 3-28.\nWickham, H. (2016). ggplot2: elegant graphics for data analysis. Springer.\nWilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Statistics and Computing, New York: Springer.\n\n\n\nmarkdown and Quarto\n\nQuarto: “Next gen” of markdown\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#linear-models",
-    "href": "refs.html#linear-models",
-    "title": "References",
-    "section": "Linear models",
-    "text": "Linear models\n\nLinear regression\n\n\nLogistic regression\n\n\nPoisson regression",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#miscellaneous",
-    "href": "refs.html#miscellaneous",
-    "title": "References",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous\n\nGenomics\n\nComputational Genomics with R\nBareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.\n\n\n\nMissing data\n\nEnders, C. K. (2022). Applied missing data analysis. Guilford Publications.\nEnders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. https://doi.org/10.1037/met0000563\nLittle, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.\nNational Research Council (US) Panel on Handling Missing Data in Clinical Trials. (2010). The Prevention and Treatment of Missing Data in Clinical Trials. National Academies Press (US).\nRubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#about-me",
-    "href": "slides/BTS510-25-0.html#about-me",
-    "title": "Introduction to Biostatistics",
-    "section": "1.1 About me",
-    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\nBiostatistician in Biostatistics Shared Resource\nAssociate Professor in Computational Biomedicine\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#about-your-co-instructors",
-    "href": "slides/BTS510-25-0.html#about-your-co-instructors",
-    "title": "Introduction to Biostatistics",
-    "section": "1.2 About your co-instructors",
-    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#this-course",
-    "href": "slides/BTS510-25-0.html#this-course",
-    "title": "Introduction to Biostatistics",
-    "section": "1.3 This course",
-    "text": "1.3 This course\n\nThis course covers linear models (i.e., regression) with a focus on experimental studies.\n\nUsing and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#hybrid-flipped-course",
-    "href": "slides/BTS510-25-0.html#hybrid-flipped-course",
-    "title": "Introduction to Biostatistics",
-    "section": "1.4 Hybrid, flipped course",
-    "text": "1.4 Hybrid, flipped course\n\nWe meet in person for 1 hour 30 minutes each week for active learning\n\nWork through R code\n\nInterpret output\nQ & A\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#course-schedule",
-    "href": "slides/BTS510-25-0.html#course-schedule",
-    "title": "Introduction to Biostatistics",
-    "section": "2.1 Course schedule",
-    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in Picasso room\nSunday by midnight: Homework assignment due"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#lecture-and-survey",
-    "href": "slides/BTS510-25-0.html#lecture-and-survey",
-    "title": "Introduction to Biostatistics",
-    "section": "3.1 Lecture and survey",
-    "text": "3.1 Lecture and survey\n\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#in-person-class-time",
-    "href": "slides/BTS510-25-0.html#in-person-class-time",
-    "title": "Introduction to Biostatistics",
-    "section": "3.2 In-person class time",
-    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#homework-assignments",
-    "href": "slides/BTS510-25-0.html#homework-assignments",
-    "title": "Introduction to Biostatistics",
-    "section": "3.3 Homework assignments",
-    "text": "3.3 Homework assignments\n\nEight (8) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#final-project",
-    "href": "slides/BTS510-25-0.html#final-project",
-    "title": "Introduction to Biostatistics",
-    "section": "3.4 Final project",
-    "text": "3.4 Final project\n\nProject based\n\nSelect a dataset\nPropose research questions\nWrite up results\nPresent results"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#statistical-software",
-    "href": "slides/BTS510-25-0.html#statistical-software",
-    "title": "Introduction to Biostatistics",
-    "section": "4.1 Statistical software",
-    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#how-can-you-be-successful",
-    "href": "slides/BTS510-25-0.html#how-can-you-be-successful",
-    "title": "Introduction to Biostatistics",
-    "section": "5.1 How can you be successful?",
-    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us\nI don’t know what’s going on with each of you"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#where-can-i-find-out-more-about",
-    "href": "slides/BTS510-25-0.html#where-can-i-find-out-more-about",
-    "title": "Introduction to Biostatistics",
-    "section": "5.2 Where can I find out more about…?",
-    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
-  },
-  {
-    "objectID": "slides/BTS510-25-0.html#whats-next",
-    "href": "slides/BTS510-25-0.html#whats-next",
-    "title": "Introduction to Biostatistics",
-    "section": "5.3 What’s next?",
-    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey to provide feedback\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
   },
   {
     "objectID": "slides/BTS510-25-2.html#learning-objectives-1",
@@ -951,5 +311,1180 @@
     "title": "Introduction to Biostatistics",
     "section": "5.1 In-class activities",
     "text": "5.1 In-class activities\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#about-me",
+    "href": "slides/BTS510-25-0.html#about-me",
+    "title": "Introduction to Biostatistics",
+    "section": "1.1 About me",
+    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\nBiostatistician in Biostatistics Shared Resource\nAssociate Professor in Computational Biomedicine\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#about-your-co-instructors",
+    "href": "slides/BTS510-25-0.html#about-your-co-instructors",
+    "title": "Introduction to Biostatistics",
+    "section": "1.2 About your co-instructors",
+    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#this-course",
+    "href": "slides/BTS510-25-0.html#this-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.3 This course",
+    "text": "1.3 This course\n\nThis course covers linear models (i.e., regression) with a focus on experimental studies.\n\nUsing and manipulating datasets, plotting data, estimation and uncertainty, linear regression, logistic regression, and Poisson regression.\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#hybrid-flipped-course",
+    "href": "slides/BTS510-25-0.html#hybrid-flipped-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.4 Hybrid, flipped course",
+    "text": "1.4 Hybrid, flipped course\n\nWe meet in person for 1 hour 30 minutes each week for active learning\n\nWork through R code\n\nInterpret output\nQ & A\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#course-schedule",
+    "href": "slides/BTS510-25-0.html#course-schedule",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 Course schedule",
+    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in Picasso room\nSunday by midnight: Homework assignment due"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#lecture-and-survey",
+    "href": "slides/BTS510-25-0.html#lecture-and-survey",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 Lecture and survey",
+    "text": "3.1 Lecture and survey\n\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#in-person-class-time",
+    "href": "slides/BTS510-25-0.html#in-person-class-time",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 In-person class time",
+    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#homework-assignments",
+    "href": "slides/BTS510-25-0.html#homework-assignments",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 Homework assignments",
+    "text": "3.3 Homework assignments\n\nEight (8) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#final-project",
+    "href": "slides/BTS510-25-0.html#final-project",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 Final project",
+    "text": "3.4 Final project\n\nProject based\n\nSelect a dataset\nPropose research questions\nWrite up results\nPresent results"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#statistical-software",
+    "href": "slides/BTS510-25-0.html#statistical-software",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 Statistical software",
+    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#how-can-you-be-successful",
+    "href": "slides/BTS510-25-0.html#how-can-you-be-successful",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 How can you be successful?",
+    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us\nI don’t know what’s going on with each of you"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#where-can-i-find-out-more-about",
+    "href": "slides/BTS510-25-0.html#where-can-i-find-out-more-about",
+    "title": "Introduction to Biostatistics",
+    "section": "5.2 Where can I find out more about…?",
+    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
+  },
+  {
+    "objectID": "slides/BTS510-25-0.html#whats-next",
+    "href": "slides/BTS510-25-0.html#whats-next",
+    "title": "Introduction to Biostatistics",
+    "section": "5.3 What’s next?",
+    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey to provide feedback\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
+  },
+  {
+    "objectID": "refs.html",
+    "href": "refs.html",
+    "title": "References",
+    "section": "",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#general-resources",
+    "href": "refs.html#general-resources",
+    "title": "References",
+    "section": "",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#software",
+    "href": "refs.html#software",
+    "title": "References",
+    "section": "Software",
+    "text": "Software\n\nR and Rstudio\n\nR: https://cran.r-project.org/\nRstudio: https://posit.co/download/rstudio-desktop/\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nCommonly used R packages for different tasks\nCheatsheets on various topics: https://posit.co/resources/cheatsheets/\n\n\n\ntidyverse\n\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.\nWickham, H. (2010). A layered grammar of graphics. Journal of computational and graphical statistics, 19(1), 3-28.\nWickham, H. (2016). ggplot2: elegant graphics for data analysis. Springer.\nWilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Statistics and Computing, New York: Springer.\n\n\n\nmarkdown and Quarto\n\nQuarto: “Next gen” of markdown\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#linear-models",
+    "href": "refs.html#linear-models",
+    "title": "References",
+    "section": "Linear models",
+    "text": "Linear models\n\nLinear regression\n\n\nLogistic regression\n\n\nPoisson regression",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#miscellaneous",
+    "href": "refs.html#miscellaneous",
+    "title": "References",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\n\nGenomics\n\nComputational Genomics with R\nBareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.\n\n\n\nMissing data\n\nEnders, C. K. (2022). Applied missing data analysis. Guilford Publications.\nEnders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. https://doi.org/10.1037/met0000563\nLittle, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.\nNational Research Council (US) Panel on Handling Missing Data in Clinical Trials. (2010). The Prevention and Treatment of Missing Data in Clinical Trials. National Academies Press (US).\nRubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "materials/03-mats.html",
+    "href": "materials/03-mats.html",
+    "title": "Week 3: Sampling distributions",
+    "section": "",
+    "text": "Understand probability as a measure of uncertainty\nDescribe the difference between population and sample\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution",
+    "crumbs": [
+      "Materials",
+      "Week 3: Sampling distributions"
+    ]
+  },
+  {
+    "objectID": "materials/03-mats.html#learning-objectives",
+    "href": "materials/03-mats.html#learning-objectives",
+    "title": "Week 3: Sampling distributions",
+    "section": "",
+    "text": "Understand probability as a measure of uncertainty\nDescribe the difference between population and sample\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution",
+    "crumbs": [
+      "Materials",
+      "Week 3: Sampling distributions"
+    ]
+  },
+  {
+    "objectID": "materials/03-mats.html#before-class-lecture",
+    "href": "materials/03-mats.html#before-class-lecture",
+    "title": "Week 3: Sampling distributions",
+    "section": "Before class: Lecture",
+    "text": "Before class: Lecture\n\nLecture 3\nLecture survey: Complete by Wednesday, May 21 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 3: Sampling distributions"
+    ]
+  },
+  {
+    "objectID": "materials/03-mats.html#during-class-lab",
+    "href": "materials/03-mats.html#during-class-lab",
+    "title": "Week 3: Sampling distributions",
+    "section": "During class: Lab",
+    "text": "During class: Lab\n\nLab 3 (html with link to code)",
+    "crumbs": [
+      "Materials",
+      "Week 3: Sampling distributions"
+    ]
+  },
+  {
+    "objectID": "materials/03-mats.html#after-class-assignment",
+    "href": "materials/03-mats.html#after-class-assignment",
+    "title": "Week 3: Sampling distributions",
+    "section": "After class: Assignment",
+    "text": "After class: Assignment\n\nNo homework this week",
+    "crumbs": [
+      "Materials",
+      "Week 3: Sampling distributions"
+    ]
+  },
+  {
+    "objectID": "materials/01-mats.html",
+    "href": "materials/01-mats.html",
+    "title": "Week 1: Introduction",
+    "section": "",
+    "text": "Review the course topics, structure, and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text",
+    "crumbs": [
+      "Materials",
+      "Week 1: Introduction"
+    ]
+  },
+  {
+    "objectID": "materials/01-mats.html#learning-objectives",
+    "href": "materials/01-mats.html#learning-objectives",
+    "title": "Week 1: Introduction",
+    "section": "",
+    "text": "Review the course topics, structure, and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text",
+    "crumbs": [
+      "Materials",
+      "Week 1: Introduction"
+    ]
+  },
+  {
+    "objectID": "materials/01-mats.html#before-class-lecture",
+    "href": "materials/01-mats.html#before-class-lecture",
+    "title": "Week 1: Introduction",
+    "section": "Before class: Lecture",
+    "text": "Before class: Lecture\n\nLecture 1\nLecture survey: Complete by Wednesday, May 7 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 1: Introduction"
+    ]
+  },
+  {
+    "objectID": "materials/01-mats.html#during-class-lab",
+    "href": "materials/01-mats.html#during-class-lab",
+    "title": "Week 1: Introduction",
+    "section": "During class: Lab",
+    "text": "During class: Lab\n\nLab 1 (html with link to code)",
+    "crumbs": [
+      "Materials",
+      "Week 1: Introduction"
+    ]
+  },
+  {
+    "objectID": "materials/01-mats.html#after-class-assignment",
+    "href": "materials/01-mats.html#after-class-assignment",
+    "title": "Week 1: Introduction",
+    "section": "After class: Assignment",
+    "text": "After class: Assignment\n\nNo homework this week",
+    "crumbs": [
+      "Materials",
+      "Week 1: Introduction"
+    ]
+  },
+  {
+    "objectID": "lab/BTS510-25-lab3.html",
+    "href": "lab/BTS510-25-lab3.html",
+    "title": "BTS 510 Lab 3",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_classic(base_size = 16))"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab3.html#learning-objectives",
+    "href": "lab/BTS510-25-lab3.html#learning-objectives",
+    "title": "BTS 510 Lab 3",
+    "section": "1 Learning objectives",
+    "text": "1 Learning objectives\n\nUnderstand probability as a measure of uncertainty\nSummarize probabilities with probability distributions\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab3.html#mathematically-derived-sampling-distribution",
+    "href": "lab/BTS510-25-lab3.html#mathematically-derived-sampling-distribution",
+    "title": "BTS 510 Lab 3",
+    "section": "2 Mathematically-derived sampling distribution",
+    "text": "2 Mathematically-derived sampling distribution\n\nMany combinations of population distribution and test statistic have mathematically-derived sampling distributions\n\nFor example, with a normally distributed population (\\mathcal{N}(\\mu, \\sigma^2)), the sampling distribution of the mean is \\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\nIn this case, the population distribution and sampling distribution are the same distribution: Normal\nThe variance (or standard deviation) of the sampling distribution decreases as n increases: A larger sample leads to a smaller, more precise standard error\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThere is not a mathematically-derived sampling distribution for every population distribution and test statistic\n\nIf you’re dealing with unknown or unusual distributions or test statistics, your only option may be computational methods"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab3.html#computationally-derived-sampling-distribution",
+    "href": "lab/BTS510-25-lab3.html#computationally-derived-sampling-distribution",
+    "title": "BTS 510 Lab 3",
+    "section": "3 Computationally-derived sampling distribution",
+    "text": "3 Computationally-derived sampling distribution\n\n3.1 Getting started\n\nSet a random number seed\n\nIf you don’t do this, every time you run the code, you’ll get different numbers\nSetting a random seed makes your simulation replicable\n(I normally set a seed at the start of each document, but I moved it down here because it’s very important in this lab.)\n\nLoad (and install, if needed) the infer package\n\ninfer has a function that we’ll use to repeatedly sample\nThere are other ways to do this, but this is very simple and works well\n\nOnly have to do this once per document\n\n\nset.seed(12345)\nlibrary(infer)\n\n\n\n3.2 Standard Normal population: population \\sim \\mathcal{N}(0, 1)\n\n3.2.1 Create a population\n\nrnorm() creates a random variable that follows a normal distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\mu\nThird argument = \\sigma (not \\sigma^2)\n\n\n\nnorm_pop &lt;- rnorm(1000000, 0, 1)\nmean(norm_pop)\n\n[1] 0.0002941277\n\nsd(norm_pop)\n\n[1] 1.001315\n\nvar(norm_pop)\n\n[1] 1.002632\n\n\n\n\n3.2.2 Sample from the population\n\nSmall sample: n = 10\n\nrep_sample_n() repeatedly samples from the dataset\n\nPiped (%&gt;%) from the norm_pop dataset, so it resamples from that\nsize = 10: Sample size for each sample\nreps = 10000: Number of repeated samples (could be larger but this is good enough to show how things work and doesn’t take too long to run)\nreplace = TRUE: Sample with replacement\n\nsummarise(x_bar = mean(norm_pop)): Create a data frame with each of the means from each sample\nThe ggplot() code creates a histogram from the data\n\nModification: bins = 50 increases the bins to make it a little smoother\nModification: xlim(-1.5, 1.5) sets limits on the x-axis to make the plots more comparable\nMake similar modifications in your own plots later in this document\nWe’ll spend the next 2 weeks on ggplot() so you’ll learn all of this (and more!)\n\n\n\n\nnorm_means10 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\nnorm_means50 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5) \n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\nnorm_means100 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\n\n3.2.3 Compare estimates\n\nCompare means, standard deviations, and variances for each sample size\n\n\nmean(norm_means10$x_bar)\n\n[1] -0.003408017\n\nmean(norm_means50$x_bar)\n\n[1] -0.0009473133\n\nmean(norm_means100$x_bar)\n\n[1] 0.001145927\n\n\n\nsd(norm_means10$x_bar)\n\n[1] 0.3131297\n\nsd(norm_means50$x_bar)\n\n[1] 0.1416664\n\nsd(norm_means100$x_bar)\n\n[1] 0.100464\n\n\n\nvar(norm_means10$x_bar)\n\n[1] 0.09805018\n\nvar(norm_means50$x_bar)\n\n[1] 0.02006937\n\nvar(norm_means100$x_bar)\n\n[1] 0.01009301\n\n\n\nHow does each value correspond to what you’d expect based on the mathematically-derived sampling distribution?\n\n\\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\n\n\n\n\n3.3 Bernoulli population: population \\sim B(0.3)\n\n3.3.1 Create a population\n\nrbinom() creates a random variable that follows a binomial distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = number of trials (here, just 1 for a Bernoulli trial)\nThird argument = p (probability of success)\n\n\n\nbernoulli_pop &lt;- rbinom(1000000, 1, 0.3)\nmean(bernoulli_pop)\n\n[1] 0.300871\n\nsd(bernoulli_pop)\n\n[1] 0.4586369\n\nvar(bernoulli_pop)\n\n[1] 0.2103479\n\n\n\nCopy and modify the code above to resample from this new Bernoulli population\n\n\n\n3.3.2 Sample from the population\n\nSmall sample: n = 10\n\n\nModerate sample: n = 50\n\n\nLarge sample: n = 100\n\n\n\n3.3.3 Compare estimates\n\nCompare means, standard deviations, and variances for each sample size\n\n\nHow does each value correspond to what you’d expect based on the mathematically-derived sampling distribution for a normally distributed population?\n\n\\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\n\n\n\n\n3.4 Poisson population: population \\sim Poisson(1.5)\n\n3.4.1 Create a population\n\nrpois() creates a random variable that follows a Poisson distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\lambda (mean and variance)\n\nRemember that \\lambda is the variance, but we’re going to look at the standard deviation which is the square root of the variance\n\n\n\n\npoisson_pop &lt;- rpois(1000000, 1.5)\nmean(poisson_pop)\n\n[1] 1.500224\n\nsd(poisson_pop)\n\n[1] 1.224674\n\nvar(poisson_pop)\n\n[1] 1.499825\n\n\n\nCopy and modify the code above to resample from this new Poisson population\n\n\n\n3.4.2 Sample from the population\n\nSmall sample: n = 10\n\n\nModerate sample: n = 50\n\n\nLarge sample: n = 100\n\n\n\n3.4.3 Compare estimates\n\nCompare means, standard deviations, and variances for each sample size\n\n\nHow does each value correspond to what you’d expect based on the mathematically-derived sampling distribution for a normally distributed population?\n\n\\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab3.html#summarize-results",
+    "href": "lab/BTS510-25-lab3.html#summarize-results",
+    "title": "BTS 510 Lab 3",
+    "section": "4 Summarize results",
+    "text": "4 Summarize results\n\nIn general, how does sample size impact the standard error?\n\ni.e., the standard deviation of the sampling distribution?\n\nDoes it seem to matter what the population distribution is?\n\nBased on: Visual inspection of the distribution\nBased on: Estimates of standard error"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2.html",
+    "href": "lab/BTS510-25-lab2.html",
+    "title": "BTS 510 Lab 2",
+    "section": "",
+    "text": "set.seed(12345)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2.html#learning-objectives",
+    "href": "lab/BTS510-25-lab2.html#learning-objectives",
+    "title": "BTS 510 Lab 2",
+    "section": "1 Learning objectives",
+    "text": "1 Learning objectives\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2.html#read-in-data",
+    "href": "lab/BTS510-25-lab2.html#read-in-data",
+    "title": "BTS 510 Lab 2",
+    "section": "2 Read in data",
+    "text": "2 Read in data\n\nRead in the “gapminder.csv” file\n\nYou’ll need to either\n\nSave it in the same folder as your .qmd file OR\nSupply the entire path to the file\n\nI have it saved in the same folder, so I’ll just give the file name\n\n\n\ngap &lt;- read.csv(\"gapminder.csv\")\n\n\nBecause I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up\n\nSpecifically, the country and continent variables were originally “factor” variables but have read in here as “character” variables\nSo I’m going to force them to be factor variables using the as.factor() function\nAmong other things, this will make some of the “data view” functions show us the number of levels of the variable\n\n\n\ngap$country &lt;- as.factor(gap$country)\ngap$continent &lt;- as.factor(gap$continent)\n\n\n2.1 Check out the data\n\nhead() function\n\n\nhead(gap)\n\n      country continent year lifeExp      pop gdpPercap\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134\n\n\n\nstr() function\n\n\nstr(gap)\n\n'data.frame':   1704 obs. of  6 variables:\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num  28.8 30.3 32 34 36.1 ...\n $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num  779 821 853 836 740 ...\n\n\n\nglimpse() function\n\n\nglimpse(gap)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\nData looks like it read in correctly\n\nHow many countries?\nHow many years?\nHow many variables (besides country, continent, and year)?"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2.html#convert-from-tall-to-wide-and-back-successfully",
+    "href": "lab/BTS510-25-lab2.html#convert-from-tall-to-wide-and-back-successfully",
+    "title": "BTS 510 Lab 2",
+    "section": "3 Convert from tall to wide and back successfully",
+    "text": "3 Convert from tall to wide and back successfully\n\nPart of the issue in the lecture with going back and forth easily is that we were converting multiple variables\n\nThis made it too complicated\n\n(Although, of course, that’s what real data is like…)\n\nSo let’s make this a little simpler and use only 1 variable: lifeExp\n\n\n\n3.1 Step 1: select() only some variables (lifeExp)\n\ngap1 &lt;- gap %&gt;% select(country, continent, year, lifeExp)\nhead(gap1)\n\n      country continent year lifeExp\n1 Afghanistan      Asia 1952  28.801\n2 Afghanistan      Asia 1957  30.332\n3 Afghanistan      Asia 1962  31.997\n4 Afghanistan      Asia 1967  34.020\n5 Afghanistan      Asia 1972  36.088\n6 Afghanistan      Asia 1977  38.438\n\n\n\n\n3.2 Step 2: pivot_wider() to convert to a wide dataset\n\ngap1_wide &lt;- gap1 %&gt;% pivot_wider(names_from = year, \n                                  values_from = lifeExp)\nhead(gap1_wide)\n\n# A tibble: 6 × 14\n  country     continent `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987`\n  &lt;fct&gt;       &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan Asia        28.8   30.3   32.0   34.0   36.1   38.4   39.9   40.8\n2 Albania     Europe      55.2   59.3   64.8   66.2   67.7   68.9   70.4   72  \n3 Algeria     Africa      43.1   45.7   48.3   51.4   54.5   58.0   61.4   65.8\n4 Angola      Africa      30.0   32.0   34     36.0   37.9   39.5   39.9   39.9\n5 Argentina   Americas    62.5   64.4   65.1   65.6   67.1   68.5   69.9   70.8\n6 Australia   Oceania     69.1   70.3   70.9   71.1   71.9   73.5   74.7   76.3\n# ℹ 4 more variables: `1992` &lt;dbl&gt;, `1997` &lt;dbl&gt;, `2002` &lt;dbl&gt;, `2007` &lt;dbl&gt;\n\n\n\nHow many years of data are in this dataset?\n\n\n\n3.3 Step 3: pivot_longer() to convert back to a tall dataset\n\ngap1_tall &lt;- gap1_wide %&gt;% pivot_longer(cols = 3:14, \n                                        names_to = \"year\", \n                                        values_to = \"lifeExp\")\nhead(gap1_tall)\n\n# A tibble: 6 × 4\n  country     continent year  lifeExp\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8\n2 Afghanistan Asia      1957     30.3\n3 Afghanistan Asia      1962     32.0\n4 Afghanistan Asia      1967     34.0\n5 Afghanistan Asia      1972     36.1\n6 Afghanistan Asia      1977     38.4\n\n\n\nBeautiful!\n\nThough notice that R decided that year is now a character variable…\nIf you wanted to, you could change that with the as.numeric() function as we did to convert variables to factors"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2.html#manipulate-some-data",
+    "href": "lab/BTS510-25-lab2.html#manipulate-some-data",
+    "title": "BTS 510 Lab 2",
+    "section": "4 Manipulate some data",
+    "text": "4 Manipulate some data\n\nFor each task, start with the original data, gap, and use appropriate functions (e.g., print(), head(), str(), glimpse()) to check that you have the data you were trying to get.\n\n\nKeep only observations from countries in Asia and Europe.\nCreate a new variable that is the ratio of life expectancy to GDP.\nCreate a new data frame with the mean GDP per capita for each continent.\nFind the country in the Americas with the largest population. What country was it and what year was it?\nKeep only data from Asia prior to 1975 and sort it according to population.\nHow many countries have a life expectancy greater than 80 in 2007?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2025!\n\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in Picasso conference room in PDC\nLinks to the syllabus, schedule, and other course materials are in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nTo download html files: Right click (or control click) and select “Save link as…”",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "assignments/hw1.html",
+    "href": "assignments/hw1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Due Sunday, May 18 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2007?\nHow many countries had a life expectancy greater than 80 in 2002?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2002?\nWhich country had the highest GDP per capita in 2007, among countries with a population of at least 20 million?",
+    "crumbs": [
+      "Assignments",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
+    "href": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Due Sunday, May 18 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2007?\nHow many countries had a life expectancy greater than 80 in 2002?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2002?\nWhich country had the highest GDP per capita in 2007, among countries with a population of at least 20 million?",
+    "crumbs": [
+      "Assignments",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/final.html",
+    "href": "assignments/final.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "Big picture: You will select a dataset, propose some research questions that can be answered using linear models (i.e., regression), write up the results, and present your findings to the class.\n\nData assignment: Email to Stefany by midnight on Sunday, June 1, 2025\n\nSelect a dataset to use for your project\nThe dataset should include at least 5 variables\n\nThe variables can be continuous or categorical\n\nThe dataset should include at least 50 subjects (people, animals, etc.)\n\nIf you work in a subfield that typically has much smaller samples than this, send me an email so we can talk about it. You can run these models with smaller samples, but you’re more likely to have problems\n\nFor the assignment, briefly describe the dataset\n\nHow many subjects?\nWhat are the variables? Continuous, categorical?\nWhat is the study design? Randomized groups, observational?\nAny other design or study details that might be important, like repeated measures, clustering of units within higher levels (e.g., people in neighborhoods)\n\n\nProposal assignment: Due July 6, 2025",
+    "crumbs": [
+      "Assignments",
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "assignments/hw2.html",
+    "href": "assignments/hw2.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Due Sunday, June 23 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly."
+  },
+  {
+    "objectID": "assignments/hw2.html#sampling-distributions",
+    "href": "assignments/hw2.html#sampling-distributions",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Due Sunday, June 23 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly."
+  },
+  {
+    "objectID": "assignments/hw2.html#data",
+    "href": "assignments/hw2.html#data",
+    "title": "Homework 3",
+    "section": "Data",
+    "text": "Data\n\nPulse dataset from the Stat2Data package\n\nA dataset with \\(n\\) = 232 observations on the following 7 variables\n\nActive: Pulse rate (beats per minute) after exercise\nRest: Resting pulse rate (beats per minute)\nSmoke: 1=smoker or 0=nonsmoker\nSex: 1=female or 0=male\nExercise: Typical hours of exercise (per week)\nHgt: Height (in inches)\nWgt: Weight (in pounds)"
+  },
+  {
+    "objectID": "assignments/hw2.html#probability-distributions",
+    "href": "assignments/hw2.html#probability-distributions",
+    "title": "Homework 3",
+    "section": "Probability distributions",
+    "text": "Probability distributions\n\nPlot each variable in the dataset using an appropriate plot. No need to be fancy with it, unless you want to.\nWhat probability distribution best represents each variable? For example, uniform, normal, binomial, etc. You can stick to just the distributions we’ve talked about in class – no need to go researching new and unusual distributions (unless you want to).\nBriefly describe (1 to 2 sentences max) why you selected each distribution in the previous question. This need not be technical or extremely detailed."
+  },
+  {
+    "objectID": "assignments/hw2.html#sampling-distributions-1",
+    "href": "assignments/hw2.html#sampling-distributions-1",
+    "title": "Homework 3",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\n\nFor resting pulse rate (Rest), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?\nFor height (Hgt), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?\nFor smoking status (Smoke), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?"
+  },
+  {
+    "objectID": "assignments/hw2.html#confidence-intervals",
+    "href": "assignments/hw2.html#confidence-intervals",
+    "title": "Homework 3",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\nConstruct the 95% confidence interval for the mean of resting pulse rate (Rest).\nBased on the confidence interval, what can you say about whether this sample comes from a population with a mean of 65?\nConstruct the 99% confidence interval for the mean of proportion smokers (Smoke).\nBased on the confidence interval, what can you say about whether this sample comes from a population with 15% smokers?"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html",
+    "href": "lab/BTS510-25-lab1.html",
+    "title": "BTS 510 Lab 1",
+    "section": "",
+    "text": "set.seed(12345)"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#learning-objectives",
+    "href": "lab/BTS510-25-lab1.html#learning-objectives",
+    "title": "BTS 510 Lab 1",
+    "section": "1 Learning objectives",
+    "text": "1 Learning objectives\n\nStart using R and Rstudio\nStart using Quarto documents as a reproducible method to present analyses along with narrative text"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
+    "href": "lab/BTS510-25-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
+    "title": "BTS 510 Lab 1",
+    "section": "2 A few miscellaneous things about R and Quarto",
+    "text": "2 A few miscellaneous things about R and Quarto\n\n2.1 About R\n\nR is case sensitive\n\nmean is not the same as Mean\nThe object b is not the same as the object B\n\nExtra returns don’t matter\n\nExtra spaces generally don’t matter either\nI often add extra spaces, tabs, and returns to make the code more readable\n\nThe assignment operator is &lt;-\n\n“Put whatever is on the right side in the object named on the left side”\n\nSometimes, equal isn’t equal\n\nIf you’re talking about assigning something to a value, you can use =\nIf you want to compare two values and make a decision based on it, you use ==\n\nThere isn’t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent\n\nIn general, variable names must start with a letter – no numbers or special characters\nThere are some options for multi-word variable naming\n\nvariablename: Just smush it all together\nvariableName or VariableName: Camel case\nvariable_name or Variable_Name: Snake case\nvariable-name or Variable-Name: Kebab case\n\nIn general, make the variable names as short as possible while keeping each name unique\n\n\n\n\n2.2 About Quarto\n\nLook at the top of the Quarto file. The section with --- at the top and bottom. This is the YAML (pronounced “yam-ull”). It provides options for the overall document.\n\ntitle: is pretty obvious\nformat: tells R which output format to produce when you knit the document together\nThis is an html document, but you can specify different or multiple output formats, like both HTML and PDF\n\nThere are additional options that are specific to this format\nembed-resources: true (older version: self-contained: true) and self-contained-math: true make sure that any additional files that are created, like figures, are part of the HTML file. If I didn’t include this and sent you to the HTML file, the figures etc. would be missing.\nhtml-math-method: katex is an option about the equations and math text. It’s probably not necessary, but I include it anyway.\nnumber-sections: true and toc: true produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate\ncode-tools: true adds the &lt;/&gt; Code button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R\ncode-block-bg: true and code-block-border-left: \"#31BAE9\" make the code chunks a little more noticeable – they blended into the background too much otherwise.\nThe YAML is one of the few places that spacing matters. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run\nRead more about YAML options here\n\n\nYou can label each code chunk in the document\n\nThis is a very smart thing to do\n\nI don’t do it consistently :( but I’m trying\n\nIf you have an error, R will tell you which chunk has the problem\n\nIf the chunks are named, it will use the name so it’s easy to find\nIf they’re not named, it will tell you something like “Unnamed chunk 52”, which is way less helpful\n\nName your chunks with #| label: name-of-this-chunk\n\nSee the setup chunk above – that’s just its name, “setup”\n\n\nThere are other options for code chunks. Here are some useful ones\n\necho: true: Repeats the code in the output\nwarning: false: Suppress any warnings from R (not recommended)\neval: false: Don’t run this code, just print it (useful for teaching)\nFor any of these, you can swap from true to false or vice versa and get the opposite effect\nfig-cap: \"My figure caption is cool\": Adds a caption to the figure produced in that chunk – useful for accessibility\nMore info here and here\n\nYou may be used to running small chunks of code individually, even in a large file of R code\n\nQuarto (and markdown) are more about rendering the whole document into an external (html or pdf or doc) file\nClick the “Render” button at the top of the window to render\n\nDepending on the size of the file and what it needs to do, this can take a few minutes\nThe console shows a progress bar with percentage complete"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#installing-packages",
+    "href": "lab/BTS510-25-lab1.html#installing-packages",
+    "title": "BTS 510 Lab 1",
+    "section": "3 Installing packages",
+    "text": "3 Installing packages\nYou must install a new package the first time you use it\n\n#install.packages(gapminder)\n\nYou only need to do this once. I have commented out this part of the code by putting # at the start of the line because I already have the package installed. If you try to install a package that is already installed, you will probably get an error.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually install packages via the Rstudio graphical user interface (GUI). I’m doing it this way for pedagogical reasons.\n\n\nAlternatively, if you’re using Rstudio, you can quickly install packages in the “Packages” pane using the “Install” button, and exclude this code."
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#loading-packages",
+    "href": "lab/BTS510-25-lab1.html#loading-packages",
+    "title": "BTS 510 Lab 1",
+    "section": "4 Loading packages",
+    "text": "4 Loading packages\nYou must load or library() a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.\n\nlibrary(gapminder)\n\nThis allows us to use the functions in these packages. If you’re loading multiple packages, just list each on it’s own line.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually load all packages in the “setup” chunk at the top of the document. I’m doing it this way for pedagogical reasons.\n\n\nThe gapminder package is a data package. It provides a subset of the data available at gapminder.org. You may have heard about this data from Hans Rosling’s very famous TED talk."
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#reading-in-data",
+    "href": "lab/BTS510-25-lab1.html#reading-in-data",
+    "title": "BTS 510 Lab 1",
+    "section": "5 Reading in data",
+    "text": "5 Reading in data\n\n5.1 External data\nYou can read in data from almost any source.\n\nComma-separated values (CSV) file: Use read.csv() (built-in)\nExcel: Use read_excel() function from readxl package\nSAS, SPSS, Stata: Use the appropriate function from the haven package\nSAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the foreign package\n\nIf you’re using Rstudio, you can read in most types of data using “Import Dataset” in the “Environment” tab in the upper right pane.\nWe’ll focus on this more next week. You’ll almost always be using external data (not internal R data) in your own research, so this is really important.\n\n\n5.2 Data from a package\nSome packages contain data. We will use the gapminder dataset from the gapminder package. Another great source of dataset is the datasets package, which includes commonly used datasets such as iris and mtcars. (Note that if you want to use iris or mtcars, you’ll need to load it – it is installed with R by default, so you don’t need to install it.)\nTo load a dataset, use the data() function\n\ndata(gapminder)"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#looking-at-your-data",
+    "href": "lab/BTS510-25-lab1.html#looking-at-your-data",
+    "title": "BTS 510 Lab 1",
+    "section": "6 Looking at your data",
+    "text": "6 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n6.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n6.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n6.3 str() function\nThe str() function (“str” = “structure”) tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\n#|label: str\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n6.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
+  },
+  {
+    "objectID": "lab/BTS510-25-lab1.html#activities",
+    "href": "lab/BTS510-25-lab1.html#activities",
+    "title": "BTS 510 Lab 1",
+    "section": "7 Activities",
+    "text": "7 Activities\nClick on the &lt;/&gt; Code button at the top of the screen, select and copy the text into a new quarto (.qmd) file in Rstudio, and complete these tasks.\n\nRender / knit the file together into an HTML file.\nRender / knit the file together into a PDF file. You’ll need to install the tinytex package for this to work (or have LaTeX installed on your computer).\nHow many rows are in the gapminder dataset? Where did you find that out?\nHow many columns are in the gapminder dataset? Where did you find that out?\nHow many countries are represented in the gapminder dataset? Where did you find that out?\nThe gapminder dataset is longitudinal. Is it organized as tall or wide?"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html",
+    "href": "lab/BTS510-25-lab2supp.html",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "",
+    "text": "library(gapminder)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#read-in-and-view-data",
+    "href": "lab/BTS510-25-lab2supp.html#read-in-and-view-data",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "1 Read in and view data",
+    "text": "1 Read in and view data\n\ndata(gapminder)\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786."
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#full-wide-dataset-with-pivot_wider",
+    "href": "lab/BTS510-25-lab2supp.html#full-wide-dataset-with-pivot_wider",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "2 Full wide dataset with pivot_wider()",
+    "text": "2 Full wide dataset with pivot_wider()\n\ngap_wide &lt;- gapminder %&gt;% pivot_wider(names_from = year, \n                                values_from = c(lifeExp, pop, gdpPercap))\n\nhead(gap_wide)\n\n# A tibble: 6 × 38\n  country     continent lifeExp_1952 lifeExp_1957 lifeExp_1962 lifeExp_1967\n  &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 Afghanistan Asia              28.8         30.3         32.0         34.0\n2 Albania     Europe            55.2         59.3         64.8         66.2\n3 Algeria     Africa            43.1         45.7         48.3         51.4\n4 Angola      Africa            30.0         32.0         34           36.0\n5 Argentina   Americas          62.5         64.4         65.1         65.6\n6 Australia   Oceania           69.1         70.3         70.9         71.1\n# ℹ 32 more variables: lifeExp_1972 &lt;dbl&gt;, lifeExp_1977 &lt;dbl&gt;,\n#   lifeExp_1982 &lt;dbl&gt;, lifeExp_1987 &lt;dbl&gt;, lifeExp_1992 &lt;dbl&gt;,\n#   lifeExp_1997 &lt;dbl&gt;, lifeExp_2002 &lt;dbl&gt;, lifeExp_2007 &lt;dbl&gt;, pop_1952 &lt;int&gt;,\n#   pop_1957 &lt;int&gt;, pop_1962 &lt;int&gt;, pop_1967 &lt;int&gt;, pop_1972 &lt;int&gt;,\n#   pop_1977 &lt;int&gt;, pop_1982 &lt;int&gt;, pop_1987 &lt;int&gt;, pop_1992 &lt;int&gt;,\n#   pop_1997 &lt;int&gt;, pop_2002 &lt;int&gt;, pop_2007 &lt;int&gt;, gdpPercap_1952 &lt;dbl&gt;,\n#   gdpPercap_1957 &lt;dbl&gt;, gdpPercap_1962 &lt;dbl&gt;, gdpPercap_1967 &lt;dbl&gt;, …\n\n\n\nOne column per variable (lifeExp, pop, gdpPercap) per year"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#step-1-reverse-part-way-with-pivot_longer",
+    "href": "lab/BTS510-25-lab2supp.html#step-1-reverse-part-way-with-pivot_longer",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "3 Step 1: Reverse part way with pivot_longer()",
+    "text": "3 Step 1: Reverse part way with pivot_longer()\n\ngap_tall &lt;- gap_wide %&gt;% pivot_longer(cols = 3:38, \n                                      names_to = \"var_year\", \n                                      values_to = \"value\")\n\nhead(gap_tall) \n\n# A tibble: 6 × 4\n  country     continent var_year     value\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;        &lt;dbl&gt;\n1 Afghanistan Asia      lifeExp_1952  28.8\n2 Afghanistan Asia      lifeExp_1957  30.3\n3 Afghanistan Asia      lifeExp_1962  32.0\n4 Afghanistan Asia      lifeExp_1967  34.0\n5 Afghanistan Asia      lifeExp_1972  36.1\n6 Afghanistan Asia      lifeExp_1977  38.4\n\n\n\nvar_year contains both variable and year information\nvalue has the actual number value\nMany rows!"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#step-2-split-var_year-into-two-variables-with-separate",
+    "href": "lab/BTS510-25-lab2supp.html#step-2-split-var_year-into-two-variables-with-separate",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "4 Step 2: Split var_year into two variables with separate()",
+    "text": "4 Step 2: Split var_year into two variables with separate()\n\ngap_tall2 &lt;- gap_tall %&gt;% separate(var_year, \n                                   sep = \"_\", \n                                   into = c(\"variable\", \"year\"))\n\nhead(gap_tall2)\n\n# A tibble: 6 × 5\n  country     continent variable year  value\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 Afghanistan Asia      lifeExp  1952   28.8\n2 Afghanistan Asia      lifeExp  1957   30.3\n3 Afghanistan Asia      lifeExp  1962   32.0\n4 Afghanistan Asia      lifeExp  1967   34.0\n5 Afghanistan Asia      lifeExp  1972   36.1\n6 Afghanistan Asia      lifeExp  1977   38.4\n\n\n\nStill many rows, but the variable name and year are split into 2 variables now"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#step-3-finish-converting-back-to-tall-data-with-another-pivot_wider",
+    "href": "lab/BTS510-25-lab2supp.html#step-3-finish-converting-back-to-tall-data-with-another-pivot_wider",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "5 Step 3: Finish converting back to tall data with another pivot_wider()",
+    "text": "5 Step 3: Finish converting back to tall data with another pivot_wider()\n\nWeird to have to use pivot_wider() to get back to the tall dataset…\n\n\ngap_tall3 &lt;- gap_tall2 %&gt;% pivot_wider(names_from = variable,\n                                       values_from = value)\n\nhead(gap_tall3)\n\n# A tibble: 6 × 6\n  country     continent year  lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8  8425333      779.\n2 Afghanistan Asia      1957     30.3  9240934      821.\n3 Afghanistan Asia      1962     32.0 10267083      853.\n4 Afghanistan Asia      1967     34.0 11537966      836.\n5 Afghanistan Asia      1972     36.1 13079460      740.\n6 Afghanistan Asia      1977     38.4 14880372      786."
+  },
+  {
+    "objectID": "lab/BTS510-25-lab2supp.html#compare-to-original-data",
+    "href": "lab/BTS510-25-lab2supp.html#compare-to-original-data",
+    "title": "Pivot wider then reverse back to tall data",
+    "section": "6 Compare to original data",
+    "text": "6 Compare to original data\n\nhead(gapminder) \n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\nhead(gap_tall3)\n\n# A tibble: 6 × 6\n  country     continent year  lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8  8425333      779.\n2 Afghanistan Asia      1957     30.3  9240934      821.\n3 Afghanistan Asia      1962     32.0 10267083      853.\n4 Afghanistan Asia      1967     34.0 11537966      836.\n5 Afghanistan Asia      1972     36.1 13079460      740.\n6 Afghanistan Asia      1977     38.4 14880372      786."
+  },
+  {
+    "objectID": "materials/00-mats.html",
+    "href": "materials/00-mats.html",
+    "title": "Week 0: Read me first!",
+    "section": "",
+    "text": "This course will be dependent on software and technology. Therefore, in preparation for the first class meeting:\n\nInstall R from here\nInstall Rstudio from here (optional but will make your life easier)\nInstall Quarto from here\nMake sure to bring your laptop to class on Thursday\n\nSyllabus\n\nTake a look at the syllabus\n\nIntroduction\n\nHere is a short video (Lecture 0) to orient you to the course and the flipped format\nHere are the slides from the video\n\nWeek 1 materials here\n\nWatch lecture video 1\nComplete the lecture survey\nThis will prepare you for our first in-person meeting on Thursday morning",
+    "crumbs": [
+      "Materials",
+      "Week 0: Read me first!"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html",
+    "href": "materials/02-mats.html",
+    "title": "Week 2: Data manipulation",
+    "section": "",
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html#learning-objectives",
+    "href": "materials/02-mats.html#learning-objectives",
+    "title": "Week 2: Data manipulation",
+    "section": "",
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html#before-class-lecture",
+    "href": "materials/02-mats.html#before-class-lecture",
+    "title": "Week 2: Data manipulation",
+    "section": "Before class: Lecture",
+    "text": "Before class: Lecture\n\nLecture 2\nLecture survey: Complete by Wednesday, May 14 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html#during-class-lab",
+    "href": "materials/02-mats.html#during-class-lab",
+    "title": "Week 2: Data manipulation",
+    "section": "During class: Lab",
+    "text": "During class: Lab\n\nCSV file of gapminder data\nSPSS file of gapminder data\nLab 2 (html with link to code)\n\nSupplement to lab 2",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html#after-class-assignment",
+    "href": "materials/02-mats.html#after-class-assignment",
+    "title": "Week 2: Data manipulation",
+    "section": "After class: Assignment",
+    "text": "After class: Assignment\n\nHomework 1",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
+  },
+  {
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Materials overview",
+    "section": "",
+    "text": "Week by week materials are listed in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\n\nNote\n\n\n\n\nRight click (or control click) and select “Save link as…” to download html files"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "L: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project\n\nData: Description of data due by June 1\n\nProposal: Proposal of final project due by July 6\n\nPresentation: Presentation in class on August 21\n\nPaper: Final paper due by August 24\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nMay 08\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 15*\nData manipulation\n2\n1\n\n\n3\nMay 22\nSamples, sampling distribution\n3\n\n\n\n4\nMay 29*\nNO CLASS\n\nData\n\n\n5\nJune 05\nggplot\n4\n\n\n\n6\nJune 12\nggplot\n5\n2\n\n\n7\nJune 19\nLinear regression\n6\n\n\n\n8\nJune 26\nLinear regression\n7\n3\n\n\n9\nJuly 03*\nNO CLASS\n\nProposal\n\n\n10\nJuly 10\nLinear regression\n8\n\n\n\n11\nJuly 17\nLinear regression\n9\n4\n\n\n12\nJuly 24\nLinear regression\n10\n\n\n\n13\nJuly 31\nLinear regression\n11\n5\n\n\n14\nAugust 07\nLogistic regression\n12\n6\n\n\n15\nAugust 14*\nPoisson regression\n13\n7\n\n\n16\nAugust 21\nPresentations\n\nFinal\n\n\n\n\nAdjusted days\n\nMay 15: Late start\nMay 29: Holiday / Stefany at conference\n\nJuly 3: Holiday\n\nAugust 14: Late start\n\nAll due dates subject to change due to weather, emergency, scheduling changes, etc.",
+    "crumbs": [
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#learning-objectives-1",
+    "href": "slides/BTS510-25-1.html#learning-objectives-1",
+    "title": "Introduction to Biostatistics",
+    "section": "1.1 Learning objectives",
+    "text": "1.1 Learning objectives\n\nReview the course topics and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-statistics-interdisciplinary",
+    "href": "slides/BTS510-25-1.html#what-is-statistics-interdisciplinary",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 What is statistics? Interdisciplinary",
+    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nDecision making\nProgramming / computer science\nStudy design and methodology\nIntegrated into science"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-statistics-people",
+    "href": "slides/BTS510-25-1.html#what-is-statistics-people",
+    "title": "Introduction to Biostatistics",
+    "section": "2.2 What is statistics? People",
+    "text": "2.2 What is statistics? People\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-statistics-context",
+    "href": "slides/BTS510-25-1.html#what-is-statistics-context",
+    "title": "Introduction to Biostatistics",
+    "section": "2.3 What is statistics? Context",
+    "text": "2.3 What is statistics? Context\n\nhttps://www.instagram.com/p/Bx8p0Pih6qs/"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-statistics-context-1",
+    "href": "slides/BTS510-25-1.html#what-is-statistics-context-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.4 What is statistics? Context",
+    "text": "2.4 What is statistics? Context\n\nThis thing is 8 feet tall. Is that tall?\n\nFor a person: Yes\nFor a building: No\n\nThese two things are 12 inches different in height. Is that a lot?\n\nFor people: Yes\nFor buildings: No"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#when-to-think-about-statistics",
+    "href": "slides/BTS510-25-1.html#when-to-think-about-statistics",
+    "title": "Introduction to Biostatistics",
+    "section": "2.5 When to think about statistics?",
+    "text": "2.5 When to think about statistics?\n\n\nStudy design\nData collection\n\n\n\nData analysis\n\n\n\n\nInterpretation\n\n\n\n\nRonald Fisher:   To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#topics",
+    "href": "slides/BTS510-25-1.html#topics",
+    "title": "Introduction to Biostatistics",
+    "section": "2.6 Topics",
+    "text": "2.6 Topics\n\nReading in and manipulating data in R\nMaking plots in R\nSampling distributions and uncertainty\nLinear regression\nLogistic regression\nPoisson regression"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-youll-learn-about",
+    "href": "slides/BTS510-25-1.html#what-youll-learn-about",
+    "title": "Introduction to Biostatistics",
+    "section": "2.7 What you’ll learn about",
+    "text": "2.7 What you’ll learn about\n\nProgramming (in R)\nProbability and mathematics underlying statistical methods\nConducting linear models\nPresenting results of statistical analyses\nThinking about issues in science related to statistics"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-r",
+    "href": "slides/BTS510-25-1.html#what-is-r",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 What is R?",
+    "text": "3.1 What is R?\n\nFree, open source software\n\nWindows, Mac, Unix, cloud\n\nObject-oriented programming language\nBuilt-in capabilities (“packages”)\nUsers can write their own packages and functions"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-r-1",
+    "href": "slides/BTS510-25-1.html#what-is-r-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 What is R?",
+    "text": "3.2 What is R?"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-does-object-oriented-mean",
+    "href": "slides/BTS510-25-1.html#what-does-object-oriented-mean",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 What does “object-oriented” mean?",
+    "text": "3.3 What does “object-oriented” mean?\n\nProgramming built on the idea of “objects”\nEverything is an object\n\nIf you have an object’s name, you can do something with it\n\nObjects: Datasets, variables, analyses, plots"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-does-object-oriented-mean-1",
+    "href": "slides/BTS510-25-1.html#what-does-object-oriented-mean-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 What does “object-oriented” mean?",
+    "text": "3.4 What does “object-oriented” mean?\n\nx &lt;- c(1, 1, 2, 3, 5, 8)\nx\n\n[1] 1 1 2 3 5 8\n\n\n\nLine 1\n\nDefine an object called x that is this set of numbers\n&lt;- is the assignment operator\n\nLine 2\n\nPrint the object x"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-a-function",
+    "href": "slides/BTS510-25-1.html#what-is-a-function",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 What is a function?",
+    "text": "3.5 What is a function?\n\nPre-written piece of code that\n\nTakes one or more inputs (or arguments)\nProduces one or more outputs"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-a-function-1",
+    "href": "slides/BTS510-25-1.html#what-is-a-function-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 What is a function?",
+    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nFunction: mean()\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-a-package",
+    "href": "slides/BTS510-25-1.html#what-is-a-package",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 What is a package?",
+    "text": "3.7 What is a package?\n\nCollection of functions (that work together in some way)\n\ndplyr package is a set of functions to manipulate data\nggplot package is a set of functions to create plots\nstats package (built-in) is a set of functions to perform basic statistical operations"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-a-package-1",
+    "href": "slides/BTS510-25-1.html#what-is-a-package-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 What is a package?",
+    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / R install\n\nLoad or library() the package\n\nEvery time you use it"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-rstudio",
+    "href": "slides/BTS510-25-1.html#what-is-rstudio",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 What is Rstudio?",
+    "text": "3.9 What is Rstudio?\n\nIntegrated development environment (IDE) for R\nGraphical user interface to use R\n\nManage installed packages\nConnect to git / github\nEasily see loaded datasets"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-rstudio-1",
+    "href": "slides/BTS510-25-1.html#what-is-rstudio-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 What is Rstudio?",
+    "text": "3.10 What is Rstudio?"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#what-is-markdown",
+    "href": "slides/BTS510-25-1.html#what-is-markdown",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 What is “markdown”?",
+    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: Hyper-Text Markup Language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#markdown-example",
+    "href": "slides/BTS510-25-1.html#markdown-example",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 markdown example",
+    "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#markdown-example-organization",
+    "href": "slides/BTS510-25-1.html#markdown-example-organization",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 markdown example: Organization",
+    "text": "4.3 markdown example: Organization\n\nOrganize document with headings\n\n# Level 1 heading\n## Level 2 heading\n### Level 3 heading\n\nMost documents can have a table of contents, which will use these headings\n\nSlides have a table of contents accessed from bottom left"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#markdown-example-format-text",
+    "href": "slides/BTS510-25-1.html#markdown-example-format-text",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 markdown example: Format text",
+    "text": "4.4 markdown example: Format text\n\n*italics* turns into italics\n**bold** turns into bold\nMathematical text in between pairs of $\n\n$R^2_{multiple}$ turns into \\(R^2_{multiple}\\)\n$\\hat{Y} = b_0 + b_1 X_1$ turns into \\(\\hat{Y} = b_0 + b_1 X_1\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#markdown-example-code-chunks",
+    "href": "slides/BTS510-25-1.html#markdown-example-code-chunks",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 markdown example: Code chunks",
+    "text": "4.5 markdown example: Code chunks\n```{r, echo = TRUE}\nx &lt;- c(1, 1, 2, 3, 5, 8)\nmean(x)\n```\n\nIntersperse text and code in the same document\n\nDescription of data and analysis\nAnalysis\nSummarize the results"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#rmarkdown-package",
+    "href": "slides/BTS510-25-1.html#rmarkdown-package",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 rmarkdown package",
+    "text": "4.6 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#quarto",
+    "href": "slides/BTS510-25-1.html#quarto",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 Quarto",
+    "text": "4.7 Quarto\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document)\n\nR, Python, Julia\n\nAdditional features\nInstall Quarto from here\n\nMore general info here"
+  },
+  {
+    "objectID": "slides/BTS510-25-1.html#in-class-activities-1",
+    "href": "slides/BTS510-25-1.html#in-class-activities-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nAny questions on the course topics and goals\nStart using R and Rstudio\nStart using Quarto in R as a reproducible method to present analyses along with narrative text"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#learning-objectives-1",
+    "href": "slides/BTS510-25-3.html#learning-objectives-1",
+    "title": "Introduction to Biostatistics",
+    "section": "1.1 Learning objectives",
+    "text": "1.1 Learning objectives\n\nUnderstand probability as a measure of uncertainty\nDescribe the difference between population and sample\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#probability",
+    "href": "slides/BTS510-25-3.html#probability",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 Probability",
+    "text": "2.1 Probability\n\nHow likely a specific event is to happen\n\nValue between 0 and 1 (inclusive)\nValues near 1 = very likely, values near 0 = very unlikely\nProbability of all possible options adds up to 1\n\nFlip a coin\n\n50% chance of heads, 50% chance of tails\n0.5 probability of heads, 0.5 probability of tails\n0.5 + 0.5 = 1"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#probability-1",
+    "href": "slides/BTS510-25-3.html#probability-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.2 Probability",
+    "text": "2.2 Probability\n\nProbability is a way to quantify uncertainty\n\nRoll a die\n\nHow likely is it to roll a 6?\n\nSelect a playing card from a deck\n\nHow likely is it to select a heart from the deck?\n\nMeasure anything\n\nHow likely is any specific value?"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#roll-a-die",
+    "href": "slides/BTS510-25-3.html#roll-a-die",
+    "title": "Introduction to Biostatistics",
+    "section": "2.3 Roll a die",
+    "text": "2.3 Roll a die\n\n1 in 6 chance of each value: 1, 2, 3, 4, 5, 6\n\nExpect to see each value 1/6 of the time\n\nIn very large samples, the probability will be close to 1/6\n\nIn typical samples, it will be less close"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#roll-a-die-6-times",
+    "href": "slides/BTS510-25-3.html#roll-a-die-6-times",
+    "title": "Introduction to Biostatistics",
+    "section": "2.4 Roll a die 6 times",
+    "text": "2.4 Roll a die 6 times\n\n\nCode\nset.seed(12345)\ndie6 &lt;- sample(1:6, size = 6, replace = TRUE)\ndie6\n\n\n[1] 6 3 2 4 2 5\n\n\nCode\ntable(die6)\n\n\ndie6\n2 3 4 5 6 \n2 1 1 1 1 \n\n\nCode\nprop.table(table(die6))\n\n\ndie6\n        2         3         4         5         6 \n0.3333333 0.1666667 0.1666667 0.1666667 0.1666667"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#roll-a-die-100-times",
+    "href": "slides/BTS510-25-3.html#roll-a-die-100-times",
+    "title": "Introduction to Biostatistics",
+    "section": "2.5 Roll a die 100 times",
+    "text": "2.5 Roll a die 100 times\n\n\nCode\nset.seed(12345)\ndie100 &lt;- sample(1:6, size = 100, replace = TRUE)\n#die100\ntable(die100)\n\n\ndie100\n 1  2  3  4  5  6 \n17 22 19 18 11 13 \n\n\nCode\nprop.table(table(die100))\n\n\ndie100\n   1    2    3    4    5    6 \n0.17 0.22 0.19 0.18 0.11 0.13"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#roll-a-die-10000-times",
+    "href": "slides/BTS510-25-3.html#roll-a-die-10000-times",
+    "title": "Introduction to Biostatistics",
+    "section": "2.6 Roll a die 10000 times",
+    "text": "2.6 Roll a die 10000 times\n\n\nCode\nset.seed(12345)\ndie10000 &lt;- sample(1:6, size = 10000, replace = TRUE)\n#die10000\ntable(die10000)\n\n\ndie10000\n   1    2    3    4    5    6 \n1661 1674 1694 1656 1655 1660 \n\n\nCode\nprop.table(table(die10000))\n\n\ndie10000\n     1      2      3      4      5      6 \n0.1661 0.1674 0.1694 0.1656 0.1655 0.1660"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#measuring-random-variables",
+    "href": "slides/BTS510-25-3.html#measuring-random-variables",
+    "title": "Introduction to Biostatistics",
+    "section": "2.7 Measuring (random) variables",
+    "text": "2.7 Measuring (random) variables\n\n“Variable”: Anything we measure that can take on more than 1 value\n\nIn statistics, we would call it a random variable\n\nRandom variable follows some probability distribution\n\nThere is some probability between 0 and 1 of each possible value\n\nTable of probabilities works fine for rolling a die\n\nWhat about more complex and/or continuous random variables?"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#probability-distributions-1",
+    "href": "slides/BTS510-25-3.html#probability-distributions-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.8 Probability distributions",
+    "text": "2.8 Probability distributions\n\nSummarize probabilities across all possible values\nTwo broad types of probability distributions\n\nDiscrete: Probability mass function\nContinuous: Probability density function\n\nList of many distributions\n\nSome distributions are for outcomes, some are for statistical testing, some are for both"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#probability-distribution-of-die-rolls",
+    "href": "slides/BTS510-25-3.html#probability-distribution-of-die-rolls",
+    "title": "Introduction to Biostatistics",
+    "section": "2.9 Probability distribution of die rolls",
+    "text": "2.9 Probability distribution of die rolls\n\nProbability of each value is 1/6 = 0.1667\n\n\n\nCode\nvalue &lt;- c(1, 2, 3, 4, 5, 6)\nprobability &lt;- c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6)\nrolls &lt;- data.frame(as.factor(value), probability)\nggplot(data = rolls, aes(x = as.factor(value), y = probability)) +\n  geom_col() +\n  scale_x_discrete(labels = c(1:6)) +\n  labs(x = \"value\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#discrete-distributions",
+    "href": "slides/BTS510-25-3.html#discrete-distributions",
+    "title": "Introduction to Biostatistics",
+    "section": "2.10 Discrete distributions",
+    "text": "2.10 Discrete distributions\n\nDiscrete (categorical) values\nProbability for a value = height of the bar for that value\nSum of height for all bars = 1\nUniform, Bernoulli, Binomial, Poisson"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uniform-distribution-discrete",
+    "href": "slides/BTS510-25-3.html#uniform-distribution-discrete",
+    "title": "Introduction to Biostatistics",
+    "section": "2.11 Uniform distribution (discrete)",
+    "text": "2.11 Uniform distribution (discrete)\n\nAll possible values are equally likely (uniform probability)\n\nDie roll, coin flip\n\nNotation: \\(X \\sim U\\{a,b\\}\\)\n\\(E(X) = \\frac{a+b}{2}\\)\n\\(Var(X) = \\frac{(b - a + 1)^2 - 1}{12}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uniform-6-sided-die",
+    "href": "slides/BTS510-25-3.html#uniform-6-sided-die",
+    "title": "Introduction to Biostatistics",
+    "section": "2.12 Uniform: 6 sided die",
+    "text": "2.12 Uniform: 6 sided die\n\n\n\n\nCode\nunid_dat &lt;- data.frame(x = 1:6, y = 1/6)\n\nggplot(data = unid_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 1:6) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim U\\{1,6\\}\\)\n\\(E(X) = 3.5\\)\n\\(Var(X) = 2.916667\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#bernoulli-distribution",
+    "href": "slides/BTS510-25-3.html#bernoulli-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "2.13 Bernoulli distribution",
+    "text": "2.13 Bernoulli distribution\n\nSingle trials, each with two possible values (0 = failure, 1 = success)\n\nAlive or dead, pass or fail\n\nNotation: \\(X \\sim B(p)\\), where \\(p\\) is the probability of success\nDistribution: \\(P(X = x) = p^x (1 - p)^{1 -x}\\)\n\\(E(X) = p\\)\n\\(Var(X) = p(1-p)\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#bernoulli-p-0.3",
+    "href": "slides/BTS510-25-3.html#bernoulli-p-0.3",
+    "title": "Introduction to Biostatistics",
+    "section": "2.14 Bernoulli: \\(p\\) = 0.3",
+    "text": "2.14 Bernoulli: \\(p\\) = 0.3\n\n\n\n\nCode\nbern_dat &lt;- data.frame(x = 0:1, y = dbinom(0:1, 1, 0.3))\nggplot(data = bern_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 0:1) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim B(0.3)\\)\n\\(E(X) = 0.3\\)\n\\(Var(X) = 0.21\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#binomial-distribution",
+    "href": "slides/BTS510-25-3.html#binomial-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "2.15 Binomial distribution",
+    "text": "2.15 Binomial distribution\n\nThe sum of \\(m\\) Bernoulli trials (each of which is 0/1)\n\nDeaths in a group, passes in a class, voting (yes/no)\n\n\nNotation: \\(X \\sim Bin(m, p)\\)\nDistribution: \\(P(X = x) = {m \\choose x} p^x (1 - p)^{m -x}\\)\n\n\\({m \\choose x}\\) is “\\(m\\) choose \\(x\\)”\n\n\\(E(X) = mp\\)\n\\(Var(X) = mp(1-p)\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#binomial-m-15-p-0.5",
+    "href": "slides/BTS510-25-3.html#binomial-m-15-p-0.5",
+    "title": "Introduction to Biostatistics",
+    "section": "2.16 Binomial: \\(m\\) = 15, \\(p\\) = 0.5",
+    "text": "2.16 Binomial: \\(m\\) = 15, \\(p\\) = 0.5\n\n\n\n\nCode\nbinom_dat &lt;- data.frame(x = 0:15, y = dbinom(0:15, 15, 0.5))\nggplot(data = binom_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 0:15) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim Binom(15, 0.5)\\)\n\\(E(X) = 7.5\\)\n\\(Var(X) = 3.75\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#binomial-m-25-p-0.1",
+    "href": "slides/BTS510-25-3.html#binomial-m-25-p-0.1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.17 Binomial: \\(m\\) = 25, \\(p\\) = 0.1",
+    "text": "2.17 Binomial: \\(m\\) = 25, \\(p\\) = 0.1\n\n\n\n\nCode\nbinom_dat &lt;- data.frame(x = 0:15, y = dbinom(0:15, 25, 0.1))\nggplot(data = binom_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 0:15) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim Binom(25, 0.1)\\)\n\\(E(X) = 2.5\\)\n\\(Var(X) = 2.25\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#poisson-distribution",
+    "href": "slides/BTS510-25-3.html#poisson-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "2.18 Poisson distribution",
+    "text": "2.18 Poisson distribution\n\nDistribution of counts in a fixed period of time\n\nGene expression, earthquakes, days per month in pain\n\nNotation: \\(X \\sim Pois(\\lambda)\\), where \\(\\lambda\\) is the mean and variance\nDistribution: \\(P(X = x) = \\frac{\\lambda^x e^{-\\lambda}}{x!}\\)\n\\(E(X) = \\lambda\\)\n\\(Var(X) = \\lambda\\)\nNegative binomial distribution relaxes the mean-variance equality"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#poisson-lambda-2.5",
+    "href": "slides/BTS510-25-3.html#poisson-lambda-2.5",
+    "title": "Introduction to Biostatistics",
+    "section": "2.19 Poisson: \\(\\lambda\\) = 2.5",
+    "text": "2.19 Poisson: \\(\\lambda\\) = 2.5\n\n\n\n\nCode\npois_dat &lt;- data.frame(x = 0:15, y = dpois(0:15, 2.5))\nggplot(data = pois_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 0:15) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim Pois(2.5)\\)\n\\(E(X) = \\lambda = 2.5\\)\n\\(Var(X) = \\lambda = 2.5\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#poisson-lambda-5",
+    "href": "slides/BTS510-25-3.html#poisson-lambda-5",
+    "title": "Introduction to Biostatistics",
+    "section": "2.20 Poisson: \\(\\lambda\\) = 5",
+    "text": "2.20 Poisson: \\(\\lambda\\) = 5\n\n\n\n\nCode\npois_dat &lt;- data.frame(x = 0:15, y = dpois(0:15, 5))\nggplot(data = pois_dat, aes(x = x, y = y)) +\n  geom_col() +\n  scale_x_continuous(breaks = 0:15) +\n  ylim(0,1) +\n  labs(x = \"X\", y = \"P(X = x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim Pois(5)\\)\n\\(E(X) = \\lambda = 5\\)\n\\(Var(X) = \\lambda = 5\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#continuous-distributions",
+    "href": "slides/BTS510-25-3.html#continuous-distributions",
+    "title": "Introduction to Biostatistics",
+    "section": "2.21 Continuous distributions",
+    "text": "2.21 Continuous distributions\n\nContinuous (numeric) values\nHeight of the line for a value is not probability for that value\n\nArea under the curve between two values = probability between those values\n\nArea under the entire curve = 1\nUniform, Normal (Gaussian), \\(t\\)\n\n\\(F\\), Chi-square (\\(\\chi^2\\))"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uniform-distribution-continuous",
+    "href": "slides/BTS510-25-3.html#uniform-distribution-continuous",
+    "title": "Introduction to Biostatistics",
+    "section": "2.22 Uniform distribution (continuous)",
+    "text": "2.22 Uniform distribution (continuous)\n\nAll possible values are equally likely (uniform probability)\n\nWait times\n\nNotation: \\(X \\sim U(a,b)\\)\nDistribution: \\(f(x) = \\frac{1}{b-a}\\) for \\(a \\le x \\le b\\)\n\n\\(f(x) = 0\\) for \\(x &lt; a\\) or \\(x &gt; b\\)\n\n\\(E(X) = \\frac{a+b}{2}\\)\n\\(Var(X) = \\frac{(b - a)^2}{12}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uniform-between-0-and-5",
+    "href": "slides/BTS510-25-3.html#uniform-between-0-and-5",
+    "title": "Introduction to Biostatistics",
+    "section": "2.23 Uniform: between 0 and 5",
+    "text": "2.23 Uniform: between 0 and 5\n\n\n\n\nCode\nx &lt;- seq(-1, 13, by = 0.01)\ny &lt;- dunif(x, 0, 5)\nuni_dat &lt;- data.frame(x, y)\nggplot(data = uni_dat, aes(x = x, y = y)) +\n  geom_line() +\n  scale_x_continuous(limits = c(-1, 13), breaks = 0:12) +\n  ylim(0,.25) + \n  labs(x = \"X\", y = \"f(x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim U(0,5)\\)\n\\(E(X) = 2.5\\)\n\\(Var(X) = 2.08\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uniform-between-3-and-12",
+    "href": "slides/BTS510-25-3.html#uniform-between-3-and-12",
+    "title": "Introduction to Biostatistics",
+    "section": "2.24 Uniform: between 3 and 12",
+    "text": "2.24 Uniform: between 3 and 12\n\n\n\n\nCode\nuni_dat &lt;- data.frame(x = seq(-1, 13, by = 0.01), y = dunif(x, 3, 12))\nggplot(data = uni_dat, aes(x = x, y = y)) +\n  geom_line() +\n  scale_x_continuous(limits = c(-1, 13), breaks = 0:12) +\n  ylim(0,.25) + \n  labs(x = \"X\", y = \"f(x)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim U(3,12)\\)\n\\(E(X) = 7.5\\)\n\\(Var(X) = 6.75\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#normal-distribution",
+    "href": "slides/BTS510-25-3.html#normal-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "2.25 Normal distribution",
+    "text": "2.25 Normal distribution\n\nGaussian, bell-shaped curve\n\nHeight, random error, birth weight, SAT scores, statistical tests\n\nNotation: \\(X \\sim \\mathcal{N}(\\mu, \\sigma^2)\\)\nDistribution: \\(f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{1}{2}\\left(\\frac{x - \\mu}{\\sigma}\\right)}\\)\n\\(E(X) = \\mu\\)\n\\(Var(X) = \\sigma^2\\)\nModifications: skew-normal, log-normal"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#normal-mu-0-sigma2-1",
+    "href": "slides/BTS510-25-3.html#normal-mu-0-sigma2-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.26 Normal: \\(\\mu\\) = 0, \\(\\sigma^2\\) = 1",
+    "text": "2.26 Normal: \\(\\mu\\) = 0, \\(\\sigma^2\\) = 1\n\n\n\n\nCode\nggplot(data.frame(x = c(-3, 10)), aes(x)) +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = \"line\") +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:10) +\n  labs(x = \"X\", y = \"f(x)\") \n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim \\mathcal{N}(0, 1)\\)\n\\(E(X) = \\mu = 0\\)\n\\(Var(X) = \\sigma^2 = 1\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#normal-mu-5-sigma2-2",
+    "href": "slides/BTS510-25-3.html#normal-mu-5-sigma2-2",
+    "title": "Introduction to Biostatistics",
+    "section": "2.27 Normal: \\(\\mu\\) = 5, \\(\\sigma^2\\) = 2",
+    "text": "2.27 Normal: \\(\\mu\\) = 5, \\(\\sigma^2\\) = 2\n\n\n\n\nCode\nggplot(data.frame(x = c(-3, 10)), aes(x)) +\n  stat_function(fun = dnorm, args = list(mean = 5, sd = sqrt(2)), geom = \"line\") +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:10) +\n  labs(x = \"X\", y = \"f(x)\") \n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim \\mathcal{N}(5, 2)\\)\n\\(E(X) = \\mu = 5\\)\n\\(Var(X) = \\sigma^2 = 2\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#students-t-distribution",
+    "href": "slides/BTS510-25-3.html#students-t-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "2.28 (Student’s) \\(t\\) distribution",
+    "text": "2.28 (Student’s) \\(t\\) distribution\n\nSampling distribution for many statistical tests\n\nApproximation to normal distribution in small samples\nCloser as degrees of freedom increase\n\nNotation: \\(X \\sim t(df)\\) or \\(X \\sim t(df, ncp)\\) or \\(X \\sim t(\\mu, \\sigma^2, \\nu)\\)\nDistribution: See here if you’re interested\n\\(E(X) = 0\\) (when \\(ncp\\) = 0)\n\\(Var(X) = \\frac{df}{df-2}\\) (when \\(ncp\\) = 0)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#t-df-10",
+    "href": "slides/BTS510-25-3.html#t-df-10",
+    "title": "Introduction to Biostatistics",
+    "section": "2.29 \\(t\\): \\(df\\) = 10",
+    "text": "2.29 \\(t\\): \\(df\\) = 10\n\n\n\n\nCode\nggplot(data.frame(x = c(-3, 3)), aes(x)) +\n  stat_function(fun = dt, args = list(df = 10, ncp = 0), geom = \"line\") +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:3) +\n  labs(x = \"X\", y = \"f(x)\") \n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim t(10)\\)\n\\(E(X) = 0\\)\n\\(Var(X) = 1.25\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#t-df-150",
+    "href": "slides/BTS510-25-3.html#t-df-150",
+    "title": "Introduction to Biostatistics",
+    "section": "2.30 \\(t\\): \\(df\\) = 150",
+    "text": "2.30 \\(t\\): \\(df\\) = 150\n\n\n\n\nCode\nggplot(data.frame(x = c(-3, 3)), aes(x)) +\n  stat_function(fun = dt, args = list(df = 150, ncp = 0), geom = \"line\") +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:3) +\n  labs(x = \"X\", y = \"f(x)\") \n\n\n\n\n\n\n\n\n\n\n\n\\(X \\sim t(150)\\)\n\\(E(X) = 0\\)\n\\(Var(X) = 1.0135\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#mathcaln0-1-red-vs-t10-blue",
+    "href": "slides/BTS510-25-3.html#mathcaln0-1-red-vs-t10-blue",
+    "title": "Introduction to Biostatistics",
+    "section": "2.31 \\(\\mathcal{N}(0, 1)\\) (red) vs \\(t(10)\\) (blue)",
+    "text": "2.31 \\(\\mathcal{N}(0, 1)\\) (red) vs \\(t(10)\\) (blue)\n\n\nCode\nggplot(data.frame(x = c(-3, 3)), aes(x)) +\n  stat_function(fun = dt, args = list(df = 10, ncp = 0), geom = \"line\", color = \"blue\", linewidth = 0.75) +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = \"line\", color = \"red\", linewidth = 0.75) +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:3) +\n  labs(x = \"X\", y = \"f(x)\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#summary-probability-distributions",
+    "href": "slides/BTS510-25-3.html#summary-probability-distributions",
+    "title": "Introduction to Biostatistics",
+    "section": "2.32 Summary: Probability distributions",
+    "text": "2.32 Summary: Probability distributions\n\nProbability is a way to quantify uncertainty\nProbability distributions summarize probabilities across all possible values of a random variable\nVariety of discrete and continuous probability distributions\n\nSome for actual variables, some for statistical tests"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#how-does-a-study-work",
+    "href": "slides/BTS510-25-3.html#how-does-a-study-work",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 How does a study work?",
+    "text": "3.1 How does a study work?\n\n\n\n\n\n\n\nflowchart LR\n  A(Population) --&gt; B{Sampling}\n  B{Sampling} --&gt; D[Sample]\n\n\n\n\n\n\n\nSample from a population\n\n\n\n\n\n\n\nflowchart RL\n  C{Inference} --&gt; A(Population)\n  D[Sample] --&gt; C{Inference}\n\n\n\n\n\n\n\nMake inference from sample back to population"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#how-does-a-study-work-1",
+    "href": "slides/BTS510-25-3.html#how-does-a-study-work-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 How does a study work?",
+    "text": "3.2 How does a study work?\nStep 1. Identify a population that you’re interested in\n\nAll units (people, animals, cells) you’re interested in\nThis can be very broad\n\nAll adults in the United States\n\nOr very specific\n\nAll adults living in Southern California who are &gt; 65 years old who have had a heart attack in 2015"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#how-does-a-study-work-2",
+    "href": "slides/BTS510-25-3.html#how-does-a-study-work-2",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 How does a study work?",
+    "text": "3.3 How does a study work?\nStep 2. Sample from the population\n\nSelect a subset of individuals from the population\n\nDo your study on the sample\n\nRandomize to groups\nEstimate means\nStatistical tests"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#we-dont-care-about-the-sample",
+    "href": "slides/BTS510-25-3.html#we-dont-care-about-the-sample",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 We don’t care about the sample",
+    "text": "3.4 We don’t care about the sample\n\nThe sole purpose of the sample is to let us make inferences about the population\nAny individual sample doesn’t matter\n\nAny individual in the sample doesn’t matter"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#the-problem-with-samples",
+    "href": "slides/BTS510-25-3.html#the-problem-with-samples",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 The problem with samples",
+    "text": "3.5 The problem with samples\n\nThey’re not the population that you’re actually interested in\n\nThey are not fully representative of the population\nDo not reflect the full variability of the population\nMay be biased (intentionally or not)\n\nDifferent samples are also different from one another"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#uncertainty-in-sampling",
+    "href": "slides/BTS510-25-3.html#uncertainty-in-sampling",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 Uncertainty in sampling",
+    "text": "3.6 Uncertainty in sampling\n\nCreate a (normally distributed) population of 1 million values with a mean of 0 and standard deviation of 1\n\n\\(pop \\sim \\mathcal{N}(0,1)\\)\n\n\n\npop &lt;- rnorm(1000000, 0, 1)\nmean(pop)\n\n[1] 0.0000667581\n\nsd(pop)\n\n[1] 1.001029"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sample-1",
+    "href": "slides/BTS510-25-3.html#sample-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 Sample 1",
+    "text": "3.7 Sample 1\n\nDraw a sample from the population of size \\(n\\) = 100\n\n\nsample1 &lt;- sample(pop, 100)\nmean(sample1)\n\n[1] 0.06610631\n\nsd(sample1)\n\n[1] 0.968169"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sample-2",
+    "href": "slides/BTS510-25-3.html#sample-2",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 Sample 2",
+    "text": "3.8 Sample 2\n\nDraw another sample from the population of size \\(n\\) = 100\n\n\nsample2 &lt;- sample(pop, 100)\nmean(sample2)\n\n[1] -0.1525419\n\nsd(sample2)\n\n[1] 0.9083531"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sample-3",
+    "href": "slides/BTS510-25-3.html#sample-3",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 Sample 3",
+    "text": "3.9 Sample 3\n\nDraw another sample from the population of size \\(n\\) = 100\n\n\nsample3 &lt;- sample(pop, 100)\nmean(sample3)\n\n[1] 0.08553226\n\nsd(sample3)\n\n[1] 0.9714634"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sample-4",
+    "href": "slides/BTS510-25-3.html#sample-4",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 Sample 4",
+    "text": "3.10 Sample 4\n\nDraw another sample from the population of size \\(n\\) = 100\n\n\nsample4 &lt;- sample(pop, 100)\nmean(sample4)\n\n[1] -0.01909962\n\nsd(sample4)\n\n[1] 0.8953612"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sample-5",
+    "href": "slides/BTS510-25-3.html#sample-5",
+    "title": "Introduction to Biostatistics",
+    "section": "3.11 Sample 5",
+    "text": "3.11 Sample 5\n\nDraw another sample from the population of size \\(n\\) = 100\n\n\nsample5 &lt;- sample(pop, 100)\nmean(sample5)\n\n[1] 0.1106358\n\nsd(sample5)\n\n[1] 0.8906352"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-variability",
+    "href": "slides/BTS510-25-3.html#sampling-variability",
+    "title": "Introduction to Biostatistics",
+    "section": "3.12 Sampling variability",
+    "text": "3.12 Sampling variability\n\n\nCode\nggplot(data.frame(x = c(-3, 3)), aes(x)) +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = \"line\") +\n  ylim(0,.5) + \n  scale_x_continuous(breaks = -3:3) +\n  labs(x = \"X\", y = \"f(x)\") +\n  annotate(\"pointrange\", x = mean(sample1), y = 0, ymin = 0, ymax = 0,\n  colour = \"red\", size = .5, linewidth = 1) +\n  annotate(\"pointrange\", x = mean(sample2), y = 0.01, ymin = 0.01, ymax = 0.01,\n  colour = \"blue\", size = .5, linewidth = 1) +\n  annotate(\"pointrange\", x = mean(sample3), y = 0.02, ymin = 0.02, ymax = 0.02,\n  colour = \"darkgreen\", size = .5, linewidth = 1) +\n  annotate(\"pointrange\", x = mean(sample4), y = 0.03, ymin = 0.03, ymax = 0.03,\n  colour = \"purple\", size = .5, linewidth = 1) +\n  annotate(\"pointrange\", x = mean(sample5), y = 0.04, ymin = 0.04, ymax = 0.04,\n  colour = \"cyan\", size = .5, linewidth = 1)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-variability-1",
+    "href": "slides/BTS510-25-3.html#sampling-variability-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.13 Sampling variability",
+    "text": "3.13 Sampling variability\n\nEach sample mean is different from the other sample means\nEach sample SD is different from the other sample SDs\nEach sample mean is different from the population mean\nEach sample SD is different from the population SD\nHow can we deal with this?\n\nCharacterize and quantify this variability across samples"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-distribution-1",
+    "href": "slides/BTS510-25-3.html#sampling-distribution-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 Sampling distribution",
+    "text": "4.1 Sampling distribution\n\nProbability distribution\nQuantifies the uncertainty in sampling from a population\n\nSample isn’t representative of the whole population\nSampling variability in the test statistic\nAcross all samples from this population, how variable can we expect the test statistic to be?"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-distribution-2",
+    "href": "slides/BTS510-25-3.html#sampling-distribution-2",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 Sampling distribution",
+    "text": "4.2 Sampling distribution\n\nSampling distribution depends on\n\nPopulation distribution (somewhat)\nSample size\nTest statistic (e.g., mean, regression coefficient)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-distribution-3",
+    "href": "slides/BTS510-25-3.html#sampling-distribution-3",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 Sampling distribution",
+    "text": "4.3 Sampling distribution\n\nSampling distribution is a probability distribution\n\nDistribution of a statistic (often the mean, but can be any statistic, like regression coefficient)\n\n(Not distribution of the observations)\n\nUnder repeated sampling (or all possible samples) from the population\nWith the same sample size (\\(n\\))"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#how-do-we-get-sampling-distributions",
+    "href": "slides/BTS510-25-3.html#how-do-we-get-sampling-distributions",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 How do we get sampling distributions?",
+    "text": "4.4 How do we get sampling distributions?\n\nMathematically derived\n\nCommon distributions, like Normal, Bernoulli, etc.\nCommon test statistics like mean, regression coefficient\n\nComputationally derived\n\nMonte Carlo simulations, bootstrapping\nLiterally, repeatedly sample from the population (or pseudo population), save the test statistic from each sample, make a distribution (i.e., histogram) of those values"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-distribution-4",
+    "href": "slides/BTS510-25-3.html#sampling-distribution-4",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 Sampling distribution",
+    "text": "4.5 Sampling distribution\n\nNormally distributed population: \\(\\mathcal{N}(0,1)\\)\nSampling distribution of the mean\nDifferent sample sizes\nThis situation can use either method\n\nMathematically derived: \\(\\bar{X} \\sim \\mathcal{N}(\\mu,\\frac{\\sigma^2}{n})\\)\nSimulation based: Literally sample (repeatedly) from population"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-dist-math-n-10-50-100",
+    "href": "slides/BTS510-25-3.html#sampling-dist-math-n-10-50-100",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 Sampling dist (math): \\(n\\) = 10, 50, 100",
+    "text": "4.6 Sampling dist (math): \\(n\\) = 10, 50, 100\n\n\nCode\nggplot(data.frame(x = c(-1.5, 1.5)), aes(x)) +\n  #stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = \"line\") +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(10)), geom = \"line\", color = \"red\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(50)), geom = \"line\", color = \"darkgreen\", size = 1) +\n  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(100)), geom = \"line\", color = \"purple\", size = 1) +\n  #ylim(0,1) + \n  annotate(\"text\", x = 0.75, y = 0.5, label = \"n = 10\", color = \"red\") +\n  annotate(\"text\", x = 0.5, y = 2, label = \"n = 50\", color = \"darkgreen\") +\n  annotate(\"text\", x = 0.5, y = 3, label = \"n = 100\", color = \"purple\") +\n  scale_x_continuous(breaks = -2:2) +\n  labs(x = \"x_bar\", y = \"f(x)\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-dist-sim-n-10",
+    "href": "slides/BTS510-25-3.html#sampling-dist-sim-n-10",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 Sampling dist (sim): \\(n\\) = 10",
+    "text": "4.7 Sampling dist (sim): \\(n\\) = 10\n\n\nCode\nlibrary(infer)\nmeans10 &lt;- data.frame(pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(pop))\nmeans50 &lt;- data.frame(pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(pop))\nmeans100 &lt;- data.frame(pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(pop))\n\nggplot(data = means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50, alpha = 0.5, fill = \"red\") +\n  xlim(-1.5,1.5) +\n  ylim(0, 2500)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-dist-sim-n-50",
+    "href": "slides/BTS510-25-3.html#sampling-dist-sim-n-50",
+    "title": "Introduction to Biostatistics",
+    "section": "4.8 Sampling dist (sim): \\(n\\) = 50",
+    "text": "4.8 Sampling dist (sim): \\(n\\) = 50\n\n\nCode\nggplot(data = means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50, alpha = 0.5, fill = \"darkgreen\") +\n  xlim(-1.5,1.5) +\n  ylim(0, 2500)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#sampling-dist-sim-n-100",
+    "href": "slides/BTS510-25-3.html#sampling-dist-sim-n-100",
+    "title": "Introduction to Biostatistics",
+    "section": "4.9 Sampling dist (sim): \\(n\\) = 100",
+    "text": "4.9 Sampling dist (sim): \\(n\\) = 100\n\n\nCode\nggplot(data = means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50, alpha = 0.5, fill = \"purple\") +\n  xlim(-1.5,1.5) +\n  ylim(0, 2500)"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#why-do-we-care-about-this",
+    "href": "slides/BTS510-25-3.html#why-do-we-care-about-this",
+    "title": "Introduction to Biostatistics",
+    "section": "4.10 Why do we care about this?",
+    "text": "4.10 Why do we care about this?\n\nSampling distribution gives the standard error\n\nStandard deviation of the sampling distribution\nTells us about sampling variability in that test statistic\nAcross all samples from this population, how variable can we expect the test statistic to be?\n\nContext\nUsed in significance testing, confidence intervals"
+  },
+  {
+    "objectID": "slides/BTS510-25-3.html#in-class-activities-1",
+    "href": "slides/BTS510-25-3.html#in-class-activities-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nExplore some sampling distributions using simulation\n\nDifferent population distributions\n\nNormal, Bernoulli, binomial, Poisson\n\nSample 10000 times from each population\n\nWith different sample sizes: \\(n = 10, 50, 100\\)\n\nCalculate sample mean (\\(\\bar{X}\\)) for each sample\n\nExamine sampling distributions of means"
   }
 ]

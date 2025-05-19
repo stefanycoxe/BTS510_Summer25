@@ -10,16 +10,16 @@ website:
     search: true
     collapse-level: 1 
     contents:
-      - index.qmd
-      - syllabus.qmd  
-      - schedule.qmd 
+      - index.qmd      
+      - syllabus.qmd
+      - schedule.qmd        
       - section: "Materials"
-        contents:                    
+        contents:                      
 #          - materials/index.qmd     
           - materials/00-mats.qmd
           - materials/01-mats.qmd 
           - materials/02-mats.qmd      
-#          - materials/03-mats.qmd
+          - materials/03-mats.qmd
 #          - materials/04-mats.qmd
 #          - materials/05-mats.qmd
 #          - materials/06-mats.qmd  
@@ -42,12 +42,12 @@ website:
 #          - labs_comp/lab9.qmd 
       - section: "Assignments"
         contents:
-         - assignments/hw1.qmd 
+         - assignments/hw1.qmd  
 #         - assignments/hw2.qmd
 #         - assignments/hw3.qmd  
 #         - assignments/hw4.qmd            
 #         - assignments/hw5.qmd
-#         - assignments/final.qmd  
+         - assignments/final.qmd      
       - refs.qmd 
           
   # sidebar:
@@ -60,11 +60,11 @@ website:
   #           - text: "Week 1: Introduction"
   #             file: materials/01-mats.qmd
   #           - text: "Week 2: Data manipulation"
-  #             file: materials/02-mats.qmd
+  #             file: materials/02-mats.qmd 
               
 format:   
   html: 
-    number-sections: false 
+    number-sections: false  
     theme: flatly
     css: styles.css
     toc: true
