@@ -1,0 +1,25 @@
+---
+title: "Week 5: More plots"
+---
+
+## Learning objectives
+
+* Advanced plotting
+  * Color, size, opacity
+  * Annotations
+  * Changing themes, axis labels, re-ordering categories
+  * Complex and combined plots
+
+## Before class: Lecture 
+
+* [Lecture 5](https://youtu.be/kjAAat9x4gw){target="_blank"} 
+* [Lecture survey](https://forms.gle/GjVSnKD1V7Dg4BRM6){target="_blank"}: Complete by Wednesday, June 11 at 8pm
+* [Slides (html)](../slides/BTS510-25-5.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 5 (html with link to code)](../lab/BTS510-25-lab5.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 2](../assignments/hw2.qmd)
