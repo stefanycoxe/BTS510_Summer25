@@ -1,0 +1,578 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* Describe the logic of **linear regression** 
+* Describe the **assumptions** of linear regression
+* Briefly **present results** of linear regression
+* Use a **regression equation** to summarize a model
+* Compare and contrast **observed**, **predicted**, and **residual** values
+
+# Motivation
+
+## Linear regression
+
+* General linear model or **GLM**
+  * Includes linear regression, ANOVA, $t$-tests
+* One **dependent variable** or **outcome**
+  * Predicted by 1 or more continuous or categorical **independent variables** or **predictors**
+* Causality not assumed, but sometimes (wrongly) implied
+  
+## Purposes of linear regression
+
+* **Inference**
+  * Confirm effect of predictor(s) on outcome
+* **Prediction**
+  * Predict outcome value based on predictor value(s)
+* **Variance explained**
+  * How much of the variance in the outcome is explained by the predictor(s)?
+
+## Assumptions
+
+* **One** *continuous* outcome variable
+* **One or more** predictor variable (nominal, ordinal, interval, ratio)
+* Relationship is **linear in the predictors**
+* Observations are **independent** (uncorrelated)
+* **Residuals** are *conditionally normally distributed* with *constant variance* (homoscedasticity)
+
+# Example
+
+## Data
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Data
+
+```{r}
+library(Stat2Data)
+data(ICU)
+head(ICU)
+```
+
+## Relations between variables
+
+* Y versus X
+* Y as a function of X
+* `Y ~ X`
+* X predicts Y
+
+## Example 1: `Pulse` vs `Age`
+
+* Does `Pulse` depend on `Age`?
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Age, y = Pulse)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth(method = "lm",
+              se = TRUE)
+```
+
+## Example 2: `Pulse` vs `Emergency`
+
+* Do emergency and non-emergency admits have similar `Pulse` rates?
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Emergency, y = Pulse)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth(method = "lm", 
+              se = TRUE)
+```
+
+# Inference
+
+## `lm()` function  
+
+* `lm()` function in **stats** package (loaded by default)
+* Inputs
+  * `data`: data frame
+  * `formula`: relationship to model (`Y ~ X`)
+* Outputs
+  * `coefficients`, `residuals`, etc.
+  * See [documentation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm) 
+
+## Example 1: `Pulse` vs `Age`
+
+```{r}
+pulse_vs_age <- lm(data = ICU, Pulse ~ Age)
+summary(pulse_vs_age)
+```
+
+## Example 1: `Pulse` vs `Age`
+
+* Intercept = Expected `Pulse` value when `Age` = 0
+  * $b_0$ = 96.048, $t(1)$ = 16.594, $p$ < .0001
+  * `Pulse` for a person at `Age` = 0 is 96.048
+* Slope = Expected change in `Pulse` for a 1 unit difference in `Age`
+  * $b_1$ = 0.049, $t(1)$ = 0.526, $p$ > .05
+  * For each 1 unit increase in `Age`, we expect `Pulse` to increase by 0.526 points (NS)
+
+## Example 2: `Pulse` vs `Emergency`
+
+```{r}
+pulse_vs_ER <- lm(data = ICU, Pulse ~ Emergency)
+summary(pulse_vs_ER)
+```
+
+## Example 2: `Pulse` vs `Emergency`
+
+* Intercept = Expected `Pulse` when `Emergency` = 0
+  * $b_0$ = 91.113, $t(1)$ = 25.049, $p$ < .0001
+  * `Pulse` for a person w non-emergency admit is 91.113
+* Slope = Expected change in `Pulse` for a 1 unit difference in `Emergency`
+  * $b_1$ = 10.628, $t(1)$ = 2.505, $p$ < .05
+  * For each 1 unit increase in `Emergency`, we expect `Pulse` to increase by 10.628 points
+  * **Group difference** (0 to 1) is 10.628 points
+
+## Regression equations
+
+* Two forms
+  * $\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + \cdots$
+    * **Predicted Y** is a function of coefficients and predictors
+  * $Y = b_0 + b_1 X_1 + b_2 X_2 + \cdots + error$
+    * **Observed Y** is a function of coefficients and predictors, **plus error** 
+
+## Regression equations
+
+* Example 1: 
+  * $\hat{Pulse} = 96.048 + 0.049*Age$
+* Example 2: 
+  * $\hat{Pulse} = 91.113 + 10.628*Emergency$
+
+## How to describe slopes
+
+* For each **1 unit increase** (or **1 unit change** or **1 unit difference**) in `X`, we expect `Y` to increase by $b_1$ points on average
+  * Are we **increasing** or **changing** `X`? 
+  * In these models (and often), no
+* For **two individuals who are 1 unit apart** on `X`, we expect their scores on `Y` to differ by $b_1$ points on average
+  * This is a *mouthful* but more technically accurate
+
+## Reporting $p$-values
+
+* Non-significant effect
+  * Thresholds: $b_1$ = 0.049, $t(1)$ = 0.526, $p$ > .05
+  * Exact $p$-value: $b_1$ = 0.049, $t(1)$ = 0.526, $p$ = .599
+  * Not significant: $b_1$ = 0.049, $t(1)$ = 0.526, NS
+* Significant effect
+  * Thresholds: $b_1$ = 10.628, $t(1)$ = 2.505, $p$ < .05
+  * Exact $p$-value: $b_1$ = 10.628, $t(1)$ = 2.505, $p$ = .0131
+* $p$-value is **never** 0: Report $p$ < .001 or similar
+
+# Prediction
+
+## Observed and predicted values
+
+* **Observed** values of the outcome in the dataset
+  * One value per observation
+  * Observed outcome: $Y$
+* **Predicted** values of the outcome that are **predicted** by the model
+  * One value per observation
+  * Predicted outcome: $\hat{Y}$
+  * Use the regression equation to calculate
+
+## Predicted values
+
+* Example 1: `Pulse ~ Age`
+  * `Age` = 87: $\hat{Pulse} = 96.048 + 0.049 * 87 = 100.311$
+  * `Age` = 27: $\hat{Pulse} = 96.048 + 0.049 * 27 = 97.371$
+  * `Age` = 59: $\hat{Pulse} = 96.048 + 0.049 * 59 = 98.939$
+  * `Age` = 0: $\hat{Pulse} = 96.048 + 0.049 * 0 = 96.048$
+  * Etc. for each value of `Age`
+
+## Predicted values
+
+* Example 2: `Pulse ~ Emergency`
+  * Emergency = 0: $\hat{Pulse} = 91.113 + 10.628 * 0 = 91.113$
+  * Emergency = 1: $\hat{Pulse} = 91.113 + 10.628 * 1 = 101.741$
+
+## Predicted values
+
+* `predict()` function in R
+  * Talk more about this in coming weeks
+  * Can use to create predicted values for
+    * Original data
+    * All possible values
+    * Specific values
+
+## Example 1: Observed and predicted
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Age, y = Pulse)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth(method = "lm",
+              se = FALSE, 
+              size = 2)
+```
+
+## Example 2: Observed and predicted
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Emergency, y = Pulse)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              size = 2)
+```
+  
+## Residual values
+
+* Residuals are the *difference* between the **observed** and **predicted** values **for an observation**
+  * One residual per observation
+  * Residual: $Y - \hat{Y}$
+* Assumptions for **residuals**
+  * *Constant variance* (homoscedasticity)
+  * *Conditionally normally distributed*
+
+## Predicted and residual values
+
+```{r}
+ICU$pred1 <- fitted(pulse_vs_age)
+ICU$resi1 <- residuals(pulse_vs_age)
+ICU$pred2 <- fitted(pulse_vs_ER)
+ICU$resi2 <- residuals(pulse_vs_ER)
+head(ICU)
+```
+
+## What is the residual?
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Age, y = Pulse)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth(method = "lm",
+              se = FALSE, 
+              size = 2) +
+  geom_segment(aes(x = Age,
+                   xend = Age,
+                   y = Pulse,
+                   yend = pred1))
+```
+
+## Constant variance?
+
+* Plot residual vs predictor
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Age, y = resi1)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+```
+
+## Constant variance?
+
+* Plot residual vs predicted (for more than 1 predictor)
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = pred1, y = resi1)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+```
+
+## Normally distributed?
+
+* Q-Q plot (overall distribution)
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU,
+       aes(sample = resi1)) + 
+       stat_qq() +
+       stat_qq_line()
+```
+
+## Normally distributed?
+
+* Histogram
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU,
+       aes(x = resi1)) +
+  geom_histogram()
+```
+
+## (Conditionally) Normally distributed?
+
+* Histogram **at each level of predictor**
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU,
+       aes(x = resi2)) +
+  geom_histogram() +
+  facet_grid(cols = vars(Emergency))
+```
+
+## Constant variance?
+
+* Plot residual vs predictor
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Emergency, y = resi2)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+```
+
+# Variance explained
+
+## R-squared multiple
+
+* One number summary of the predictive power of the model
+  * Proportion: Ranges from 0 to 1
+    * 0 = predictor(s) explain **no variance** in outcome
+    * 1 = predictor(s) explain **all variance** in outcome
+* **Squared correlation** (between observed and predicted values)\
+  * **Effect size** for the *model*
+  * Other definitions related to *estimation*
+
+## Correlations
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Correlation = 0.2 
+  * $R^2$ = 0.04
+
+```{r}
+#| echo: false
+library(faux)
+cmat <- c(1, .2, 0, 0,
+          .2, 1, 0, 0,
+          0, 0, 1, .8,
+          0, 0, .8, 1)
+dat <- rnorm_multi(n = 100, 
+                  mu = c(0, 0, 0, 0),
+                  sd = c(1, 1, 1, 1),
+                  r = cmat, 
+                  varnames = c("A", "B", "C", "D"),
+                  empirical = TRUE)
+ggplot(data = dat, 
+       aes(x = A, y = B)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Correlation = 0.8
+  * $R^2$ = 0.64
+
+```{r}
+#| echo: false
+ggplot(data = dat, 
+       aes(x = C, y = D)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+:::
+
+::::
+
+## R-squared multiple
+
+* We'll talk more about $R^2_{multiple}$
+  * Estimation
+  * Effect size
+  * Logistic regression and Poisson regression
+
+
+# Presenting results
+
+## Packages to show model results
+
+* `summary()` function from **base** R
+* `summ()` function from **jtools** package
+* `modelsummary()` function in **modelsummary** package
+  * Nice HTML output, multiple models in one table
+* Non-exhaustive list
+  
+## Example 1: `summary()`
+
+```{r}
+summary(pulse_vs_age)
+```
+
+## Example 1: `summ()`
+
+```{r}
+library(jtools)
+summ(pulse_vs_age)
+```
+
+## Example 1: `modelsummary()`
+
+```{r}
+library(modelsummary)
+modelsummary(pulse_vs_age)
+```
+
+## Example 1: `summary()` + `kableExtra()`
+
+```{r}
+library(kableExtra)
+kable(summary(pulse_vs_age)$coefficients)
+```
+
+## Example 2: `summary()`
+
+```{r}
+summary(pulse_vs_ER)
+```
+
+## Example 2: `summ()`
+
+```{r}
+library(jtools)
+summ(pulse_vs_ER)
+```
+
+## Example 2: `modelsummary()`
+
+```{r}
+library(modelsummary)
+modelsummary(pulse_vs_ER)
+```
+
+## Example 2: `summary()` + `kableExtra()`
+
+```{r}
+library(kableExtra)
+kable(summary(pulse_vs_ER)$coefficients)
+```
+
+## Multiple models in `modelsummary()`
+
+```{r}
+#| echo: false
+pulse_age_ER <- lm(data = ICU, Pulse ~ Age + Emergency)
+```
+
+
+```{r}
+library(modelsummary)
+modelsummary(list(pulse_vs_age, pulse_vs_ER, pulse_age_ER))
+```
+
+## Example 1: Full results
+
+* The intercept ($b_0$) was 96.048, $t(1)$ = 16.594, $p$ < .0001. An individual who was 0 years old is expected to have a pulse rate of 96.048. 
+* The slope for age ($b_1$) was 0.049, $t(1)$ = 0.526, $p$ > .05. For each 1 year increase in age, the expected pulse rate increased by 0.048 points; this effect was not significant.
+
+* The $R^2$ for this model was 0.0014, F(1, 198) = 0.2969, p > .05. Less than 1% of the variance in pulse rate was explained by age; this was not significant.
+
+## Example 2: Full results
+
+* The intercept ($b_0$) was 91.113, $t(1)$ = 25.049, $p$ < .0001. An individual who had a non-emergency admission is expected to have a pulse rate of 91.113. 
+
+* The slope for type of admission ($b_1$) was 10.628, $t(1)$ = 2.505, $p$ < .05. The difference in expected pulse rate between non-emergency admissions (0) and emergency admissions (1) was 10.628 points. 
+
+* The $R^2$ for this model was 0.0307, F(1, 198) = 6.275, p < .05. About 3% of the variance in pulse rate was explained by admission type.
+
+# Next time
+
+## Expanding the model
+
+* More complicated models
+  * Two or more predictors
+  * Non-linear relationships, interaction (moderator) effects
+* Predictor coding and centering
+* Comparing models
+* More interpretation, more checking assumptions
+* Estimation of the model
+

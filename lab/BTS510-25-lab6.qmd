@@ -1,0 +1,65 @@
+---
+title: "BTS 510 Lab 6"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* Describe the logic of **linear regression** 
+* Describe the **assumptions** of linear regression
+* Briefly **present results** of linear regression
+* Use a **regression equation** to summarize a model
+* Compare and contrast **observed**, **predicted**, and **residual** values
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Tasks
+
+1. **Does blood pressure differ between those with a suspected infection and those without?** *Fit a linear regression to answer this question.*
+
+2. Write up the **interpretation** of the model, including:
+  * Intercept value, test statistic, $p$-value
+  * Intercept interpretation (in words)
+  * Slope value, test statistic, $p$-value
+  * Slope interpretation (in words)
+  * $R^2$ value, test statistic, $p$-value
+  * $R^2$ interpretation (in words)
+
+3. What is the **predicted blood pressure** for someone *with a suspected infection*? What is the **predicted blood pressure** for someone *without a suspected infection*?
+
+4. Calculate the **predicted** and **residual** values for each person and add them to the original dataset. **Does it looks like the assumptions are satisfied?** Make plots to help you decide:
+  * Residual vs predictor
+  * Q-Q plot of residuals
+  * Histogram of residuals (all together and separately for the two groups)
+
+5. **Does blood pressure differ between those with a suspected infection and those without? How?** (Brief, simple words, no jargon, no statistics.) 
+
+

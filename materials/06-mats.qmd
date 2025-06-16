@@ -1,0 +1,25 @@
+---
+title: "Week 6: Linear regression"
+---
+
+## Learning objectives
+
+* Describe the logic of **linear regression** 
+* Describe the **assumptions** of linear regression
+* Briefly **present results** of linear regression
+* Use a **regression equation** to summarize a model
+* Compare and contrast **observed**, **predicted**, and **residual** values
+
+## Before class: Lecture 
+
+* [Lecture 6](https://youtu.be/SgoYuU42pFQ){target="_blank"} 
+* [Lecture survey](https://forms.gle/qQaYgM4GzhXcysmm8){target="_blank"}: Complete by Wednesday, June 18 at 8pm
+* [Slides (html)](../slides/BTS510-25-6.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 6 (html with link to code)](../lab/BTS510-25-lab6.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**
