@@ -1,0 +1,51 @@
+---
+title: "Homework 3"
+---
+
+## Linear regression
+
+* **Due Sunday, June 29 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.
+    * Remember to include `embed-resources: true` in the `html` options. If you don't, we won't see any of your figures when you send the files. 
+    
+## Data
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with 232 observations on the following 7 variables.
+        `Active`: Pulse rate (beats per minute) after exercise
+        `Rest`: Resting pulse rate (beats per minute)
+        `Smoke`: 1=smoker or 0=nonsmoker
+        `Sex`: 1=female or 0=male
+        `Exercise`: Typical hours of exercise (per week)
+        `Hgt`: Height (in inches)
+        `Wgt`: Weight (in pounds)
+
+## Research question
+
+**How do patient sex and smoking status predict active pulse rate?**
+
+## Tasks
+
+1. Conduct **three linear regression models** to address the above research question.
+
+* Model 1: Patient sex predicts active pulse rate
+* Model 2: Patient smoking status predicts active pulse rate
+* Model 3: Patient sex *and* smoking status predict active pulse rate
+
+2. **Which is the best model?** 
+
+* Use the $F$-test for $R^2_{change}$ and the AIC values to help you decide. Report the tests and values that you used to decide this. 
+
+3. Report the results of the **best** model, including:
+  * Intercept value, test statistic, $p$-value, interpretation (in words)
+  * Slope value(s), test statistic(s), $p$-value(s), interpretation(s) (in words)
+  * $R^2$ value, test statistic, $p$-value, interpretation (in words)
+
+4. Based on **model 3**, what are the predicted active pulse rates for the 4 combinations of sex and smoking status? (i.e., female non-smoker, male non-smoker, female smoker, male smoker)
+
+5. Using the **predicted** and **residual** values, assess whether the assumptions are met for **model 3**. Include the plots and describe your conclusions based on them. 
+
+6. In plain language, answer the research question: **How do patient sex and smoking status predict active pulse rate?** (This should not be lengthy -- just a couple sentences.)
+
+

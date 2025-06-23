@@ -1,0 +1,71 @@
+---
+title: "BTS 510 Lab 7"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Add predictors** to a linear regression model
+* Interpret **partial regression coefficients**
+* **Re-code predictors** to answer your research questions
+* **Compare** different models using $R^2_{change}$
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Research question
+
+**How do infection status (`Infection`) and admission type (`Emergency`) predict blood pressure?**
+
+## Tasks
+
+1. Conduct **three linear regression models** to address the above research questions.
+
+* Model 1: Infection status predicts blood pressure
+* Model 2: Admission type predicts blood pressure
+* Model 3: Infection status *and* admission type predict blood pressure
+
+2. **Which is the best model?** 
+
+* Use the $F$-test for $R^2_{change}$ and the AIC values to help you decide. Report the tests and values that you used to decide this. 
+
+3. Report the results of the **best** model, including:
+  * Intercept value, test statistic, $p$-value, interpretation (in words)
+  * Slope value(s), test statistic(s), $p$-value(s), interpretation(s) (in words)
+  * $R^2$ value, test statistic, $p$-value, interpretation (in words)
+
+4. Based on **model 3**, what are the predicted blood pressures for the 4 combinations of infection status and admission type? (i.e., infected non-emergency, non-infected non-emergency, infected emergency, non-infected non-emergency)
+
+5. Using the **predicted** and **residual** values, assess whether the assumptions are met for **model 3**. Include the plots and describe your conclusions based on them. 
+
+6. In plain language, answer the research question: **How do infection status and admission type predict blood pressure?** (This should not be lengthy -- just a couple sentences.)
+
+
+

@@ -4,6 +4,10 @@ title: "Final Project"
 
 **Big picture**: You will select a dataset, propose some research questions that can be answered using linear models (i.e., regression), write up the results, and present your findings to the class.
 
+::: {.callout-note collapse=true}
+
+## Data assignment
+
 * Data assignment: **Email to Stefany by midnight on Sunday, June 1, 2025**
   * Select a **dataset** to use for your project
   * The dataset should include **at least 5 variables** 
@@ -16,8 +20,29 @@ title: "Final Project"
     * What is the study design? Randomized groups, observational?
     * Any other design or study details that might be important, like repeated measures, clustering of units within higher levels (e.g., people in neighborhoods)
 
-* Proposal assignment: Due July 6, 2025
+:::
 
+::: {.callout-note collapse=false}
 
+## Proposal assignment
+
+* Proposal assignment: **Email to Stefany by midnight on Sunday, July 6, 2025**
+  * Submit a ~2 page proposal (similar to a thesis or dissertation proposal, only *much shorter* and without all the boring literature review parts) for your project. This should:
+    * Motivate the project
+      * Not a literature review, but tell me why what you're doing is interesting
+    * Describe your dataset in some detail
+      * Where the data came from
+      * Sample size
+      * Any interventions, etc. that happened
+      * Most importantly: **What variables you will be using**
+    * Describe several questions that you have that can be answered using linear, logistic, or Poisson regression. For example:
+      * Does this predictor significantly predict the outcome?
+      * Which of these competing models produces the best fit?
+      * Explain how these models will answer your research questions. It's ok if the research questions are fairly basic, but try to be as specific as you can about how the model will answer your question.
+      * I want you to run at least **3 different models**, with some justification for each, and compare them. Some examples: 
+        * Multiple predictors that you test in a hierarchical manner (i.e., first predictor 1, then predictor 1 and 2, then both predictors and their interaction)
+        * One predictor that predicts several different outcomes (e.g., treatment / control variable predicts several outcomes)
+        * Homework 3 is a rough model for this. Use that scope as a guide.
+  * **Proposals are not contracts**: If you start working and realize that you can't do what you proposed, that's ok. Talk to me if you need some guidance on making changes or problems you encounter. I just want you to try to identify a dataset, variables, and questions early so you don't scramble at the end of the semester.
     
-    
+:::    

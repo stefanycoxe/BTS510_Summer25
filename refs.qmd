@@ -10,6 +10,8 @@ title: "References"
 
 * Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.
 
+* Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
+
 ## Software
 
 ### R and Rstudio
@@ -51,6 +53,20 @@ Springer.
 ## Linear models
 
 ### Linear regression
+
+* Cohen, J., Cohen, P., West, S. G., & Aiken, L. S. (2013). Applied multiple regression/correlation analysis for the behavioral sciences. Routledge.
+
+* Darlington, R. B., & Hayes, A. F. (2016). Regression analysis and linear models: Concepts, applications, and implementation. Guilford Publications.
+
+* Fox, J. (2015). Applied regression analysis and generalized linear models. Sage publications.
+
+* Hayes, A. F., & Montoya, A. K. (2017). A tutorial on testing, visualizing, and probing an interaction involving a multicategorical variable in linear regression analysis. Communication methods and measures, 11(1), 1-30.
+
+* Neter, J., Kutner, M. H., Nachtsheim, C. J., & Wasserman, W. (1996). Applied linear statistical models.
+
+* Weisberg, S. (2005). Applied linear regression (Vol. 528). John Wiley & Sons.
+
+
 
 ### Logistic regression
 

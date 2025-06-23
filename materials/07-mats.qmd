@@ -1,0 +1,24 @@
+---
+title: "Week 7: Linear regression"
+---
+
+## Learning objectives
+
+* **Add predictors** to a linear regression model
+* Interpret **partial regression coefficients**
+* **Re-code predictors** to answer your research questions
+* **Compare** different models using $R^2_{change}$
+
+## Before class: Lecture 
+
+* [Lecture 7](https://youtu.be/4RlIZbH6oro){target="_blank"} 
+* [Lecture survey](https://forms.gle/XvGVVKz3JsQucj3z5){target="_blank"}: Complete by Wednesday, June 25 at 8pm
+* [Slides (html)](../slides/BTS510-25-7.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 7 (html with link to code)](../lab/BTS510-25-lab7.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 3](../assignments/hw3.qmd)

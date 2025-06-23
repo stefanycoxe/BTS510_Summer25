@@ -1,0 +1,26 @@
+\documentclass[
+%% TIKZ_CLASSOPTION %%
+tikz
+]{standalone}
+\usepackage{amsmath}
+\usetikzlibrary{matrix}
+%% EXTRA_TIKZ_PREAMBLE_CODE %%
+\begin{document}
+%% TIKZ_CODE %%
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2.5,-2.5) rectangle (5.5,5.5);
+\draw [line width=2pt] (0,0) circle (2cm) node {$X$};
+\draw [line width=2pt] (3,0) circle (2cm) node {$Y$};
+\draw [line width=2pt] (1.5,2.5) circle (2cm) node {$Z$};
+\begin{scope}
+\clip (0,0) circle (2cm);
+\fill[blue] (3,0) circle (2cm);
+\end{scope}
+\draw [line width=2pt] (0,0) circle (2cm);
+\draw [line width=2pt] (3,0) circle (2cm);
+\draw [line width=2pt] (1.5,2.5) circle (2cm);
+\end{tikzpicture}
+\end{document}
