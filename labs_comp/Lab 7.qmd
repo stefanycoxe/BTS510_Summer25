@@ -1,0 +1,171 @@
+---
+title: "BTS 510 Lab 7"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Add predictors** to a linear regression model
+* Interpret **partial regression coefficients**
+* **Re-code predictors** to answer your research questions
+* **Compare** different models using $R^2_{change}$
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Research question
+
+**How do infection status (`Infection`) and admission type (`Emergency`) predict blood pressure?**
+
+## Tasks
+
+```{r}
+library(Stat2Data)
+data(ICU)
+```
+
+1. Conduct **three linear regression models** to address the above research questions.
+
+* Model 1: Infection status predicts blood pressure
+* Model 2: Admission type predicts blood pressure
+* Model 3: Infection status *and* admission type predict blood pressure
+
+```{r}
+m1 <- lm(data = ICU, SysBP ~ Infection)
+m2 <- lm(data = ICU, SysBP ~ Emergency)
+m3 <- lm(data = ICU, SysBP ~ Infection + Emergency)
+```
+
+```{r}
+summary(m1)
+summary(m2)
+summary(m3)
+library(modelsummary)
+modelsummary(list(m1, m2, m3))
+```
+
+```{r}
+cor(ICU[, c(6, 7, 9)])
+```
+
+2. **Which is the best model?** 
+
+* Use the $F$-test for $R^2_{change}$ and the AIC values to help you decide. Report the tests and values that you used to decide this. 
+
+```{r}
+anova(m3, m1)
+anova(m3, m2)
+AIC(m1)
+AIC(m2)
+AIC(m3)
+```
+
+3. Report the results of the **best** model, including:
+  * Intercept value, test statistic, $p$-value, interpretation (in words)
+  * Slope value(s), test statistic(s), $p$-value(s), interpretation(s) (in words)
+  * $R^2$ value, test statistic, $p$-value, interpretation (in words)
+
+```{r}
+m3_coeff <- summary(m3)$coefficients
+m3_coeff
+```
+
+::: {.callout-note}
+Look at the code for the section below to see how to programmatically (i.e., automatically) grab the coefficient values from the output and have them print in your document. 
+:::
+
+* $\hat{SysBP} = `r round(m3_coeff[1], 3)` + `r round(m3_coeff[2], 3)` \times Infection + `r round(m3_coeff[3], 3)` \times Emergency$
+
+* The intercept ($b_0$) was `r round(m3_coeff[1], 3)`, t(1) = 31.995, p < .0001. An individual who did not have an infection and had a non-emergency admission is expected to have blood pressure of `r round(m3_coeff[1], 3)`.
+
+* The slope for `Infection` ($b_1$) was `r round(m3_coeff[2], 3)`, t(1) = -2.927, p<.01. Holding `Emergency` constant, the difference between in blood pressure between an infection and a non-infection patient is `r round(m3_coeff[2], 3)` points. Patients with an infection have lower blood pressure.
+
+* The slope for `Emergency` ($b_2$) was `r round(m3_coeff[3], 3)`, t(1) = -2.160, p<.05. Holding `Infection` constant, the difference between in blood pressure between an emergency admit and a non-emergency admit patient is `r round(m3_coeff[3], 3)` points. Patients with an emergency admission have lower blood pressure.
+
+4. Based on **model 3**, what are the predicted blood pressures for the 4 combinations of infection status and admission type? (i.e., infected non-emergency, non-infected non-emergency, infected emergency, non-infected emergency)
+
+* Non-infected non-emergency
+
+```{r}
+summary(m3)$coefficients[1] + summary(m3)$coefficients[2] * 0 + summary(m3)$coefficients[3] * 0
+```
+
+* Infected non-emergency
+
+```{r}
+summary(m3)$coefficients[1] + summary(m3)$coefficients[2] * 1 + summary(m3)$coefficients[3] * 0
+```
+
+* Non-infected emergency
+
+```{r}
+summary(m3)$coefficients[1] + summary(m3)$coefficients[2] * 0 + summary(m3)$coefficients[3] * 1
+```
+
+* Infected emergency
+
+```{r}
+summary(m3)$coefficients[1] + summary(m3)$coefficients[2] * 1 + summary(m3)$coefficients[3] * 1
+```
+
+5. Using the **predicted** and **residual** values, assess whether the assumptions are met for **model 3**. Include the plots and describe your conclusions based on them. 
+
+```{r}
+ICU$pred <- fitted(m3)
+ICU$resi <- residuals(m3)
+```
+
+```{r}
+ggplot(data = ICU, 
+       aes(x = Infection, y = resi)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+
+ggplot(data = ICU, 
+       aes(x = Emergency, y = resi)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+
+ggplot(data = ICU, 
+       aes(x = pred, y = resi)) + 
+  geom_point(alpha = 0.3, 
+             size = 2) +
+  geom_smooth()
+
+ggplot(data = ICU,
+       aes(x = resi)) +
+  geom_histogram()
+```
+
+
+6. In plain language, answer the research question: **How do infection status and admission type predict blood pressure?** (This should not be lengthy -- just a couple sentences.)
+

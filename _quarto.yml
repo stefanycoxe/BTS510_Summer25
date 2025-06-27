@@ -38,8 +38,8 @@ website:
           - labs_comp/Lab 4.qmd
           - labs_comp/Lab 5.qmd   
           - labs_comp/Lab 6.qmd   
-#          - labs_comp/lab8.qmd 
-#          - labs_comp/lab9.qmd 
+          - labs_comp/Lab 7.qmd 
+#          - labs_comp/Lab 9.qmd 
       - section: "Assignments"
         contents:
          - assignments/hw1.qmd  
