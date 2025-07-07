@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BTS 510 Lab 6 – BTS 510  Summer 2025</title>
+<title>BTS 510 Lab 8 – BTS 510  Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4800,7 +4800,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BTS 510 Lab 6</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BTS 510 Lab 8</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -5008,7 +5008,8 @@ window.Quarto = {
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">3</span> Tasks</a></li>
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions"><span class="header-section-number">3</span> Research question(s)</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -5017,7 +5018,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 6</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 8</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -5055,55 +5056,59 @@ window.Quarto = {
 <section id="learning-objectives" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
 <ul>
-<li>Describe the logic of <strong>linear regression</strong></li>
-<li>Describe the <strong>assumptions</strong> of linear regression</li>
-<li>Briefly <strong>present results</strong> of linear regression</li>
-<li>Use a <strong>regression equation</strong> to summarize a model</li>
-<li>Compare and contrast <strong>observed</strong>, <strong>predicted</strong>, and <strong>residual</strong> values</li>
+<li><strong>Assess</strong> models for <strong>(multi)collinearity</strong> among predictors</li>
+<li><strong>Conduct</strong> outlier analyses to determine extreme and/or problematic cases</li>
 </ul>
 </section>
 <section id="data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="data"><span class="header-section-number">2</span> Data</h2>
 <ul>
-<li><code>ICU</code> data from the <strong>Stat2Data</strong> package
+<li><code>FirstYearGPA</code> data from the <strong>Stat2Data</strong> package: <span class="math inline">n</span> = 219 subjects
 <ul>
-<li><code>ID</code>: Patient ID code</li>
-<li><code>Survive</code>: 1 = patient survived to discharge or 0 = patient died</li>
-<li><code>Age</code>: Age (in years)</li>
-<li><code>AgeGroup</code>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</li>
-<li><code>Sex</code>: 1 = female or 0 = male</li>
-<li><code>Infection</code>: 1 = infection suspected or 0 = no infection</li>
-<li><code>SysBP</code>: Systolic blood pressure (in mm of Hg)</li>
-<li><code>Pulse</code>: Heart rate (beats per minute)</li>
-<li><code>Emergency</code>: 1 = emergency admission or 0 = elective admission</li>
+<li><code>GPA</code>: First-year college GPA on a 0.0 to 4.0 scale</li>
+<li><code>HSGPA</code>: High school GPA on a 0.0 to 4.0 scale</li>
+<li><code>SATV</code>: Verbal/critical reading SAT score</li>
+<li><code>SATM</code>: Math SAT score</li>
+<li><code>Male</code>: 1= male, 0= female</li>
+<li><code>HU</code>: Number of credit hours earned in humanities courses in high school</li>
+<li><code>SS</code>: Number of credit hours earned in social science courses in high school</li>
+<li><code>FirstGen</code>: 1= student is the first in her or his family to attend college, 0=otherwise</li>
+<li><code>White</code>: 1= white students, 0= others</li>
+<li><code>CollegeBound</code>: 1=attended a high school where &gt;=50% students intended to go on to college, 0=otherwise</li>
 </ul></li>
 </ul>
 </section>
-<section id="tasks" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3</span> Tasks</h2>
+<section id="research-questions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="research-questions"><span class="header-section-number">3</span> Research question(s)</h2>
+<ul>
+<li>How do <strong>all these variables</strong> impact first year GPA (<code>GPA</code>)?
+<ul>
+<li>Are there any problems with <strong>collinearity</strong> among the <em>predictors</em>?</li>
+<li>Are there <strong>problematic cases</strong> that are <em>influencing the results</em>?</li>
+</ul></li>
+</ul>
+</section>
+<section id="tasks" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
 <ol type="1">
-<li><p><strong>Does blood pressure differ between those with a suspected infection and those without?</strong> <em>Fit a linear regression to answer this question.</em></p></li>
-<li><p>Write up the <strong>interpretation</strong> of the model, including:</p></li>
+<li><p>Run a <strong>linear regression model</strong> predicting <code>GPA</code> from <em>all other variables</em> in the dataset.</p></li>
+<li><p>Some of those variables seem like they could be <strong>strongly related</strong>, which could cause problems for the model. Check to see if <strong>collinearity</strong> is an issue for this model. To check this, look at:</p></li>
 </ol>
 <ul>
-<li>Intercept value, test statistic, <span class="math inline">p</span>-value</li>
-<li>Intercept interpretation (in words)</li>
-<li>Slope value, test statistic, <span class="math inline">p</span>-value</li>
-<li>Slope interpretation (in words)</li>
-<li><span class="math inline">R^2</span> value, test statistic, <span class="math inline">p</span>-value</li>
-<li><span class="math inline">R^2</span> interpretation (in words)</li>
+<li><strong>Correlations among variables</strong></li>
+<li><strong>Variable inflation factors (VIFs)</strong></li>
 </ul>
 <ol start="3" type="1">
-<li><p>What is the <strong>predicted blood pressure</strong> for someone <em>with a suspected infection</em>? What is the <strong>predicted blood pressure</strong> for someone <em>without a suspected infection</em>?</p></li>
-<li><p>Calculate the <strong>predicted</strong> and <strong>residual</strong> values for each person and add them to the original dataset. <strong>Does it looks like the assumptions are satisfied?</strong> Make plots to help you decide:</p></li>
+<li><p>Based on the <strong>correlations between each predictor and the outcome</strong> (above), are there predictors that you think <strong>should</strong> be significant but aren’t? Why do you think they aren’t? (This is a bit of a philosophical question.)</p></li>
+<li><p>Are there <strong>extreme cases</strong> that we might be concerned about? Check for extreme values in terms of:</p></li>
 </ol>
 <ul>
-<li>Residual vs predictor</li>
-<li>Q-Q plot of residuals</li>
-<li>Histogram of residuals (all together and separately for the two groups)</li>
+<li><strong>Predictors</strong></li>
+<li><strong>Predicted values</strong></li>
+<li><strong>Changes to predicted values</strong></li>
 </ul>
 <ol start="5" type="1">
-<li><strong>Does blood pressure differ between those with a suspected infection and those without? How?</strong> (Brief, simple words, no jargon, no statistics.)</li>
+<li><strong>Summarize</strong> your findings about collinearity and outliers. <em>Use plain language.</em></li>
 </ol>
 
 
@@ -5581,7 +5586,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 6&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 8&quot;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
@@ -5604,46 +5609,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Describe the logic of **linear regression** </span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Describe the **assumptions** of linear regression</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Briefly **present results** of linear regression</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use a **regression equation** to summarize a model</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare and contrast **observed**, **predicted**, and **residual** values</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`ICU`</span> data from the **Stat2Data** package</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`ID`</span>: Patient ID code</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Survive`</span>: 1 = patient survived to discharge or 0 = patient died</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span>: Age (in years)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`AgeGroup`</span>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Sex`</span>: 1 = female or 0 = male</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Infection`</span>: 1 = infection suspected or 0 = no infection</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SysBP`</span>: Systolic blood pressure (in mm of Hg)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Pulse`</span>: Heart rate (beats per minute)</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Emergency`</span>: 1 = emergency admission or 0 = elective admission</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Assess** models for **(multi)collinearity** among predictors</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Conduct** outlier analyses to determine extreme and/or problematic cases</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`FirstYearGPA`</span> data from the **Stat2Data** package: $n$ = 219 subjects</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`GPA`</span>: First-year college GPA on a 0.0 to 4.0 scale</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`HSGPA`</span>: High school GPA on a 0.0 to 4.0 scale</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SATV`</span>: Verbal/critical reading SAT score</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SATM`</span>: Math SAT score</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Male`</span>: 1= male, 0= female</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`HU`</span>: Number of credit hours earned in humanities courses in high school</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SS`</span>: Number of credit hours earned in social science courses in high school</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`FirstGen`</span>: 1= student is the first in her or his family to attend college, 0=otherwise</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`White`</span>: 1= white students, 0= others</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`CollegeBound`</span>: 1=attended a high school where &gt;=50% students intended to go on to college, 0=otherwise</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research question(s)</span></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Does blood pressure differ between those with a suspected infection and those without?** *Fit a linear regression to answer this question.*</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do **all these variables** impact first year GPA (<span class="in">`GPA`</span>)?</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Are there any problems with **collinearity** among the *predictors*?</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Are there **problematic cases** that are *influencing the results*?</span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Write up the **interpretation** of the model, including:</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Intercept value, test statistic, $p$-value</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Intercept interpretation (in words)</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Slope value, test statistic, $p$-value</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Slope interpretation (in words)</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$R^2$ value, test statistic, $p$-value</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$R^2$ interpretation (in words)</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the **predicted blood pressure** for someone *with a suspected infection*? What is the **predicted blood pressure** for someone *without a suspected infection*?</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Run a **linear regression model** predicting <span class="in">`GPA`</span> from *all other variables* in the dataset.</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Some of those variables seem like they could be **strongly related**, which could cause problems for the model. Check to see if **collinearity** is an issue for this model. To check this, look at:</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Correlations among variables**</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Variable inflation factors (VIFs)**</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Based on the **correlations between each predictor and the outcome** (above), are there predictors that you think **should** be significant but aren&#39;t? Why do you think they aren&#39;t? (This is a bit of a philosophical question.)</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Calculate the **predicted** and **residual** values for each person and add them to the original dataset. **Does it looks like the assumptions are satisfied?** Make plots to help you decide:</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Residual vs predictor</span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Q-Q plot of residuals</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Histogram of residuals (all together and separately for the two groups)</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Does blood pressure differ between those with a suspected infection and those without? How?** (Brief, simple words, no jargon, no statistics.) </span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Are there **extreme cases** that we might be concerned about? Check for extreme values in terms of:</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Predictors**</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Predicted values**</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Changes to predicted values**</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Summarize** your findings about collinearity and outliers. *Use plain language.*</span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

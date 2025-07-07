@@ -1,0 +1,22 @@
+---
+title: "Week 8: Linear regression"
+---
+
+## Learning objectives
+
+* **Assess** models for **(multi)collinearity** among predictors
+* **Conduct** outlier analyses to determine extreme and/or problematic cases
+
+## Before class: Lecture 
+
+* [Lecture 8](https://youtu.be/Qf_NSblMUk8){target="_blank"} 
+* [Lecture survey](https://forms.gle/WPLc9vLwrqwA94fg9){target="_blank"}: Complete by Wednesday, July 9 at 8pm
+* [Slides (html)](../slides/BTS510-25-8.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 8 (html with link to code)](../lab/BTS510-25-lab8.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

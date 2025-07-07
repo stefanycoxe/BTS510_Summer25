@@ -1,0 +1,677 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Assess** models for **(multi)collinearity** among predictors
+* **Conduct** outlier analyses to determine extreme and/or problematic cases
+
+# Collinearity
+
+## Collinearity
+
+* Sometimes called *multicollinearity*
+* **High correlations** between **predictors** in linear regression
+* Why does that matter?
+
+## Recall: Partial correlations
+
+Correlation between $X_1$ and $Y$, no effect of $X_2$
+
+```{tikz, echo = FALSE, fig.align="center", fig.height = 3.5, fig.width = 5, fig.ext=if (knitr:::is_latex_output()) 'pdf' else 'png'}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2.5,-2.5) rectangle (5.5,5.5);
+\draw [line width=2pt] (0,0) circle (2cm) node {$X_1$};
+\draw [line width=2pt] (3,0) circle (2cm) node {$Y$};
+\draw [line width=2pt] (3,3) circle (2cm) node {$X_2$};
+\begin{scope}
+\clip (0,0) circle (2cm);
+\fill[blue] (3,0) circle (2cm);
+\end{scope}
+\begin{scope}
+\clip (0,0) circle (2cm);
+\clip (3,0) circle (2cm);
+\end{scope}
+\draw [line width=2pt] (0,0) circle (2cm);
+\draw [line width=2pt] (3,0) circle (2cm);
+\draw [line width=2pt] (3,3) circle (2cm);
+\end{tikzpicture}
+```
+
+## Recall: Partial correlations
+
+Correlation between $X_1$ and $Y$, removing the effect of $X_2$
+
+```{tikz, echo = FALSE, fig.align="center", fig.height = 3.5, fig.width = 5, fig.ext=if (knitr:::is_latex_output()) 'pdf' else 'png'}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2.5,-2.5) rectangle (5.5,5.5);
+\draw [line width=2pt] (0,0) circle (2cm) node {$X_1$};
+\draw [line width=2pt] (3,0) circle (2cm) node {$Y$};
+\draw [line width=2pt] (1.5,2.5) circle (2cm) node {$X_2$};
+\begin{scope}
+\clip (0,0) circle (2cm);
+\fill[blue] (3,0) circle (2cm);
+\end{scope}
+\begin{scope}
+\clip (0,0) circle (2cm);
+\clip (3,0) circle (2cm);
+\fill[white] (1.5,2.5) circle (2cm);
+\end{scope}
+\draw [line width=2pt] (0,0) circle (2cm);
+\draw [line width=2pt] (3,0) circle (2cm);
+\draw [line width=2pt] (1.5,2.5) circle (2cm);
+\end{tikzpicture}
+```
+
+## Recall: Partial correlations
+
+Correlation between $X_1$ and $Y$, removing the effect of $X_2$
+
+```{tikz, echo = FALSE, fig.align="center", fig.height = 3.5, fig.width = 5, fig.ext=if (knitr:::is_latex_output()) 'pdf' else 'png'}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2.5,-2.5) rectangle (5.5,5.5);
+\draw [line width=2pt] (0,0) circle (2cm) node {$X_1$};
+\draw [line width=2pt] (3,0) circle (2cm) node {$Y$};
+\draw [line width=2pt] (1,2) circle (2cm) node {$X_2$};
+\begin{scope}
+\clip (0,0) circle (2cm);
+\fill[blue] (3,0) circle (2cm);
+\end{scope}
+\begin{scope}
+\clip (0,0) circle (2cm);
+\clip (3,0) circle (2cm);
+\fill[white] (1,2) circle (2cm);
+\end{scope}
+\draw [line width=2pt] (0,0) circle (2cm);
+\draw [line width=2pt] (3,0) circle (2cm);
+\draw [line width=2pt] (1,2) circle (2cm);
+\end{tikzpicture}
+```
+
+
+## Why "collinear"?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* Variables are **vectors**
+* Represent any vector as a **line** from the **origin** (0,0) to a **point**
+* Angles between vectors are **correlations**
+  * 180 degrees = -1
+  * 90 degrees = 0
+  * On top of one another = 1
+
+:::
+
+::: {.column width="50%"}
+```{r, fig.width = 6}
+#| echo: FALSE
+#library(ggh4x)
+dat2 <- data.frame(x=runif(10),y=runif(10))
+
+tick_frame <- 
+  data.frame(ticks = seq(-10, 10, length.out = 21), 
+             zero=0) %>%
+  subset(ticks != 0)
+
+lab_frame <- data.frame(lab = seq(-10, 10),
+                        zero = 0) %>%
+  subset(lab != 0)
+
+tick_sz <- (tail(lab_frame$lab, 1) -  lab_frame$lab[1]) / 128
+
+ggplot(data = dat2, aes(x = x, y = y)) +
+  # point 1
+  geom_point(aes(x = 4, y = 3), color = "red", size = 4) +
+  annotate("text", x = 4, y = 3.5, label = "(4,3)", size = 6) +
+  geom_segment(aes(x = 0, y = 0, xend = 4, yend = 3),
+                  arrow = arrow()) +
+  # point 2
+  geom_point(aes(x = -1, y = 5), color = "blue", size = 4) +
+  annotate("text", x = -1.75, y = 5, label = "(-1,5)", size = 6) +
+  geom_segment(aes(x = 0, y = 0, xend = -1, yend = 5),
+                  arrow = arrow()) +
+  # point 3
+  geom_point(aes(x = 2, y = -2), color = "green", size = 4) +
+  annotate("text", x = 2.5, y = -2.5, label = "(2,-2)", size = 6) +
+  geom_segment(aes(x = 0, y = 0, xend = 2, yend = -2),
+                  arrow = arrow()) +
+  # point 4
+  geom_point(aes(x = 1, y = -2), color = "purple", size = 4) +
+  annotate("text", x = 1, y = -2.5, label = "(1,-2)", size = 6) +
+  geom_segment(aes(x = 0, y = 0, xend = 1, yend = -2),
+                  arrow = arrow()) +  
+  xlim(c(-5, 5)) + ylim(c(-5, 5)) +
+  theme(axis.line = element_line()) + 
+  geom_segment(x = 0, xend = 0, 
+               y = -10, yend = 10,
+               size = 0.5) +
+  geom_segment(y = 0, yend = 0, 
+               x = -10, xend = 10,
+               size = 0.5) +
+  # point 5
+  geom_point(aes(x = 2, y = 1.5), color = "cyan", size = 4) +
+  annotate("text", x = 1.5, y = 2, label = "(2,1.5)", size = 6) +
+  geom_segment(aes(x = 0, y = 0, xend = 2, yend = 1.5),
+                  arrow = arrow()) +
+  # x ticks
+  geom_segment(data = tick_frame, 
+               aes(x = ticks, xend = ticks, 
+                   y = zero, yend = zero + tick_sz)) +
+  # y ticks
+  geom_segment(data = tick_frame, 
+               aes(x = zero, xend = zero + tick_sz, 
+                   y = ticks, yend = ticks)) + 
+  # labels
+  geom_text(data=lab_frame, aes(x=lab, y=zero, label=lab), vjust=1.5) +
+  geom_text(data=lab_frame, aes(x=zero, y=lab, label=lab), hjust=1.5) +
+  theme_void()
+  #coord_axes_inside(labels_inside = TRUE)
+```
+:::
+
+::::
+
+## Data
+
+* `ICU` data from the **Stat2Data** package
+
+```{r}
+library(Stat2Data)
+data(ICU)
+colnames(ICU)
+```
+
+## Correlations between variables
+
+```{r}
+cor(ICU)
+```
+
+## Predict `SysBP` from "everthing" 
+
+```{r}
+m1 <- lm(data = ICU, SysBP ~ . - ID - AgeGroup)
+summary(m1)
+```
+
+## `Emergency` predicts `SysBP` alone
+
+```{r}
+m2 <- lm(data = ICU, SysBP ~ Emergency)
+summary(m2)
+```
+
+## Variance inflation factor (VIF)
+
+* VIF = $\frac{1}{1 - R^2_j}$
+  * $R^2_j$ is $R^2$ for **all other predictors** predicting that predictor
+* Standard error of a regression coefficient = $\frac{s^2}{(n - 1) \hat{var}(X_j)}  \times \frac{1}{1 - R^2_j}$
+  * $s^2$ is the variance of the residuals
+  * $n$ is the sample size
+  * $\hat{var}(X_j)$ is the estimated variance of the predictor
+
+## Variance inflation factor (VIF)
+
+* Cut-offs for **high VIF**: 5 (common) or 10
+* VIF is not the ratio of SEs for big model vs small model
+  * Square root of VIF is how much larger the standard error is *compared to a model where the predictor has* **0 correlation** *to all other predictors*
+* Might also / instead hear about **tolerance**
+  * $\frac{1}{VIF}$ or $1 - R^2_j$
+
+## Variance inflation factor (VIF)
+
+```{r}
+library(car)
+vif(m1)
+```
+
+## Big model vs small model
+
+* Two things change
+  * Big model has **partial regression coefficients**
+    * "Holding all other variables constant **(at 0)**"
+    * Changes the **regression coefficient**: -8.16 vs -13.71
+  * Variance inflated in big model due to **correlated predictors**
+    * Changes the **standard error**: 5.59 vs 5.20
+    * About 7.5% increase
+
+## Highly correlated predictors
+
+* `Age` and `AgeGroup` are correlated 0.899
+
+```{r}
+m3 <- lm(data = ICU, SysBP ~ . - ID)
+library(car)
+vif(m3)
+```
+
+## Summary: Collinearity
+
+* Look at correlations between predictors
+  * Not the whole story
+  * VIF uses $R^2$ for **all other predictors** predicting that predictor
+* Look at VIF values for the model
+  * Cut off of 5
+* Very high VIF
+  * Do you **need all** of those predictors?
+  * Can you **combine** some predictors?
+
+# Outliers
+
+## Outliers
+
+* Observations that are 
+  * *Extreme* on **predictor(s)**
+  * *Extreme* on **predicted values**
+  * *Change* **coefficients** or **predicted values**
+
+## Outlier statistics
+
+* **Model-based**
+  * Based on a **linear regression** (or other) model
+* **Case-wise**
+  * **One** value per case (observation)
+* Three types of outlier statistics for linear regression
+  * Leverage
+  * Discrepancy
+  * Influence
+
+## Leverage
+
+* Extreme in the **predictor space**
+  * "Hat matrix" from the model
+* How far is a case from the **centroid** of the predictor space?
+* Cut offs with $k$ predictors
+  * Large samples, many predictors: $\frac{2(k + 1)}{n}$
+  * Smaller samples: $\frac{3(k + 1)}{n}$
+
+## Centroid of predictor space
+
+* If just `Age` and `Pulse` are predictors
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = ICU, 
+       aes(x = Pulse, y = Age)) +
+  geom_point(alpha = 0.3, 
+             color = "blue",
+             size = 4) +
+  annotate("pointrange",
+           x = mean(ICU$Pulse, na.rm = TRUE),
+           y = mean(ICU$Age, na.rm = TRUE),
+           ymin = mean(ICU$Age, na.rm = TRUE),
+           ymax = mean(ICU$Age, na.rm = TRUE),
+           color = "red",
+           size = 2) +
+  stat_ellipse(linetype = "dashed")
+```
+
+## Leverage
+
+* `hatvalues()`
+* `.hat` value: `augment()` from **broom** package
+
+## Leverage: `hatvalues()`
+
+```{r}
+hatvalues(m1)
+```
+
+## Leverage: `augment()`
+
+```{r}
+library(broom)
+m1_aug <- augment(m1)
+m1_aug
+```
+
+## Histogram of leverage values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = .hat)) +
+  geom_histogram()
+```
+
+## Index plot of leverage values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = c(1:nrow(m1_aug)), 
+           y = .hat)) +
+  geom_point()
+```
+
+## Index plot of leverage values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = c(1:nrow(m1_aug)), 
+           y = .hat)) +
+  geom_point() +
+  geom_hline(yintercept = 3*(6+1)/200, 
+             color = "red",
+             linetype = "dashed") +
+  geom_hline(yintercept = 2*(6+1)/200,
+             color = "blue") +
+  geom_text(aes(label=ifelse((.hat > 2*(6+1)/200), 
+                             as.character(ID), 
+                             '')),
+            hjust = 0, nudge_x = 2)
+```
+
+## Discrepancy
+
+* Extreme **predicted values**
+  * Discrepancy between **observed** and **predicted** values
+  * Residual = Observed - Predicted = $Y - \hat{Y}$
+  * *Externally studentized residuals*
+* How far is a case from the **regression line**?
+* ES residual follows $t$ distribution with $n - k - 1$ df
+  * Cut off: $\pm3$ for large sample, otherwise $\pm2$
+
+## Raw residuals
+
+* Residual = $e_i = Y_i - \hat{Y}_i$
+
+* **Problems**
+  * Metric depends on the **scale of the outcome**
+  * An outlier **hides** by pulling the regression line toward itself
+
+## Hiding outlier
+
+```{r}
+#| code-fold: true
+x <- c(1:15)
+y <- 2 * x + rnorm(15, 0, 8)
+dat <- data.frame(x, y)
+dat_out <- dat
+dat_out[14,2] <- 50
+dat_del <- dat_out
+dat_del[14,2] <- NA
+
+ggplot(data = dat_out,
+       aes(x = x, y = y)) +
+  geom_point(size = 2) +
+  geom_smooth(data = dat_out, method = "lm", se = FALSE, color = "black") +
+  ylim(0, 60)
+```
+
+## Hiding outlier
+
+```{r}
+#| code-fold: true
+
+ggplot(data = dat_out,
+       aes(x = x, y = y)) +
+  geom_point(size = 2) +
+  geom_smooth(data = dat_out, method = "lm", se = FALSE, color = "black") +
+  geom_smooth(data = dat_del, method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  annotate("rect", xmin = 13.5, xmax = 14.5, ymin = 46, ymax = 54, fill = "red", alpha = 0.2) +
+  ylim(0, 60)
+```
+
+## Internally studentized residual
+
+* "Studentized" = standardized
+  * Divide raw residual by its standard deviation
+  * $SD_{e_i} = \sqrt{MS_{error}(1 - h_{ii})}$
+* Internally studentized residual = $\frac{e_i}{SD_{e_i}}$
+
+* **Problems**
+  * **What distribution** does this follow???
+  * Outlier pulls line toward itself, **increasing** $MS_{error}$
+
+## Externally studentized residual
+
+* **Deleted residual**: Difference between *observed value* and *predicted value* **in a regression in which the point was deleted**
+* Deleted residual = $d_i = Y_i - \hat{Y}_{i(i)}$
+  * Standard deviation based on deleted: $SD_{d} = \sqrt{MS_{error(i)}(1 - h_{ii})}$
+* Externally studentized residual = $\frac{d_i}{SD_{d}}$
+
+## Discrepancy: Externally studentized residuals
+
+* `rstudent()` function from the **car** package
+
+```{r}
+library(car)
+m1_stresid <- ICU %>% mutate(esresid = rstudent(m1))
+head(m1_stresid)
+```
+
+## Histogram of ES residuals
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_stresid,
+       aes(x = esresid)) +
+  geom_histogram()
+```
+
+## Index plot of ES residuals
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_stresid,
+       aes(x = c(1:nrow(m1_stresid)), 
+           y = esresid)) +
+  geom_point()
+```
+
+## Index plot of ES residuals
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_stresid,
+       aes(x = c(1:nrow(m1_stresid)), 
+           y = esresid)) +
+  geom_point() +
+  geom_hline(yintercept = 2, 
+             color = "blue",
+             linetype = "dashed") +
+  geom_hline(yintercept = -2,
+             color = "blue",
+             linetype = "dashed") +
+  geom_text(aes(label=ifelse((esresid > 2), 
+                             as.character(ID), 
+                             '')),
+            hjust = 0, nudge_x = 2) +
+  geom_text(aes(label=ifelse((esresid < -2), 
+                             as.character(ID), 
+                             '')),
+            hjust = 0, nudge_x = 2)
+```
+
+## What's up with `ID` = 921?
+
+```{r}
+library(kableExtra)
+m1_aug %>% filter(ID == 921) %>%
+  kable()
+```
+
+## Influence
+
+* Changes **coefficients** and/or **predicted values**
+  * *Predicted values*: **Cook's D** and DFFITS
+  * *Regression coefficients*: DFBETAS
+* Based on **case deletion**
+* How much does the case **change** the **coefficient(s)** and/or the **predicted values**?
+* Cutoff: Cook's D > 1
+
+## Influence = leverage x discrepancy
+
+```{r}
+#| code-fold: true
+ggplot(data = dat,
+       aes(x = x, y = y)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", se = FALSE, color = "black") 
+```
+
+## Histogram of influence values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = .cooksd)) +
+  geom_histogram()
+```
+
+## Index plot of Influence values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = c(1:nrow(m1_aug)), 
+           y = .cooksd)) +
+  geom_point()
+```
+
+## Index plot of influence values
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = m1_aug,
+       aes(x = c(1:nrow(m1_aug)), 
+           y = .cooksd)) +
+  geom_point() +
+  geom_hline(yintercept = 1, 
+             color = "red",
+             linetype = "dashed") +
+  geom_text(aes(label=ifelse((.cooksd > 1), 
+                             as.character(ID), 
+                             '')),
+            hjust = 0, nudge_x = 2)
+```
+
+## Summary: Handling outliers
+
+* Leverage and discrepancy will flag **most extreme ~5%**
+* *Don't* base decisions on a single measure
+  * Look for a **pattern** of suspicious cases
+  * **Same case** shows up with high leverage, high discrepancy, high influence
+* *Don't* just delete cases
+  * *Sensitivity analysis*: **Same conclusions**?
+
+## Repeat offenders?
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+Leverage
+
+```{r}
+#| code-fold: true
+m1_aug %>% filter(.hat > 2*(6+1)/200) %>% select(ID)
+```
+
+:::
+
+::: {.column width="33%"}
+
+Discrepancy
+
+```{r}
+#| code-fold: true
+m1_stresid %>% filter(esresid > 2) %>% select(ID)
+m1_stresid %>% filter(esresid < -2) %>% select(ID)
+```
+
+:::
+
+::: {.column width="33%"}
+
+Influence
+
+```{r}
+#| code-fold: true
+m1_aug %>% filter(.cooksd > 1) %>% select(ID)
+```
+
+:::
+
+::::
+
+# Next time
+
+## Some details
+
+* Hypothesis testing
+  * Sampling distribution, degrees of freedom
+* Estimation of the model
+  * $R^2$, likelihood
+* Interaction (moderator) effects
+

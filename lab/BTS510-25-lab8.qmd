@@ -1,0 +1,67 @@
+---
+title: "BTS 510 Lab 8"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Assess** models for **(multi)collinearity** among predictors
+* **Conduct** outlier analyses to determine extreme and/or problematic cases
+
+## Data 
+
+* `FirstYearGPA` data from the **Stat2Data** package: $n$ = 219 subjects
+  * `GPA`: First-year college GPA on a 0.0 to 4.0 scale
+  * `HSGPA`: High school GPA on a 0.0 to 4.0 scale
+  * `SATV`: Verbal/critical reading SAT score
+  * `SATM`: Math SAT score
+  * `Male`: 1= male, 0= female
+  * `HU`: Number of credit hours earned in humanities courses in high school
+  * `SS`: Number of credit hours earned in social science courses in high school
+  * `FirstGen`: 1= student is the first in her or his family to attend college, 0=otherwise
+  * `White`: 1= white students, 0= others
+  * `CollegeBound`: 1=attended a high school where >=50% students intended to go on to college, 0=otherwise
+
+## Research question(s)
+
+* How do **all these variables** impact first year GPA (`GPA`)?
+  * Are there any problems with **collinearity** among the *predictors*?
+  * Are there **problematic cases** that are *influencing the results*?
+
+## Tasks
+
+1. Run a **linear regression model** predicting `GPA` from *all other variables* in the dataset.
+
+2. Some of those variables seem like they could be **strongly related**, which could cause problems for the model. Check to see if **collinearity** is an issue for this model. To check this, look at:
+  * **Correlations among variables**
+  * **Variable inflation factors (VIFs)**
+  
+3. Based on the **correlations between each predictor and the outcome** (above), are there predictors that you think **should** be significant but aren't? Why do you think they aren't? (This is a bit of a philosophical question.)
+
+4. Are there **extreme cases** that we might be concerned about? Check for extreme values in terms of:
+  * **Predictors**
+  * **Predicted values**
+  * **Changes to predicted values**
+  
+5. **Summarize** your findings about collinearity and outliers. *Use plain language.*
+
+
+
+
