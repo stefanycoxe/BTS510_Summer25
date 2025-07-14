@@ -1,0 +1,23 @@
+---
+title: "Week 9: Linear regression"
+---
+
+## Learning objectives
+
+* **Describe** *maximum likelihood estimation* for linear regression 
+* **Describe** *hypothesis testing* for linear regression coefficients, including the sampling distribution used and degrees of freedom
+
+## Before class: Lecture 
+
+* [Lecture 9 - part 1](https://youtu.be/SauO09Zh3lM){target="_blank"} 
+* [Lecture 9 - part 2](https://youtu.be/Ozf-3xjOxxw){target="_blank"} 
+* [Lecture survey](https://forms.gle/egCSFYHcEeqgx2PYA){target="_blank"}: Complete by Wednesday, July 16 at 8pm
+* [Slides (html)](../slides/BTS510-25-9.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 9 (html with link to code)](../lab/BTS510-25-lab9.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

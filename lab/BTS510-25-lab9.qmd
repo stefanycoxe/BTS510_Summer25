@@ -1,0 +1,54 @@
+---
+title: "BTS 510 Lab 9"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Describe** *maximum likelihood estimation* for linear regression 
+* **Describe** *hypothesis testing* for linear regression coefficients, including the sampling distribution used and degrees of freedom
+
+## Data 
+
+* `FirstYearGPA` data from the **Stat2Data** package: $n$ = 219 subjects
+  * `GPA`: First-year college GPA on a 0.0 to 4.0 scale
+  * `HSGPA`: High school GPA on a 0.0 to 4.0 scale
+  * `SATV`: Verbal/critical reading SAT score
+  * `SATM`: Math SAT score
+  * `Male`: 1= male, 0= female
+  * `HU`: Number of credit hours earned in humanities courses in high school
+  * `SS`: Number of credit hours earned in social science courses in high school
+  * `FirstGen`: 1= student is the first in her or his family to attend college, 0=otherwise
+  * `White`: 1= white students, 0= others
+  * `CollegeBound`: 1=attended a high school where >=50% students intended to go on to college, 0=otherwise
+
+## Tasks
+
+Question 1: How do demographic variables (`Male`, `FirstGen` and `White`) predict first year college GPA (`GPA`)?
+
+Question 2: How does HS GPA (`HSGPA`) predict first year college GPA (`GPA`) over demographic variables (`Male`, `FirstGen` and `White`)?
+
+1. Run the two models above.
+
+2. What are the log-likelihoods of each model? What can you say about the models based on those values? What *can't* you say?
+
+3. Compare the two models using a likelihood ratio test (LRT). Report the results of the test. What can you say about the models based on the test?
+
+4. Report the results for the better model (based on the LRT). Include all regression coefficients, $R^2$, test statistics, $p$-values.

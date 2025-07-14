@@ -1,0 +1,629 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Describe** *maximum likelihood estimation* for linear regression 
+* **Describe** *hypothesis testing* for linear regression coefficients, including the sampling distribution used and degrees of freedom
+
+# Estimation
+
+## What is estimation?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* Method by which we get **estimates** of regression coefficients 
+* What are the $b_0$ and $b_1$ for the regression equation?
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+height <- 3*rnorm(50) + 70
+weight <- 7 * (height - 70) + 25 * rnorm(50) + 125
+dat <- data.frame(height, weight)
+ggplot(data = dat, aes(x = height, y = weight)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+:::
+
+::::
+
+## Ordinary least squares (OLS) estimation
+
+* **Minimize** the sum of **squared** residuals
+* Find $b_0$ and $b_1$ that give the smallest $\Sigma((Y_i - \hat{Y}_1)^2)$
+* For linear regression, there is **one** value of $b_0$ and **one** value of $b_1$ that minimize the sum of squared residuals
+  * Not true for all estimation methods
+
+## Minimizing
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* Functions with squared in them look like a "U"
+* Minimum is the bottom of the "U"
+* **Tangent line** is a line that touches a curve *at a single point*
+  * The **slope** of the tangent line is 0 at the **minimum**
+
+:::
+
+::: {.column width="50%"}
+
+* $Y = X^2$
+
+```{r}
+#| code-fold: true
+x <- c(-10:10)
+y <- x*x
+dat1 <- data.frame(x, y)
+ggplot(data = dat1, aes(x = x, y = y)) + 
+  geom_line(linewidth = 1)
+```
+
+:::
+
+::::
+
+## Tangent lines
+
+```{r}
+#| code-fold: true
+b1 <- c(0:20)
+ssr <- b1*b1 - 20*b1 + 115
+dat_ssr <- data.frame(b1, ssr)
+ggplot(data = dat_ssr, aes(x = b1, y = ssr)) +
+  geom_line(linewidth = 1) +
+  ylim(0, 120) +
+  labs(x = "Regression coefficient (b)", y = "Sum of squared residuals")
+```
+
+## Tangent lines (at b = 15)
+
+```{r}
+#| code-fold: true
+ggplot(data = dat_ssr, aes(x = b1, y = ssr)) +
+  geom_line(linewidth = 1) +
+  ylim(0, 120) +
+  labs(x = "Regression coefficient (b)", y = "Sum of squared residuals") +
+  geom_abline(intercept = -110, slope = 10, linewidth = 1, linetype = "dashed", color = "red") +
+  annotate("pointrange", x = 15, y = 15*15 - 20*15 + 115, ymin = 15*15 - 20*15 + 115, ymax = 15*15 - 20*15 + 115) +
+  geom_segment(x = 15, xend = 15, y = -1, yend = 15*15 - 20*15 + 115, linetype = "dotted", linewidth = 1)
+```
+
+## Tangent lines (at b = 12)
+
+```{r}
+#| code-fold: true
+ggplot(data = dat_ssr, aes(x = b1, y = ssr)) +
+  geom_line(linewidth = 1) +
+  ylim(0, 120) +
+  labs(x = "Regression coefficient (b)", y = "Sum of squared residuals") +
+  geom_abline(intercept = -29, slope = 4, linewidth = 1, linetype = "dashed", color = "red") +
+  annotate("pointrange", x = 12, y = 12*12 - 20*12 + 115, ymin = 12*12 - 20*12 + 115, ymax = 12*12 - 20*12 + 115) +
+  geom_segment(x = 12, xend = 12, y = -1, yend = 12*12 - 20*12 + 115, linetype = "dotted", linewidth = 1)
+```
+
+## Tangent lines (at b = 10)
+
+```{r}
+#| code-fold: true
+ggplot(data = dat_ssr, aes(x = b1, y = ssr)) +
+  geom_line(linewidth = 1) +
+  ylim(0, 120) +
+  labs(x = "Regression coefficient (b)", y = "Sum of squared residuals") +
+  geom_abline(intercept = 15, slope = 0, linewidth = 1, linetype = "dashed", color = "red") +
+  annotate("pointrange", x = 10, y = 10*10 - 20*10 + 115, ymin = 10*10 - 20*10 + 115, ymax = 10*10 - 20*10 + 115) +
+  geom_segment(x = 10, xend = 10, y = -1, yend = 10*10 - 20*10 + 115, linetype = "dotted", linewidth = 1)
+```
+
+## Tangents and minimums
+
+* The tangent line is **horizontal** (slope = 0) at the **minimum**
+* Want to find the **minimum** of the *sum of squared residuals*
+* **Value of regression coefficient** that meets the *least squares criterion*
+* Use calculus: **Derivative** of a function produces the *tangent line*
+
+## Least squares solution
+
+1. State **function** to minimize: $\Sigma((Y_i - \hat{Y}_i)^2)$
+2. Take **derivative** of the function, with respect to the *constants of interest* (i.e., $b_0$ and $b_1$)
+3. Set the derivative **equal to 0**: Normal equation
+4. **Solve** for the *constants*
+
+## 1. Function to minimize
+
+$$\Sigma(Y_i - \hat{Y}_i)^2 = $$
+
+$$\Sigma(Y - (b_1 X + b_0))^2 =$$
+$$\Sigma(Y - b_1 X - b_0)^2 =$$
+$$\Sigma(Y^2 + {b^2_0} + {b^2_1} X^2 - 2 b_0 Y - 2 b_1 X Y + 2 b_0 b_1 X ) =$$
+$$\Sigma Y^2 + \Sigma{b^2_0} + \Sigma{b^2_1} X^2 - \Sigma 2 b_0 Y - \Sigma 2 b_1 X Y + \Sigma 2 b_0 b_1 X  =$$
+$$\Sigma Y^2 + n{b^2_0} + {b^2_1} \Sigma X^2 - 2 b_0 \Sigma Y - 2 b_1 \Sigma X Y + 2 b_0 b_1 \Sigma X$$
+
+## 2. Get the derivative
+
+* With respect to $b_1$:
+
+$$\frac{\partial \Sigma (Y - \hat{Y})^2}{\partial b_1} = 2 b_1 \Sigma X^2 - 2 \Sigma X Y + 2 b_0 \Sigma X$$
+
+* With respect to $b_0$:
+
+$$\frac{\partial \Sigma (Y - \hat{Y})^2}{\partial b_0} = 2 n b_0 - 2 \Sigma Y + 2 b_1 \Sigma X$$
+
+## 3 and 4. Set to 0 and solve
+
+For $b_1$: 
+
+$$2 b_1 \Sigma X^2 - 2 \Sigma X Y + 2 b_0 \Sigma X = 0 $$
+$$ \vdots $$
+$$b_1 = \frac{n \Sigma X Y - (\Sigma X) (\Sigma Y)}{n \Sigma X^2 - (\Sigma X)^2} = \frac{SP_{XY}}{SS_X} = \frac{s_{XY}}{{s^2_X}}$$
+
+## 3 and 4. Set to 0 and solve
+
+For $b_0$:
+
+$$2 n b_0 - 2 \Sigma Y + 2 b_1 \Sigma X = 0$$
+$$ \vdots $$
+$$b_0 = \overline{Y} - b_1 \overline{X}$$
+
+## How one variable **varies**
+
+* Variation = **sum** of **squared deviations** from the **mean**
+  * $SS_X = \Sigma((X - \bar{X})^2)$ 
+* Variance = **variation** divided by $n - 1$
+  * $s^2_X = \frac{SS_X}{n-1}$
+* Standard deviation = **square root** of **variance**
+  * $s_X = \sqrt{s^2_X}$
+  
+## How two variables **covary**
+
+* Covariation = **sum** of **product of deviations** from the **mean**
+  * $SP_{XY} = \Sigma((X - \bar{X})(Y - \bar{Y}))$ 
+* Covariance = **covariation** divided by $n - 1$
+  * $s_{XY} = \frac{SP_{XY}}{n-1}$
+
+## Least squares estimates
+
+* $b_1$ is the 
+  * **Covariation** between X and Y, divided by the **variation** of X
+  * **Covariance** between X and Y, divided by the **variance** of X
+
+$$b_1 = \frac{SP_{XY}}{SS_X} = \frac{s_{XY}}{{s^2_X}}$$
+
+$$b_0 = \overline{Y} - b_1 \overline{X}$$
+
+## Aside: $R^2_{multiple}$
+
+* $R^2$ = proportion of variation in $Y$ that's explained by the predictors
+  * Also: Maximum possible squared correlation between $Y$ and $\hat{Y}$
+
+$$R^2_{multiple} = r^2_{Y\hat{Y}} = \frac{SS_{regression}}{SS_Y} = \frac{predictable\ variation}{total\ variation}$$
+
+where $SS_{regression} = \Sigma(\hat{Y_i} - \overline{Y}_i)^2$
+
+## How do we really estimate?
+
+* Maximum likelihood (ML) 
+  * **Maximizes** a likelihood function 
+  * Makes **assumptions** about the distribution of parameter 
+
+## Likelihood
+
+* **Conceptually** similar to *probability*
+  * Higher values are more likely / probable
+  * Likelihood = **relative** probability
+* Make **assumptions** about the distribution of observations
+  * For example, that they're **normally distributed**
+  * Use (normal) **probability distributions** to create a likelihood function
+
+## Recall: Normal distribution
+
+$$f(X) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(X - \mu)^2}{2\sigma^2}}$$
+
+* $\mu$ = mean = location of the distribution
+* $\sigma^2$ = variance = spread of the distribution
+  * $\sigma$ = standard deviation
+  
+## Likelihood for one subject
+
+* Make **assumptions** about the **population distribution**
+* Assume outcome (BDI) has mean = 20, SD = 5
+* For a single subject with BDI = 21:
+  * $L_i = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(X - \mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi*5^2}}e^{-\frac{(21 - 20)^2}{2*5^2}} = 0.078$
+* $L_i$ = 0.078 is the **likelihood** or **relative probability** of X = 21 from a normally distributed population with mean = 20 and SD = 5
+
+## Subject likelihoods
+
+* Small example from Enders (2005)
+* Assume $\mu$ = 20, $\sigma$ = 5
+
+```{r}
+#| code-fold: true
+ID <- c(1:10)
+BDI <- c(5, 33, 17, 21, 13, 17, 5, 13, 17, 13)
+Likelihood <- dnorm(BDI, 20, 5)
+LogLikelihood <- log(Likelihood)
+LL_dat <- data.frame(ID, BDI, Likelihood, LogLikelihood)
+round(LL_dat, 3)
+```
+
+## Normal distribution, mean = 20, SD = 5
+
+```{r}
+#| code-fold: true
+norm_plot <- ggplot(data = data.frame(x = c(0, 40)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 20, sd = 5)) + 
+  ylab("Likelihood")
+norm_plot + 
+  annotate("pointrange", x = LL_dat[4,2], y = LL_dat[4,3], ymin = LL_dat[4,3], ymax = LL_dat[4,3], size = 1) +
+  annotate("text", x = LL_dat[4,2] + 2, y = LL_dat[4,3], label = "0.078", hjust = 0, size = 8) +
+  geom_segment(x = LL_dat[4,2], xend = LL_dat[4,2], y = 0, yend = LL_dat[4,3], linetype = "dashed") + 
+  annotate("pointrange", x = LL_dat[2,2], y = LL_dat[2,3], ymin = LL_dat[2,3], ymax = LL_dat[2,3], size = 1) +
+  annotate("text", x = LL_dat[2,2] - 2, y = LL_dat[2,3], label = "0.003", hjust = 1, size = 8) +
+  geom_segment(x = LL_dat[2,2], xend = LL_dat[2,2], y = 0, yend = LL_dat[2,3], linetype = "dashed") + 
+  annotate("pointrange", x = LL_dat[3,2], y = LL_dat[3,3], ymin = LL_dat[3,3], ymax = LL_dat[3,3], size = 1) +
+  annotate("text", x = LL_dat[3,2] - 2, y = LL_dat[3,3], label = "0.067", hjust = 1, size = 8) +
+  geom_segment(x = LL_dat[3,2], xend = LL_dat[3,2], y = 0, yend = LL_dat[3,3], linetype = "dashed") + 
+  annotate("pointrange", x = LL_dat[1,2], y = LL_dat[1,3], ymin = LL_dat[1,3], ymax = LL_dat[1,3], size = 1) +
+  annotate("text", x = LL_dat[1,2] + 2, y = LL_dat[1,3], label = "0.001", hjust = 0, size = 8) +
+  geom_segment(x = LL_dat[1,2], xend = LL_dat[1,2], y = 0, yend = LL_dat[1,3], linetype = "dashed")
+```
+
+## Likelihood for a sample
+
+* Each subject has a likelihood for their observation
+  * How to combine them?
+* Probability theory: Joint probability of independent events is the **product** of the individual probabilities
+  * Same works for likelihoods: 
+  
+$$L = \prod_{i=1}^{n} L_i = L_1 \times L_2 \times L_3 \times \cdots \times L_n$$
+
+## What does likelihood mean?
+
+* Individual
+  * *Relatively* higher $L_i$ means that **that individual's score** is **more likely** than **other scores** (given the distributional assumptions)
+  
+* Sample
+  * *Relatively* higher $L$ means that **the sample's scores** are **more likely** than **other samples of scores** (given the distributional assumptions)
+
+## Sample likelihood
+
+* Sample likelihood for this **very small** sample
+
+$$L = 0.001 \times 0.003 \times 0.067 \times 0.078 \times 0.030 \times 0.067 \times 0.001$$
+
+$$\times 0.030 \times 0.067 \times 0.030 = 0.000000000000000001327$$
+
+* Especially as $n$ increases: Very very very small number, rounding errors
+  * Computers have problems with this
+
+## Log-likelihood
+
+* Logarithms: $log(ab) = log(a) + log(b)$
+
+$$L = \prod_{i=1}^{n} L_i = L_1 \times L_2 \times L_3 \times \cdots \times L_n$$
+becomes
+
+$$log(L) = \sum_{i=1}^{n} log(L_i) = log(L_1) + log(L_2) + log(L_3) + \cdots + log(L_n)$$
+
+## Log-likelihood
+
+```{r}
+#| code-fold: true
+round(LL_dat, 3)
+```
+
+* $L = 0.000000000000000001327$
+* $log(L) = -7.028 + -5.908 + -2.708 + \cdots + -3.508 = -41.16$
+
+## What does log-likelihood mean?
+
+* Log-likelihood is **always negative**
+
+* Individual
+  * *Relatively* **higher** $log(L_i)$ means that **that individual's score** is **more likely** than **other scores** (given the distributional assumptions)
+  
+* Sample
+  * *Relatively* **higher** $log(L)$ means that **the sample's scores** are **more likely** than **other samples of scores** (given the distributional assumptions)
+
+## Log-likelihoods
+
+```{r}
+#| code-fold: true
+ggplot(data = LL_dat, aes(x = BDI, y = LogLikelihood)) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm",formula = y~poly(x,3), se = FALSE, color = "black")
+```
+
+## Distribution actually unknown!!!
+
+* **We don't actually know the population values**
+  * We draw samples and calculate statistics to **estimate** them
+* **Conceptually**, with *maximum likelihood*, we try out different values of the mean and SD to figure out which are **most likely**
+  * Which values result in the **highest (log)likelihood**
+
+## Assume SD = 5
+
+* Calculate the sample log-likelihood for several potential mean values
+```{r}
+#| code-fold: true
+mu <- c(10:20)
+logL <- c(-42.764,	-40.804,	-39.244,	-38.084,	-37.324,	-36.964,	-37.004,	-37.444,	-38.284,	-39.524,	-41.164)
+aud_LL <- data.frame(mu, logL)
+aud_LL
+```
+
+## Tangents and minimums again
+
+* **Conceptually**, we try out different values of the mean and SD to figure out which are **most likely**
+* **Actually**, we again use **calculus** and **derivatives**
+  * Find the **maximum** of the likelihood function
+  
+## LL function maximized at 15.4
+
+```{r}
+#| code-fold: true
+ggplot(data = aud_LL, aes(x = mu, y = logL)) +
+  geom_smooth(method = "lm",formula = y~poly(x,3), se = FALSE, color = "black") + 
+  labs(x = "Estimate of mean", y = "log(L)") +
+  geom_hline(yintercept = -36.932, color = "dodgerblue", linetype = "dashed", linewidth = 1) +
+  annotate("pointrange", x = 15.4, y = -36.932, ymin = -36.932, ymax = -36.932, color = "dodgerblue", size = 1)
+```
+
+## Extensions
+
+* **More than 1 parameter** estimated
+  * 1 parameter = 2D plots
+  * k parameters = (k+1)D plots
+* Can't assume the outcome is from a **normally distriubuted population**  
+  * Replace **normal likelihood** (i.e., PDF) with appropriate version
+  * A **slight** simplification
+
+## Extensions
+
+* A variation on maximum likelihood called **full information maximum likelihood** or "FIML" can be used to improve estimation in the presence of **missing data**
+  * See the "References" section of the course website
+
+## Caveats
+
+* For linear regression, the **likelihood function** is very well-behaved
+  * Shaped like upside down "U"
+  * Only one maximum value
+* For more complex models, the **likelihood function** is less well-behaved
+  * Missing data
+  * More complex, multivariate models
+  * Non-normal outcomes
+
+# Hypothesis testing
+
+## Uncertainty
+
+* **Sampling distributions** capture uncertainty in estimate
+  * Sample is not population
+  * Estimates vary from sample to sample
+  * Uncertainty in the point estimate
+* Produce quantities like $p$-values, confidence intervals
+  * Based on the **standard error**
+  * Standard error = standard deviation of sampling distribution
+  
+## Standard error estimation
+
+* Use the **likelihood function**
+  * **Second derivative** of the likelihood function
+  * Tells you have quickly the *1st derivative* **changes**
+  * Basically, how steep is the maximum likelihood **peak**
+
+## Small SE vs large SE
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+mu <- c(0:40)
+L_smallse <- dnorm(mu, 20, 2)
+L_largese <- dnorm(mu, 20, 5)
+LL_smallse <- log(L_smallse)
+LL_largese <- log(L_largese)
+LLse_dat <- data.frame(mu, L_smallse, L_largese, LL_smallse, LL_largese)
+#round(LLse_dat, 3)
+ggplot(data = LLse_dat, aes(x = mu, y = LL_smallse)) +
+  geom_smooth(method = "lm",formula = y~poly(x,3), se = FALSE, color = "black") +
+  ylim(-10,0) +
+  xlim(0,40) +
+  annotate("pointrange", x = 15, y = -4.737, ymin = -4.737, ymax = -4.737, color = "dodgerblue", size = 1) +
+  geom_segment(x = 15, xend = 15, y = -10, yend = -4.737, linetype = "dotted", linewidth = 1) +
+  geom_hline(yintercept = -1.6) +
+  labs(x = "Estimate of mean", y = "Log-likelihood")
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data = LLse_dat, aes(x = mu, y = LL_largese)) +
+  geom_smooth(method = "lm",formula = y~poly(x,3), se = FALSE, color = "black") +
+  ylim(-10,0) +
+  xlim(0,40) +
+  annotate("pointrange", x = 15, y = -3.028, ymin = -3.028, ymax = -3.028, color = "dodgerblue", size = 1) +
+  geom_segment(x = 15, xend = 15, y = -10, yend = -3.028, linetype = "dotted", linewidth = 1) +
+  geom_hline(yintercept = -2.5) +
+  labs(x = "Estimate of mean", y = "Log-likelihood")
+```
+
+:::
+
+::::
+
+## Information matrix
+
+* a.k.a. Fisher Information Matrix
+* $k \times k$ matrix, where $k$ is the number of parameters estimated
+* Values on **diagonal** are **variances** of **parameter estimates**
+  * *Square root* to get the **standard error**
+* Error about "information matrix" = problem estimating standard errors
+
+## Types of significance tests
+
+* Equivalent in very large samples
+  * **Wald tests**
+  * **Likelihood ratio tests**
+
+## Wald tests
+
+* Usually used to test a **single parameter**
+  * e.g., regression coefficient
+* Divide estimate by its **standard error**
+  * Compare to *appropriate hypothesized distribution*
+* Regression coefficients use $t$-test, but may see $z$-tests
+  * ML estimates are asymptotically normally distributed
+
+## Likelihood ratio tests
+
+* Used to test **1 or more** parameters
+  * e.g., sets of predictors
+  * Similar to `anova()` that we've used previously
+* Compare likelihoods of two different **nested** models
+  * Difference in -2*LL between models $\sim \chi^2(df)$
+    * Degrees of freedom = difference in parameters
+  * `anova(m1, m2, test = "LRT")`
+
+## Degrees of freedom
+
+* Observations are independent pieces of **information**
+* Each thing we **estimate** *removes* something
+  * One sample $t$-test: Degrees of freedom = $n - 1 = 10 - 1 = 9$
+  * Regression coefficient: Degrees of freedom = $n - k - 1$
+  * $F$-test of $R^2$: $k$, $n - k - 1$
+
+## Example data
+  
+* `ICU` data from the **Stat2Data** package
+
+```{r}
+library(Stat2Data)
+data(ICU)
+head(ICU)
+```
+
+## Model 1
+
+* `Age` and `Sex` predict `Pulse`
+
+```{r}
+m1 <- lm(data = ICU, Pulse ~ Age + Sex)
+summary(m1)
+```
+
+## Degrees of freedom
+
+* Regression coefficient
+  * $b_{Age} = 0.04533, t(197) = 0.474, p = .636$
+  * $n - k - 1$ (sample size minus predictors minus 1)
+* Overall $F$-test 
+  * $R^2 = 0.0027, F(2, 197) = 0.2667, p = .7662$
+  * Degree of freedom 1: $k$ (number of predictors)
+  * Degree of freedom 2: $n - k - 1$ (sample size minus predictors minus 1)
+
+## Information matrix
+
+* `vcov()` function in **stats** package (always loaded)
+  * Values on main diagonal are **variances**
+  * Square root to get standard error
+
+```{r}
+vcov(m1)
+```
+
+* $\sqrt{15.53330671}$ = 3.94123, which is standard error for `Sex`
+
+## Model 2
+
+* `Age` and `Sex` predict `Pulse`, then add `Infection` and `Emergency`
+
+```{r}
+m2 <- lm(data = ICU, Pulse ~ Age + Sex + Infection + Emergency)
+summary(m2)
+```
+
+## Information matrix
+
+```{r}
+vcov(m2)
+```
+
+## Likelihood ratio test
+
+* `logLik()` function from **stats** package (always loaded)
+
+```{r}
+logLik(m1)
+logLik(m2)
+```
+
+* Why different degrees of freedom here?
+  * Counts estimating the **variance** of the outcome as well
+  * Intercept + number of predictors + variance
+
+## Likelihood ratio test
+
+```{r}
+anova(m1, m2, test = "LRT")
+-2 * (logLik(m1) - logLik(m2))
+```
+
+# Next time
+
+## Interactions
+
+* Non-additive effects
+  * Relationship differs across groups
+  * Easy to add to the model
+    * Interpretation is more difficult
+

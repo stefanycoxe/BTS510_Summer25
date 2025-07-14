@@ -25,7 +25,7 @@ website:
           - materials/06-mats.qmd          
           - materials/07-mats.qmd   
           - materials/08-mats.qmd           
-#          - materials/09-mats.qmd  
+          - materials/09-mats.qmd  
 #          - materials/10-mats.qmd  
 #          - materials/11-mats.qmd   
 #          - materials/12-mats.qmd 
@@ -38,8 +38,8 @@ website:
           - labs_comp/Lab 4.qmd
           - labs_comp/Lab 5.qmd   
           - labs_comp/Lab 6.qmd   
-          - labs_comp/Lab 7.qmd 
-#          - labs_comp/Lab 9.qmd 
+          - labs_comp/Lab 7.qmd                
+          - labs_comp/Lab 8.qmd 
       - section: "Assignments"
         contents:
          - assignments/hw1.qmd  
@@ -48,7 +48,6 @@ website:
 #         - assignments/hw4.qmd            
 #         - assignments/hw5.qmd
 #         - assignments/hw6.qmd
-#         - assignments/hw7.qmd          
          - assignments/final.qmd      
       - refs.qmd 
           

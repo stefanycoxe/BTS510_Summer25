@@ -52,7 +52,43 @@ Springer.
 
 ## Linear models
 
+### Generalized linear models (GLiMs) -- includes linear, logistic, and Poisson
+
+* Agresti, A. (2003). Categorical data analysis (Vol. 482). John Wiley & Sons.
+
+* Agresti, A. (2018). An introduction to categorical data analysis. John Wiley & Sons.
+
+* Ai, C. & Norton, E. C. (2003). Interaction terms in logit and probit models. Economics Letters, 80 (1), 123–129. doi:10.1016/S0165-1765(03)00032-6
+
+* Dobson, A. J., & Barnett, A. G. (2018). An introduction to generalized linear models. Chapman and Hall/CRC.
+
+* Faraway, J. J. (2016). Extending the linear model with R: generalized linear, mixed effects and nonparametric regression models. Chapman and Hall/CRC.
+
+* Fox, J. (2015). Applied regression analysis and generalized linear models. Sage Publications.
+
+* Geldhof, G. J., Anthony, K. P., Selig, J. P., & Mendez-Luck, C. A. (2018). Accommodating binary and count variables in mediation: A case for conditional indirect effects. International Journal of Behavioral Development, 42(2), 300-308.
+
+* Green, P., & MacLeod, C. J. (2016). SIMR: an R package for power analysis of generalized linear mixed models by simulation. Methods in Ecology and Evolution, 7(4), 493-498.
+
+* Halvorson, M. A., McCabe, C. J., Kim, D. S., Cao, X., & King, K. M. (2022). Making sense of some odd ratios: A tutorial and improvements to present practices in reporting and visualizing quantities of interest for binary and count outcome models. Psychology of Addictive Behaviors, 36(3), 284.
+
+* Hardin, J. W. & Hilbe, J. M. (2007). Generalized linear models and extensions. Stata press.
+
+* Long, J. S. (1997). Regression models for categorical and limited dependent variables (Vol. 7). Advanced quantitative techniques in the social sciences, 219.
+
+* McCabe, C. J., Halvorson, M. A., King, K. M., Cao, X., & Kim, D. S. (2020). Interpreting interaction effects in generalized linear models of nonlinear probabilities and counts. Multivariate Behavioral Research, 1-27.
+
+* McCullagh, P., & Nelder, J. A. (2019). Generalized linear models. Routledge.
+
+* Ng, V. K., & Cribbie, R. A. (2017). Using the gamma generalized linear model for modeling continuous, skewed and heteroscedastic outcomes in psychology. Current Psychology, 36(2), 225-235.
+
+* Norton, E. C., Wang, H., & Ai, C. (2004). Computing interaction effects and standard errors in logit and probit models. The Stata Journal, 4 (2), 154–167.
+
+* Smithson, M., & Merkle, E. C. (2013). Generalized linear models for categorical and continuous limited dependent variables. CRC Press.
+
 ### Linear regression
+
+* Barker, L. E., & Shaw, K. M. (2015). Best (but oft-forgotten) practices: checking assumptions concerning regression residuals. The American journal of clinical nutrition, 102(3), 533-539.
 
 * Cohen, J., Cohen, P., West, S. G., & Aiken, L. S. (2013). Applied multiple regression/correlation analysis for the behavioral sciences. Routledge.
 
@@ -60,17 +96,66 @@ Springer.
 
 * Fox, J. (2015). Applied regression analysis and generalized linear models. Sage publications.
 
+* Fox, J., & Weisberg, S. (2018). An R companion to applied regression. Sage publications.
+
+* Gelman, A., & Hill, J. (2006). Data analysis using regression and multilevel/hierarchical models. Cambridge University Press.
+
 * Hayes, A. F., & Montoya, A. K. (2017). A tutorial on testing, visualizing, and probing an interaction involving a multicategorical variable in linear regression analysis. Communication methods and measures, 11(1), 1-30.
+
+* Hickey, G. L., Kontopantelis, E., Takkenberg, J. J., & Beyersdorf, F. (2019). Statistical primer: checking model assumptions with regression diagnostics. Interactive cardiovascular and thoracic surgery, 28(1), 1-8.
+
+* * Kozak, M., & Piepho, H. P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of agronomy and crop science, 204(1), 86-98.
 
 * Neter, J., Kutner, M. H., Nachtsheim, C. J., & Wasserman, W. (1996). Applied linear statistical models.
 
+* Osborne, J. W., & Waters, E. (2002). Four assumptions of multiple regression that researchers should always test. Practical assessment, research, and evaluation, 8(1), 2.
+
 * Weisberg, S. (2005). Applied linear regression (Vol. 528). John Wiley & Sons.
-
-
 
 ### Logistic regression
 
+* Allison, P. D. (2012). Logistic regression using SAS: Theory and application. SAS Institute.
+
+* Bürkner, P. C., & Vuorre, M. (2019). Ordinal regression models in psychology: A tutorial. Advances in Methods and Practices in Psychological Science, 2(1), 77-101.
+
+* Chen, K., Cheng, Y., Berkout, O., & Lindhiem, O. (2016). Analyzing Proportion Scores as Outcomes for Prevention Trials: A Statistical Primer. Prevention Science, 1-10.
+
+* DeMaris, A. (2002). Explained variance in logistic regression: A Monte Carlo study of proposed measures. Sociological Methods & Research, 31(1), 27-74.
+
+* Hayes, A. F., & Matthes, J. (2009). Computational procedures for probing interactions in OLS and logistic regression: SPSS and SAS implementations. Behavior research methods, 41(3), 924-936.
+
+* Hedeker, D. (2015). Methods for multilevel ordinal data in prevention research. Prevention Science, 16(7), 997-1006.
+
+* Liddell, T. M., & Kruschke, J. K. (2018). Analyzing ordinal data with metric models: What could possibly go wrong?. Journal of Experimental Social Psychology, 79, 328-348.
+
+* Long, J. S., & Mustillo, S. A. (2021). Using predictions and marginal effects to compare groups in regression models for binary outcomes. Sociological Methods & Research, 50(3), 1284-1320.
+
+* Menard, S. (2002). Applied logistic regression analysis (No. 106). Sage.
+
+* Mood, C. (2010). Logistic regression: Why we cannot do what we think we can do, and what we can do about it. European sociological review, 26(1), 67-82.
+
 ### Poisson regression
+
+* Atkins, D. C., & Gallop, R. J. (2007). Rethinking how family researchers model infrequent outcomes: a tutorial on count regression and zero-inflated models. Journal of Family Psychology, 21(4), 726.
+
+* Blevins, D. P., Tsang, E. W., & Spain, S. M. (2015). Count-Based Research in Management Suggestions for Improvement. Organizational Research Methods, 18(1), 47-69.
+
+* Brooks, M. E., Kristensen, K., van Benthem, K. J., Magnusson, A., Berg, C. W., Nielsen, A., … & Bolker, B. M. (2017). Modeling zero-inflated count data with glmmTMB. BioRxiv, 132753.
+
+* Campbell, H. (2021). The consequences of checking for zero‐inflation and overdispersion in the analysis of count data. Methods in Ecology and Evolution, 12(4), 665-680.
+
+* Coxe, S., West, S. G., & Aiken, L. S. (2009). The analysis of count data: A gentle introduction to Poisson regression and its alternatives. Journal of personality assessment, 91(2), 121-136.
+
+* Gardner, W., Mulvey, E. P., & Shaw, E. C. (1995). Regression analyses of counts and rates: Poisson, overdispersed Poisson, and negative binomial models. Psychological bulletin, 118(3), 392.
+
+* Green, J. (2020). A tutorial on modelling health behaviour as count data with Poisson and negative binomial regression.
+
+* Land, K. C., McCall, P. L., & Nagin, D. S. (1996). A comparison of Poisson, negative binomial, and semiparametric mixed Poisson regression models with empirical applications to criminal careers data. Sociological Methods & Research, 24(4), 387-442.
+
+* Yang, S. (2014). A comparison of different methods of zero-inflated data analysis and its application in health surveys. University of Rhode Island.
+
+### Survival analysis
+
 
 ## Miscellaneous
     

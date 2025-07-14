@@ -27,18 +27,18 @@ Week	  | Date          |	Topic	                        |	L	    |	H	    |
 8	    |	June 26	    |	Linear regression         	      |	7	    |	3	|
 9	    |	July 03*	  |	NO CLASS             	            |		    |	Proposal	|
 10	  |	July 10	    |	Linear regression	                |	8	    |		|
-11	  |	July 17	    |	Linear regression   	            |	9	    |	4	|
-12	  |	July 24	    |	Linear regression   	            |	10	  |	 	|
-13	  |	July 31	    |	Linear regression   	            |	11	  |	5	|
-14	  |	August 07   |	Logistic regression               |	12	  |	6	|
-15	  |	August 14*	|	Poisson regression                |	13	  |	7	|
+11	  |	July 17	    |	Linear regression   	            |	9	    |		|
+12	  |	July 24	    |	Linear regression   	            |	10	  |	4 |
+13	  |	July 31	    |	Logistic regression   	          |	11	  |	5	|
+14	  |	August 07   |	Poisson regression                |	12	  |	6	|
+15	  |	August 14*	|	Survival analysis                 |	13	  |	 	|
 16	  |	August 21	  |	Presentations	                    |		    | Final	| 
 
 * Adjusted days  
   * May 15: Late start 
   * May 29: Holiday / Stefany at conference  
   * July 3: Holiday  
-  * August 14: Late start  
+  * August 14: Remote  
 
 - **All due dates subject to change** due to weather, emergency, scheduling changes, etc. 
 
