@@ -1,0 +1,63 @@
+---
+title: "BTS 510 Lab 10"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Run models** with interaction effects to assess conditional effects of predictors
+* **Probe** interaction models to fully understand all effects
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package: $n$ = 200
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Analysis
+
+* Replicate and extend the analysis from the lecture
+  * `Age`, `Emergency`, and their interaction predict `Pulse`
+  * Be sure to mean center `Age` for interpretability.
+
+## Tasks
+
+* Model 1: `Pulse ~ Age + Emergency`
+* Model 2: `Pulse ~ Age + Emergency + Age*Emergency`
+
+1. Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?
+
+2. Plot the simple slopes with the data points. What is the general pattern of results? 
+
+3. Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and $p$-values.
+
+* Is the slope with respect to age significant for each group?
+* For which values of age are the emergency groups different in pulse rate?
+
+4. Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.
+
+5. Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., pulse, age, emergency admission) rather than X and Y.

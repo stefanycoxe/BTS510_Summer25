@@ -86,6 +86,14 @@ Springer.
 
 * Smithson, M., & Merkle, E. C. (2013). Generalized linear models for categorical and continuous limited dependent variables. CRC Press.
 
+#### Interactions
+
+* Aiken, L. S. & West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Newbury Park, CA: SAGE.
+
+* Johnson, P. O., & Fay, L. C. (1950). The Johnson-Neyman technique, its theory and application. Psychometrika, 15(4), 349-367.
+
+* Preacher, K. J., Curran, P. J., & Bauer, D. J. (2006). Computational tools for probing interactions in multiple linear regression, multilevel modeling, and latent curve analysis. Journal of educational and behavioral statistics, 31(4), 437-448.
+
 ### Linear regression
 
 * Barker, L. E., & Shaw, K. M. (2015). Best (but oft-forgotten) practices: checking assumptions concerning regression residuals. The American journal of clinical nutrition, 102(3), 533-539.

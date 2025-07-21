@@ -1,0 +1,116 @@
+---
+title: "BTS 510 Lab 9"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Describe** *maximum likelihood estimation* for linear regression 
+* **Describe** *hypothesis testing* for linear regression coefficients, including the sampling distribution used and degrees of freedom
+
+## Data 
+
+* `FirstYearGPA` data from the **Stat2Data** package: $n$ = 219 subjects
+  * `GPA`: First-year college GPA on a 0.0 to 4.0 scale
+  * `HSGPA`: High school GPA on a 0.0 to 4.0 scale
+  * `SATV`: Verbal/critical reading SAT score
+  * `SATM`: Math SAT score
+  * `Male`: 1= male, 0= female
+  * `HU`: Number of credit hours earned in humanities courses in high school
+  * `SS`: Number of credit hours earned in social science courses in high school
+  * `FirstGen`: 1= student is the first in her or his family to attend college, 0=otherwise
+  * `White`: 1= white students, 0= others
+  * `CollegeBound`: 1=attended a high school where >=50% students intended to go on to college, 0=otherwise
+
+## Tasks
+
+Question 1: How do demographic variables (`Male`, `FirstGen` and `White`) predict first year college GPA (`GPA`)?
+
+Question 2: How does HS GPA (`HSGPA`) predict first year college GPA (`GPA`) over demographic variables (`Male`, `FirstGen` and `White`)?
+
+1. Run the two models above.
+
+```{r}
+library(car)
+library(Stat2Data)
+data(FirstYearGPA)
+head(FirstYearGPA)
+
+m1 <- lm(data = FirstYearGPA, GPA ~ Male + FirstGen + White)
+summary(m1)
+vif(m1)
+vcov(m1)
+
+m2 <- lm(data = FirstYearGPA, GPA ~ Male + FirstGen + White + HSGPA)
+summary(m2)
+vif(m2)
+vcov(m2)
+```
+
+* Mean center `HSGPA` to make intercept more interpretable
+
+```{r}
+FirstYearGPA <- FirstYearGPA %>%
+  mutate(HSGPA_C = HSGPA - mean(HSGPA, na.rm = TRUE))
+mean(FirstYearGPA$HSGPA, na.rm = TRUE)
+m2a <- lm(data = FirstYearGPA, GPA ~ Male + FirstGen + White + HSGPA_C)
+summary(m2a)
+vif(m2a)
+vcov(m2a)
+```
+
+2. What are the log-likelihoods of each model? What can you say about the models based on those values? What *can't* you say?
+
+```{r}
+logLik(m1)
+logLik(m2)
+logLik(m2a)
+```
+
+* You cannot say anything about the individual likelihoods, only compare them. Likelihood (/log likelihood) are **relative** measures, unlike probability.
+* Model 2/2a has a higher (closer to 0) log likelihood than model 1.
+* Centering `HSGPA` doesn't change the log likelihood.
+
+3. Compare the two models using a likelihood ratio test (LRT). Report the results of the test. What can you say about the models based on the test?
+
+```{r}
+anova(m1, m2, test = "LRT")
+-2*(logLik(m1) - logLik(m2))
+```
+
+* Model 2 is significantly better than model 1: $\chi^2(1) = 54.1902, p<.0001$.
+* Adding `HSGPA` to a model with `Male`, `FirstGen`, and `White` significantly improves the model.
+
+4. Report the results for the better model (based on the LRT). Include all regression coefficients, $R^2$, test statistics, $p$-values.
+
+* Intercept: $b_0 = 2.885, t(214) = 43.321, p<.0001$
+  * The expected first year college GPA for a person who is **female**, **not** a  first generation college student, **not** white, and who has mean high school GPA is 2.885.
+* `Male`: $b_1 = 0.062, t(214) = 1.144, p>.05$
+  * Male students have a first year college GPA that is 0.062 points *higher* than female students, *holding all other predictors constant*. This effect is not significantly different from 0.
+* `FirstGen`: $b_2 = -0.185, t(214) = -2.125, p<.05$
+  * First generation college students have a first year college GPA that is 0.185 points *lower* than that of non-first generation students, *holding all other predictors constant*; this effect is significant.
+* `White`: $b_3 = 0.25738, t(214) = 3.786, p<.001$
+  * White students have a first year college GPA that is 0.257 points *higher* than their non-white classmates, *holding all other predictors constant*; this effect is significant.
+* `HSGPA_C`: $b_4 = 0.55967, t(214) = 7.751, p<.0001$
+  * Each 1 unit increase in high school GPA corresponds to a 0.560 point *higher* first year college GPA, *holding all other predictors constant*. This effect is significant.
+* $R^2_{multiple} = 0.2884, F(4, 214) = 21.68, p<.0001$
+  * The four predictors in this model account for 28.84% of the variance in the outcome, first year college GPA.
+  
+  

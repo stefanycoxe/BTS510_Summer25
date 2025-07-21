@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 6: Linear regression – BTS 510 Summer 2025</title>
+<title>Homework 4 – BTS 510 Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/06-mats.html">Week 6: Linear regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/hw1.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw4.html">Homework 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,13 +154,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materials/00-mats.html" class="sidebar-item-text sidebar-link">
@@ -170,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/06-mats.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/06-mats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6: Linear regression</span></a>
   </div>
 </li>
@@ -261,13 +290,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/hw1.html" class="sidebar-item-text sidebar-link">
@@ -288,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/hw4.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/hw4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Homework 4</span></a>
   </div>
 </li>
@@ -316,19 +345,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#before-class-lecture" id="toc-before-class-lecture" class="nav-link" data-scroll-target="#before-class-lecture">Before class: Lecture</a></li>
-  <li><a href="#during-class-lab" id="toc-during-class-lab" class="nav-link" data-scroll-target="#during-class-lab">During class: Lab</a></li>
-  <li><a href="#after-class-assignment" id="toc-after-class-assignment" class="nav-link" data-scroll-target="#after-class-assignment">After class: Assignment</a></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link active" data-scroll-target="#linear-regression">Linear regression</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/06-mats.html">Week 6: Linear regression</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/hw1.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw4.html">Homework 4</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 6: Linear regression</h1>
+<h1 class="title">Homework 4</h1>
 </div>
 
 
@@ -345,35 +374,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<section id="linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="linear-regression">Linear regression</h2>
 <ul>
-<li>Describe the logic of <strong>linear regression</strong></li>
-<li>Describe the <strong>assumptions</strong> of linear regression</li>
-<li>Briefly <strong>present results</strong> of linear regression</li>
-<li>Use a <strong>regression equation</strong> to summarize a model</li>
-<li>Compare and contrast <strong>observed</strong>, <strong>predicted</strong>, and <strong>residual</strong> values</li>
+<li><p><strong>Due Sunday, July 27 by end of day (midnight)</strong></p></li>
+<li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.</p>
+<ul>
+<li>Remember to include <code>embed-resources: true</code> in the <code>html</code> options. If you don’t, we won’t see any of your figures when you send the files.</li>
+</ul></li>
 </ul>
 </section>
-<section id="before-class-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="before-class-lecture">Before class: Lecture</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
 <ul>
-<li><a href="https://youtu.be/SgoYuU42pFQ" target="_blank">Lecture 6</a></li>
-<li><a href="https://forms.gle/qQaYgM4GzhXcysmm8" target="_blank">Lecture survey</a>: Complete by Wednesday, June 18 at 8pm</li>
-<li><a href="../slides/BTS510-25-6.html" target="_blank">Slides (html)</a></li>
+<li><code>birthwt</code> dataset from the <strong>MASS</strong> package
+<ul>
+<li>A dataset with 189 observations on the following 10 variables.
+<ul>
+<li><code>low</code>: indicator of birth weight less than 2.5 kg.</li>
+<li><code>age</code>: mother’s age in years.</li>
+<li><code>lwt</code>: mother’s weight in pounds at last menstrual period.</li>
+<li><code>race</code>: mother’s race (1 = white, 2 = black, 3 = other).</li>
+<li><code>smoke</code>: smoking status during pregnancy.</li>
+<li><code>ptl</code>: number of previous premature labours.</li>
+<li><code>ht</code>: history of hypertension.</li>
+<li><code>ui</code>: presence of uterine irritability.</li>
+<li><code>ftv</code>: number of physician visits during the first trimester.</li>
+<li><code>bwt</code>: birth weight in grams.</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
-<section id="during-class-lab" class="level2">
-<h2 class="anchored" data-anchor-id="during-class-lab">During class: Lab</h2>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
 <ul>
-<li><a href="../lab/BTS510-25-lab6.html" target="_blank">Lab 6 (html with link to code)</a></li>
+<li>There are several <strong>known risk factors</strong> for infant <strong>low birth weight</strong> (defined as less than 2.5 kg or 5.5 pounds). <em>Multiple risk factors</em> may exacerbate one another <strong>or</strong> cancel each other out.</li>
+<li>How do mother’s age (<code>age</code>), mother’s smoking status (<code>smoke</code>), and their interaction predict infant birth weight (<code>bwt</code>)?</li>
 </ul>
 </section>
-<section id="after-class-assignment" class="level2">
-<h2 class="anchored" data-anchor-id="after-class-assignment">After class: Assignment</h2>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<ol type="1">
+<li><p>Conduct a linear regression with mother’s age, mother’s smoking status, and their interaction predicting birth weight. (<em>Be sure to center any continuous predictors to improve interpretability.</em>)</p></li>
+<li><p>Plot the simple slopes with the data points.</p></li>
+<li><p>Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and <span class="math inline">\(p\)</span>-values.</p></li>
+</ol>
 <ul>
-<li><strong>No homework this week</strong></li>
+<li>Is the slope with respect to age significant for each group?</li>
+<li>For which values of age are the smoking groups different in birth weight?</li>
 </ul>
+<ol start="4" type="1">
+<li><p>Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.</p></li>
+<li><p>Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., birth weight, age, smoking status) rather than X and Y.</p></li>
+</ol>
 
 
 </section>

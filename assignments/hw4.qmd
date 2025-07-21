@@ -1,0 +1,45 @@
+---
+title: "Homework 4"
+---
+
+## Linear regression
+
+* **Due Sunday, July 27 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.
+    * Remember to include `embed-resources: true` in the `html` options. If you don't, we won't see any of your figures when you send the files. 
+    
+## Data
+
+* `birthwt` dataset from the **MASS** package
+    * A dataset with 189 observations on the following 10 variables.
+        * `low`: indicator of birth weight less than 2.5 kg.
+        * `age`: mother’s age in years.
+        * `lwt`: mother’s weight in pounds at last menstrual period.
+        * `race`: mother’s race (1 = white, 2 = black, 3 = other).
+        * `smoke`: smoking status during pregnancy.
+        * `ptl`: number of previous premature labours.
+        * `ht`: history of hypertension.
+        * `ui`: presence of uterine irritability.
+        * `ftv`: number of physician visits during the first trimester.
+        * `bwt`: birth weight in grams.
+
+## Research question
+
+* There are several **known risk factors** for infant **low birth weight** (defined as less than 2.5 kg or 5.5 pounds). *Multiple risk factors* may exacerbate one another **or** cancel each other out.
+* How do mother's age (`age`), mother's smoking status (`smoke`), and their interaction predict infant birth weight (`bwt`)?
+
+## Tasks
+
+1. Conduct a linear regression with mother's age, mother's smoking status, and their interaction predicting birth weight. (*Be sure to center any continuous predictors to improve interpretability.*)
+
+2. Plot the simple slopes with the data points. 
+
+3. Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and $p$-values.
+
+* Is the slope with respect to age significant for each group?
+* For which values of age are the smoking groups different in birth weight?
+
+4. Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.
+
+5. Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., birth weight, age, smoking status) rather than X and Y.

@@ -1,0 +1,22 @@
+---
+title: "Week 10: Linear regression"
+---
+
+## Learning objectives
+
+* **Run models** with interaction effects to assess conditional effects of predictors
+* **Probe** interaction models to fully understand all effects
+
+## Before class: Lecture 
+
+* [Lecture 10](https://youtu.be/dFVZkOHuauk){target="_blank"} 
+* [Lecture survey](https://forms.gle/2MXAtriPYbxKoDNS6){target="_blank"}: Complete by Wednesday, July 23 at 8pm
+* [Slides (html)](../slides/BTS510-25-10.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 10 (html with link to code)](../lab/BTS510-25-lab10.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 4](../assignments/hw4.qmd)

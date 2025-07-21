@@ -1,0 +1,632 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Run models** with interaction effects to assess conditional effects of predictors
+* **Probe** interaction models to fully understand all effects
+
+# Additive models
+
+## Our models so far
+
+* Additive effects
+  * The effect of *two variables* is the **sum** of *two individual effects*, nothing more
+  * Effect of predictor 1: Add that effect
+  * Effect of predictor 2: Add that effect
+  * Effect of **both** predictors: Add **both** effects
+
+## Example data and analysis
+
+```{r}
+library(Stat2Data)
+data(ICU)
+m1 <- lm(data = ICU, 
+         Pulse ~ Emergency + Age)
+library(broom)
+ICU_aug <- augment(m1)
+```
+
+## Additive effects
+
+```{r}
+summary(m1)
+```
+
+## Constant, additive effects
+
+$$\hat{Pulse} = 84.913 + 11.452 Emergency + 0.097 Age$$
+
+* Effect of `Emergency` is the same regardless of value of `Age`
+* Effect of `Age` is the same regardless of value of `Emergency`
+  * Same **slope** wrt `Age` regardless of value of `Emergency`
+  * `Emergency` = 0: $\hat{Pulse} = 84.913 + 0.097 Age$
+  * `Emergency` = 1: $\hat{Pulse} = 96.365 + 0.097 Age$
+
+## Additive effects = parallel lines
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU_aug,
+       aes(x = Age, y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.4, size = 2) +
+  geom_line(aes(y = .fitted, color = as.factor(Emergency)), 
+            linewidth = 1) +
+  labs(color = "Emergency")
+```
+
+## Assumptions: Residuals
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU_aug,
+       aes(x = .fitted, 
+           y = .std.resid)) +
+  geom_point() +
+  geom_smooth()
+```
+
+## Assumptions: Residuals
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU_aug,
+       aes(x = .fitted, 
+           y = .std.resid, 
+           color = as.factor(Emergency))) +
+  geom_point() +
+  geom_smooth() +
+  labs(color = "Emergency")
+```
+
+## More going on?
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.4, 
+             size = 2) +
+  geom_smooth(se = FALSE,
+              aes(color = as.factor(Emergency))) +
+  labs(color = "Emergency")
+```
+
+## More going on?
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.4, 
+             size = 2) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              aes(color = as.factor(Emergency))) +
+  labs(color = "Emergency")
+```
+
+# Interactions (moderation)
+
+## Interaction is a product term
+
+$$\hat{Pulse} = b_0 + b_1 Emergency + b_2 Age + b_3 Emergency\times Age$$
+
+* `Emergency` and `Age` have their own effects
+* But they do something special **together**
+* The effect of *one predictor* is **conditional on** (or **depends on**) the value of the *other predictor*
+* Non-parallel lines
+
+## Interaction effect
+
+```{r}
+m2 <- lm(data = ICU, Pulse ~ Emergency + Age + Emergency*Age)
+summary(m2)
+```
+
+## Interaction effect
+
+$$\hat{Pulse} = 125.609 + -36.051 Emergency +$$
+$$-0.541 Age + 0.761 Emergency\times Age$$
+
+* Simplify for the two `Emergency` groups
+  * Substitute 0 and 1 for `Emergency`
+
+## Interaction effect
+
+* `Emergency` = 0
+  * $\hat{Pulse} = 125.609 + -36.051 (0) + -0.541 Age + 0.761 (0)\times Age$
+  * $\hat{Pulse} = 125.609 + -0.541 Age$
+* `Emergency` = 1
+  * $\hat{Pulse} = 125.609 + -36.051 (1) + -0.541 Age + 0.761 (1)\times Age$
+  * $\hat{Pulse} = (125.609 -36.051) + (-0.541 + 0.761) Age$
+  * $\hat{Pulse} = 89.558 + 0.22 Age$
+  
+## What do all the coefficients mean?
+
+$$\hat{Pulse} = 125.609 + -36.051 Emergency +$$
+$$-0.541 Age + 0.761 Emergency\times Age$$
+
+* Intercept: 125.609
+  * Expected `Pulse` when all predictors are equal to 0
+  * `Emergency` = 0 and `Age` = 0
+  * `Pulse` for non-emergency admit newborn
+  
+## What do all the coefficients mean?
+
+$$\hat{Pulse} = 125.609 + -36.051 Emergency +$$
+$$-0.541 Age + 0.761 Emergency\times Age$$
+
+* `Emergency` effect = -36.051
+  * **Difference** in `Pulse` between emergency and non-emergency admits **when `Age` equals 0**
+  * In this case, an *intercept* difference  
+  
+## What do all the coefficients mean?
+
+$$\hat{Pulse} = 125.609 + -36.051 Emergency +$$
+$$-0.541 Age + 0.761 Emergency\times Age$$
+  
+* `Age` effect = -0.541
+  * Expected change in `Pulse` for a 1 unit change in `Age` **when `Emergency` equals 0**
+  * *Slope* wrt `Age` for `Emergency` = 0 group
+
+## What do all the coefficients mean?
+
+$$\hat{Pulse} = 125.609 + -36.051 Emergency +$$
+$$-0.541 Age + 0.761 Emergency\times Age$$
+  
+* Interaction = 0.761
+  * **Difference** in `Age` slopes between emergency and non admits
+  * Significant interaction = **slopes are different**
+  * Not parallel lines
+  
+## Plot of interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.3, 
+             size = 2) +
+  geom_abline(slope = -0.541, 
+              intercept = 125.609, 
+              linewidth = 1,
+              color = "#F8766D") +
+  geom_abline(slope = 0.22, 
+              intercept = 89.558,
+              linewidth = 1,
+              color = "#00BA38") +
+  xlim(0, 90) +
+  theme(legend.position="none")
+```
+
+$\hat{Pulse} = 125.609 + -36.051 Emergency + -0.541 Age + 0.761 Emergency\times Age$
+  
+## Plot of interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.3, 
+             size = 2) +
+  geom_abline(slope = -0.541, 
+              intercept = 125.609, 
+              linewidth = 1,
+              color = "#F8766D") +
+  geom_abline(slope = 0.22, 
+              intercept = 89.558,
+              linewidth = 1,
+              color = "#00BA38") +
+  xlim(0, 90) +
+  theme(legend.position="none") +
+  annotate("pointrange", 
+           x = 0, y = 125.609, 
+           ymin = 125.609, ymax = 125.609, 
+           size = 1) +
+  annotate("text", x = 0, y = 135, label = "125.609", size = 6)
+```
+
+$\hat{Pulse} = 125.609 + -36.051 Emergency + -0.541 Age + 0.761 Emergency\times Age$
+
+## Plot of interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.3, 
+             size = 2) +
+  geom_abline(slope = -0.541, 
+              intercept = 125.609, 
+              linewidth = 1,
+              color = "#F8766D") +
+  geom_abline(slope = 0.22, 
+              intercept = 89.558,
+              linewidth = 1,
+              color = "#00BA38") +
+  xlim(0, 90) +
+  theme(legend.position="none") +
+  annotate("pointrange", 
+           x = 0, y = 125.609, 
+           ymin = 125.609, ymax = 125.609, 
+           size = 1) +
+  annotate("text", x = 0, y = 135, label = "125.609", size = 6) +
+  geom_segment(x = 0, xend = 0, 
+               y = 89.558, yend = 125.609,
+               linewidth = 1, linetype = "dashed") +
+  annotate("text", x = 5, y = 105, label = "-36.051", size = 6)
+```
+
+$\hat{Pulse} = 125.609 + -36.051 Emergency + -0.541 Age + 0.761 Emergency\times Age$
+
+## Plot of interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.3, 
+             size = 2) +
+  geom_abline(slope = -0.541, 
+              intercept = 125.609, 
+              linewidth = 1,
+              color = "#F8766D") +
+  geom_abline(slope = 0.22, 
+              intercept = 89.558,
+              linewidth = 1,
+              color = "#00BA38") +
+  xlim(0, 90) +
+  theme(legend.position="none") +
+  annotate("pointrange", 
+           x = 0, y = 125.609, 
+           ymin = 125.609, ymax = 125.609, 
+           size = 1) +
+  annotate("text", x = 0, y = 135, label = "125.609", size = 6) +
+  geom_segment(x = 0, xend = 0, 
+               y = 89.558, yend = 125.609,
+               linewidth = 1, linetype = "dashed") +
+  annotate("text", x = 5, y = 105, label = "-36.051", size = 6) +
+  geom_abline(intercept = 125.609, slope = -0.541,
+              linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 25, y = 125, label = "-0.541", size = 6)
+```
+
+$\hat{Pulse} = 125.609 + -36.051 Emergency + -0.541 Age + 0.761 Emergency\times Age$
+
+## Plot of interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.3, 
+             size = 2) +
+  geom_abline(slope = -0.541, 
+              intercept = 125.609, 
+              linewidth = 1,
+              color = "#F8766D") +
+  geom_abline(slope = 0.22, 
+              intercept = 89.558,
+              linewidth = 1,
+              color = "#00BA38") +
+  xlim(0, 90) +
+  theme(legend.position="none") +
+  annotate("pointrange", 
+           x = 0, y = 125.609, 
+           ymin = 125.609, ymax = 125.609, 
+           size = 1) +
+  annotate("text", x = 0, y = 135, label = "125.609", size = 6) +
+  geom_segment(x = 0, xend = 0, 
+               y = 89.558, yend = 125.609,
+               linewidth = 1, linetype = "dashed") +
+  annotate("text", x = 5, y = 105, label = "-36.051", size = 6) +
+  geom_abline(intercept = 125.609, slope = -0.541,
+              linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 25, y = 125, label = "-0.541", size = 6) +
+  geom_abline(intercept = 89.558, slope = 0.22,
+              linetype = "dashed", linewidth = 1) +
+  geom_curve(x = 80, xend = 80, 
+             y = 82.329, yend = 107.158,
+             linewidth = 1, linetype = "dashed",
+             arrow = arrow(length = unit(0.3, "cm"), 
+                           type = "closed")) +
+  annotate("text", x = 87, y = 95, label = "0.761", size = 6)
+```
+
+$\hat{Pulse} = 125.609 + -36.051 Emergency + -0.541 Age + 0.761 Emergency\times Age$
+
+## Center continuous predictors
+
+* Recommended to **mean center** continuous predictors
+  * Interpretable intercept
+  * Interpretable lower order effects
+  * Reduces collinearity between interaction and other predictors
+* Use centered predictor in all places in the model
+  
+## Center continuous predictors
+
+```{r}
+ICU <- ICU %>% mutate(AgeC = Age - mean(Age, na.rm = TRUE))
+m3 <- lm(data = ICU, Pulse ~ Emergency + AgeC + Emergency*AgeC)
+summary(m3)
+```
+
+## What changes?
+
+* Lower order terms because **"...when `Age` = 0"**
+  * Intercept: 125.609 $\rightarrow$ 94.482
+    * Now at mean of `Age` instead of `Age` = 0
+  * Effect of `Emergency`: -36.051 $\rightarrow$ 7.754
+    * Now at mean of `Age` instead of `Age` = 0
+* Collinearity
+  * Standard errors are **reduced** with centering for some terms
+
+## Collinearity before and after centering
+
+```{r}
+library(car)
+vif(m2)
+vif(m3)
+```
+
+* Though don't worry about this **too** much, esp for product term
+  * [https://statisticalhorizons.com/multicollinearity/](https://statisticalhorizons.com/multicollinearity/)
+  * [https://search.r-project.org/CRAN/refmans/car/html/vif.html](https://search.r-project.org/CRAN/refmans/car/html/vif.html)
+  
+## What doesn't change?
+
+* Higher order terms
+  * Interaction: 0.761
+  * Effect of `Age` (slope): -0.541
+* $R^2_{multiple}$ and associated tests
+* Log-likelihood
+
+## Uncentered `Age`
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = Age, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.4, 
+             size = 2) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              aes(color = as.factor(Emergency))) +
+  labs(color = "Emergency")
+```
+
+## Centered `Age`
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU,
+       aes(x = AgeC, 
+           y = Pulse, 
+           group = Emergency)) +
+  geom_point(aes(color = as.factor(Emergency)), 
+             alpha = 0.4, 
+             size = 2) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              aes(color = as.factor(Emergency))) +
+  labs(color = "Emergency")
+```
+
+## Probing the interaction
+
+* **Simple slopes**: Slopes at specific values
+  * `Emergency` = 0: $\hat{Pulse} = 125.609 + -0.541 Age$
+  * `Emergency` = 1: $\hat{Pulse} = 89.558 + 0.22 Age$
+* We know (from the original analysis)
+  * Significance of coefficients for "group = 0" 
+  * Significance of **differences** between the groups
+* **What about "group = 1"?**
+
+## Two approaches
+
+* **Method 1**: *Recode your group variable* from 0,1 to 1,0
+  * Now the group that **was** 1 is now 0
+  * Interpret the intercept and slope for that group
+* **Method 2**: *Calculate things*
+  * Uses the variances and covariance of coefficients (`vcov()`)
+  * See Aiken & West (1991), Preacher, Curran, Bauer (2006)
+
+## Packages to make this easier for you
+
+* Non-exhaustive list of packages
+* **interactions**: [https://cran.r-project.org/package=interactions](https://cran.r-project.org/package=interactions)
+* **marginaleffects**: [https://cran.r-project.org/package=marginaleffects](https://cran.r-project.org/package=marginaleffects)
+  * Also [https://marginaleffects.com/](https://marginaleffects.com/)
+* **sjPlot**: [https://cran.r-project.org/package=sjPlot](https://cran.r-project.org/package=sjPlot)
+
+## Plot simple slopes
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+library(interactions)
+interact_plot(m3, 
+              pred = AgeC, 
+              modx = Emergency)
+```
+
+## Plot simple slopes with data
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+interact_plot(m3, 
+              pred = AgeC, 
+              modx = Emergency, 
+              plot.points = TRUE)
+```
+
+## Simple slopes analysis
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+sim_slopes(m3, 
+           pred = AgeC, 
+           modx = Emergency, 
+           johnson_neyman = FALSE)
+```
+
+## Johnson-Neyman intervals
+
+* For **which values of `AgeC`** are the `Emergency` groups **different**?
+  * Not about the **slopes** but about the **values**
+* Johnson, P. O., & Fay, L. C. (1950). The Johnson-Neyman technique, its theory and application. *Psychometrika*, 15, 349–367.
+
+## Johnson-Neyman intervals
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+sim_slopes(m3, 
+           pred = AgeC, 
+           modx = Emergency, 
+           johnson_neyman = TRUE)
+```
+
+## Johnson-Neyman intervals: Improved
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+sim_slopes(m3, 
+           pred = Emergency, 
+           modx = AgeC, 
+           johnson_neyman = TRUE)
+```
+
+## Johnson-Neyman intervals: Plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+johnson_neyman(m3, 
+               pred = Emergency, 
+               modx = AgeC, 
+               alpha = .05)
+```
+
+# Miscellaneous
+
+## Main effects vs simple effects
+
+* Factorial ANOVA: **Main effects** + interaction
+  * **Main effect**: Effect of a predictor **averaged across** the levels of the other predictors
+  * *Overall effect*
+* Linear regression: **Simple (main) effects** + interaction
+  * **Simple effect**: Effect of a predictor **at a specific value** of the other predictors
+  * *Conditional effect*
+
+## Main effects vs simple effects
+
+* In general: Don't use the term "main effects" for regression
+  * "Simple slopes" for the actual simple slopes
+  * "Lower order effects" for the coefficients (i.e., $b_1$ and $b_2$)
+* If interaction is significant
+  * Lower order effects are conditional, so make sure to talk about them accordingly
+
+## Two continuous predictors
+
+```{r}
+ICU <- ICU %>% mutate(SysBPC = SysBP - mean(SysBP, na.rm = TRUE))
+m4 <- lm(data = ICU, Pulse ~ AgeC + SysBPC + AgeC*SysBPC)
+summary(m4)
+```
+
+## Simple slopes
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+interact_plot(m4, 
+              pred = AgeC, 
+              modx = SysBPC, 
+              plot.points = TRUE)
+```
+
+
+# Next time
+
+## Non-normal outcomes
+
+* Logistic regression for **binary** outcomes
+* Poisson regressoin for **count** outcomes
+* Survival analysis for **survival** outcomes
+

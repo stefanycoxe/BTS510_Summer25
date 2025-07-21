@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 6: Linear regression – BTS 510 Summer 2025</title>
+<title>Week 10: Linear regression – BTS 510 Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/06-mats.html">Week 6: Linear regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/10-mats.html">Week 10: Linear regression</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/06-mats.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/06-mats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6: Linear regression</span></a>
   </div>
 </li>
@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/10-mats.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/10-mats.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 10: Linear regression</span></a>
   </div>
 </li>
@@ -326,9 +326,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/06-mats.html">Week 6: Linear regression</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/10-mats.html">Week 10: Linear regression</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 6: Linear regression</h1>
+<h1 class="title">Week 10: Linear regression</h1>
 </div>
 
 
@@ -348,31 +348,28 @@ ul.task-list li input[type="checkbox"] {
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
-<li>Describe the logic of <strong>linear regression</strong></li>
-<li>Describe the <strong>assumptions</strong> of linear regression</li>
-<li>Briefly <strong>present results</strong> of linear regression</li>
-<li>Use a <strong>regression equation</strong> to summarize a model</li>
-<li>Compare and contrast <strong>observed</strong>, <strong>predicted</strong>, and <strong>residual</strong> values</li>
+<li><strong>Run models</strong> with interaction effects to assess conditional effects of predictors</li>
+<li><strong>Probe</strong> interaction models to fully understand all effects</li>
 </ul>
 </section>
 <section id="before-class-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="before-class-lecture">Before class: Lecture</h2>
 <ul>
-<li><a href="https://youtu.be/SgoYuU42pFQ" target="_blank">Lecture 6</a></li>
-<li><a href="https://forms.gle/qQaYgM4GzhXcysmm8" target="_blank">Lecture survey</a>: Complete by Wednesday, June 18 at 8pm</li>
-<li><a href="../slides/BTS510-25-6.html" target="_blank">Slides (html)</a></li>
+<li><a href="https://youtu.be/dFVZkOHuauk" target="_blank">Lecture 10</a></li>
+<li><a href="https://forms.gle/2MXAtriPYbxKoDNS6" target="_blank">Lecture survey</a>: Complete by Wednesday, July 23 at 8pm</li>
+<li><a href="../slides/BTS510-25-10.html" target="_blank">Slides (html)</a></li>
 </ul>
 </section>
 <section id="during-class-lab" class="level2">
 <h2 class="anchored" data-anchor-id="during-class-lab">During class: Lab</h2>
 <ul>
-<li><a href="../lab/BTS510-25-lab6.html" target="_blank">Lab 6 (html with link to code)</a></li>
+<li><a href="../lab/BTS510-25-lab10.html" target="_blank">Lab 10 (html with link to code)</a></li>
 </ul>
 </section>
 <section id="after-class-assignment" class="level2">
 <h2 class="anchored" data-anchor-id="after-class-assignment">After class: Assignment</h2>
 <ul>
-<li><strong>No homework this week</strong></li>
+<li><a href="../assignments/hw4.html">Homework 4</a></li>
 </ul>
 
 
