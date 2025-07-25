@@ -41,6 +41,7 @@ website:
           - labs_comp/Lab 7.qmd                
           - labs_comp/Lab 8.qmd
           - labs_comp/Lab 9.qmd
+          - labs_comp/Lab 10.qmd
       - section: "Assignments"
         contents:
          - assignments/hw1.qmd  

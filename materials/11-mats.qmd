@@ -1,0 +1,22 @@
+---
+title: "Week 11: Logistic regression"
+---
+
+## Learning objectives
+
+
+
+
+## Before class: Lecture 
+
+* [Lecture 11](){target="_blank"} 
+* [Lecture survey](){target="_blank"}: Complete by Wednesday, July 30 at 8pm
+* [Slides (html)](../slides/BTS510-25-11.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 10 (html with link to code)](../lab/BTS510-25-lab11.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**
