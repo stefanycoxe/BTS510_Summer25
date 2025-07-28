@@ -4,18 +4,18 @@ title: "Week 11: Logistic regression"
 
 ## Learning objectives
 
-
-
+* **Conduct** logistic regression for *binary outcomes*
+* **Interpret** results in terms of *probability*, *odds*, and *log-odds*
 
 ## Before class: Lecture 
 
-* [Lecture 11](){target="_blank"} 
-* [Lecture survey](){target="_blank"}: Complete by Wednesday, July 30 at 8pm
+* [Lecture 11](https://youtu.be/E5sa61W9fd0){target="_blank"} 
+* [Lecture survey](https://forms.gle/7eX2m4sbzcuG63229){target="_blank"}: Complete by Wednesday, July 30 at 8pm
 * [Slides (html)](../slides/BTS510-25-11.qmd){target="_blank"}
     
 ## During class: Lab
 
-* [Lab 10 (html with link to code)](../lab/BTS510-25-lab11.qmd){target="_blank"}
+* [Lab 11 (html with link to code)](../lab/BTS510-25-lab11.qmd){target="_blank"}
 
 ## After class: Assignment
 

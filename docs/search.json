@@ -1775,7 +1775,7 @@
     "href": "refs.html#linear-models",
     "title": "References",
     "section": "Linear models",
-    "text": "Linear models\n\nGeneralized linear models (GLiMs) – includes linear, logistic, and Poisson\n\nAgresti, A. (2003). Categorical data analysis (Vol. 482). John Wiley & Sons.\nAgresti, A. (2018). An introduction to categorical data analysis. John Wiley & Sons.\nAi, C. & Norton, E. C. (2003). Interaction terms in logit and probit models. Economics Letters, 80 (1), 123–129. doi:10.1016/S0165-1765(03)00032-6\nDobson, A. J., & Barnett, A. G. (2018). An introduction to generalized linear models. Chapman and Hall/CRC.\nFaraway, J. J. (2016). Extending the linear model with R: generalized linear, mixed effects and nonparametric regression models. Chapman and Hall/CRC.\nFox, J. (2015). Applied regression analysis and generalized linear models. Sage Publications.\nGeldhof, G. J., Anthony, K. P., Selig, J. P., & Mendez-Luck, C. A. (2018). Accommodating binary and count variables in mediation: A case for conditional indirect effects. International Journal of Behavioral Development, 42(2), 300-308.\nGreen, P., & MacLeod, C. J. (2016). SIMR: an R package for power analysis of generalized linear mixed models by simulation. Methods in Ecology and Evolution, 7(4), 493-498.\nHalvorson, M. A., McCabe, C. J., Kim, D. S., Cao, X., & King, K. M. (2022). Making sense of some odd ratios: A tutorial and improvements to present practices in reporting and visualizing quantities of interest for binary and count outcome models. Psychology of Addictive Behaviors, 36(3), 284.\nHardin, J. W. & Hilbe, J. M. (2007). Generalized linear models and extensions. Stata press.\nLong, J. S. (1997). Regression models for categorical and limited dependent variables (Vol. 7). Advanced quantitative techniques in the social sciences, 219.\nMcCabe, C. J., Halvorson, M. A., King, K. M., Cao, X., & Kim, D. S. (2020). Interpreting interaction effects in generalized linear models of nonlinear probabilities and counts. Multivariate Behavioral Research, 1-27.\nMcCullagh, P., & Nelder, J. A. (2019). Generalized linear models. Routledge.\nNg, V. K., & Cribbie, R. A. (2017). Using the gamma generalized linear model for modeling continuous, skewed and heteroscedastic outcomes in psychology. Current Psychology, 36(2), 225-235.\nNorton, E. C., Wang, H., & Ai, C. (2004). Computing interaction effects and standard errors in logit and probit models. The Stata Journal, 4 (2), 154–167.\nSmithson, M., & Merkle, E. C. (2013). Generalized linear models for categorical and continuous limited dependent variables. CRC Press.\n\n\nInteractions\n\nAiken, L. S. & West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Newbury Park, CA: SAGE.\nJohnson, P. O., & Fay, L. C. (1950). The Johnson-Neyman technique, its theory and application. Psychometrika, 15(4), 349-367.\nPreacher, K. J., Curran, P. J., & Bauer, D. J. (2006). Computational tools for probing interactions in multiple linear regression, multilevel modeling, and latent curve analysis. Journal of educational and behavioral statistics, 31(4), 437-448.\n\n\n\n\nLinear regression\n\nBarker, L. E., & Shaw, K. M. (2015). Best (but oft-forgotten) practices: checking assumptions concerning regression residuals. The American journal of clinical nutrition, 102(3), 533-539.\nCohen, J., Cohen, P., West, S. G., & Aiken, L. S. (2013). Applied multiple regression/correlation analysis for the behavioral sciences. Routledge.\nDarlington, R. B., & Hayes, A. F. (2016). Regression analysis and linear models: Concepts, applications, and implementation. Guilford Publications.\nFox, J. (2015). Applied regression analysis and generalized linear models. Sage publications.\nFox, J., & Weisberg, S. (2018). An R companion to applied regression. Sage publications.\nGelman, A., & Hill, J. (2006). Data analysis using regression and multilevel/hierarchical models. Cambridge University Press.\nHayes, A. F., & Montoya, A. K. (2017). A tutorial on testing, visualizing, and probing an interaction involving a multicategorical variable in linear regression analysis. Communication methods and measures, 11(1), 1-30.\nHickey, G. L., Kontopantelis, E., Takkenberg, J. J., & Beyersdorf, F. (2019). Statistical primer: checking model assumptions with regression diagnostics. Interactive cardiovascular and thoracic surgery, 28(1), 1-8.\n\nKozak, M., & Piepho, H. P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of agronomy and crop science, 204(1), 86-98.\n\nNeter, J., Kutner, M. H., Nachtsheim, C. J., & Wasserman, W. (1996). Applied linear statistical models.\nOsborne, J. W., & Waters, E. (2002). Four assumptions of multiple regression that researchers should always test. Practical assessment, research, and evaluation, 8(1), 2.\nWeisberg, S. (2005). Applied linear regression (Vol. 528). John Wiley & Sons.\n\n\n\nLogistic regression\n\nAllison, P. D. (2012). Logistic regression using SAS: Theory and application. SAS Institute.\nBürkner, P. C., & Vuorre, M. (2019). Ordinal regression models in psychology: A tutorial. Advances in Methods and Practices in Psychological Science, 2(1), 77-101.\nChen, K., Cheng, Y., Berkout, O., & Lindhiem, O. (2016). Analyzing Proportion Scores as Outcomes for Prevention Trials: A Statistical Primer. Prevention Science, 1-10.\nDeMaris, A. (2002). Explained variance in logistic regression: A Monte Carlo study of proposed measures. Sociological Methods & Research, 31(1), 27-74.\nHayes, A. F., & Matthes, J. (2009). Computational procedures for probing interactions in OLS and logistic regression: SPSS and SAS implementations. Behavior research methods, 41(3), 924-936.\nHedeker, D. (2015). Methods for multilevel ordinal data in prevention research. Prevention Science, 16(7), 997-1006.\nLiddell, T. M., & Kruschke, J. K. (2018). Analyzing ordinal data with metric models: What could possibly go wrong?. Journal of Experimental Social Psychology, 79, 328-348.\nLong, J. S., & Mustillo, S. A. (2021). Using predictions and marginal effects to compare groups in regression models for binary outcomes. Sociological Methods & Research, 50(3), 1284-1320.\nMenard, S. (2002). Applied logistic regression analysis (No. 106). Sage.\nMood, C. (2010). Logistic regression: Why we cannot do what we think we can do, and what we can do about it. European sociological review, 26(1), 67-82.\n\n\n\nPoisson regression\n\nAtkins, D. C., & Gallop, R. J. (2007). Rethinking how family researchers model infrequent outcomes: a tutorial on count regression and zero-inflated models. Journal of Family Psychology, 21(4), 726.\nBlevins, D. P., Tsang, E. W., & Spain, S. M. (2015). Count-Based Research in Management Suggestions for Improvement. Organizational Research Methods, 18(1), 47-69.\nBrooks, M. E., Kristensen, K., van Benthem, K. J., Magnusson, A., Berg, C. W., Nielsen, A., … & Bolker, B. M. (2017). Modeling zero-inflated count data with glmmTMB. BioRxiv, 132753.\nCampbell, H. (2021). The consequences of checking for zero‐inflation and overdispersion in the analysis of count data. Methods in Ecology and Evolution, 12(4), 665-680.\nCoxe, S., West, S. G., & Aiken, L. S. (2009). The analysis of count data: A gentle introduction to Poisson regression and its alternatives. Journal of personality assessment, 91(2), 121-136.\nGardner, W., Mulvey, E. P., & Shaw, E. C. (1995). Regression analyses of counts and rates: Poisson, overdispersed Poisson, and negative binomial models. Psychological bulletin, 118(3), 392.\nGreen, J. (2020). A tutorial on modelling health behaviour as count data with Poisson and negative binomial regression.\nLand, K. C., McCall, P. L., & Nagin, D. S. (1996). A comparison of Poisson, negative binomial, and semiparametric mixed Poisson regression models with empirical applications to criminal careers data. Sociological Methods & Research, 24(4), 387-442.\nYang, S. (2014). A comparison of different methods of zero-inflated data analysis and its application in health surveys. University of Rhode Island.\n\n\n\nSurvival analysis",
+    "text": "Linear models\n\nGeneralized linear models (GLiMs) – includes linear, logistic, and Poisson\n\nAgresti, A. (2003). Categorical data analysis (Vol. 482). John Wiley & Sons.\nAgresti, A. (2018). An introduction to categorical data analysis. John Wiley & Sons.\nAi, C. & Norton, E. C. (2003). Interaction terms in logit and probit models. Economics Letters, 80 (1), 123–129. doi:10.1016/S0165-1765(03)00032-6\nDobson, A. J., & Barnett, A. G. (2018). An introduction to generalized linear models. Chapman and Hall/CRC.\nFaraway, J. J. (2016). Extending the linear model with R: generalized linear, mixed effects and nonparametric regression models. Chapman and Hall/CRC.\nFox, J. (2015). Applied regression analysis and generalized linear models. Sage Publications.\nGeldhof, G. J., Anthony, K. P., Selig, J. P., & Mendez-Luck, C. A. (2018). Accommodating binary and count variables in mediation: A case for conditional indirect effects. International Journal of Behavioral Development, 42(2), 300-308.\nGreen, P., & MacLeod, C. J. (2016). SIMR: an R package for power analysis of generalized linear mixed models by simulation. Methods in Ecology and Evolution, 7(4), 493-498.\nHalvorson, M. A., McCabe, C. J., Kim, D. S., Cao, X., & King, K. M. (2022). Making sense of some odd ratios: A tutorial and improvements to present practices in reporting and visualizing quantities of interest for binary and count outcome models. Psychology of Addictive Behaviors, 36(3), 284.\nHardin, J. W. & Hilbe, J. M. (2007). Generalized linear models and extensions. Stata press.\nLong, J. S. (1997). Regression models for categorical and limited dependent variables (Vol. 7). Advanced quantitative techniques in the social sciences, 219.\nMcCabe, C. J., Halvorson, M. A., King, K. M., Cao, X., & Kim, D. S. (2022). Interpreting interaction effects in generalized linear models of nonlinear probabilities and counts. Multivariate Behavioral Research, 57(2-3), 243-263.\nMcCullagh, P., & Nelder, J. A. (2019). Generalized linear models. Routledge.\nNg, V. K., & Cribbie, R. A. (2017). Using the gamma generalized linear model for modeling continuous, skewed and heteroscedastic outcomes in psychology. Current Psychology, 36(2), 225-235.\nNorton, E. C., Wang, H., & Ai, C. (2004). Computing interaction effects and standard errors in logit and probit models. The Stata Journal, 4 (2), 154–167.\nSmithson, M., & Merkle, E. C. (2013). Generalized linear models for categorical and continuous limited dependent variables. CRC Press.\n\n\nInteractions\n\nAiken, L. S. & West, S. G. (1991). Multiple regression: Testing and interpreting interactions. Newbury Park, CA: SAGE.\nJohnson, P. O., & Fay, L. C. (1950). The Johnson-Neyman technique, its theory and application. Psychometrika, 15(4), 349-367.\nPreacher, K. J., Curran, P. J., & Bauer, D. J. (2006). Computational tools for probing interactions in multiple linear regression, multilevel modeling, and latent curve analysis. Journal of educational and behavioral statistics, 31(4), 437-448.\n\n\n\n\nLinear regression\n\nBarker, L. E., & Shaw, K. M. (2015). Best (but oft-forgotten) practices: checking assumptions concerning regression residuals. The American journal of clinical nutrition, 102(3), 533-539.\nCohen, J., Cohen, P., West, S. G., & Aiken, L. S. (2013). Applied multiple regression/correlation analysis for the behavioral sciences. Routledge.\nDarlington, R. B., & Hayes, A. F. (2016). Regression analysis and linear models: Concepts, applications, and implementation. Guilford Publications.\nFox, J. (2015). Applied regression analysis and generalized linear models. Sage publications.\nFox, J., & Weisberg, S. (2018). An R companion to applied regression. Sage publications.\nGelman, A., & Hill, J. (2006). Data analysis using regression and multilevel/hierarchical models. Cambridge University Press.\nHayes, A. F., & Montoya, A. K. (2017). A tutorial on testing, visualizing, and probing an interaction involving a multicategorical variable in linear regression analysis. Communication methods and measures, 11(1), 1-30.\nHickey, G. L., Kontopantelis, E., Takkenberg, J. J., & Beyersdorf, F. (2019). Statistical primer: checking model assumptions with regression diagnostics. Interactive cardiovascular and thoracic surgery, 28(1), 1-8.\n\nKozak, M., & Piepho, H. P. (2018). What’s normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. Journal of agronomy and crop science, 204(1), 86-98.\n\nNeter, J., Kutner, M. H., Nachtsheim, C. J., & Wasserman, W. (1996). Applied linear statistical models.\nOsborne, J. W., & Waters, E. (2002). Four assumptions of multiple regression that researchers should always test. Practical assessment, research, and evaluation, 8(1), 2.\nWeisberg, S. (2005). Applied linear regression (Vol. 528). John Wiley & Sons.\n\n\n\nLogistic regression\n\nAllison, P. D. (2012). Logistic regression using SAS: Theory and application. SAS Institute.\nBürkner, P. C., & Vuorre, M. (2019). Ordinal regression models in psychology: A tutorial. Advances in Methods and Practices in Psychological Science, 2(1), 77-101.\nChen, K., Cheng, Y., Berkout, O., & Lindhiem, O. (2016). Analyzing Proportion Scores as Outcomes for Prevention Trials: A Statistical Primer. Prevention Science, 1-10.\nDeMaris, A. (2002). Explained variance in logistic regression: A Monte Carlo study of proposed measures. Sociological Methods & Research, 31(1), 27-74.\nHayes, A. F., & Matthes, J. (2009). Computational procedures for probing interactions in OLS and logistic regression: SPSS and SAS implementations. Behavior research methods, 41(3), 924-936.\nHedeker, D. (2015). Methods for multilevel ordinal data in prevention research. Prevention Science, 16(7), 997-1006.\nLiddell, T. M., & Kruschke, J. K. (2018). Analyzing ordinal data with metric models: What could possibly go wrong?. Journal of Experimental Social Psychology, 79, 328-348.\nLong, J. S., & Mustillo, S. A. (2021). Using predictions and marginal effects to compare groups in regression models for binary outcomes. Sociological Methods & Research, 50(3), 1284-1320.\nMenard, S. (2002). Applied logistic regression analysis (No. 106). Sage.\nMood, C. (2010). Logistic regression: Why we cannot do what we think we can do, and what we can do about it. European sociological review, 26(1), 67-82.\n\n\n\nPoisson regression\n\nAtkins, D. C., & Gallop, R. J. (2007). Rethinking how family researchers model infrequent outcomes: a tutorial on count regression and zero-inflated models. Journal of Family Psychology, 21(4), 726.\nBlevins, D. P., Tsang, E. W., & Spain, S. M. (2015). Count-Based Research in Management Suggestions for Improvement. Organizational Research Methods, 18(1), 47-69.\nBrooks, M. E., Kristensen, K., van Benthem, K. J., Magnusson, A., Berg, C. W., Nielsen, A., … & Bolker, B. M. (2017). Modeling zero-inflated count data with glmmTMB. BioRxiv, 132753.\nCampbell, H. (2021). The consequences of checking for zero‐inflation and overdispersion in the analysis of count data. Methods in Ecology and Evolution, 12(4), 665-680.\nCoxe, S., West, S. G., & Aiken, L. S. (2009). The analysis of count data: A gentle introduction to Poisson regression and its alternatives. Journal of personality assessment, 91(2), 121-136.\nGardner, W., Mulvey, E. P., & Shaw, E. C. (1995). Regression analyses of counts and rates: Poisson, overdispersed Poisson, and negative binomial models. Psychological bulletin, 118(3), 392.\nGreen, J. (2020). A tutorial on modelling health behaviour as count data with Poisson and negative binomial regression.\nLand, K. C., McCall, P. L., & Nagin, D. S. (1996). A comparison of Poisson, negative binomial, and semiparametric mixed Poisson regression models with empirical applications to criminal careers data. Sociological Methods & Research, 24(4), 387-442.\nYang, S. (2014). A comparison of different methods of zero-inflated data analysis and its application in health surveys. University of Rhode Island.\n\n\n\nSurvival analysis",
     "crumbs": [
       "References"
     ]
@@ -1791,25 +1791,59 @@
     ]
   },
   {
+    "objectID": "materials/11-mats.html",
+    "href": "materials/11-mats.html",
+    "title": "Week 11: Logistic regression",
+    "section": "",
+    "text": "Conduct logistic regression for binary outcomes\nInterpret results in terms of probability, odds, and log-odds",
+    "crumbs": [
+      "Materials",
+      "Week 11: Logistic regression"
+    ]
+  },
+  {
+    "objectID": "materials/11-mats.html#learning-objectives",
+    "href": "materials/11-mats.html#learning-objectives",
+    "title": "Week 11: Logistic regression",
+    "section": "",
+    "text": "Conduct logistic regression for binary outcomes\nInterpret results in terms of probability, odds, and log-odds",
+    "crumbs": [
+      "Materials",
+      "Week 11: Logistic regression"
+    ]
+  },
+  {
     "objectID": "materials/11-mats.html#before-class-lecture",
     "href": "materials/11-mats.html#before-class-lecture",
     "title": "Week 11: Logistic regression",
     "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\nLecture 11\nLecture survey: Complete by Wednesday, July 30 at 8pm\nSlides (html)"
+    "text": "Before class: Lecture\n\nLecture 11\nLecture survey: Complete by Wednesday, July 30 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 11: Logistic regression"
+    ]
   },
   {
     "objectID": "materials/11-mats.html#during-class-lab",
     "href": "materials/11-mats.html#during-class-lab",
     "title": "Week 11: Logistic regression",
     "section": "During class: Lab",
-    "text": "During class: Lab\n\nLab 10 (html with link to code)"
+    "text": "During class: Lab\n\nLab 11 (html with link to code)",
+    "crumbs": [
+      "Materials",
+      "Week 11: Logistic regression"
+    ]
   },
   {
     "objectID": "materials/11-mats.html#after-class-assignment",
     "href": "materials/11-mats.html#after-class-assignment",
     "title": "Week 11: Logistic regression",
     "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nNo homework this week"
+    "text": "After class: Assignment\n\nNo homework this week",
+    "crumbs": [
+      "Materials",
+      "Week 11: Logistic regression"
+    ]
   },
   {
     "objectID": "materials/09-mats.html",
@@ -2524,7 +2558,7 @@
     "href": "lab/BTS510-25-lab11.html#learning-objectives",
     "title": "BTS 510 Lab 11",
     "section": "1 Learning objectives",
-    "text": "1 Learning objectives"
+    "text": "1 Learning objectives\n\nConduct logistic regression for binary outcomes\nInterpret results in terms of probability, odds, and log-odds"
   },
   {
     "objectID": "lab/BTS510-25-lab11.html#data",
@@ -2538,14 +2572,35 @@
     "href": "lab/BTS510-25-lab11.html#analysis",
     "title": "BTS 510 Lab 11",
     "section": "3 Analysis",
-    "text": "3 Analysis\n\nReplicate and extend the analysis from the lecture\n\nAge, Emergency, and their interaction predict Pulse\nBe sure to mean center Age for interpretability."
+    "text": "3 Analysis\n\nReplicate and extend the analysis from the lecture\n\nAge and Emergency predict Survive\nBe sure to mean center Age for interpretability"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab11.html#pseudo-r2",
+    "href": "lab/BTS510-25-lab11.html#pseudo-r2",
+    "title": "BTS 510 Lab 11",
+    "section": "4 Pseudo R^2",
+    "text": "4 Pseudo R^2\n\nFor linear regression, R^2_{multiple} is calculated from the sums of squares from ordinary least squares estimation\nLogistic regression is estimated via maximum likelihood\n\nThere are no sums of squares\nThere is, however, deviance\n\nDeviance is a function of the log-likelihood\n\nDeviance for a model is how far the model is from a theoretical perfect model where every observation is perfectly predicted\nRelative measure so can only compare to another model\nBig deviance (far from perfect) is worse than small deviance (closer to perfect)\n\nPseudo R^2\n\nCompare your model to a model with no predictors (only intercept)\nHow much closer is this model to the perfect model than the intercept only model?\nTheoretically ranges from 0 to 1 (but not in practice)\nR^2_{deviance} = 1 - \\frac{deviance_{M}}{deviance_{intercept\\ only}}\nDeviance for your model is “Residual deviance” from output\nDeviance for intercept model is “Null deviance” from output"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab11.html#confidence-intervals",
+    "href": "lab/BTS510-25-lab11.html#confidence-intervals",
+    "title": "BTS 510 Lab 11",
+    "section": "5 Confidence intervals",
+    "text": "5 Confidence intervals\n\nCalculate confidence intervals for all coefficients in a model using confint()\n\nFor example: confint(m1) to get confidence intervals for model m1\nIf the CI doesn’t include zero, the coefficient is significant\nDefault is 99% confidence interval\n\nUse level argument to change\ne.g., confint(m1, level = 0.99) produces 99% CIs\n\n\nTo convert from default logit metric to odds metric: Exponentiate\n\nLogit metric: b_1\nConvert to odds ratio: e^{b_1}\nDo the same thing to the confidence intervals\n\nexp(confint(m1)) produces the odds metric CIs\nCompare to “no effect” value of one for odds\nIf the CI doesn’t include one, the coefficient is significant"
+  },
+  {
+    "objectID": "lab/BTS510-25-lab11.html#predicted-values",
+    "href": "lab/BTS510-25-lab11.html#predicted-values",
+    "title": "BTS 510 Lab 11",
+    "section": "6 Predicted values",
+    "text": "6 Predicted values\n\nTwo main options\n\nUse R like a calculator to calculate predicted values using equations\n\nYou can be fancy and grab the coefficients directly from the output\ne.g., using coef(m1)[1] to get the first coefficient, etc.\nOr just type the numbers in\n\nUse predict() to calculate predicted values\n\nSet up a new dataset with the predictor values you’re interested in\ne.g., age_vals &lt;- data.frame(AgeC = c(-20, 0, 20))\nThen use that new data in predict()\ne.g., predict(m1, newdata = age_vals, type = \"response\")\ntype = \"response\" gives predicted values in probability\ntype = \"link\" gives predicted values in logit"
   },
   {
     "objectID": "lab/BTS510-25-lab11.html#tasks",
     "href": "lab/BTS510-25-lab11.html#tasks",
     "title": "BTS 510 Lab 11",
-    "section": "4 Tasks",
-    "text": "4 Tasks\n\nModel 1: Pulse ~ Age + Emergency\nModel 2: Pulse ~ Age + Emergency + Age*Emergency\n\n\nConduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?\nPlot the simple slopes with the data points. What is the general pattern of results?\nConduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and p-values.\n\n\nIs the slope with respect to age significant for each group?\nFor which values of age are the emergency groups different in pulse rate?\n\n\nConduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.\nDescribe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., pulse, age, emergency admission) rather than X and Y."
+    "section": "7 Tasks",
+    "text": "7 Tasks\n\nModel 1: Survive ~ Age\nModel 2: Survive ~ Age + Emergency\n\n\nConduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?\nReport the full results of the preferred model. This is similar to linear regression. For each coefficient (including intercept), report:\n\n\nRegression coefficient\nStandard error\nz statistic (note that there aren’t degrees of freedom for z tests)\np value\n\n\nCalculate predicted probabilities for 6 predictor combinations:\n\n\nEmergency admit, 20 years younger than mean\nEmergency admit, mean age\nEmergency admit, 20 years older than mean\nNon-emergency admit, 20 years younger than mean\nNon-emergency admit, mean age\nNon-emergency admit, 20 years older than mean\n\n\nReport the odds ratios for each predictor and their confidence intervals. Interpret the odds ratios in words.\nDescribe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., survival, age, emergency admission) rather than X and Y."
   },
   {
     "objectID": "lab/BTS510-25-lab1.html",
@@ -3684,14 +3739,434 @@
     "href": "slides/BTS510-25-11.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
     "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives"
+    "text": "1.1 Learning objectives\n\nConduct logistic regression for binary outcomes\nInterpret results in terms of probability, odds, and log-odds"
   },
   {
-    "objectID": "slides/BTS510-25-11.html#non-normal-outcomes",
-    "href": "slides/BTS510-25-11.html#non-normal-outcomes",
+    "objectID": "slides/BTS510-25-11.html#assumptions-of-linear-regression",
+    "href": "slides/BTS510-25-11.html#assumptions-of-linear-regression",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 Non-normal outcomes",
-    "text": "2.1 Non-normal outcomes\n\nLogistic regression for binary outcomes\nPoisson regressoin for count outcomes\nSurvival analysis for survival outcomes"
+    "section": "2.1 Assumptions of linear regression",
+    "text": "2.1 Assumptions of linear regression\nGeneral linear model (GLM, linear regression, ANOVA) makes three assumptions about the residuals (\\(e_i = Y_i - \\hat{Y}_i\\)) of the model\n\nIndependence: observations (i.e., residuals) from different subjects do not depend on one another\nConstant variance (homoscedasticity): variance of residuals is same at all values of predictor(s)\nConditional normality: residuals are normally distributed at each value of predictor(s)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#icu-data",
+    "href": "slides/BTS510-25-11.html#icu-data",
+    "title": "Introduction to Biostatistics",
+    "section": "2.2 ICU data",
+    "text": "2.2 ICU data\n\nlibrary(Stat2Data)\ndata(ICU)\nhead(ICU)\n\n  ID Survive Age AgeGroup Sex Infection SysBP Pulse Emergency\n1  4       0  87        3   1         1    80    96         1\n2  8       1  27        1   1         1   142    88         1\n3 12       1  59        2   0         0   112    80         1\n4 14       1  77        3   0         0   100    70         0\n5 27       0  76        3   1         1   128    90         1\n6 28       1  54        2   0         1   142   103         1"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#linear-regression-on-normal-outcome",
+    "href": "slides/BTS510-25-11.html#linear-regression-on-normal-outcome",
+    "title": "Introduction to Biostatistics",
+    "section": "2.3 Linear regression on normal outcome",
+    "text": "2.3 Linear regression on normal outcome\n\n\nCode\nggplot(data = ICU, \n       aes(x = Age, \n           y = Pulse)) + \n  geom_point(alpha = 0.5) + \n  geom_smooth(method = \"lm\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#assumptions-met",
+    "href": "slides/BTS510-25-11.html#assumptions-met",
+    "title": "Introduction to Biostatistics",
+    "section": "2.4 Assumptions met!",
+    "text": "2.4 Assumptions met!\n\n\nCode\nm1_norm &lt;- lm(Pulse ~ Age, \n              data = ICU)\nm1_norm_resid &lt;- augment(m1_norm)\nggplot(data = m1_norm_resid, \n       aes(x = .resid)) +\n  geom_histogram(aes(y = ..density..), \n                 fill = \"white\", \n                 color = \"blue\") +\n  geom_density()"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#assumptions-met-1",
+    "href": "slides/BTS510-25-11.html#assumptions-met-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.5 Assumptions met!",
+    "text": "2.5 Assumptions met!\n\n\nCode\nggplot(data = m1_norm_resid, \n       aes(sample = .resid)) + \n  geom_qq() + \n  geom_qq_line() +\n  labs(x = \"Theoretical\", \n       y = \"Sample\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#assumptions-met-2",
+    "href": "slides/BTS510-25-11.html#assumptions-met-2",
+    "title": "Introduction to Biostatistics",
+    "section": "2.6 Assumptions met!",
+    "text": "2.6 Assumptions met!\n\n\nCode\nggplot(data = m1_norm_resid, \n       aes(x = Age, \n           y = .resid)) + \n  geom_point() + \n  geom_smooth()"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#a-binary-variable-is-not-normal",
+    "href": "slides/BTS510-25-11.html#a-binary-variable-is-not-normal",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 A binary variable is not normal",
+    "text": "3.1 A binary variable is not normal\n\n\nCode\nggplot(data = ICU, \n       aes(x = as.factor(Survive))) + \n  geom_bar()"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#plot-of-data-with-fit-line",
+    "href": "slides/BTS510-25-11.html#plot-of-data-with-fit-line",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 Plot of data with fit line",
+    "text": "3.2 Plot of data with fit line\n\n\nCode\nggplot(data = ICU, \n       aes(x = Age, \n           y = Survive)) + \n  geom_point(alpha = 0.5) + \n  geom_smooth(method = \"lm\", \n              se = FALSE) +\n  coord_cartesian(ylim = c(0,1))"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#plot-of-data-with-fit-line-1",
+    "href": "slides/BTS510-25-11.html#plot-of-data-with-fit-line-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 Plot of data with fit line",
+    "text": "3.3 Plot of data with fit line\n\n\nCode\nggplot(data = ICU, \n       aes(x = Age, \n           y = Survive)) + \n  geom_jitter(height = 0.02, \n              alpha = 0.5) + \n  geom_smooth(method = \"lm\", \n              se = FALSE) +\n  coord_cartesian(ylim = c(0,1))"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#plot-of-residuals",
+    "href": "slides/BTS510-25-11.html#plot-of-residuals",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 Plot of residuals",
+    "text": "3.4 Plot of residuals\n\n\nCode\nm1_bin &lt;- lm(Survive ~ Age, \n             data = ICU)\nresids_m1_bin &lt;- augment(m1_bin)\nggplot(data = resids_m1_bin, \n       aes(x = .resid)) + \n  geom_histogram(aes(y = ..density..), \n                 fill = \"white\", \n                 color = \"blue\") +\n  geom_density()"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#plot-of-residuals-1",
+    "href": "slides/BTS510-25-11.html#plot-of-residuals-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 Plot of residuals",
+    "text": "3.5 Plot of residuals\n\n\nCode\nggplot(data = resids_m1_bin, \n       aes(sample = .resid)) + \n  geom_qq() + \n  geom_qq_line() +\n  labs(x = \"Theoretical\", \n       y = \"Sample\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#plot-of-residuals-2",
+    "href": "slides/BTS510-25-11.html#plot-of-residuals-2",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 Plot of residuals",
+    "text": "3.6 Plot of residuals\n\n\nCode\nggplot(data = resids_m1_bin, \n       aes(x = Age, \n           y = .resid)) + \n  geom_point() + \n  geom_smooth()"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#what-not-to-do",
+    "href": "slides/BTS510-25-11.html#what-not-to-do",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 What NOT to do",
+    "text": "3.7 What NOT to do\n\nIgnore the problem\n\nDo linear regression anyway\nCall it linear probability model\n\nTransform the outcome\n\nSquare root, natural log, etc.\nMay slightly normalize univariate residual distribution\nDoes not fix heteroscedasticity, (conditional) non-normality"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#a-binary-variable-is-not-normal-1",
+    "href": "slides/BTS510-25-11.html#a-binary-variable-is-not-normal-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 A binary variable is not normal",
+    "text": "3.8 A binary variable is not normal"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#what-to-do",
+    "href": "slides/BTS510-25-11.html#what-to-do",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 What to do",
+    "text": "3.9 What to do\n\nGeneralized linear model (GLiM)\n\nNot a single model but a family of regression models\nChoose features (e.g., residual distribution) to match the characteristics of your outcome variable\nAccommodates many continuous and categorical outcome variables\nIncludes logistic regression and Poisson regression\nTransformation of the predicted outcome"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#binary-logistic-regression",
+    "href": "slides/BTS510-25-11.html#binary-logistic-regression",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 (Binary) logistic regression",
+    "text": "4.1 (Binary) logistic regression\n\nOutcome: binary\n\nObserved value (\\(Y\\)): 0 or 1, where 1 = “success” or “event”\nPredicted value (\\(\\hat{Y}\\)): Probability of success, between 0 and 1\n\nResidual/outcome distribution: binomial\nLink function: logit (or log-odds) = \\(ln\\Big(\\frac{\\hat{Y}}{1 - \\hat{Y}}\\Big) = ln\\left(\\frac{\\hat{p}}{1-\\hat{p}}\\right)\\)\n\n\\[ln\\left(\\frac{\\hat{p}}{1-\\hat{p}}\\right) = b_0 + b_1 X_1 + b_2 X_2 + \\cdots + b_p X_p\\]"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#reminder-normal-distribution",
+    "href": "slides/BTS510-25-11.html#reminder-normal-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 Reminder: normal distribution",
+    "text": "4.2 Reminder: normal distribution\n\\[f(x) = {\\frac {1}{{\\sqrt {2\\pi \\sigma^2}}}}e^{-{\\frac {(x-\\mu)^2 }{2 \\sigma^2 }}}\\]\nMean of normal distribution = \\(\\mu\\)\nVariance of normal distribution = \\(\\sigma^2\\)\n\nMean and variance are different parameters and are unrelated\nHomoscedasticity: Constant variance doesn’t depend on mean"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#binomial-distribution",
+    "href": "slides/BTS510-25-11.html#binomial-distribution",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 Binomial distribution",
+    "text": "4.3 Binomial distribution\nProbability of \\(k\\) events in \\(n\\) trials, each with probability \\(p\\) of event?\n\n\n\n\\(p\\) = 0.5, \\(n\\) = 10\n\n\n\nCode\nn &lt;- 10\np &lt;- 0.5\nk &lt;- seq(0, 10, 1)\nProb &lt;- dbinom(k, n, p)\nbin0_5 &lt;- data.frame(k, Prob)\nggplot(data = bin0_5, aes(x = k, y = Prob)) + \n  geom_col() +\n  scale_x_continuous(breaks=seq(0,10,1)) +\n  scale_y_continuous(breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5)) +\n  ylim(0,0.4) +\n  labs(y = \"P(X = k)\")\n\n\n\n\n\n\n\n\n\n\n\n\\(p\\) = 0.1, \\(n\\) = 10\n\n\n\nCode\nn &lt;- 10\np &lt;- 0.1\nk &lt;- seq(0, 10, 1)\nProb &lt;- dbinom(k, n, p)\nbin0_2 &lt;- data.frame(k, Prob)\nggplot(data = bin0_2, aes(x = k, y = Prob)) + \n  geom_col() +\n  scale_x_continuous(breaks=seq(0,10,1)) +\n  scale_y_continuous(breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5)) +\n  ylim(0,0.4) + \n  labs(y = \"P(X = k)\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#binomial-distribution-1",
+    "href": "slides/BTS510-25-11.html#binomial-distribution-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 Binomial distribution",
+    "text": "4.4 Binomial distribution\n\\[P(X = k) = {n \\choose k} p^k (1-p)^{n-k}\\]\nMean of a binomial distribution: \\(np\\)\nVariance of a binomial distribution: \\(np(1-p)\\)\n\nMean and variance are related to one another\n\nThey are functions of the same parameters (\\(n\\) and \\(p\\))\n\nHeteroscedasticity is built into logistic regression"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#logistic-regression-what-we-model",
+    "href": "slides/BTS510-25-11.html#logistic-regression-what-we-model",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 Logistic regression: What we model",
+    "text": "4.5 Logistic regression: What we model\n\nLinear regression: Model the mean of the outcome\n\nObserved and predicted outcome are the same type of variable\n\nLogistic regression: Model the probability of a “success” or “event”\n\nObserved is binary (0 or 1)\nPredicted is probability (from 0 to 1)\nFrom the probability, we can also get the odds of a success and the logit or log-odds of a success"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#logistic-regression-model",
+    "href": "slides/BTS510-25-11.html#logistic-regression-model",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 Logistic regression model",
+    "text": "4.6 Logistic regression model\n\nglm() function in stats package (always loaded)\n\ndata: same as lm()\nformula: same as lm()\nfamily: Residual distribution and link function\n\n\n\nICU &lt;- ICU %&gt;% mutate(AgeC = Age - mean(Age, na.rm = TRUE))\nm1 &lt;- glm(data = ICU, \n          Survive ~ AgeC, \n          family = binomial(link = \"logit\"))\n\n\n\nCode\nm1_b0 &lt;- round(coefficients(m1)[1], 3)\nm1_b1 &lt;- round(coefficients(m1)[2], 3)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#logistic-regression-model-1",
+    "href": "slides/BTS510-25-11.html#logistic-regression-model-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 Logistic regression model",
+    "text": "4.7 Logistic regression model\n\n\n\nEstimate\nStandard error\n\\(z\\) statistic\n\\(p\\)-value\nNo \\(R^2\\)\nDeviance value\n\n\n\nsummary(m1)\n\n\nCall:\nglm(formula = Survive ~ AgeC, family = binomial(link = \"logit\"), \n    data = ICU)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)  1.47357    0.19133   7.702 1.34e-14 ***\nAgeC        -0.02754    0.01056  -2.607  0.00913 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 200.16  on 199  degrees of freedom\nResidual deviance: 192.31  on 198  degrees of freedom\nAIC: 196.31\n\nNumber of Fisher Scoring iterations: 4"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#figure-what-we-model",
+    "href": "slides/BTS510-25-11.html#figure-what-we-model",
+    "title": "Introduction to Biostatistics",
+    "section": "4.8 Figure: What we model",
+    "text": "4.8 Figure: What we model\n\n\nCode\nggplot(ICU, \n       aes(x=AgeC, \n           y=Survive)) +\n  geom_point() +\n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#three-forms-of-logistic-regression",
+    "href": "slides/BTS510-25-11.html#three-forms-of-logistic-regression",
+    "title": "Introduction to Biostatistics",
+    "section": "4.9 Three forms of logistic regression",
+    "text": "4.9 Three forms of logistic regression\n\n\nProbability:\n\n\\[\\hat{p} = \\frac{e^{(\\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \\cdots + b_p X_p})}}{1+e^{(\\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \\cdots + b_p X_p})}}\\]\n\n\n\nOdds:\n\n\\[\\hat{odds} = \\frac{\\hat{p}}{1-\\hat{p}} = e^{\\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \\cdots + b_p X_p}}\\]\n\n\n\nLogit:\n\n\\[ln\\left(\\frac{\\hat{p}}{1-\\hat{p}}\\right) = \\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \\cdots + b_p X_p}\\]"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#what-is-probability-p",
+    "href": "slides/BTS510-25-11.html#what-is-probability-p",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 What is probability (\\(p\\))?",
+    "text": "5.1 What is probability (\\(p\\))?\n\nLikelihood of a “success” or “event”\nRanges from 0 to 1 (inclusive)\nBoth options are equally likely when \\(p = 0.5\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#hatp-frace1.474--0.028-x1-e1.474--0.028-x",
+    "href": "slides/BTS510-25-11.html#hatp-frace1.474--0.028-x1-e1.474--0.028-x",
+    "title": "Introduction to Biostatistics",
+    "section": "5.2 \\(\\hat{p} = \\frac{e^{1.474 + -0.028 X}}{1 + e^{1.474 + -0.028 X}}\\)",
+    "text": "5.2 \\(\\hat{p} = \\frac{e^{1.474 + -0.028 X}}{1 + e^{1.474 + -0.028 X}}\\)\n\n\nggplot(ICU, \n       aes(x=AgeC, \n           y=Survive)) + \n  geom_point() + \n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#hatp-frace1.474--0.028-x1-e1.474--0.028-x-1",
+    "href": "slides/BTS510-25-11.html#hatp-frace1.474--0.028-x1-e1.474--0.028-x-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.3 \\(\\hat{p} = \\frac{e^{1.474 + -0.028 X}}{1 + e^{1.474 + -0.028 X}}\\)",
+    "text": "5.3 \\(\\hat{p} = \\frac{e^{1.474 + -0.028 X}}{1 + e^{1.474 + -0.028 X}}\\)\n\n\nlibrary(ggdist)\nggplot(ICU, \n       aes(x=AgeC, \n           y=Survive)) + \n  #geom_point() + \n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE) +\n  stat_dots(data = ICU, \n            aes(y = Survive, \n                side = ifelse(Survive == 0, \n                              \"top\", \n                              \"bottom\")), \n            scale = 1/5)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-probability",
+    "href": "slides/BTS510-25-11.html#interpreting-probability",
+    "title": "Introduction to Biostatistics",
+    "section": "5.4 Interpreting probability",
+    "text": "5.4 Interpreting probability\n\nIntercept: \\(b_0\\) is related to the probability of success when X = 0\n\n\\(b_0\\) &gt; 0: Success (1) more likely than failure (0) when X = 0\n\\(b_0\\) &lt; 0: Failure (0) more likely than success (1) when X = 0\n\nSlope: \\(b_1\\) tells you how predictor X relates to probability of success\n\n\\(b_1\\) &gt; 0: Probability of a success increases as X increases\n\\(b_1\\) &lt; 0: Probability of a success decreases as X increases"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-probability-example",
+    "href": "slides/BTS510-25-11.html#interpreting-probability-example",
+    "title": "Introduction to Biostatistics",
+    "section": "5.5 Interpreting probability: Example",
+    "text": "5.5 Interpreting probability: Example\n\\[\\hat{p} = \\frac{e^{\\color{OrangeRed}{1.474} + -0.028 X}}{1 + e^{\\color{OrangeRed}{1.474} + -0.028 X}}\\]\n\nInterpretation of example intercept\n\n\\(b_0\\) &gt; 0: Success (1) more likely than failure (0) when X = 0\nProbability of success when X = 0: \\(\\frac{e^{\\color{OrangeRed}{b_0}}}{1 + e^{\\color{OrangeRed}{b_0}}} = \\frac{e^{\\color{OrangeRed}{1.474}}}{1 + e^{\\color{OrangeRed}{1.474}}} =0.814\\)\nProbability of survival at mean age = 0.814"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#psuccessx0",
+    "href": "slides/BTS510-25-11.html#psuccessx0",
+    "title": "Introduction to Biostatistics",
+    "section": "5.6 P(success|X=0)",
+    "text": "5.6 P(success|X=0)\n\n\nCode\nint_eval &lt;- round(eval(exp(m1_b0)) / (1 + exp(m1_b0)), 3)\n\nggplot(ICU, \n       aes(x=AgeC, \n           y=Survive)) + \n  geom_point() + \n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE) +\n  annotate(\"segment\", \n           x = -2, xend = 0, \n           y = int_eval, yend = int_eval, \n           colour = \"black\", linetype = \"dashed\") +\n  annotate(\"segment\", \n           x = 0, xend = 0, \n           y = 0, yend = int_eval, \n           colour = \"black\", linetype = \"dashed\") +\n  annotate(\"pointrange\", \n           x = 0, y = int_eval, \n           ymin = int_eval, ymax = int_eval, \n           colour = \"black\", size = 1.5) +\n  annotate(\"text\", \n           x = 0, y = int_eval + 0.1, \n           colour = \"black\", label = int_eval, size = 6)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-probability-example-1",
+    "href": "slides/BTS510-25-11.html#interpreting-probability-example-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.7 Interpreting probability: Example",
+    "text": "5.7 Interpreting probability: Example\n\\[\\hat{p} = \\frac{e^{1.474 + \\color{OrangeRed}{-0.028} X}}{1 + e^{1.474 + \\color{OrangeRed}{-0.028} X}}\\]\n\nInterpretation of example slope\n\n\\(b_1\\) &lt; 0: Probability of a success decreases as X increases\nProbability of survival decreases as age increases\n\nBut it’s non-linear"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#probability-metric-is-non-linear",
+    "href": "slides/BTS510-25-11.html#probability-metric-is-non-linear",
+    "title": "Introduction to Biostatistics",
+    "section": "5.8 Probability metric is non-linear",
+    "text": "5.8 Probability metric is non-linear\n\nLinear regression:\n\nConstant, linear slope\nSlope depends on the slope only\n\nLogistic regression (probability):\n\nNon-linear slope\nNo interaction but conditional effect"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#probability-metric-is-non-linear-1",
+    "href": "slides/BTS510-25-11.html#probability-metric-is-non-linear-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.9 Probability metric is non-linear",
+    "text": "5.9 Probability metric is non-linear\n\n\n\n\n\nAgeC\nPredicted probability\n\n\n\n\n-30\n0.9100\n\n\n-20\n0.8843\n\n\n-10\n0.8525\n\n\n0\n0.8137\n\n\n10\n0.7675\n\n\n20\n0.7138\n\n\n30\n0.6534"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#probability-metric-is-non-linear-2",
+    "href": "slides/BTS510-25-11.html#probability-metric-is-non-linear-2",
+    "title": "Introduction to Biostatistics",
+    "section": "5.10 Probability metric is non-linear",
+    "text": "5.10 Probability metric is non-linear\n\n\nCode\nggplot(data = ICU, \n       aes(x=AgeC, \n           y=Survive)) + \n  geom_point() + \n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#probability-metric-is-non-linear-3",
+    "href": "slides/BTS510-25-11.html#probability-metric-is-non-linear-3",
+    "title": "Introduction to Biostatistics",
+    "section": "5.11 Probability metric is non-linear",
+    "text": "5.11 Probability metric is non-linear\n\n\nCode\nggplot(data = ICU, \n       aes(x=AgeC, \n           y=Survive)) + \n  geom_point() + \n  stat_smooth(method=\"glm\", \n              method.args=list(family=\"binomial\"), \n              se=FALSE, \n              fullrange = T) +\n  xlim(-100, 250)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#a-caution-about-probability-equation",
+    "href": "slides/BTS510-25-11.html#a-caution-about-probability-equation",
+    "title": "Introduction to Biostatistics",
+    "section": "5.12 A caution about probability equation",
+    "text": "5.12 A caution about probability equation\n\n\n\n\n\n\nWarning\n\n\nYou might also see the probability defined as \\(\\hat{p} = \\frac{1}{1 + e^{-({b_{0} + b_{1} X})}}\\)\nOr more generally, \\(\\hat{p} = \\frac{1}{1 + e^{-(Xb)}}\\)\n\nThese are numerically equivalent to what we’ve talked about\n\nBut did you notice the negative sign?\nNo? You didn’t expect it and missed it in the complicated equation?\nYeah, that’s why we don’t use this version"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#what-are-odds",
+    "href": "slides/BTS510-25-11.html#what-are-odds",
+    "title": "Introduction to Biostatistics",
+    "section": "6.1 What are odds?",
+    "text": "6.1 What are odds?\n\nOdds is the ratio of two probabilities\n\n\\[odds = \\frac{\\hat{p}}{(1 - \\hat{p})}\\]\n\nOdds is the ratio of probability of a “success” (\\(\\hat{p}\\)) to the probability of “not a success” \\((1 − \\hat{p})\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#how-do-odds-work",
+    "href": "slides/BTS510-25-11.html#how-do-odds-work",
+    "title": "Introduction to Biostatistics",
+    "section": "6.2 How do odds work?",
+    "text": "6.2 How do odds work?\n\nProbability ranges from 0 to 1, switches at 0.5\n\nSuccess more likely than failure when \\(p &gt; 0.5\\)\nSuccess less likely than failure when \\(p &lt; 0.5\\)\n\nOdds range from \\(0\\) to \\(+\\infty\\), switches at 1\n\nSuccess more likely than failure when \\(odds &gt; 1\\)\nSuccess less likely than failure when \\(odds &lt; 1\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#hatodds-frachatp1---hatp-e1.474--0.028-x",
+    "href": "slides/BTS510-25-11.html#hatodds-frachatp1---hatp-e1.474--0.028-x",
+    "title": "Introduction to Biostatistics",
+    "section": "6.3 \\(\\hat{odds} = \\frac{\\hat{p}}{(1 - \\hat{p})} = e^{1.474 + -0.028 X}\\)",
+    "text": "6.3 \\(\\hat{odds} = \\frac{\\hat{p}}{(1 - \\hat{p})} = e^{1.474 + -0.028 X}\\)\n\n\nCode\nICU &lt;- ICU %&gt;% mutate(pred_odds = exp(m1_b0 + m1_b1 * AgeC),\n                      pred_p = exp(m1_b0 + m1_b1 * AgeC) / (1 + exp(m1_b0 + m1_b1 * AgeC)),\n                      obs_odds = pred_p / (1 - pred_p))\n\nggplot(data = ICU, \n       aes(x = AgeC, \n           y = obs_odds)) +  \n  geom_line(color=\"blue\", \n            aes(x = AgeC, \n                y = pred_odds)) +\n  labs (y = \"Odds\") +\n  annotate(\"segment\", \n           x = -40, xend = 35, \n           y = 1, yend = 1, \n           colour = \"black\", linetype = \"dashed\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-odds",
+    "href": "slides/BTS510-25-11.html#interpreting-odds",
+    "title": "Introduction to Biostatistics",
+    "section": "6.4 Interpreting odds",
+    "text": "6.4 Interpreting odds\n\nIntercept: \\(b_0\\) is related to the odds of success when \\(X\\) = 0\n\nOdds of success when X = 0: \\(e^{b_0}\\)\n\\(b_0\\) &gt; 0: Odds of success &gt; 1 when \\(X\\) = 0\n\n\\(b_0\\) &lt; 0: Odds of success &lt; 1 when \\(X\\) = 0\n\n\nSlope: \\(b_1\\) tells you how predictor X relates to odds of success\n\n\\(b_1\\) &gt; 0: Odds of success increases as \\(X\\) increases\n\\(b_1\\) &lt; 0: Odds of a success decreases as \\(X\\) increases"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-odds-example",
+    "href": "slides/BTS510-25-11.html#interpreting-odds-example",
+    "title": "Introduction to Biostatistics",
+    "section": "6.5 Interpreting odds: Example",
+    "text": "6.5 Interpreting odds: Example\n\\[\\hat{odds} = \\frac{\\hat{p}}{(1 - \\hat{p})} = e^{\\color{OrangeRed}{1.474} + -0.028 X}\\]\n\nInterpretation of example intercept\n\n\\(b_0 &gt; 0\\) so odds of success &gt; 1 when \\(X\\) = 0\n\nSuccess (1) more likely than failure (0) when \\(X\\) = 0\n\nOdds of success when \\(X\\) = 0: \\(e^{\\color{OrangeRed}{b_0}} = e^{\\color{OrangeRed}{1.474}} = 4.37\\)\n\nA “success” is about 4.37 times as likely as a “failure”\nCompare to 0.814 probability of success: 0.814 / 0.186 = 4.38"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-odds-example-1",
+    "href": "slides/BTS510-25-11.html#interpreting-odds-example-1",
+    "title": "Introduction to Biostatistics",
+    "section": "6.6 Interpreting odds: Example",
+    "text": "6.6 Interpreting odds: Example\n\\[\\hat{odds} = \\frac{\\hat{p}}{(1 - \\hat{p})} = e^{1.474 + \\color{OrangeRed}{-0.028} X}\\]\n\nInterpretation of example slope\n\n\\(b_1\\) &lt; 0: Odds of a success decreases as \\(X\\) increases\nOdds of survival decreases as age increases\n\nBut it’s non-linear"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#odds-metric-is-nonlinear",
+    "href": "slides/BTS510-25-11.html#odds-metric-is-nonlinear",
+    "title": "Introduction to Biostatistics",
+    "section": "6.7 Odds metric is nonlinear",
+    "text": "6.7 Odds metric is nonlinear\n\nThis non-linear change is presented in terms of odds ratio\n\nConstant, multiplicative change in predicted odds\nFor a 1-unit difference in \\(X\\), the predicted odds of success is multiplied by the odds ratio\n\nExample: odds ratio \\(= e^{b_1}= e^{-0.028} = 0.972\\)\n\nFor a 1-unit difference in \\(X\\), the predicted odds of success is multiplied by \\(0.972\\)\nEach 1-unit increase in \\(X\\) reduces the odds of a success"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#odds-ratio-0.972",
+    "href": "slides/BTS510-25-11.html#odds-ratio-0.972",
+    "title": "Introduction to Biostatistics",
+    "section": "6.8 Odds ratio = 0.972)",
+    "text": "6.8 Odds ratio = 0.972)\n\n\nCode\nggplot(data = ICU, \n       aes(x = AgeC, \n           y = obs_odds)) +  \n  geom_line(color=\"blue\", \n            aes(x = AgeC, \n                y = pred_odds)) +\n  labs (y = \"Odds\") +\n  annotate(\"segment\", \n           x = -40, xend = 35, \n           y = 1, yend = 1, \n           colour = \"black\", linetype = \"dashed\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#odds-metric-is-nonlinear-1",
+    "href": "slides/BTS510-25-11.html#odds-metric-is-nonlinear-1",
+    "title": "Introduction to Biostatistics",
+    "section": "6.9 Odds metric is nonlinear",
+    "text": "6.9 Odds metric is nonlinear\n\n\n\n\n\nAgeC\nPredicted probability\nPredicted odds\n\n\n\n\n-30\n0.9100\n10.1148\n\n\n-20\n0.8843\n7.6446\n\n\n-10\n0.8525\n5.7777\n\n\n0\n0.8137\n4.3667\n\n\n10\n0.7675\n3.3003\n\n\n20\n0.7138\n2.4943\n\n\n30\n0.6534\n1.8851"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#a-caution-about-odds",
+    "href": "slides/BTS510-25-11.html#a-caution-about-odds",
+    "title": "Introduction to Biostatistics",
+    "section": "6.10 A caution about odds",
+    "text": "6.10 A caution about odds\n\n\n\n\n\n\nWarning\n\n\n\nOdds ratios are very popular in medicine and epidemiology\nThey can be extremely misleading\nThe same odds ratio corresponds to many different probability values\n\nOdds ratio \\(= \\frac{odds = 3}{odds = 1} = 3\\)\n\nCorresponds to probability of 0.75 vs 0.5\n\nOdds ratio \\(= \\frac{odds = 9}{odds = 3} = 3\\)\n\nCorresponds to probability of 0.90 vs 0.75"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#what-is-the-logit",
+    "href": "slides/BTS510-25-11.html#what-is-the-logit",
+    "title": "Introduction to Biostatistics",
+    "section": "7.1 What is the logit?",
+    "text": "7.1 What is the logit?\n\nLogit or log-odds is the natural log (\\(ln\\)) of the odds\n\nAs probability of “success” increases (nonlinearly, S-shaped curve)\nThe odds of “success” increases (also nonlinearly, exponentially)\nThe logit of “success” increases linearly"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#how-does-the-logit-work",
+    "href": "slides/BTS510-25-11.html#how-does-the-logit-work",
+    "title": "Introduction to Biostatistics",
+    "section": "7.2 How does the logit work?",
+    "text": "7.2 How does the logit work?\n\nProbability ranges from 0 to 1, switches at 0.5\nOdds range from 0 to \\(+\\infty\\) , switches at 1\nLogit ranges from \\(-\\infty\\) to \\(+\\infty\\), switches at 0\n\nSuccess more likely than failure when logit &gt; 0\nSuccess less likely than failure when logit &lt; 0"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#lnleftfrachatp1---hatpright-1.474--0.028-x",
+    "href": "slides/BTS510-25-11.html#lnleftfrachatp1---hatpright-1.474--0.028-x",
+    "title": "Introduction to Biostatistics",
+    "section": "7.3 \\(ln\\left(\\frac{\\hat{p}}{(1 - \\hat{p})}\\right) = 1.474 + -0.028 X\\)",
+    "text": "7.3 \\(ln\\left(\\frac{\\hat{p}}{(1 - \\hat{p})}\\right) = 1.474 + -0.028 X\\)\n\n\nCode\nggplot(ICU, aes(x=AgeC, y=obs_odds)) +  \n  geom_line(color=\"blue\", aes(x = AgeC, y = log(pred_odds))) +\n  labs (y = \"Logit\") +\n  annotate(\"segment\", x = -40, xend = 35, y = 0, yend = 0, colour = \"black\", linetype = \"dashed\")"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-logit",
+    "href": "slides/BTS510-25-11.html#interpreting-logit",
+    "title": "Introduction to Biostatistics",
+    "section": "7.4 Interpreting logit",
+    "text": "7.4 Interpreting logit\n\nIntercept: \\(b_0\\) is related to the logit of success when X = 0\n\nLogit of success when X = 0: \\(b_0\\)\n\n\\(b_0\\) &gt; 0: Logit &gt; 0 when X = 0\n\\(b_0\\) &lt; 0: Logit &lt; 0 when X = 0\n\n\nSlope : \\(b_1\\) is the relationship between predictor X and logit of success\n\n\\(b_1\\) &gt; 0: Logit of a success increases as X increases\n\\(b_1\\) &lt; 0: Logit of a success decreases as X increases"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-logit-example",
+    "href": "slides/BTS510-25-11.html#interpreting-logit-example",
+    "title": "Introduction to Biostatistics",
+    "section": "7.5 Interpreting logit: Example",
+    "text": "7.5 Interpreting logit: Example\n\\[\\hat{logit} = ln\\left(\\frac{\\hat{p}}{(1 - \\hat{p})}\\right) = \\color{OrangeRed}{1.474} + -0.028 X\\]\n\nInterpretation of example intercept\n\n\\(b_0\\) &gt; 0: Logit &gt; 0 when X = 0\nLogit of success when X = 0: \\(\\color{OrangeRed}{b_0} = \\color{OrangeRed}{1.474}\\)\nSuccess more likely than failure when X = 0"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interpreting-logit-example-1",
+    "href": "slides/BTS510-25-11.html#interpreting-logit-example-1",
+    "title": "Introduction to Biostatistics",
+    "section": "7.6 Interpreting logit: Example",
+    "text": "7.6 Interpreting logit: Example\n\\[\\hat{logit} = ln\\left(\\frac{\\hat{p}}{(1 - \\hat{p})}\\right) = 1.474 + \\color{OrangeRed}{-0.028} X\\]\n\nInterpretation of example slope\n\n\\(b_1\\) &lt; 0: Logit of a success decreases by \\(\\color{OrangeRed}{-0.028}\\) units when X increases by 1 unit"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#so-which-metric-should-i-use",
+    "href": "slides/BTS510-25-11.html#so-which-metric-should-i-use",
+    "title": "Introduction to Biostatistics",
+    "section": "8.1 So which metric should I use?",
+    "text": "8.1 So which metric should I use?\n\nThey are equivalent and give you the same information\n\nJust packaged differently\n\nUse the metric that\n\nMakes the most sense to you\nYou can explain fully\nIs most commonly used in your field"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#metrics-some-things-to-keep-in-mind",
+    "href": "slides/BTS510-25-11.html#metrics-some-things-to-keep-in-mind",
+    "title": "Introduction to Biostatistics",
+    "section": "8.2 Metrics: Some things to keep in mind",
+    "text": "8.2 Metrics: Some things to keep in mind\n\nOdds ratios tell you about change, but not where you start\n\nIf you report odds ratios, also report some measure of probability e.g., probability of success at the mean of X\n10x change is \\(5%\\) to \\(50%\\) or \\(0.05%\\) to \\(0.5%\\)?\n\nLogit is nice because it’s linear, but it’s not very interpretable\n\nWhat is a “logit”? It’s just a mathematical concept that makes a straight line – not actually meaningful\nBut many measures don’t have meaningful metrics…"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#why-a-z-statistic",
+    "href": "slides/BTS510-25-11.html#why-a-z-statistic",
+    "title": "Introduction to Biostatistics",
+    "section": "8.3 Why a \\(z\\)-statistic?",
+    "text": "8.3 Why a \\(z\\)-statistic?\n\nMaximum likelihood estimation\n\nEstimates are assumed to be normally distributed\n\nKnown variance\n\nBinomial distribution: mean = \\(np\\), variance = \\(np(1-p)\\)\nUse \\(t\\) distribution when you need to estimate variance\n\nUse \\(z\\) distribution when you don’t"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#predictors-in-logistic-regression",
+    "href": "slides/BTS510-25-11.html#predictors-in-logistic-regression",
+    "title": "Introduction to Biostatistics",
+    "section": "8.4 Predictors in logistic regression",
+    "text": "8.4 Predictors in logistic regression\n\nSimilar to linear regression\n\nContinuous: Center for interpretability\nCategorical: Code appropriately\nCoefficients are partial coefficients\n\nTests are \\(z\\)-tests, not \\(t\\)-tests"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#models-in-logistic-regression",
+    "href": "slides/BTS510-25-11.html#models-in-logistic-regression",
+    "title": "Introduction to Biostatistics",
+    "section": "8.5 Models in logistic regression",
+    "text": "8.5 Models in logistic regression\n\nAdd predictors in sets\n\nLikelihood ratio tests to compare models\n\nCoefficients are in logit metric\n\nSo are the confidence intervals\nConfidenct intervals in other metrics\n\n\\(R^2_{multiple}\\) analogue\nPackages to make some of these things easier"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#interactions-in-logistic-regression",
+    "href": "slides/BTS510-25-11.html#interactions-in-logistic-regression",
+    "title": "Introduction to Biostatistics",
+    "section": "8.6 Interactions in logistic regression",
+    "text": "8.6 Interactions in logistic regression\n\nEffects (in probability metric) are already nonlinear\n\nAlready conditional\n\nInteractions (also conditional) are complicated here\n\nConditional on top of conditional\nCan have interactions without a product term\nCan have no interaction with a significant product term\n\nSee McCabe et al. (2022): Full reference on the References page"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#summary-1",
+    "href": "slides/BTS510-25-11.html#summary-1",
+    "title": "Introduction to Biostatistics",
+    "section": "9.1 Summary",
+    "text": "9.1 Summary\n\nUse logistic regression when your outcome is binary\n\nDon’t use linear regression\n\nBe careful with interpretation no matter what\n\nProbability: Probability makes sense, but it’s nonlinear\nOdds: Odds ratio seems to make sense but it can be misleading\nLogit: Linear but what even is a logit?\n\nBut many basic concepts parallel linear regression\n\nIntercept, slope(s), adding predictors, \\(R^2_{multiple}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#in-class",
+    "href": "slides/BTS510-25-11.html#in-class",
+    "title": "Introduction to Biostatistics",
+    "section": "9.2 In class",
+    "text": "9.2 In class\n\nRun some logistic regression models\nInterpret the results\nExamples of the things we didn’t get to\n\n\\(R^2_{multiple}\\), compare models, report full results"
+  },
+  {
+    "objectID": "slides/BTS510-25-11.html#next-time",
+    "href": "slides/BTS510-25-11.html#next-time",
+    "title": "Introduction to Biostatistics",
+    "section": "9.3 Next time",
+    "text": "9.3 Next time\n\nLogistic regression for binary outcomes\nPoisson regression for count outcomes\nSurvival analysis for survival outcomes"
   },
   {
     "objectID": "slides/BTS510-25-3.html#learning-objectives-1",

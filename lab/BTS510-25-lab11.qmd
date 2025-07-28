@@ -22,7 +22,8 @@ theme_set(theme_classic(base_size = 16))
 
 ## Learning objectives
 
-
+* **Conduct** logistic regression for *binary outcomes*
+* **Interpret** results in terms of *probability*, *odds*, and *log-odds*
 
 ## Data 
 
@@ -40,23 +41,79 @@ theme_set(theme_classic(base_size = 16))
 ## Analysis
 
 * Replicate and extend the analysis from the lecture
-  * `Age`, `Emergency`, and their interaction predict `Pulse`
-  * Be sure to mean center `Age` for interpretability.
+  * `Age` and `Emergency` predict `Survive`
+  * Be sure to mean center `Age` for interpretability
+
+## Pseudo $R^2$
+
+* For linear regression, $R^2_{multiple}$ is calculated from the **sums of squares** from ordinary least squares estimation
+* Logistic regression is estimated via maximum likelihood
+  * There are no sums of squares
+  * There is, however, **deviance**
+* Deviance is a function of the log-likelihood
+  * Deviance for a model is how far the model is from a *theoretical* **perfect model** where every observation is perfectly predicted
+  * **Relative measure** so can only **compare** to another model
+  * Big deviance (far from perfect) is worse than small deviance (closer to perfect)
+* Pseudo $R^2$
+  * Compare your model to a model with **no predictors** (only intercept)
+  * How much closer is this model to the perfect model than the intercept only model?
+  * Theoretically ranges from 0 to 1 (but not in practice)
+  * $R^2_{deviance} = 1 - \frac{deviance_{M}}{deviance_{intercept\ only}}$
+  * Deviance for your model is "Residual deviance" from output
+  * Deviance for intercept model is "Null deviance" from output
+
+## Confidence intervals
+
+* Calculate confidence intervals for all coefficients in a model using `confint()`
+  * For example: `confint(m1)` to get confidence intervals for model `m1`
+  * If the CI doesn't include **zero**, the coefficient is significant
+  * Default is 99% confidence interval
+    * Use `level` argument to change
+    * e.g., `confint(m1, level = 0.99)` produces 99% CIs
+* To convert from default logit metric to odds metric: Exponentiate
+  * Logit metric: $b_1$
+  * Convert to **odds ratio**: $e^{b_1}$
+  * Do the same thing to the confidence intervals
+    * `exp(confint(m1))` produces the odds metric CIs
+    * Compare to "no effect" value of **one** for odds
+    * If the CI doesn't include **one**, the coefficient is significant
+
+## Predicted values
+
+* Two main options
+  * Use R like a calculator to calculate predicted values using equations
+    * You can be fancy and grab the coefficients directly from the output
+    * e.g., using `coef(m1)[1]` to get the first coefficient, etc.
+    * Or just type the numbers in
+  * Use `predict()` to calculate predicted values
+    * Set up a new dataset with the predictor values you're interested in
+    * e.g., `age_vals <- data.frame(AgeC = c(-20, 0, 20))`
+    * Then use that new data in `predict()`
+    * e.g., `predict(m1, newdata = age_vals, type = "response")`
+    * `type = "response"` gives predicted values in **probability**
+    * `type = "link"` gives predicted values in **logit**
 
 ## Tasks
 
-* Model 1: `Pulse ~ Age + Emergency`
-* Model 2: `Pulse ~ Age + Emergency + Age*Emergency`
+* Model 1: `Survive ~ Age`
+* Model 2: `Survive ~ Age + Emergency`
 
 1. Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?
 
-2. Plot the simple slopes with the data points. What is the general pattern of results? 
+2. Report the full results of the preferred model. This is similar to linear regression. For each coefficient (including intercept), report:
+* Regression coefficient
+* Standard error
+* $z$ statistic (note that there aren't degrees of freedom for $z$ tests)
+* $p$ value 
 
-3. Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and $p$-values.
+3. Calculate predicted probabilities for 6 predictor combinations:
+* Emergency admit, 20 years younger than mean
+* Emergency admit, mean age
+* Emergency admit, 20 years older than mean
+* Non-emergency admit, 20 years younger than mean
+* Non-emergency admit, mean age
+* Non-emergency admit, 20 years older than mean
 
-* Is the slope with respect to age significant for each group?
-* For which values of age are the emergency groups different in pulse rate?
+4. Report the odds ratios for each predictor and their confidence intervals. Interpret the odds ratios in words.
 
-4. Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.
-
-5. Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., pulse, age, emergency admission) rather than X and Y.
+5. Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., survival, age, emergency admission) rather than X and Y.

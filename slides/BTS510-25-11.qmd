@@ -33,6 +33,8 @@ knitr:
 
 ```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
 library(tidyverse)
+library(broom)
+library(ggdist) # logistic regression plot
 theme_set(theme_classic(base_size = 16))
 set.seed(12345)
 ```
@@ -41,13 +43,860 @@ set.seed(12345)
 
 ## Learning objectives
 
+* **Conduct** logistic regression for *binary outcomes*
+* **Interpret** results in terms of *probability*, *odds*, and *log-odds*
+
+# Linear regression review
+
+## Assumptions of linear regression
+
+General linear model (GLM, linear regression, ANOVA) makes **three assumptions** about the **residuals** ($e_i = Y_i - \hat{Y}_i$) of the model
+
+1.    **Independence**: observations (i.e., residuals) from different subjects **do not depend on one another**
+2.    **Constant variance** (homoscedasticity): **variance of residuals is same** at all values of predictor(s)
+3.    **Conditional normality**: **residuals are normally distributed** at each value of predictor(s)
+
+## ICU data
+
+```{r}
+library(Stat2Data)
+data(ICU)
+head(ICU)
+```
+
+## Linear regression on normal outcome
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x = Age, 
+           y = Pulse)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm")
+```
+
+## Assumptions met!
+
+```{r}
+#| code-fold: true
+m1_norm <- lm(Pulse ~ Age, 
+              data = ICU)
+m1_norm_resid <- augment(m1_norm)
+ggplot(data = m1_norm_resid, 
+       aes(x = .resid)) +
+  geom_histogram(aes(y = ..density..), 
+                 fill = "white", 
+                 color = "blue") +
+  geom_density()
+```
+
+## Assumptions met!
+
+```{r}
+#| code-fold: true
+ggplot(data = m1_norm_resid, 
+       aes(sample = .resid)) + 
+  geom_qq() + 
+  geom_qq_line() +
+  labs(x = "Theoretical", 
+       y = "Sample")
+```
+
+## Assumptions met!
+
+```{r}
+#| code-fold: true
+ggplot(data = m1_norm_resid, 
+       aes(x = Age, 
+           y = .resid)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+# Binary variable
+
+## A binary variable is not normal
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x = as.factor(Survive))) + 
+  geom_bar()
+```
+
+## Plot of data with fit line
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x = Age, 
+           y = Survive)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", 
+              se = FALSE) +
+  coord_cartesian(ylim = c(0,1)) 
+```
+
+## Plot of data with fit line
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x = Age, 
+           y = Survive)) + 
+  geom_jitter(height = 0.02, 
+              alpha = 0.5) + 
+  geom_smooth(method = "lm", 
+              se = FALSE) +
+  coord_cartesian(ylim = c(0,1)) 
+```
+
+<!-- ## Plot of data with fit line -->
+
+<!-- ```{r} -->
+<!-- #| fig-alt: "Binary outcome vs predictor with linear fit" -->
+<!-- #| output-location: column -->
+<!-- #| results: hold -->
+<!-- #| echo: true -->
+<!-- library(ggdist) -->
+<!-- ggplot(data = ICU,  -->
+<!--        aes(x = Age,  -->
+<!--            y = Survive)) +  -->
+<!--   stat_dots(data = ICU,  -->
+<!--             aes(y = Survive,  -->
+<!--                 side = ifelse(Survive == 0,  -->
+<!--                               "top",  -->
+<!--                               "bottom")),  -->
+<!--             scale = 1/5) + -->
+<!--   geom_smooth(method = "lm",  -->
+<!--               se = FALSE) + -->
+<!--   coord_cartesian(ylim = c(0,1))  -->
+<!-- ``` -->
+
+## Plot of residuals
+
+```{r}
+#| code-fold: true
+m1_bin <- lm(Survive ~ Age, 
+             data = ICU)
+resids_m1_bin <- augment(m1_bin)
+ggplot(data = resids_m1_bin, 
+       aes(x = .resid)) + 
+  geom_histogram(aes(y = ..density..), 
+                 fill = "white", 
+                 color = "blue") +
+  geom_density() 
+
+```
+
+## Plot of residuals
+
+```{r}
+#| code-fold: true
+ggplot(data = resids_m1_bin, 
+       aes(sample = .resid)) + 
+  geom_qq() + 
+  geom_qq_line() +
+  labs(x = "Theoretical", 
+       y = "Sample")
+```
+
+## Plot of residuals
+
+```{r}
+#| code-fold: true
+ggplot(data = resids_m1_bin, 
+       aes(x = Age, 
+           y = .resid)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+## What **NOT** to do
+
+-   **Ignore** the problem
+
+    -   Do linear regression anyway
+    -   Call it **linear probability model**
+
+-   **Transform** the *outcome*
+
+    -   Square root, natural log, etc.
+    -   May *slightly* normalize *univariate* residual distribution
+    -   **Does not fix heteroscedasticity, (conditional) non-normality**
+
+## A binary variable is not normal
+
+```{r}
+#| fig-alt: "Distribution of binary variable" 
+#| echo: false
+ggplot(data = ICU, 
+       aes(x = as.factor(Survive))) + 
+  geom_bar()
+```
+
+## What to do
+
+* **Generalized linear model (GLiM)**
+  * Not a single model but a **family** of regression models
+  * **Choose** features (e.g., residual distribution) to match the **characteristics** of your outcome variable
+  * Accommodates many **continuous** and **categorical** outcome variables
+  * Includes **logistic regression** and **Poisson regression**
+  * Transformation of the **predicted** outcome
+
+# Logistic regression
+
+## (Binary) logistic regression
+
+* **Outcome**: binary 
+  * Observed value ($Y$): 0 or 1, where 1 = "success" or "event"
+  * Predicted value ($\hat{Y}$): **Probability** of success, between 0 and 1
+*   **Residual/outcome distribution**: binomial
+*   **Link function**: logit (or log-odds) = $ln\Big(\frac{\hat{Y}}{1 - \hat{Y}}\Big) = ln\left(\frac{\hat{p}}{1-\hat{p}}\right)$
+
+$$ln\left(\frac{\hat{p}}{1-\hat{p}}\right) = b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p$$
+
+## Reminder: normal distribution
+
+$$f(x) = {\frac {1}{{\sqrt {2\pi \sigma^2}}}}e^{-{\frac {(x-\mu)^2 }{2 \sigma^2 }}}$$
+
+Mean of normal distribution = $\mu$
+
+Variance of normal distribution = $\sigma^2$
+
+-   Mean and variance are **different parameters** and are **unrelated**
+  * **Homoscedasticity**: Constant variance doesn't depend on mean
+
+<!-- ## Binomial distribution -->
+
+<!-- $$P(X = k) = {n \choose k} p^k (1-p)^{n-k}$$ -->
+
+<!-- -   $n$ is the sample size -->
+<!-- -   $p$ is the probability of an event\ -->
+<!-- -   $k$ is the observed number of events\ -->
+<!-- -   ${n \choose k} = \frac{n!}{k!(n-k!)}$ and is read as "$n$ choose $k$" -->
+
+## Binomial distribution
+
+Probability of $k$ events in $n$ trials, each with probability $p$ of event?
+
+::: columns
+::: column
+* $p$ = 0.5, $n$ = 10
+
+```{r}
+#| code-fold: true
+n <- 10
+p <- 0.5
+k <- seq(0, 10, 1)
+Prob <- dbinom(k, n, p)
+bin0_5 <- data.frame(k, Prob)
+ggplot(data = bin0_5, aes(x = k, y = Prob)) + 
+  geom_col() +
+  scale_x_continuous(breaks=seq(0,10,1)) +
+  scale_y_continuous(breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5)) +
+  ylim(0,0.4) +
+  labs(y = "P(X = k)")
+```
+:::
+
+::: column
+* $p$ = 0.1, $n$ = 10
+
+```{r}
+#| code-fold: true
+n <- 10
+p <- 0.1
+k <- seq(0, 10, 1)
+Prob <- dbinom(k, n, p)
+bin0_2 <- data.frame(k, Prob)
+ggplot(data = bin0_2, aes(x = k, y = Prob)) + 
+  geom_col() +
+  scale_x_continuous(breaks=seq(0,10,1)) +
+  scale_y_continuous(breaks = c(0, 0.1, 0.2, 0.3, 0.4, 0.5)) +
+  ylim(0,0.4) + 
+  labs(y = "P(X = k)")
+```
+:::
+:::
+
+## Binomial distribution
+
+$$P(X = k) = {n \choose k} p^k (1-p)^{n-k}$$
+
+Mean of a binomial distribution: $np$\
+Variance of a binomial distribution: $np(1-p)$
+
+-   Mean and variance are **related** to one another
+
+    -   They are functions of the same parameters ($n$ and $p$)
+    
+- **Heteroscedasticity is built into logistic regression**
+
+## Logistic regression: What we model
+
+* Linear regression: Model the **mean** of the outcome
+  * Observed and predicted outcome are the *same type of variable*
+* Logistic regression: Model the **probability of a "success" or "event"**
+  * Observed is **binary** (**0 or 1**) 
+  * Predicted is **probability** (**from 0 to 1**)
+  * From the **probability**, we can also get the **odds** of a success and the **logit or log-odds** of a success
+
+## Logistic regression model
+
+* `glm()` function in **stats** package (always loaded)
+  * `data`: same as `lm()`
+  * `formula`: same as `lm()`
+  * `family`: Residual distribution and link function
+
+```{r}
+ICU <- ICU %>% mutate(AgeC = Age - mean(Age, na.rm = TRUE))
+m1 <- glm(data = ICU, 
+          Survive ~ AgeC, 
+          family = binomial(link = "logit"))
+```
+
+```{r}
+#| code-fold: true
+m1_b0 <- round(coefficients(m1)[1], 3)
+m1_b1 <- round(coefficients(m1)[2], 3)
+```
+
+## Logistic regression model
+
+:::: {.columns}
+
+::: {.column width="30%"}
+* Estimate
+* Standard error
+* **$z$ statistic**
+* $p$-value
+* **No $R^2$**
+* Deviance value
+:::
+
+::: {.column width="70%"}
+```{r}
+summary(m1)
+```
+:::
+
+::::
 
 
-# Next time
 
-## Non-normal outcomes
+
+
+<!-- ## Figure: What we model -->
+
+<!-- ```{r} -->
+<!-- #| code-fold: true -->
+<!-- m1 <- glm(Survive ~ Age, family = binomial(link = "logit"), data = ICU) -->
+<!-- m1_b0 <- round(coefficients(m1)[1], 3) -->
+<!-- m1_b1 <- round(coefficients(m1)[2], 3) -->
+<!-- #m1_b0 -->
+<!-- #m1_b1 -->
+<!-- ICU$pred <- (exp(m1_b0 + m1_b1 * ICU$Age)) / (1 + exp(m1_b0 + m1_b1 * ICU$Age)) -->
+<!-- ICU$low <- ICU$pred - ICU$pred * (1-ICU$pred) -->
+<!-- ICU$high <- ICU$pred + ICU$pred * (1-ICU$pred) -->
+<!-- ggplot(ICU, aes(x=Age, y=Survive)) + -->
+<!--   geom_point() + -->
+<!--   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE) + -->
+<!--   geom_ribbon(aes(ymin=low, ymax=high), alpha = 0.3) -->
+<!-- ``` -->
+
+## Figure: What we model
+
+```{r}
+#| code-fold: true
+ggplot(ICU, 
+       aes(x=AgeC, 
+           y=Survive)) +
+  geom_point() +
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE)
+```
+
+## Three forms of logistic regression
+
+::: {.columns}
+
+::: {.column width="20%"}
+Probability: 
+:::
+
+::: {.column width="80%"}
+$$\hat{p} = \frac{e^{(\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p})}}{1+e^{(\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p})}}$$ 
+:::
+
+:::
+
+::: {.columns}
+
+::: {.column width="20%"}
+Odds:
+:::
+
+::: {.column width="80%"}
+$$\hat{odds} = \frac{\hat{p}}{1-\hat{p}} = e^{\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p}}$$ 
+:::
+
+:::
+
+::: {.columns}
+
+::: {.column width="20%"}
+Logit:
+:::
+
+::: {.column width="80%"}
+$$ln\left(\frac{\hat{p}}{1-\hat{p}}\right) = \color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p}$$
+:::
+
+:::
+
+# Probability metric
+
+## What is probability ($p$)?
+
+- Likelihood of a "success" or "event"
+- Ranges from 0 to 1 (inclusive)
+- Both options are equally likely when $p = 0.5$
+
+## $\hat{p} = \frac{e^{`r m1_b0` + `r m1_b1` X}}{1 + e^{`r m1_b0` + `r m1_b1` X}}$
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(ICU, 
+       aes(x=AgeC, 
+           y=Survive)) + 
+  geom_point() + 
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE) 
+```
+
+## $\hat{p} = \frac{e^{`r m1_b0` + `r m1_b1` X}}{1 + e^{`r m1_b0` + `r m1_b1` X}}$
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+library(ggdist)
+ggplot(ICU, 
+       aes(x=AgeC, 
+           y=Survive)) + 
+  #geom_point() + 
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE) +
+  stat_dots(data = ICU, 
+            aes(y = Survive, 
+                side = ifelse(Survive == 0, 
+                              "top", 
+                              "bottom")), 
+            scale = 1/5)
+```
+
+## Interpreting probability
+
+* **Intercept**: $b_0$ is related to the **probability of success** when **X = 0**
+  * $b_0$ \> 0: **Success (1) more likely** than failure (0) when X = 0
+  * $b_0$ \< 0: **Failure (0) more likely** than success (1) when X = 0
+* **Slope**: $b_1$ tells you how **predictor X relates to probability of success**
+  * $b_1$ \> 0: Probability of a **success increases as X increases**
+  * $b_1$ \< 0: Probability of a **success decreases as X increases**
+
+## Interpreting probability: Example
+
+$$\hat{p} = \frac{e^{\color{OrangeRed}{`r m1_b0`} + `r m1_b1` X}}{1 + e^{\color{OrangeRed}{`r m1_b0`} + `r m1_b1` X}}$$
+
+* Interpretation of example **intercept**
+  * $b_0$ > 0: **Success (1) more likely than failure (0) when X = 0**
+  * Probability of success when X = 0: $\frac{e^{\color{OrangeRed}{b_0}}}{1 + e^{\color{OrangeRed}{b_0}}} = \frac{e^{\color{OrangeRed}{`r m1_b0`}}}{1 + e^{\color{OrangeRed}{`r m1_b0`}}} =`r round(eval(exp(m1_b0)) / (1 + exp(m1_b0)), 3)`$
+  * Probability of survival at mean age = `r round(eval(exp(m1_b0)) / (1 + exp(m1_b0)), 3)`
+
+## P(success|X=0)
+
+```{r}
+#| code-fold: true
+int_eval <- round(eval(exp(m1_b0)) / (1 + exp(m1_b0)), 3)
+
+ggplot(ICU, 
+       aes(x=AgeC, 
+           y=Survive)) + 
+  geom_point() + 
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE) +
+  annotate("segment", 
+           x = -2, xend = 0, 
+           y = int_eval, yend = int_eval, 
+           colour = "black", linetype = "dashed") +
+  annotate("segment", 
+           x = 0, xend = 0, 
+           y = 0, yend = int_eval, 
+           colour = "black", linetype = "dashed") +
+  annotate("pointrange", 
+           x = 0, y = int_eval, 
+           ymin = int_eval, ymax = int_eval, 
+           colour = "black", size = 1.5) +
+  annotate("text", 
+           x = 0, y = int_eval + 0.1, 
+           colour = "black", label = int_eval, size = 6)
+```
+
+## Interpreting probability: Example
+
+$$\hat{p} = \frac{e^{`r m1_b0` + \color{OrangeRed}{`r m1_b1`} X}}{1 + e^{`r m1_b0` + \color{OrangeRed}{`r m1_b1`} X}}$$
+
+* Interpretation of example **slope**
+  * $b_1$ < 0: **Probability of a success decreases as X increases**
+  * Probability of survival decreases as age increases
+    * **But** it's non-linear
+
+## Probability metric is non-linear
+
+* Linear regression:
+  * **Constant**, linear slope
+  * Slope depends on the **slope only**
+* Logistic regression (probability):
+  * **Non-linear** slope
+  * No interaction but **conditional effect**
+
+<!-- ## Probability metric is non-linear -->
+
+```{r, echo = FALSE}
+pred_prob_1.5 <- signif(exp(m1_b0 + m1_b1 * 1.5) / (1 + exp(m1_b0 + m1_b1 * 1.5)), 3)
+```
+
+<!-- When $\color{blue}{X = 1.5}$: -->
+
+<!-- $$\hat{P}(success) = \hat{p} = \frac{e^{b_0 + b_1 \color{blue}{X}}}{1+e^{b_0 + b_1 \color{blue}{X}}} = \frac{e^{`r m1_b0` + `r m1_b1` \times \color{blue}{1.5}}}{1 + e^{`r m1_b0` + `r m1_b1` \times \color{blue}{1.5}}} = `r signif(eval(exp(m1_b0 + m1_b1 * 1.5) / (1 + exp(m1_b0 + m1_b1 * 1.5))), 3)`$$ -->
+
+<!-- Approximate **slope** at that point is -->
+
+<!-- $$\hat{p} (1-\hat{p}) \color{OrangeRed}{b_1} = `r pred_prob_1.5` \times (1 - `r pred_prob_1.5`) \times \color{OrangeRed}{`r m1_b1`} = `r signif(eval(pred_prob_1.5 * (1 - pred_prob_1.5) * m1_b1), 3)`$$ -->
+
+## Probability metric is non-linear
+
+```{r, echo = FALSE}
+x_val <- c(-30, -20, -10, 0, 10, 20, 30)
+pred_prob_slope <- exp(m1_b0 + m1_b1 * x_val) / (1 + exp(m1_b0 + m1_b1 * x_val))
+#slope <- pred_prob_slope * (1 - pred_prob_slope) * m1_b1
+slopes <- data.frame(x_val, pred_prob_slope)
+colnames(slopes) <- c("AgeC", "Predicted probability")
+rownames(slopes) <- NULL
+
+knitr::kable(slopes, digits = 4, row.names = F)
+```
+
+## Probability metric is non-linear
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x=AgeC, 
+           y=Survive)) + 
+  geom_point() + 
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE)
+```
+
+## Probability metric is non-linear
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x=AgeC, 
+           y=Survive)) + 
+  geom_point() + 
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE, 
+              fullrange = T) +
+  xlim(-100, 250)
+```
+
+## A caution about probability equation 
+
+:::{.callout-warning}
+You might also see the probability defined as $\hat{p} = \frac{1}{1 + e^{-({b_{0} + b_{1} X})}}$
+
+Or more generally, $\hat{p} = \frac{1}{1 + e^{-(Xb)}}$
+
+* These are **numerically equivalent** to what we've talked about
+
+  * But did you notice the negative sign?
+  * No? You didn't expect it and missed it in the complicated equation?
+  * Yeah, that's why we don't use this version
+:::
+
+# Odds metric
+
+## What are odds?
+
+* *Odds* is the **ratio** of **two probabilities**
+
+$$odds = \frac{\hat{p}}{(1 - \hat{p})}$$
+
+* Odds is the ratio of probability of a "success" ($\hat{p}$) to the probability of "not a success" $(1 − \hat{p})$ 
+
+## How do odds work?
+
+* Probability ranges from 0 to 1, switches at 0.5
+
+  * **Success more likely** than failure when $p > 0.5$
+  * **Success less likely** than failure when $p < 0.5$
+
+* Odds range from $0$ to $+\infty$, switches at 1 
+
+  * **Success more likely** than failure when $odds > 1$
+  * **Success less likely** than failure when $odds < 1$
+
+## $\hat{odds} = \frac{\hat{p}}{(1 - \hat{p})} = e^{`r m1_b0` + `r m1_b1` X}$
+
+```{r}
+#| code-fold: true
+ICU <- ICU %>% mutate(pred_odds = exp(m1_b0 + m1_b1 * AgeC),
+                      pred_p = exp(m1_b0 + m1_b1 * AgeC) / (1 + exp(m1_b0 + m1_b1 * AgeC)),
+                      obs_odds = pred_p / (1 - pred_p))
+
+ggplot(data = ICU, 
+       aes(x = AgeC, 
+           y = obs_odds)) +  
+  geom_line(color="blue", 
+            aes(x = AgeC, 
+                y = pred_odds)) +
+  labs (y = "Odds") +
+  annotate("segment", 
+           x = -40, xend = 35, 
+           y = 1, yend = 1, 
+           colour = "black", linetype = "dashed")
+```
+
+## Interpreting odds
+
+* **Intercept**: $b_0$ is related to the **odds of success when $X$ = 0**   
+  * Odds of success **when X = 0**: $e^{b_0}$
+  * $b_0$ > 0: Odds of success > 1 when $X$ = 0  
+  * $b_0$ < 0: Odds of success < 1 when $X$ = 0  
+* **Slope**: $b_1$ tells you how predictor X relates to **odds of success**
+  * $b_1$ > 0: Odds of success **increases** as $X$ **increases** 
+  * $b_1$ < 0: Odds of a success **decreases** as $X$ **increases** 
+
+## Interpreting odds: Example
+
+$$\hat{odds} = \frac{\hat{p}}{(1 - \hat{p})} = e^{\color{OrangeRed}{`r m1_b0`} + `r m1_b1` X}$$
+
+* Interpretation of example **intercept**
+  * $b_0 > 0$ so odds of success > 1 when $X$ = 0  
+  * Success (1) more likely than failure (0) when $X$ = 0   
+  * Odds of success when $X$ = 0: $e^{\color{OrangeRed}{b_0}} = e^{\color{OrangeRed}{`r m1_b0`}} = `r signif(eval(exp(m1_b0)), 3)`$   
+    * A "success" is about `r signif(eval(exp(m1_b0)), 3)` times as likely as a "failure"
+    * Compare to `r signif(eval(int_eval), 3)` **probability** of success: `r signif(eval(int_eval), 3)` / `r signif(eval(1 - int_eval), 3)` = `r signif(eval(int_eval / (1 - int_eval)), 3)`
+
+## Interpreting odds: Example
+
+$$\hat{odds} = \frac{\hat{p}}{(1 - \hat{p})} = e^{`r m1_b0` + \color{OrangeRed}{`r m1_b1`} X}$$
+
+* Interpretation of example **slope**
+  * $b_1$ < 0: Odds of a success **decreases** as $X$ **increases**
+  * **Odds** of survival decreases as age increases
+    * But it’s non-linear
+
+## Odds metric is nonlinear
+
+* This non-linear change is presented in terms of **odds ratio**
+  * Constant, **multiplicative** change in predicted odds
+  * For a 1-unit difference in $X$, the **predicted odds** of success is **multiplied by** the **odds ratio**
+* *Example*: odds ratio $= e^{b_1}= e^{`r m1_b1`} = `r signif(eval(exp(m1_b1)), 3)`$
+  * For a 1-unit difference in $X$, the **predicted odds** of success is **multiplied by** $`r signif(eval(exp(m1_b1)), 3)`$
+  * Each 1-unit increase in $X$ **reduces** the odds of a success
+  
+## Odds ratio = `r signif(eval(exp(m1_b1)), 3)`)  
+
+```{r}
+#| code-fold: true
+ggplot(data = ICU, 
+       aes(x = AgeC, 
+           y = obs_odds)) +  
+  geom_line(color="blue", 
+            aes(x = AgeC, 
+                y = pred_odds)) +
+  labs (y = "Odds") +
+  annotate("segment", 
+           x = -40, xend = 35, 
+           y = 1, yend = 1, 
+           colour = "black", linetype = "dashed")
+```
+
+## Odds metric is nonlinear
+
+```{r}
+#| echo: false
+slopes <- slopes %>% mutate(odds_slope = pred_prob_slope / (1 - pred_prob_slope))
+colnames(slopes) <- c("AgeC", "Predicted probability", "Predicted odds")
+
+knitr::kable(slopes, digits = 4, row.names = F)
+```
+
+## A caution about odds 
+
+:::{.callout-warning}
+* **Odds ratios** are very popular in medicine and epidemiology
+* They can be **extremely** misleading
+* The **same odds ratio** corresponds to many **different** probability values
+  * Odds ratio $= \frac{odds = 3}{odds = 1} = 3$
+    * Corresponds to probability of 0.75 vs 0.5
+  * Odds ratio $= \frac{odds = 9}{odds = 3} = 3$  
+    * Corresponds to probability of 0.90 vs 0.75
+:::
+
+# Logit or log-odds metric
+
+## What is the logit?
+
+* **Logit** or **log-odds** is the natural log ($ln$) of the odds
+  * As **probability** of "success" increases (nonlinearly, S-shaped curve)
+  * The *odds* of "success" increases (also nonlinearly, exponentially)
+  * The **logit** of "success" increases **linearly**
+  
+## How does the logit work?
+
+* Probability ranges from 0 to 1, **switches at 0.5**
+* Odds range from 0 to $+\infty$ , **switches at 1**
+* Logit ranges from $-\infty$ to $+\infty$, **switches at 0**
+  * Success more likely than failure when logit > 0
+  * Success less likely than failure when logit < 0
+
+## $ln\left(\frac{\hat{p}}{(1 - \hat{p})}\right) = `r m1_b0` + `r m1_b1` X$
+
+```{r}
+#| code-fold: true
+ggplot(ICU, aes(x=AgeC, y=obs_odds)) +  
+  geom_line(color="blue", aes(x = AgeC, y = log(pred_odds))) +
+  labs (y = "Logit") +
+  annotate("segment", x = -40, xend = 35, y = 0, yend = 0, colour = "black", linetype = "dashed")
+```
+
+## Interpreting logit
+
+* **Intercept**: $b_0$ is related to the **logit of success** when **X = 0**
+  * Logit of success when X = 0: $b_0$
+    * $b_0$ > 0: Logit > 0 when X = 0
+    * $b_0$ < 0: Logit < 0 when X = 0
+* **Slope** : $b_1$ is the relationship between **predictor X** and **logit of success**  
+  * $b_1$ > 0: Logit of a success **increases** as X **increases**
+  * $b_1$ < 0: Logit of a success **decreases** as X **increases**
+
+## Interpreting logit: Example
+
+$$\hat{logit} = ln\left(\frac{\hat{p}}{(1 - \hat{p})}\right) = \color{OrangeRed}{`r m1_b0`} + `r m1_b1` X$$
+
+* Interpretation of example **intercept**
+  * $b_0$ > 0: Logit > 0 when X = 0
+  * Logit of success when X = 0: $\color{OrangeRed}{b_0} = \color{OrangeRed}{`r m1_b0`}$
+  * Success more likely than failure when X = 0
+
+## Interpreting logit: Example
+
+$$\hat{logit} = ln\left(\frac{\hat{p}}{(1 - \hat{p})}\right) = `r m1_b0` + \color{OrangeRed}{`r m1_b1`} X$$
+
+* Interpretation of example **slope**
+  * $b_1$ < 0: Logit of a success **decreases** by $\color{OrangeRed}{`r m1_b1`}$ units when X increases by 1 unit
+
+# Miscellaneous
+
+## So which metric should I use?
+
+* They are **equivalent** and give you the same information
+  * Just packaged differently
+* Use the metric that
+  * Makes the most *sense* to you
+  * You can *explain* fully
+  * Is most commonly used in your *field*
+
+## Metrics: Some things to keep in mind
+
+* Odds ratios tell you about **change**, but not **where you start**
+
+  * If you report odds ratios, *also report some measure of probability* e.g., probability of success at the mean of X
+  * 10x change is $5%$ to $50%$ or $0.05%$ to $0.5%$?
+  
+* Logit is nice because it’s **linear**, but it’s not very **interpretable** 
+
+  * What is a "logit"? It’s just a *mathematical* concept that makes a straight line -- not actually **meaningful**
+  * *But many measures don’t have meaningful metrics...*
+
+## Why a $z$-statistic?
+
+* Maximum likelihood estimation
+  * Estimates are assumed to be normally distributed
+
+* Known variance
+  * Binomial distribution: mean = $np$, variance = $np(1-p)$
+  * Use $t$ distribution when you need to **estimate** variance
+    * Use $z$ distribution when you don't
+
+## Predictors in logistic regression
+
+* Similar to linear regression
+  * Continuous: Center for interpretability
+  * Categorical: Code appropriately
+  * Coefficients are **partial** coefficients
+* Tests are $z$-tests, not $t$-tests
+
+## Models in logistic regression
+
+* Add predictors in sets
+  * Likelihood ratio tests to compare models
+* Coefficients are in **logit metric**
+  * So are the **confidence intervals**
+  * Confidenct intervals in other metrics
+* $R^2_{multiple}$ analogue
+* Packages to make some of these things easier
+
+## Interactions in logistic regression
+
+* Effects (in probability metric) are already nonlinear   
+  * Already conditional
+* Interactions (also conditional) are complicated here
+  * Conditional on top of conditional
+  * Can have interactions *without* a product term
+  * Can have no interaction *with* a significant product term
+* See McCabe et al. (2022): Full reference on the References page
+
+# Summary
+
+## Summary
+
+* Use logistic regression when your outcome is binary
+
+  * **Don't use linear regression**
+
+* Be careful with interpretation no matter what
+  * **Probability**: Probability *makes sense*, but it's *nonlinear*
+  * **Odds**: Odds ratio *seems to make sense* but it can be *misleading*
+  * **Logit**: *Linear* but what even is a *logit*?
+
+* But many basic concepts parallel linear regression
+  * Intercept, slope(s), adding predictors, $R^2_{multiple}$
+
+## In class
+
+* Run some logistic regression models
+* Interpret the results
+* Examples of the things we didn't get to
+  * $R^2_{multiple}$, compare models, report full results
+
+## Next time
 
 * ~~Logistic regression for **binary** outcomes~~
-* Poisson regressoin for **count** outcomes
+* Poisson regression for **count** outcomes
 * Survival analysis for **survival** outcomes
 

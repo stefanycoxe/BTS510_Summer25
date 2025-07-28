@@ -4918,6 +4918,12 @@ window.Quarto = {
  <span class="menu-text">Week 10: Linear regression</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11-mats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11: Logistic regression</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5045,7 +5051,10 @@ window.Quarto = {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">3</span> Analysis</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
+  <li><a href="#pseudo-r2" id="toc-pseudo-r2" class="nav-link" data-scroll-target="#pseudo-r2"><span class="header-section-number">4</span> Pseudo <span class="math inline">R^2</span></a></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">5</span> Confidence intervals</a></li>
+  <li><a href="#predicted-values" id="toc-predicted-values" class="nav-link" data-scroll-target="#predicted-values"><span class="header-section-number">6</span> Predicted values</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">7</span> Tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -5094,6 +5103,10 @@ window.Quarto = {
 </div>
 <section id="learning-objectives" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
+<ul>
+<li><strong>Conduct</strong> logistic regression for <em>binary outcomes</em></li>
+<li><strong>Interpret</strong> results in terms of <em>probability</em>, <em>odds</em>, and <em>log-odds</em></li>
+</ul>
 </section>
 <section id="data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="data"><span class="header-section-number">2</span> Data</h2>
@@ -5117,29 +5130,116 @@ window.Quarto = {
 <ul>
 <li>Replicate and extend the analysis from the lecture
 <ul>
-<li><code>Age</code>, <code>Emergency</code>, and their interaction predict <code>Pulse</code></li>
-<li>Be sure to mean center <code>Age</code> for interpretability.</li>
+<li><code>Age</code> and <code>Emergency</code> predict <code>Survive</code></li>
+<li>Be sure to mean center <code>Age</code> for interpretability</li>
 </ul></li>
 </ul>
 </section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
+<section id="pseudo-r2" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="pseudo-r2"><span class="header-section-number">4</span> Pseudo <span class="math inline">R^2</span></h2>
 <ul>
-<li>Model 1: <code>Pulse ~ Age + Emergency</code></li>
-<li>Model 2: <code>Pulse ~ Age + Emergency + Age*Emergency</code></li>
+<li>For linear regression, <span class="math inline">R^2_{multiple}</span> is calculated from the <strong>sums of squares</strong> from ordinary least squares estimation</li>
+<li>Logistic regression is estimated via maximum likelihood
+<ul>
+<li>There are no sums of squares</li>
+<li>There is, however, <strong>deviance</strong></li>
+</ul></li>
+<li>Deviance is a function of the log-likelihood
+<ul>
+<li>Deviance for a model is how far the model is from a <em>theoretical</em> <strong>perfect model</strong> where every observation is perfectly predicted</li>
+<li><strong>Relative measure</strong> so can only <strong>compare</strong> to another model</li>
+<li>Big deviance (far from perfect) is worse than small deviance (closer to perfect)</li>
+</ul></li>
+<li>Pseudo <span class="math inline">R^2</span>
+<ul>
+<li>Compare your model to a model with <strong>no predictors</strong> (only intercept)</li>
+<li>How much closer is this model to the perfect model than the intercept only model?</li>
+<li>Theoretically ranges from 0 to 1 (but not in practice)</li>
+<li><span class="math inline">R^2_{deviance} = 1 - \frac{deviance_{M}}{deviance_{intercept\ only}}</span></li>
+<li>Deviance for your model is “Residual deviance” from output</li>
+<li>Deviance for intercept model is “Null deviance” from output</li>
+</ul></li>
+</ul>
+</section>
+<section id="confidence-intervals" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">5</span> Confidence intervals</h2>
+<ul>
+<li>Calculate confidence intervals for all coefficients in a model using <code>confint()</code>
+<ul>
+<li>For example: <code>confint(m1)</code> to get confidence intervals for model <code>m1</code></li>
+<li>If the CI doesn’t include <strong>zero</strong>, the coefficient is significant</li>
+<li>Default is 99% confidence interval
+<ul>
+<li>Use <code>level</code> argument to change</li>
+<li>e.g., <code>confint(m1, level = 0.99)</code> produces 99% CIs</li>
+</ul></li>
+</ul></li>
+<li>To convert from default logit metric to odds metric: Exponentiate
+<ul>
+<li>Logit metric: <span class="math inline">b_1</span></li>
+<li>Convert to <strong>odds ratio</strong>: <span class="math inline">e^{b_1}</span></li>
+<li>Do the same thing to the confidence intervals
+<ul>
+<li><code>exp(confint(m1))</code> produces the odds metric CIs</li>
+<li>Compare to “no effect” value of <strong>one</strong> for odds</li>
+<li>If the CI doesn’t include <strong>one</strong>, the coefficient is significant</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="predicted-values" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="predicted-values"><span class="header-section-number">6</span> Predicted values</h2>
+<ul>
+<li>Two main options
+<ul>
+<li>Use R like a calculator to calculate predicted values using equations
+<ul>
+<li>You can be fancy and grab the coefficients directly from the output</li>
+<li>e.g., using <code>coef(m1)[1]</code> to get the first coefficient, etc.</li>
+<li>Or just type the numbers in</li>
+</ul></li>
+<li>Use <code>predict()</code> to calculate predicted values
+<ul>
+<li>Set up a new dataset with the predictor values you’re interested in</li>
+<li>e.g., <code>age_vals &lt;- data.frame(AgeC = c(-20, 0, 20))</code></li>
+<li>Then use that new data in <code>predict()</code></li>
+<li>e.g., <code>predict(m1, newdata = age_vals, type = &quot;response&quot;)</code></li>
+<li><code>type = &quot;response&quot;</code> gives predicted values in <strong>probability</strong></li>
+<li><code>type = &quot;link&quot;</code> gives predicted values in <strong>logit</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="tasks" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="tasks"><span class="header-section-number">7</span> Tasks</h2>
+<ul>
+<li>Model 1: <code>Survive ~ Age</code></li>
+<li>Model 2: <code>Survive ~ Age + Emergency</code></li>
 </ul>
 <ol type="1">
 <li><p>Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?</p></li>
-<li><p>Plot the simple slopes with the data points. What is the general pattern of results?</p></li>
-<li><p>Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and <span class="math inline">p</span>-values.</p></li>
+<li><p>Report the full results of the preferred model. This is similar to linear regression. For each coefficient (including intercept), report:</p></li>
 </ol>
 <ul>
-<li>Is the slope with respect to age significant for each group?</li>
-<li>For which values of age are the emergency groups different in pulse rate?</li>
+<li>Regression coefficient</li>
+<li>Standard error</li>
+<li><span class="math inline">z</span> statistic (note that there aren’t degrees of freedom for <span class="math inline">z</span> tests)</li>
+<li><span class="math inline">p</span> value</li>
+</ul>
+<ol start="3" type="1">
+<li>Calculate predicted probabilities for 6 predictor combinations:</li>
+</ol>
+<ul>
+<li>Emergency admit, 20 years younger than mean</li>
+<li>Emergency admit, mean age</li>
+<li>Emergency admit, 20 years older than mean</li>
+<li>Non-emergency admit, 20 years younger than mean</li>
+<li>Non-emergency admit, mean age</li>
+<li>Non-emergency admit, 20 years older than mean</li>
 </ul>
 <ol start="4" type="1">
-<li><p>Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.</p></li>
-<li><p>Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., pulse, age, emergency admission) rather than X and Y.</p></li>
+<li><p>Report the odds ratios for each predictor and their confidence intervals. Interpret the odds ratios in words.</p></li>
+<li><p>Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., survival, age, emergency admission) rather than X and Y.</p></li>
 </ol>
 
 
@@ -5640,44 +5740,101 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`ICU`</span> data from the **Stat2Data** package: $n$ = 200</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`ID`</span>: Patient ID code</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Survive`</span>: 1 = patient survived to discharge or 0 = patient died</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span>: Age (in years)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`AgeGroup`</span>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Sex`</span>: 1 = female or 0 = male</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Infection`</span>: 1 = infection suspected or 0 = no infection</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SysBP`</span>: Systolic blood pressure (in mm of Hg)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Pulse`</span>: Heart rate (beats per minute)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Emergency`</span>: 1 = emergency admission or 0 = elective admission</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Replicate and extend the analysis from the lecture</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span>, <span class="in">`Emergency`</span>, and their interaction predict <span class="in">`Pulse`</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Be sure to mean center <span class="in">`Age`</span> for interpretability.</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Model 1: <span class="in">`Pulse ~ Age + Emergency`</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Model 2: <span class="in">`Pulse ~ Age + Emergency + Age*Emergency`</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Plot the simple slopes with the data points. What is the general pattern of results? </span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Conduct simple slopes analysis and the Johnson-Neyman procedure. Report the findings, including test statistics, degrees of freedom, and $p$-values.</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the slope with respect to age significant for each group?</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>For which values of age are the emergency groups different in pulse rate?</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Conduct outlier analysis for the model. Are there observations with extreme values on the predictors or predicted values? Are there observations that change the findings? Briefly report your findings.</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Describe the overall findings for this model, including the analyses to probe the interaction. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., pulse, age, emergency admission) rather than X and Y.</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Conduct** logistic regression for *binary outcomes*</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Interpret** results in terms of *probability*, *odds*, and *log-odds*</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`ICU`</span> data from the **Stat2Data** package: $n$ = 200</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`ID`</span>: Patient ID code</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Survive`</span>: 1 = patient survived to discharge or 0 = patient died</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span>: Age (in years)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`AgeGroup`</span>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Sex`</span>: 1 = female or 0 = male</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Infection`</span>: 1 = infection suspected or 0 = no infection</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SysBP`</span>: Systolic blood pressure (in mm of Hg)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Pulse`</span>: Heart rate (beats per minute)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Emergency`</span>: 1 = emergency admission or 0 = elective admission</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Replicate and extend the analysis from the lecture</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span> and <span class="in">`Emergency`</span> predict <span class="in">`Survive`</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Be sure to mean center <span class="in">`Age`</span> for interpretability</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pseudo $R^2$</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>For linear regression, $R^2_{multiple}$ is calculated from the **sums of squares** from ordinary least squares estimation</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Logistic regression is estimated via maximum likelihood</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>There are no sums of squares</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>There is, however, **deviance**</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Deviance is a function of the log-likelihood</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Deviance for a model is how far the model is from a *theoretical* **perfect model** where every observation is perfectly predicted</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Relative measure** so can only **compare** to another model</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Big deviance (far from perfect) is worse than small deviance (closer to perfect)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Pseudo $R^2$</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Compare your model to a model with **no predictors** (only intercept)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>How much closer is this model to the perfect model than the intercept only model?</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Theoretically ranges from 0 to 1 (but not in practice)</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$R^2_{deviance} = 1 - \frac{deviance_{M}}{deviance_{intercept\ only}}$</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Deviance for your model is &quot;Residual deviance&quot; from output</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Deviance for intercept model is &quot;Null deviance&quot; from output</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Confidence intervals</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Calculate confidence intervals for all coefficients in a model using <span class="in">`confint()`</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>For example: <span class="in">`confint(m1)`</span> to get confidence intervals for model <span class="in">`m1`</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If the CI doesn&#39;t include **zero**, the coefficient is significant</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Default is 99% confidence interval</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Use <span class="in">`level`</span> argument to change</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., <span class="in">`confint(m1, level = 0.99)`</span> produces 99% CIs</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>To convert from default logit metric to odds metric: Exponentiate</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Logit metric: $b_1$</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Convert to **odds ratio**: $e^{b_1}$</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Do the same thing to the confidence intervals</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`exp(confint(m1))`</span> produces the odds metric CIs</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Compare to &quot;no effect&quot; value of **one** for odds</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>If the CI doesn&#39;t include **one**, the coefficient is significant</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predicted values</span></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Two main options</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use R like a calculator to calculate predicted values using equations</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>You can be fancy and grab the coefficients directly from the output</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., using <span class="in">`coef(m1)[1]`</span> to get the first coefficient, etc.</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Or just type the numbers in</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use <span class="in">`predict()`</span> to calculate predicted values</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Set up a new dataset with the predictor values you&#39;re interested in</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., <span class="in">`age_vals &lt;- data.frame(AgeC = c(-20, 0, 20))`</span></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Then use that new data in <span class="in">`predict()`</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., <span class="in">`predict(m1, newdata = age_vals, type = &quot;response&quot;)`</span></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`type = &quot;response&quot;`</span> gives predicted values in **probability**</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`type = &quot;link&quot;`</span> gives predicted values in **logit**</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Model 1: <span class="in">`Survive ~ Age`</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Model 2: <span class="in">`Survive ~ Age + Emergency`</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Report the full results of the preferred model. This is similar to linear regression. For each coefficient (including intercept), report:</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Regression coefficient</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Standard error</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$z$ statistic (note that there aren&#39;t degrees of freedom for $z$ tests)</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$p$ value </span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Calculate predicted probabilities for 6 predictor combinations:</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Emergency admit, 20 years younger than mean</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Emergency admit, mean age</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Emergency admit, 20 years older than mean</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Non-emergency admit, 20 years younger than mean</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Non-emergency admit, mean age</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Non-emergency admit, 20 years older than mean</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Report the odds ratios for each predictor and their confidence intervals. Interpret the odds ratios in words.</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., survival, age, emergency admission) rather than X and Y.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
