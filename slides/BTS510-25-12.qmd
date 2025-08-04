@@ -1,0 +1,936 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+library(broom)
+library(ggdist) # logistic regression plot
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Conduct** Poisson regression for *count outcomes*
+* **Interpret** results in terms of *predicted counts*
+* **Describe** when to use alternative models / specifications
+  * Negative binomial, inflated zeroes, offset, etc.
+
+# Linear regression review
+
+## Assumptions of linear regression
+
+* Linear regression (GLM) makes 3 assumptions about the residuals ($e_i = Y_i - \hat{Y}_i$) of the model
+  * Independence
+  * Constant variance
+  * Conditional normality
+
+# Count variables
+
+## What is a count?
+
+* **Count variables** occur any time you **count** the number of times an event occurs in a *fixed period of time*
+    * Number of visits to doctor in past 6 months
+    * Number of days of poor QOL per month
+    * Number of cigarettes smoked in a day
+    * Number of gene repeats in a sample
+    * Number of adverse events in a study
+
+## Count outcomes in medical research
+
+```{r}
+#| code-fold: true
+count1 <- rpois(n = 1000, lambda = 1.5)
+count_dat <- as.data.frame(count1)
+ggplot(data = count_dat, aes(count1)) +
+    geom_bar(fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "Visits to doctor in past 6 months", y = "Freqency") +
+    scale_x_continuous(breaks = c(0:12))
+```
+
+## Count variable properties
+
+* Always
+    * Discrete (whole numbers)
+    * Lower bound of 0
+* Typically
+    * Low mean
+    * High frequency of 0 values
+    * Right skewed
+    * Heteroskedasticity
+
+## Example data: Alcohol use
+
+* Simulated data[^a] made to resemble real data[^b]
+* Outcome: **Number** of alcoholic drinks consumed *last Saturday*
+  * Ranges from 0 to 17
+* Predictors
+    * Sensation seeking: 3 to 7 (theoretically 1 to 7)
+    * Sex: 0 = female, 1 = male
+
+[^a]: Simulated data in Coxe, West, & Aiken (2009)
+[^b]: Real data in DeHart, Tennen, Armeli, Todd, & Affleck (2008)
+
+## A count variable is not normal
+
+```{r}
+#| code-fold: true
+library(readr)
+dat <- read_table("jpapoisson.txt", 
+    col_names = FALSE)
+colnames(dat) <- c("ID", "sensation", "sex", "alcohol")
+ggplot(data = dat, aes(x = alcohol)) +
+    geom_bar(fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "Number of alcoholic drinks", y = "Frequency")
+```
+
+## Linear regression on count
+
+```{r}
+#| code-fold: true
+ggplot(data = dat, aes(x = sensation, y = alcohol)) +
+    geom_point(size = 3, 
+               alpha = 0.4, 
+               color = "#3697aa") +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "black") + 
+  labs(x = "Sensation seeking", y = "Number of alcoholic drinks")
+```
+
+## Residuals for linear regression
+
+```{r}
+#| code-fold: true
+m1_lin <- lm(data = dat, alcohol ~ sensation)
+resids_m1_lin <- augment(m1_lin)
+ggplot(data = resids_m1_lin, 
+       aes(x = .resid)) + 
+  geom_histogram(aes(y = ..density..), 
+                 fill = "#3697aa", 
+                 color = "#76777a") +
+  geom_density() 
+```
+
+## Residuals for linear regression
+
+```{r}
+#| code-fold: true
+ggplot(data = resids_m1_lin, 
+       aes(sample = .resid)) + 
+  geom_qq() + 
+  geom_qq_line() +
+  labs(x = "Theoretical", 
+       y = "Sample")
+```
+
+## Residuals vs predictor
+
+```{r}
+#| code-fold: true
+ggplot(data = resids_m1_lin, 
+       aes(x = sensation, 
+           y = .resid)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+## Residuals vs predictor
+
+```{r}
+#| code-fold: true
+ggplot(data = resids_m1_lin, 
+       aes(x = sensation, 
+           y = .resid)) + 
+  geom_point() + 
+  geom_smooth() +   
+  geom_abline(intercept = 0.75, 
+                slope = -0.75, 
+                color = "#dc1e34", 
+                size = 1,
+                linetype = "dashed") +
+    geom_abline(intercept = 1.5, 
+                slope = 1.9, 
+                color = "#dc1e34", 
+                size = 1,
+                linetype = "dashed")
+```
+
+## What **NOT** to do
+
+* **Ignore** the problem
+  * Do linear regression anyway
+  * Get biased estimates and out-of-range prediction
+
+* **Transform** the *outcome*
+  * Square root, natural log, etc.
+  * May *slightly* normalize *univariate* residual distribution
+  * **Does not fix heteroscedasticity, (conditional) non-normality**
+
+## Transform the outcome - ugh!
+
+```{r}
+#| code-fold: true
+dat2 <- dat %>%
+    mutate(lnalc = log(alcohol + 0.01))
+ggplot(data = dat2, aes(x = lnalc)) +
+    geom_histogram(fill = "#3697aa", 
+                   color = "#76777a", 
+                   size = 1) +
+    labs(x = "ln(Number of alcoholic drinks)", y = "Frequency")
+```
+
+## Transform the outcome - ugh!
+
+```{r}
+#| code-fold: true
+dat2 <- dat2 %>%
+    mutate(sqrtalc = sqrt(alcohol))
+ggplot(data = dat2, aes(x = sqrtalc)) +
+    geom_histogram(fill = "#3697aa", 
+                   color = "#76777a", 
+                   size = 1) +
+    labs(x = "Square root(Number of alcoholic drinks)", y = "Frequency")
+```
+
+## What to do
+
+* **Generalized linear model (GLiM)**
+  * Not a single model but a **family** of regression models
+  * **Choose** features (e.g., residual distribution) to match the **characteristics** of your outcome variable
+  * Accommodates many **continuous** and **categorical** outcome variables
+  * Includes **logistic regression** and **Poisson regression**
+  * Transformation of the **predicted** outcome
+
+# Poisson regression
+
+## Poisson regression
+
+* **Outcome**: count in a *fixed period of time*
+  * Discrete, lower bound of zero, often right skewed
+* **Residual / outcome distribution**: Poisson
+* **Link function**: natural log = $ln(\hat{Y}) = ln(\hat{\mu})$
+
+$$ln(\hat{\mu}) = b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p$$
+
+## Reminder: normal distribution
+
+$$f(x) = {\frac {1}{{\sqrt {2\pi \sigma^2}}}}e^{-{\frac {(x-\mu)^2 }{2 \sigma^2 }}}$$
+
+Mean of normal distribution = $\mu$
+
+Variance of normal distribution = $\sigma^2$
+
+* Mean and variance are **different parameters** and are **unrelated**
+  * **Homoscedasticity**: Constant variance doesn't depend on mean
+
+## Poisson distribution
+
+* Developed by Simeon Denis Poisson (1781 - 1840)
+* **Number of times** a **low probability** event happens
+  * Number of soldiers killed by horse-kicks each year in each corps in the Prussian cavalry (Bortkiewicz)
+  * Number of yeast cells used when brewing Guinness beer
+  * Number of typographical errors on each page of a book
+  * Number of bombs falling in London in each block during Blitz
+  * Number of earthquakes per day in Southern California
+
+## Poisson distribution
+
+$$P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}$$
+
+* **Poisson distribution** is
+  * *Discrete*
+  * *Undefined for values less than 0*
+  * *Right skewed* when *mean is low*
+  * $\lambda =$ mean *and* variance: Heteroscedasticity
+
+## Poisson: mean = variance = 1
+
+```{r}
+#| code-fold: true
+pois_1 <- rpois(10000, 1)
+pois_1_data <- data.frame(pois_1)
+ggplot(data = pois_1_data, aes(x = pois_1)) + 
+    geom_bar(aes(y = (..count..)/sum(..count..)),
+             fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "X", y = "Proportion") + 
+    xlim(-1, 20) + 
+    ylim(0, .400)
+```
+
+## Poisson: mean = variance = 4
+
+```{r}
+#| code-fold: true
+pois_4 <- rpois(10000, 4)
+pois_4_data <- data.frame(pois_4)
+ggplot(data = pois_4_data, aes(x = pois_4)) + 
+    geom_bar(aes(y = (..count..)/sum(..count..)),
+             fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "X", y = "Proportion") + 
+    xlim(-1, 20) + 
+    ylim(0, .400)
+```
+
+## Poisson: mean = variance = 7
+
+```{r}
+#| code-fold: true
+pois_7 <- rpois(10000, 7)
+pois_7_data <- data.frame(pois_7)
+ggplot(data = pois_7_data, aes(x = pois_7)) + 
+    geom_bar(aes(y = (..count..)/sum(..count..)),
+             fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "X", y = "Proportion") + 
+    xlim(-1, 20) + 
+    ylim(0, .400)
+```
+
+## Poisson: mean = variance = 10
+
+```{r}
+#| code-fold: true
+pois_10 <- rpois(10000, 10)
+pois_10_data <- data.frame(pois_10)
+ggplot(data = pois_10_data, aes(x = pois_10)) + 
+    geom_bar(aes(y = (..count..)/sum(..count..)), 
+             fill = "#3697aa", color = "#76777a", size = 1) +
+    labs(x = "X", y = "Proportion") + 
+    xlim(-1, 20) + 
+    ylim(0, .400)
+```
+
+## Poisson regression model
+
+* `glm()` function in **stats** package (always loaded)
+  * `data`: same as `lm()`
+  * `formula`: same as `lm()`
+  * `family`: Residual distribution and link function
+
+```{r}
+dat <- dat %>% mutate(sensationC = sensation - mean(sensation, na.rm = TRUE))
+m1 <- glm(data = dat, 
+          alcohol ~ sensationC, 
+          family = poisson(link = "log"))
+```
+
+```{r}
+#| code-fold: true
+m1_b0 <- round(coefficients(m1)[1], 3)
+m1_b1 <- round(coefficients(m1)[2], 3)
+```
+
+## Poisson regression model
+
+:::: {.columns}
+
+::: {.column width="30%"}
+* Estimate
+* Standard error
+* **$z$ statistic**
+* $p$-value
+* **No $R^2$**
+* Deviance
+:::
+
+::: {.column width="70%"}
+```{r}
+summary(m1)
+```
+:::
+
+::::
+
+## Two forms of Poisson regression
+
+Predicted count:
+
+$$\hat{\mu} = e^{\color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p}}$$ 
+
+Natural log of predicted count:
+
+$$ln(\hat{\mu}) = \color{OrangeRed}{b_0 + b_1 X_1 + b_2 X_2 + \cdots + b_p X_p}$$
+
+## Predicted count interpretation
+
+$$\hat{\mu} = e^{b_0 + b_1 X}$$
+
+* Intercept
+  * $e^{b_0}$ is the **predicted count** when **$X$ = 0**
+* Slope
+  * $e^{b_1}$ is the **rate ratio**
+  * For a 1 unit increase in $X$, the predicted count is **multiplied by** $e^{b_1}$ 
+
+
+## Example: $\hat{\mu} = e^{`r m1_b0` + `r m1_b1` \times sensationC}$
+
+* Intercept = $e^{b_0} = e^{`r m1_b0`} = `r round(exp(m1_b0), 3)`$
+  * People with mean value of `sensation` are expected to drink `r round(exp(m1_b0), 3)` alcoholic drinks
+* Slope = $e^{b_1} = e^{`r m1_b1`} = `r round(exp(m1_b1), 3)`$
+  * **Multiplicative** effect of $X$ on the predicted count
+  * For a one unit increase in `sensation`, the number of predicted alcoholic drinks is **multiplied** by `r round(exp(m1_b1), 3)`
+  * Also: `r (round(exp(m1_b1), 3) - 1)*100`$\%$ increase in the predicted outcome for each one unit increase in `sensation`
+
+
+## Predicted counts: $e^{b_1} = `r round(exp(m1_b1), 3)`$
+
+```{r}
+#| code-fold: true
+sens_vals <- data.frame(sensationC = c(-2, -1, 0, 1)) 
+pred_counts <- predict(m1, newdata = sens_vals, type = "response")
+sensationC <- c(-2, -1, 0, 1)
+pred_alc <- c(1.82, 2.29, 2.89, 3.64)
+pred_counts <- data.frame(sensationC, pred_alc)
+ggplot(dat, 
+       aes(x=sensationC, 
+           y=alcohol)) +
+  geom_point(color = "#3697aa",
+             alpha = 0.3,
+             size = 2) +
+  stat_smooth(method="glm", 
+              method.args=list(family="poisson"), 
+              se=FALSE,
+              color = "black") +
+  geom_point(data = pred_counts, 
+             aes(x = sensationC, y = pred_alc),
+             size = 3,
+             color = "black") +
+  annotate("text", x = -2, y = 1.82, 
+           label = "1.82", vjust = -1, size = 6) +
+  annotate("text", x = -1, y = 2.29, 
+           label = "2.29", vjust = -1, size = 6) +
+  annotate("text", x = 0, y = 2.89, 
+           label = "2.89", vjust = -1, size = 6) +
+  annotate("text", x = 1, y = 3.64, 
+           label = "3.64", vjust = -1, size = 6)
+```
+
+## Confidence intervals: Natural log
+
+* Original coefficients and confidence intervals
+  * Natural log of predicted count metric
+
+```{r}
+coef(m1)
+confint(m1)
+```
+
+* Do they contain 0?
+
+## Confidence intervals: Predicted count
+
+* Exponentiate estimates and confidence intervals
+  * **Predicted count** metric
+
+```{r}
+exp(coef(m1))
+exp(confint(m1))
+```
+
+* Do they contain 1?
+
+# (Over)Dispersion
+
+## Equidispersion
+
+* Poisson distribution displays **equidisersion**
+  * Conditional mean = conditional variance = $\lambda$
+* In practice in data, the actual variance of $Y$ is typically **larger** than expected (i.e., larger than the mean)
+  * This is called **overdispersion**
+  
+## Why does overdispersion happen?
+
+* Sometimes, just because
+* Due to omitted predictors
+  * Something we should include but are not
+  * New predictors affect the **mean**
+    * Heteroscedasticity: They can impact variance
+* "Excess" zeroes
+  * **Looks like** more variance 
+
+## Why do we care?
+
+* The variance estimated in the model ($\lambda$) helps determine the **standard errors** for regression coefficients
+* It also plays a role in calculating **deviance**
+* **If the variance in our data is larger than $\lambda$, the standard errors are too small and the deviance is wrong**
+  * Test of significance, pseudo-$R^2$, model comparisons are **wrong**
+
+## Is there overdispersion?
+
+* Quick check: Residual deviance / degrees of freedom > 1
+
+```{r}
+summary(m1)
+```
+
+## Adding a predictor
+
+* Can reduce overdispersion
+
+```{r}
+m1add <- glm(data = dat, 
+          alcohol ~ sensationC + sex, 
+          family = poisson(link = "log"))
+summary(m1add)
+```
+
+
+## What do we do?
+
+* There are two main alternative models for overdispersion
+  * **Overdispersed Poisson regression** a.k.a. quasi-Poisson regression
+    * *Same coefficients*, adjusted standard errors
+  * **Negative binomial regression**
+    * Different coefficients, different standard errors
+* Both handle overdispersion, but in slightly different ways
+
+## Overdispersed Poisson regression
+
+* "Fudge factor"
+  * Variance is larger than the model says, so multiply variance by something to make it larger
+* Scale parameter: $\psi = \frac{\chi^2_{Pearson}}{residual\ df}$ or $\frac{deviance}{residual\ df}$
+  * If equidispersion holds: $\psi = 1$
+  * If overdispserion: $\psi > 1$
+  * Compared to Poisson: Each standard error $\times \sqrt{\psi}$
+
+## Overdispersed Poisson regression
+
+```{r}
+m2 <- glm(data = dat, 
+          alcohol ~ sensationC, 
+          family = quasipoisson)
+summary(m2)
+```
+
+
+## Compare Poisson to OD Poisson
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Poisson regression
+
+```{r}
+summary(m1)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Overdispersed Poisson
+
+```{r}
+summary(m2)
+```
+
+:::
+
+::::
+
+## Negative binomial regression
+
+* Negative binomial distribution
+  * Poisson distribution + gamma distribution
+  * Adds **additional variance**
+* Different scale parameter: $\alpha$, but in R is $\theta = 1/\alpha$
+  * Mean = $\mu$
+  * Variance = $\mu + \alpha \mu^2$
+  * If overdispersion: $\alpha$ > 0
+  * If not: $\alpha$ = 0 and reduces to Poisson
+  
+## Negative binomial regression
+
+```{r}
+library(MASS)
+m3 <- glm.nb(data = dat, 
+             alcohol ~ sensationC)
+summary(m3)
+```
+
+## Compare Poisson to negative binomial
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+summary(m1)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+summary(m3)
+```
+
+:::
+
+::::
+
+## Compare all three models
+
+* Poisson regression ($\psi$ = 1, $\alpha$ = 0)
+
+```{r}
+#| echo: false
+library(broom)
+m1_table <- as.data.frame(tidy(m1))
+m1_table
+```
+
+* Overdispersed Poisson regression ($\psi$ = 2.847, $\alpha$ = 0)
+
+```{r}
+#| echo: false
+m2_table <- as.data.frame(tidy(m2))
+m2_table
+```
+
+* Negative binomial regression ($\theta$ = 1.393, $\alpha$ = $1/\theta$ = 0.718)
+
+```{r}
+#| echo: false
+m3_table <- as.data.frame(tidy(m3))
+m3_table
+```
+
+## Plot: Poisson vs negative binomial
+
+```{r}
+#| code-fold: true
+nb_b0 <- summary(m3)$coefficients[1]
+nb_b1 <- summary(m3)$coefficients[2]
+ggplot(data = dat, aes(x = sensationC, y = alcohol)) +
+    geom_point(size = 3, 
+               alpha = 0.4, 
+               color = "#3697aa") +
+    labs(x = "Sensation seeking (centered)", y = "Number of alcoholic drinks") +
+    geom_smooth(method = "glm", 
+                method.args = list(family = 'poisson'), 
+                se = FALSE, 
+                color = "black", 
+                fullrange = TRUE) +
+    geom_function(fun = function(x) exp(nb_b0 + nb_b1 * x),
+                color = "#dc1e34", 
+                size = 1)
+```
+
+## Observed vs predicted
+
+```{r}
+#| code-fold: true
+ggplot(data = dat, aes(x = alcohol)) + 
+    geom_bar(fill = "#3697aa", 
+             color = "#76777a", 
+             size = 1) +
+labs(x = "Number of alcoholic drinks", y = "Frequency") +
+ylim(0, 90)
+```
+
+## Observed vs predicted
+
+```{r}
+#| code-fold: true
+library(pscl)       # predprob() function for predicted counts
+                    # zeroinfl() function for zero-inflated count models
+                    # hurdle() for hurdle count models
+                    # vuong() for non-nested model comparisons
+phat.poi <- predprob(m1)
+phat.poi.mn <- apply(phat.poi, 2, mean)
+#phat.poi.mn
+phat.nb <- predprob(m3)
+phat.nb.mn <- apply(phat.nb, 2, mean)
+#phat.nb.mn
+#phat.zinb <- predprob(zinb)
+#phat.zinb.mn <- apply(phat.zinb, 2, mean)
+#phat.zinb.mn
+x <- seq(0, 17, 1)
+probs <- data.frame(x, phat.poi.mn, phat.nb.mn)#, phat.zinb.mn)
+#probs
+ggplot(data = dat, aes(x = alcohol)) + 
+    geom_bar(fill = "#3697aa", 
+             color = "#76777a", 
+             size = 1) +
+    geom_line(data = probs, 
+              aes(x = x, y = 400*phat.poi.mn), 
+              linetype = "solid",
+              size = 1,
+              color = "black") +
+labs(x = "Number of alcoholic drinks", y = "Frequency") +
+ylim(0, 90)
+```
+
+
+## Observed vs predicted
+
+```{r}
+#| code-fold: true
+ggplot(data = dat, aes(x = alcohol)) + 
+    geom_bar(fill = "#3697aa", 
+             color = "#76777a", 
+             size = 1) +
+    geom_line(data = probs, 
+              aes(x = x, y = 400*phat.poi.mn), 
+              linetype = "solid",
+              size = 1,
+              color = "black") +
+    geom_line(data = probs, 
+              aes(x = x, y = 400*phat.nb.mn), 
+              size = 1,
+              #linetype = "dashed",
+              color = "#dc1e34") +
+labs(x = "Number of alcoholic drinks", y = "Frequency") +
+ylim(0, 90)
+```
+
+## Which model to pick?
+
+* **Poisson regression**
+  * You will likely never satisfy the equidispersion assumption
+* **Overdispersed Poisson regression**
+  * Preferred to Poisson regression
+  * Appropriate standard errors and relatively simple model
+* **Negative binomial regression**
+  * More complex, but better able to reproduce the observed counts
+  * This may be preferred if you’re interested in prediction
+
+## A word of caution...
+
+Berk & MacDonald (2008)
+
+> If apparent overdispersion results from **specification errors in the systematic part** of the Poisson regression model, resorting to the negative binomial distribution does not help. It can make things worse by giving a **false sense of security** when the fundamental errors in the model remain.
+
+* In other words, negative binomial regression doesn’t *fix a bad model*
+
+
+# Zeroes
+
+## Zeroes can be really important
+
+* Conceptually, zeroes are meaningful
+
+- Lowest possible value of a count
+- Indicate "nothing"
+- Two situations:
+  - Too few zeroes (relative to a Poisson distribution)
+  - Too many zeroes (relative to a Poisson distribution)
+
+## Too few zeroes 
+
+* Sometimes you have a study where the outcome is a count, but it **cannot take on a value of 0**
+  * Study of medical visits 
+    * **Have to visit the doctor** to get involved in the study
+  * Study of substance use 
+    * Only interested in **substance users**
+* **Truncated Poisson regression** model uses a *truncated Poisson distribution* that removes the probability of zeroes
+
+## Excess zeroes
+
+* Counts often display **"excess" zeroes**
+  * More values of 0 than expected for a Poisson distribution
+* Even if the rest of the distribution is approximately Poisson, the "excess" zeroes lead to *overdispersion*
+  * Sometimes, what looks like overdispersion is really excess zeroes
+* There are specific Poisson family models to appropriately deal with excess zeroes, depending on *why* the zeroes are there
+
+## Why are there all these zeroes?
+
+* This is a substantive question
+  * You need to know about the outcome you’re studying
+* Question: Do the **people who are responding zero** have **some probability** of responding otherwise?
+
+## Some probability of responding > 0?
+
+* Yes $\rightarrow$ **zero-inflated Poisson regression**
+  - Cigarettes smoked for smoker who hasn't smoked yet **today**
+  - Alcohol consumed for someone who hasn't had any yet **today**
+* No $\rightarrow$ **hurdle regression** or **with-zeroes regression**
+  - Cigarettes smoked: nonsmoker always responds 0
+  - Alcoholic drinks consumed: abstainer always responds 0
+  - (These are called "structural zeroes")
+
+## Zero-inflated Poisson regression
+
+* There are zeroes have **some probability** to be non-zero
+* Two parts modeled simultaneously:
+  - Logistic regression: *Is each zero structural or not?*
+  - Poisson regression: non-structural zeroes and positive values
+* Can use same set of predictors in both parts, but do not have to
+* Can also **model non-structural zeroes and positive values** using *overdispersed* Poisson regression or *negative binomial* regression
+
+## Hurdle regression (with-zeroes) 
+
+* There are zeroes that have **no probability** of being non-zero
+  - Two different populations: smokers and nonsmokers, drinkers and nondrinkers
+* Two parts modeled simultaneously:
+  - Logistic regression: *whether zero or not*
+  - Truncated Poisson regression: positive values only
+* Can use same set of predictors in both parts, but do not have to
+
+# Variable lengths of time
+
+## Variable lengths of time
+
+* Poisson regression and variants assume a *fixed length of time*
+  * Number of aggressive acts committed by a child in 1 hour
+  * Number of visits to doctor in past 6 months
+  * Number of adverse events in a study
+* Often, we measure a count over some *variable period of time*
+
+## Variable lengths of time
+
+- Can extend Poisson type models to variable time periods
+  - Include natural log of the measurement interval as a predictor with regression coefficient equal to 1:
+
+$$ln(\hat{\mu}) = ln(time) + b_0 + b_1X_1 + b_2X_2 + \cdots + b_pX_p$$
+
+- In software: include time (specifically, ln(time)) as an "offset"
+
+# Evaluation and comparison
+
+## Deviance
+
+* As with logistic regression
+  * Estimated with **maximum likelihood**
+  * Use **deviance** to estimate pseudo-$R^2$
+* Deviance is a function of the log-likelihood
+  * How far model is from a *theoretical* **perfect model**
+  * **Relative measure** so can only **compare** to another model
+* Deviance usually = -2LL, but **not** for Poisson models
+
+## Pseudo $R^2$
+
+$$R^2_{deviance} = 1 - \frac{deviance_{model}}{deviance_{intercept\ only}}$$
+
+* Deviance for your model is "Residual deviance" from output
+* Deviance for intercept model is "Null deviance" from output
+* Theoretically ranges from 0 to 1 (but not always in practice)
+
+## Compare models
+
+* Compare **deviances** of 2 **nested models** using likelihood ratio test
+* e.g., compare `m1` (only `sensationC`) to `m1add` (`sensationC` and `sex`)
+
+```{r}
+anova(m1, m1add, test = "LRT")
+```
+
+## Nested models
+
+* Two models are **nested** if 
+  * All terms in one are **included in the other**
+  * You can get from one to the other by **fixing some paths to a value**
+* Why do we care?
+  * Likelihood ratio tests can only be used to compare *nested models*
+    * If your models are not nested, you **cannot** use the likelihood ratio tests to compare them
+  * Instead, use **AIC**, **BIC** (smaller is better), Vuong test
+
+## Nested models 
+
+1. Linear regression with predictor $X_1$
+2. Linear regression with predictors $X_1$ and $X_2$
+
+- Model 1 is nested within model 2
+  * If the coefficient for $X_2$ = 0 then Model 2 becomes Model 1
+
+## Complicated nesting situations 1
+
+3. Poisson regression with predictors $X_3$ and $X_4$
+4. Overdispersed Poisson regression w/ predictors $X_3$ and $X_4$
+
+- Model 3 seems like it's nested within model 4
+  * But it's not really
+- Same number of things estimated: df = 0
+
+## Complicated nesting situations 2
+
+5. Overdispersed Poisson regression w/ predictor $X_5$
+6. Overdispersed Poisson regression w/ predictors $X_5$ and $X_6$
+
+- Model 5 is NOT nested within model 6
+- In addition to the extra predictor ($X_6$), the *overdispersion parameter* is not the same in these models
+
+  - Model 5 has a $\psi$ parameter based on only $X_5$
+  - Model 6 has a **different** $\psi$ parameter based on both $X_5$ and $X_6$
+  - Can't get from Model 6 to Model 5 by setting coefficient to 0
+
+## Complicated nesting situations 3
+
+7. Overdispersed Poisson regression w/ predictors $X_7$ and $X_8$
+8. Negative binomial regression w/ predictors $X_7$ and $X_8$
+
+- Model 7 is NOT nested within model 8 (or vice versa)
+- The overdispersion parameters are **different** for the two models
+
+  - Model 7 has a $\psi$ parameter and estimates variance = $\psi \mu$ 
+  - Model 8 has a $\alpha$ parameter and estimates variance = $\mu + \alpha \mu^2$
+
+## Vuong test
+
+* For nested or non-nested models
+* `vuong()` function in **pscl** package
+
+```{r}
+library(pscl)
+vuong(m1, m3)
+```
+
+# Summary
+
+## Summary
+
+* When your outcome is a **count**, use a model from the **Poisson regression** family
+  * *Nonlinear, exponential model* or *log-linear model*
+  * *Overdispersion*: overdispersed Poisson or negative binomial
+  * Too many or too few *zeroes*
+  * Variable lengths of time
+
+## In class
+
+* Run some Poisson regression models
+  * Poisson
+  * Overdispersed Poisson
+  * Negative binomial
+* Interpret the results
+
+## Next time
+
+* ~~Logistic regression for **binary** outcomes~~
+* ~~Poisson regression for **count** outcomes~~
+* Survival analysis for **survival** outcomes
+

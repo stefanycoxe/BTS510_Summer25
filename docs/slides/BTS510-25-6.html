@@ -1893,19 +1893,6 @@ F-statistic: 0.2769 on 1 and 198 DF,  p-value: 0.5993</code></pre>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_tw9n33njli2i5pzs7v5b');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
       function spanCell_tw9n33njli2i5pzs7v5b(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_tw9n33njli2i5pzs7v5b");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -2201,19 +2188,6 @@ F-statistic: 6.275 on 1 and 198 DF,  p-value: 0.01305</code></pre>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_xs4ft8n59pbvbz68p2og');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
       function spanCell_xs4ft8n59pbvbz68p2og(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_xs4ft8n59pbvbz68p2og");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -2397,19 +2371,6 @@ F-statistic: 6.275 on 1 and 198 DF,  p-value: 0.01305</code></pre>
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_ttlzpzhlyot6pig33sio');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_ttlzpzhlyot6pig33sio(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_ttlzpzhlyot6pig33sio");

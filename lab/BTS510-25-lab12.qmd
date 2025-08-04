@@ -1,0 +1,129 @@
+---
+title: "BTS 510 Lab 12"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Conduct** Poisson regression for *count outcomes*
+* **Interpret** results in terms of *predicted counts*
+* **Describe** when to use alternative models / specifications
+  * Negative binomial, inflated zeroes, offset, etc.
+
+## Data 
+
+* Read in data from text file: `jpapoisson.txt`
+
+```{r}
+#| eval: false
+dat <- read_table("jpapoisson.txt",
+                  col_names = FALSE)
+colnames(dat) <- c("ID", "sensation", "sex", "alcohol")
+```
+
+* $n$ = 200 observations on 4 variables
+  * `ID`: ID variable
+  * `sensation`: 1 to 7 scale of sensation seeking
+  * `sex`: 0 = female, 1 = male
+  * `alcohol`: count of number of alcoholic drinks consumed
+
+## Analysis
+
+* Extend the analysis from the lecture
+  * `sensation` and `sex` predict `alcohol`
+  * Be sure to mean center `sensation` for interpretability
+
+## Tasks
+
+* Model 1: Poisson regression for `alcohol ~ sensation + sex`
+* Model 2: Negative binomial for `alcohol ~ sensation + sex`
+
+1. How can we compare models 1 and 2? Do that comparison. Which model is preferred?
+
+2. Report the full results of the preferred model.
+
+* Report the $R^2$ for the model
+* For each coefficient (including intercept), report:
+  * Regression coefficient
+  * Standard error
+  * $z$ statistic
+  * $p$ value 
+
+3. Calculate predicted counts for `alcohol` for 6 predictor combinations:
+* Male, low sensation seeking
+* Male, mean sensation seeking
+* Male, high sensation seeking
+* Female, low sensation seeking
+* Female, mean sensation seeking
+* Female, high sensation seeking
+
+4. Report the **rate ratios** for each predictor and their confidence intervals. Interpret the **rate ratios** in words.
+
+5. Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., sensation seeking, sex, alcoholic drinks consumed) rather than X and Y.
+
+## Bonus task: Are there excess zeroes?
+
+* Zero-inflated Poisson 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+#| eval: false
+library(pscl)
+zip <- zeroinfl(y ~ sensationC + sex | sensationC + sex, 
+                data = dat,
+                dist = "poisson")
+summary(zip)
+```
+
+* Zero-inflated negative binomial
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+#| eval: false
+library(pscl)
+zinb <- zeroinfl(y ~ sensationC + sex | sensationC + sex, 
+                 data = dat,
+                 dist = "negbin")
+summary(zinb)
+```
+
+* Hurdle Poisson 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+#| eval: false
+library(pscl)
+hurdle_poi <- hurdle(y ~ sensationC + sex | sensationC + sex, 
+                     data = dat, 
+                     dist = "poisson")
+summary(hurdle_poi)
+```
+
+* Hurdle negative binomial 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+#| eval: false
+library(pscl)
+hurdle_nb <- hurdle(y ~ sensationC + sex | sensationC + sex, 
+                    data = dat, 
+                    dist = "negbin")
+summary(hurdle_nb)
+```

@@ -4924,6 +4924,12 @@ window.Quarto = {
  <span class="menu-text">Week 11: Logistic regression</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-mats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: Poisson regression</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -4989,6 +4995,12 @@ window.Quarto = {
  <span class="menu-text">BTS 510 Lab 10</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs_comp/Lab 11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BTS 510 Lab 11</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5022,6 +5034,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../assignments/hw4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/hw5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -5228,19 +5246,6 @@ F-statistic:  7.89 on 2 and 197 DF,  p-value: 0.0005054</code></pre>
           } else {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_g2icu29qxylmup6embpn');
-        // Find the row with data-row attribute matching i
-        var targetRow = table.querySelector(`tr [data-row="${i}"]`).closest('tr');
-        var newRow = table.insertRow(targetRow.rowIndex);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        newCell.setAttribute("data-col", "0");
-        newCell.setAttribute("data-row", i - 1);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
       }
       function spanCell_g2icu29qxylmup6embpn(i, j, rowspan, colspan) {
         var table = document.getElementById("tinytable_g2icu29qxylmup6embpn");

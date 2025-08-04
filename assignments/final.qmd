@@ -22,7 +22,7 @@ title: "Final Project"
 
 :::
 
-::: {.callout-note collapse=false}
+::: {.callout-note collapse=true}
 
 ## Proposal assignment
 
@@ -45,4 +45,39 @@ title: "Final Project"
         * Homework 3 is a rough model for this. Use that scope as a guide.
   * **Proposals are not contracts**: If you start working and realize that you can't do what you proposed, that's ok. Talk to me if you need some guidance on making changes or problems you encounter. I just want you to try to identify a dataset, variables, and questions early so you don't scramble at the end of the semester.
     
-:::    
+:::   
+
+
+::: {.callout-note collapse=false}
+
+## Presentation
+
+* Due Thursday, August 21
+* Roundtable style
+* **Maximum of 2 slides**
+  * Just tell us the most important / interesting parts of your findings
+  * Focus on the methods and results
+  * **It's ok if you didn't find any significant effects**
+* This is very low key
+
+:::
+
+::: {.callout-note collapse=false}
+
+## Final paper
+
+* Due Sunday, August 24
+* Write up your project article style
+  * Introduction: Background and motivation, does not need to be exhaustive or include a literature review
+    * What is your research question?
+  * Method: What methods did you use to answer your question?
+  * Results: Use lecture / homework as template for reporting results
+  * Discussion: Plain language description of your findings
+    * What is the answer to your research question?
+    
+* Very rough guidelines
+  * If you're concise and have a simple project, you can do this in about 5 pages
+  * Most people will take 5 to 10 pages
+  * If you've gone over 10 pages, you've done too much! 
+
+:::

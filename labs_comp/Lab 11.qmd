@@ -1,0 +1,204 @@
+---
+title: "BTS 510 Lab 11"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Conduct** logistic regression for *binary outcomes*
+* **Interpret** results in terms of *probability*, *odds*, and *log-odds*
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package: $n$ = 200
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+## Analysis
+
+* Replicate and extend the analysis from the lecture
+  * `Age` and `Emergency` predict `Survive`
+  * Be sure to mean center `Age` for interpretability
+
+## Pseudo $R^2$
+
+* For linear regression, $R^2_{multiple}$ is calculated from the **sums of squares** from ordinary least squares estimation
+* Logistic regression is estimated via maximum likelihood
+  * There are no sums of squares
+  * There is, however, **deviance**
+* Deviance is a function of the log-likelihood
+  * Deviance for a model is how far the model is from a *theoretical* **perfect model** where every observation is perfectly predicted
+  * **Relative measure** so can only **compare** to another model
+  * Big deviance (far from perfect) is worse than small deviance (closer to perfect)
+* Pseudo $R^2$
+  * Compare your model to a model with **no predictors** (only intercept)
+  * How much closer is this model to the perfect model than the intercept only model?
+  * Theoretically ranges from 0 to 1 (but not in practice)
+  * $R^2_{deviance} = 1 - \frac{deviance_{M}}{deviance_{intercept\ only}}$
+  * Deviance for your model is "Residual deviance" from output
+  * Deviance for intercept model is "Null deviance" from output
+
+## Confidence intervals
+
+* Calculate confidence intervals for all coefficients in a model using `confint()`
+  * For example: `confint(m1)` to get confidence intervals for model `m1`
+  * If the CI doesn't include **zero**, the coefficient is significant
+  * Default is 99% confidence interval
+    * Use `level` argument to change
+    * e.g., `confint(m1, level = 0.99)` produces 99% CIs
+* To convert from default logit metric to odds metric: Exponentiate
+  * Logit metric: $b_1$
+  * Convert to **odds ratio**: $e^{b_1}$
+  * Do the same thing to the confidence intervals
+    * `exp(confint(m1))` produces the odds metric CIs
+    * Compare to "no effect" value of **one** for odds
+    * If the CI doesn't include **one**, the coefficient is significant
+
+## Predicted values
+
+* Two main options
+  * Use R like a calculator to calculate predicted values using equations
+    * You can be fancy and grab the coefficients directly from the output
+    * e.g., using `coef(m1)[1]` to get the first coefficient, etc.
+    * Or just type the numbers in
+  * Use `predict()` to calculate predicted values
+    * Set up a new dataset with the predictor values you're interested in
+    * e.g., `age_vals <- data.frame(AgeC = c(-20, 0, 20))`
+    * Then use that new data in `predict()`
+    * e.g., `predict(m1, newdata = age_vals, type = "response")`
+    * `type = "response"` gives predicted values in **probability**
+    * `type = "link"` gives predicted values in **logit**
+
+## Tasks
+
+* Model 1: `Survive ~ Age`
+* Model 2: `Survive ~ Age + Emergency`
+
+```{r}
+library(Stat2Data)
+data(ICU)
+ICU <- ICU %>% mutate(AgeC = Age - mean(Age, na.rm = TRUE))
+m1 <- glm(data = ICU, 
+          Survive ~ AgeC, 
+          family = binomial(link = "logit"))
+m2 <- glm(data = ICU, 
+          Survive ~ AgeC + Emergency, 
+          family = binomial(link = "logit"))
+summary(m1)
+summary(m2)
+```
+
+
+1. Conduct a likelihood ratio test to compare the models. Report the results. Which model is preferred?
+
+```{r}
+anova(m1, m2, test = "LRT")
+```
+
+* Model 2 (with both `AgeC` and `Emergency` predicting `Survive`) is better than model 1 (with only `AgeC` predicting `Survive`), $\chi^2(1) = 19.231, p<.0001$.
+
+2. Report the full results of the preferred model. This is similar to linear regression. **Report the $R^2$ for the model.** For each coefficient (including intercept), report:
+* Regression coefficient
+* Standard error
+* $z$ statistic (note that there aren't degrees of freedom for $z$ tests)
+* $p$ value 
+
+```{r}
+summary(m2)
+```
+
+* $R^2_{deviance} = 1 - \frac{deviance_{model}}{deviance_{null}} = 1 - \frac{173.08}{200.16} = `r round(1 - (173.08/200.16), 3)`$
+  * The two predictors explain 13.5% of the variance in the outcome.
+  * (For comparison, $R^2_{deviance}$ for `m1` is `r round(1 - (192.31/200.16), 3)`)
+
+* The intercept is significantly different from 0, $b_0 = 3.55, s.e. = 0.73, z = 4.84, p<.0001$. 
+  * The logit for a person at mean `Age` and non-`Emergency` admission is 3.55. This is greater than 0, indicating that a person of mean age and non-emergency admission has a greater than 0.5 probability of survival. 
+* The slope for `AgeC` is significantly different from 0, $b_1 = -0.03, s.e. = 0.01, z = -3.18, p<.01$.
+  * Likelihood of survival **decreases** as `AgeC` increases.
+* The slope for `Emergency` is significantly different from 0, $b_2 = -2.45, s.e. = 0.75, z = -3.26, p<.01$.
+  * Likelihood of survival **decreases** as `Emergency` increases; emergency admissions (`Emergency` = 1) are less likely to survive than non-emergency admissions (`Emergency` = 0)
+
+3. Calculate predicted probabilities for 6 predictor combinations:
+* Emergency admit, 20 years younger than mean
+* Emergency admit, mean age
+* Emergency admit, 20 years older than mean
+* Non-emergency admit, 20 years younger than mean
+* Non-emergency admit, mean age
+* Non-emergency admit, 20 years older than mean
+
+```{r}
+AgeC <- c(-20, 0, 20, -20, 0, 20)
+Emergency <- c(0, 0, 0, 1, 1, 1)
+vals <- data.frame(AgeC, Emergency)
+predict(m2, newdata = vals, type = "response")
+```
+
+* Plot to help visualize this
+
+```{r}
+ggplot(data = ICU,
+       aes(x = AgeC, 
+           y = Survive, 
+           group = factor(Emergency), 
+           color = factor(Emergency))) +
+  geom_point(size = 3, alpha = 0.3) +
+  stat_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE,
+              fullrange = T) +
+  xlim(-50, 50) + 
+  theme(legend.position="none") +
+  geom_vline(xintercept = -20, linetype = "dashed") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_vline(xintercept = 20, linetype = "dashed")
+```
+
+4. Report the odds ratios for each predictor and their confidence intervals. Interpret the odds ratios in words.
+
+```{r}
+confint(m2)
+exp(coef(m2))
+exp(confint(m2))
+```
+
+* Odds ratio for `AgeC` is 0.967 with 95% confidence interval [0.945, 0.986].
+  * The odds ratio is **less than 1**, indicating that odds of survival **decreases** as age increases
+  * The confidence interval does not include **one** so this is a significant effect
+* Odds ratio for `Emergency` is 0.086 with 95% confidence interval [0.014, 0.302].
+  * The odds ratio is **less than 1**, indicating that odds of survival **decreases** for emergency admission compared to non-emergency admission
+  * The confidence interval does not include **one** so this is a significant effect
+
+5. Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., survival, age, emergency admission) rather than X and Y.
+
+* Both **older age** and **emergency admission** negatively impact survival
+  * Older patients are less likely to survive than younger patients
+  * Emergency admission patients are less likely to survive than non-emergency admission patients
+* In terms of probability, the gap between emergency and non-emergency admission patients increases with age
+  * For younger patients (20 years below the mean age), there is a 13 percentage point gap (0.986 vs 0.855)
+  * For older patients (20 years above the mean age), there is a 34 percentage point gap (0.946 vs 0.603)
+  * (I just added this because it demonstrates how you get an "interaction" without an interaction in these non-linear models)
+* There are probably other things you could say about this

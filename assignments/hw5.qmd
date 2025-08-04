@@ -1,0 +1,45 @@
+---
+title: "Homework 5"
+---
+
+## Logistic and Poisson regression
+
+* **Due Sunday, August 10 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.
+    * Remember to include `embed-resources: true` in the `html` options. If you don't, we won't see any of your figures when you send the files. 
+    
+## Data
+
+* `MedGPA` dataset from the **Stat2Data** package
+    * A dataset with 55 observations on the following 11 variables.
+        * `Accept`: A=accepted to medical school or D=denied admission
+        * `Acceptance`: Indicator for Accept: 1=accepted or 0=denied
+        * `Sex`: F=female or M=male
+        * `BCPM`: Bio/Chem/Physics/Math grade point average
+        * `GPA`: College grade point average
+        * `VR`: Verbal reasoning (subscore)
+        * `PS`: Physical sciences (subscore)
+        * `WS`: Writing sample (subcore)
+        * `BS`: Biological sciences (subscore)
+        * `MCAT`: Score on the MCAT exam (sum of CR+PS+WS+BS)
+        * `Apps`: Number of medical schools applied to
+
+## Research questions
+
+* How do the 4 MCAT subscores (`VR`, `PS`, `WS`, and `BS`) predict whether a person is accepted into medical school (`Acceptance`)?
+* How do the 4 MCAT subscores (`VR`, `PS`, `WS`, and `BS`) predict how many medical schools a student applies to (`Apps`)?
+
+## Tasks
+
+1. Conduct a **logistic regression** to address the first research question.
+
+2. Report the results of the model, including full statistical results for each coefficient and the $R^2$ for the model. Which subscores are significantly related to the outcome? 
+
+3. For significant predictors, what are the predicted probabilities of acceptance at the mean, -1 SD, and +1 SD?
+
+4. Conduct a **negative binomial regression** to address the second research question.
+
+5. Report the results of the model, including full statistical results for each coefficient, the overdispersion parameter, and the $R^2$ for the model. Which subscores are significantly related to the outcome? Was there overdispersion?
+
+6. For significant predictors, what are the predicted number of applications at the mean, -1 SD, and +1 SD?

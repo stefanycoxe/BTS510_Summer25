@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1: Introduction – BTS 510 Summer 2025</title>
+<title>Homework 5 – BTS 510 Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/01-mats.html">Week 1: Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/hw1.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw5.html">Homework 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,13 +154,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materials/00-mats.html" class="sidebar-item-text sidebar-link">
@@ -140,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/01-mats.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/01-mats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1: Introduction</span></a>
   </div>
 </li>
@@ -285,13 +314,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/hw1.html" class="sidebar-item-text sidebar-link">
@@ -318,7 +347,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/hw5.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/hw5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Homework 5</span></a>
   </div>
 </li>
@@ -346,19 +375,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#before-class-lecture" id="toc-before-class-lecture" class="nav-link" data-scroll-target="#before-class-lecture">Before class: Lecture</a></li>
-  <li><a href="#during-class-lab" id="toc-during-class-lab" class="nav-link" data-scroll-target="#during-class-lab">During class: Lab</a></li>
-  <li><a href="#after-class-assignment" id="toc-after-class-assignment" class="nav-link" data-scroll-target="#after-class-assignment">After class: Assignment</a></li>
+  <li><a href="#logistic-and-poisson-regression" id="toc-logistic-and-poisson-regression" class="nav-link active" data-scroll-target="#logistic-and-poisson-regression">Logistic and Poisson regression</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions">Research questions</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/01-mats.html">Week 1: Introduction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/hw1.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw5.html">Homework 5</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 1: Introduction</h1>
+<h1 class="title">Homework 5</h1>
 </div>
 
 
@@ -375,33 +404,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<section id="logistic-and-poisson-regression" class="level2">
+<h2 class="anchored" data-anchor-id="logistic-and-poisson-regression">Logistic and Poisson regression</h2>
 <ul>
-<li>Review the course topics, structure, and goals</li>
-<li>Start using <strong>R</strong> and <strong>Rstudio</strong></li>
-<li>Start using <a href="https://quarto.org/">Quarto documents</a> in R as a <strong>reproducible</strong> method to present analyses along with <strong>narrative text</strong></li>
+<li><p><strong>Due Sunday, August 10 by end of day (midnight)</strong></p></li>
+<li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.</p>
+<ul>
+<li>Remember to include <code>embed-resources: true</code> in the <code>html</code> options. If you don’t, we won’t see any of your figures when you send the files.</li>
+</ul></li>
 </ul>
 </section>
-<section id="before-class-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="before-class-lecture">Before class: Lecture</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
 <ul>
-<li><a href="https://youtu.be/M7bNtrjm4XI" target="_blank">Lecture 1</a></li>
-<li><a href="https://forms.gle/zSk1R4FS9XqaXYaX9" target="_blank">Lecture survey</a>: Complete by Wednesday, May 7 at 8pm</li>
-<li><a href="../slides/BTS510-25-1.html" target="_blank">Slides (html)</a></li>
+<li><code>MedGPA</code> dataset from the <strong>Stat2Data</strong> package
+<ul>
+<li>A dataset with 55 observations on the following 11 variables.
+<ul>
+<li><code>Accept</code>: A=accepted to medical school or D=denied admission</li>
+<li><code>Acceptance</code>: Indicator for Accept: 1=accepted or 0=denied</li>
+<li><code>Sex</code>: F=female or M=male</li>
+<li><code>BCPM</code>: Bio/Chem/Physics/Math grade point average</li>
+<li><code>GPA</code>: College grade point average</li>
+<li><code>VR</code>: Verbal reasoning (subscore)</li>
+<li><code>PS</code>: Physical sciences (subscore)</li>
+<li><code>WS</code>: Writing sample (subcore)</li>
+<li><code>BS</code>: Biological sciences (subscore)</li>
+<li><code>MCAT</code>: Score on the MCAT exam (sum of CR+PS+WS+BS)</li>
+<li><code>Apps</code>: Number of medical schools applied to</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
-<section id="during-class-lab" class="level2">
-<h2 class="anchored" data-anchor-id="during-class-lab">During class: Lab</h2>
+<section id="research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="research-questions">Research questions</h2>
 <ul>
-<li><a href="../lab/BTS510-25-lab1.html" target="_blank">Lab 1 (html with link to code)</a></li>
+<li>How do the 4 MCAT subscores (<code>VR</code>, <code>PS</code>, <code>WS</code>, and <code>BS</code>) predict whether a person is accepted into medical school (<code>Acceptance</code>)?</li>
+<li>How do the 4 MCAT subscores (<code>VR</code>, <code>PS</code>, <code>WS</code>, and <code>BS</code>) predict how many medical schools a student applies to (<code>Apps</code>)?</li>
 </ul>
 </section>
-<section id="after-class-assignment" class="level2">
-<h2 class="anchored" data-anchor-id="after-class-assignment">After class: Assignment</h2>
-<ul>
-<li><strong>No homework this week</strong></li>
-</ul>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<ol type="1">
+<li><p>Conduct a <strong>logistic regression</strong> to address the first research question.</p></li>
+<li><p>Report the results of the model, including full statistical results for each coefficient and the <span class="math inline">\(R^2\)</span> for the model. Which subscores are significantly related to the outcome?</p></li>
+<li><p>For significant predictors, what are the predicted probabilities of acceptance at the mean, -1 SD, and +1 SD?</p></li>
+<li><p>Conduct a <strong>negative binomial regression</strong> to address the second research question.</p></li>
+<li><p>Report the results of the model, including full statistical results for each coefficient, the overdispersion parameter, and the <span class="math inline">\(R^2\)</span> for the model. Which subscores are significantly related to the outcome? Was there overdispersion?</p></li>
+<li><p>For significant predictors, what are the predicted number of applications at the mean, -1 SD, and +1 SD?</p></li>
+</ol>
 
 
 </section>
