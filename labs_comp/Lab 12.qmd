@@ -1,0 +1,254 @@
+---
+title: "BTS 510 Lab 12"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Conduct** Poisson regression for *count outcomes*
+* **Interpret** results in terms of *predicted counts*
+* **Describe** when to use alternative models / specifications
+  * Negative binomial, inflated zeroes, offset, etc.
+
+## Data 
+
+* Read in data from text file: `jpapoisson.txt`
+
+```{r}
+dat <- read_table("jpapoisson.txt",
+                  col_names = FALSE)
+colnames(dat) <- c("ID", "sensation", "sex", "alcohol")
+head(dat)
+```
+
+* $n$ = **400** observations on 4 variables
+  * `ID`: ID variable
+  * `sensation`: 1 to 7 scale of sensation seeking
+  * `sex`: 0 = female, 1 = male
+  * `alcohol`: count of number of alcoholic drinks consumed
+
+## Analysis
+
+* Extend the analysis from the lecture
+  * `sensation` and `sex` predict `alcohol`
+  * Be sure to mean center `sensation` for interpretability
+
+```{r}
+dat <- dat %>%
+  mutate(sensationC = sensation - mean(sensation, na.rm = TRUE))
+```
+
+## Tasks
+
+* Model 1: Poisson regression for `alcohol ~ sensation + sex`
+* Model 2: Negative binomial for `alcohol ~ sensation + sex`
+
+```{r}
+m1 <- glm(data = dat, 
+          alcohol ~ sensationC + sex, 
+          family = poisson(link = "log"))
+```
+
+```{r}
+library(MASS)
+m2 <- glm.nb(data = dat, 
+             alcohol ~ sensationC + sex)
+```
+
+
+1. How can we compare models 1 and 2? Do that comparison. Which model is preferred?
+
+* Complicated nesting situations #1
+  * Use Vuong test or AIC
+  
+```{r}
+library(pscl)
+vuong(m1, m2)
+```
+
+```{r}
+AIC(m1)
+AIC(m2)
+```
+
+2. Report the full results of the preferred model.
+
+* Report the $R^2$ for the model
+* For each coefficient (including intercept), report:
+  * Regression coefficient
+  * Standard error
+  * $z$ statistic
+  * $p$ value 
+  
+```{r}
+summary(m2)
+summary(m1)
+```
+
+* $R^2_{deviance} = 1 - \frac{deviance_{model}}{deviance_{null}} = 1 - \frac{459.77}{548.45} = `r round(1 - (459.77/548.45), 3)`$ 
+  * A negative binomial model with predictors sensation seeking and sex accounts for `r round((1 - (459.77/548.45))*100, 1)`% of the variance in number of alcoholic beverages consumed
+* Intercept: $b_0 = 0.575, s.e. = 0.073, z = 7.918, p<.0001$
+  * The natural log of the predicted count for **women** with **mean sensation seeking**
+  * Predicted count = $e^{0.575} = `r round(exp(0.57514), 3)`$
+* Sensation seeking: $b_1 = 0.235, s.e. = 0.062, z = 3.782, p<.001$
+  * Rate ratio = $e^{0.235} = `r round(exp(0.23510), 3)`$
+  * For each one unit increase in sensation seeking, the expected count is **multiplied by** `r round(exp(0.23510), 3)`, holding sex constant
+* Sex: $b_2 = 0.822, s.e. = 0.096, z = 8.584, p<.0001$
+  * Rate ratio = $e^{0.822} = `r round(exp(0.82236), 3)`$
+  * For each one unit increase in sex (i.e., going from female to male), the expected count is **multiplied by** `r round(exp(0.82236), 3)`, holding sensation seeking constant
+  * Men drink `r round(exp(0.82236), 3)` times as many drinks as women, on average, holding sensation seeking constant
+
+3. Calculate predicted counts for `alcohol` for 6 predictor combinations:
+* Male, low sensation seeking
+* Male, mean sensation seeking
+* Male, high sensation seeking
+* Female, low sensation seeking
+* Female, mean sensation seeking
+* Female, high sensation seeking
+
+```{r}
+sqrt(var(dat$sensationC))
+sensationC <- c(-0.7682503, 0, 0.7682503)
+sex <- c(0, 0, 0, 1, 1, 1)
+vals <- data.frame(sensationC, sex)
+predict(m2, newdata = vals, type = "response")
+```
+
+```{r}
+ggplot(data = dat,
+       aes(x = sensationC, 
+           y = alcohol, 
+           group = factor(sex), 
+           color = factor(sex))) +
+  geom_point(size = 3, alpha = 0.3) +
+  stat_smooth(method="glm", 
+              method.args=list(family="poisson"), 
+              se=FALSE,
+              fullrange = T) +
+  theme(legend.position="none") +
+  geom_vline(xintercept = -0.7682503, linetype = "dashed") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_vline(xintercept = 0.7682503, linetype = "dashed")
+```
+
+
+4. Report the **rate ratios** for each predictor and their confidence intervals. Interpret the **rate ratios** in words.
+
+```{r}
+exp(coef(m2))
+exp(confint(m2))
+```
+
+* Sensation seeking effect
+  * For each one unit increase in sensation seeking, the expected count is **multiplied by** `r round(exp(0.23510), 3)`, holding sex constant
+  * This effect is significant because the *confidence interval does not include 1*
+
+* Sex effect
+  * For each one unit increase in sex (i.e., going from female to male), the expected count is **multiplied by** `r round(exp(0.82236), 3)`, holding sensation seeking constant
+  * Men drink `r round(exp(0.82236), 3)` times as many drinks as women, on average, holding sensation seeking constant
+  * This effect is significant because the *confidence interval does not include 1*
+
+5. Describe the overall findings for this model. Be statistically accurate but avoid jargon and technical terms as much as you can. Be sure to use the names of the variables studied (i.e., sensation seeking, sex, alcoholic drinks consumed) rather than X and Y.
+
+* A woman with average sensation seeking drinks about `r round(exp(0.57514), 3)` alcoholic beverages
+* Men drink about `r round(exp(0.82236), 3)` **times** as many drinks as women
+* For each 1 unit increase in sensation seeking, people drink about `r round(exp(0.23510), 3)` more alcoholic beverages. Note that this variable ranged from around 3 to 7, so a 4 unit range
+  * Could also talk in terms of SD unit change: here, SD = 0.7682503
+  * Multiplicative change for **1 SD change** in sensation seeking: 1.483677 $\rightarrow$ 1.777375
+    * 1.777375 / 1.483677 = 1.198
+  * This is equal to $e^{SD \times b} = e^{0.768 \times 0.235} = `r round(exp(0.7682503*0.23510), 3)`$
+
+## Bonus task: Are there excess zeroes?
+
+* Zero-inflated Poisson 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+library(pscl)
+zip <- zeroinfl(alcohol ~ sensationC + sex | sensationC + sex, 
+                data = dat,
+                dist = "poisson")
+summary(zip)
+```
+
+* Zero-inflated negative binomial
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+library(pscl)
+zinb <- zeroinfl(alcohol ~ sensationC + sex | sensationC + sex, 
+                 data = dat,
+                 dist = "negbin")
+summary(zinb)
+```
+
+* Hurdle Poisson 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+library(pscl)
+hurdle_poi <- hurdle(alcohol ~ sensationC + sex | sensationC + sex, 
+                     data = dat, 
+                     dist = "poisson")
+summary(hurdle_poi)
+```
+
+* Hurdle negative binomial 
+  * `y ~ count_predictors | logistic_predictors`
+
+```{r}
+library(pscl)
+hurdle_nb <- hurdle(alcohol ~ sensationC + sex | sensationC + sex, 
+                    data = dat, 
+                    dist = "negbin")
+summary(hurdle_nb)
+```
+
+### Comparisons
+
+* No overdispersion, does modeling inflated zeroes help?
+  * Yes
+  * So can we model **either** overdispersion or inflated zeroes? Do we need both?
+
+```{r}
+vuong(m1, zip)
+vuong(m1, hurdle_poi)
+```
+
+* Have overdispersion, does modeling inflated zeroes help?
+  * Maybe, if you use the BIC penalty for model complexity
+    * BIC adjustment penalizes **more** for more complex models
+  * So maybe just need to model overdispersion, not also inflated zeroes?
+  
+```{r}
+vuong(m2, zinb)
+vuong(m2, hurdle_nb)
+```
+
+* Have inflated zeroes, does modeling overdispersion help?
+  * Yes, if we already have inflated zeroes, overdispersion too makes a better model
+
+```{r}
+vuong(zip, zinb)
+vuong(hurdle_poi, hurdle_nb)
+```
+
+* Overall, it looks like we probably need **both** overdispersion **and** inflated zeroes
+  

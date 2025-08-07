@@ -38,7 +38,7 @@ dat <- read_table("jpapoisson.txt",
 colnames(dat) <- c("ID", "sensation", "sex", "alcohol")
 ```
 
-* $n$ = 200 observations on 4 variables
+* $n$ = **400** observations on 4 variables
   * `ID`: ID variable
   * `sensation`: 1 to 7 scale of sensation seeking
   * `sex`: 0 = female, 1 = male
@@ -86,7 +86,7 @@ colnames(dat) <- c("ID", "sensation", "sex", "alcohol")
 ```{r}
 #| eval: false
 library(pscl)
-zip <- zeroinfl(y ~ sensationC + sex | sensationC + sex, 
+zip <- zeroinfl(alcohol ~ sensationC + sex | sensationC + sex, 
                 data = dat,
                 dist = "poisson")
 summary(zip)
@@ -98,7 +98,7 @@ summary(zip)
 ```{r}
 #| eval: false
 library(pscl)
-zinb <- zeroinfl(y ~ sensationC + sex | sensationC + sex, 
+zinb <- zeroinfl(alcohol ~ sensationC + sex | sensationC + sex, 
                  data = dat,
                  dist = "negbin")
 summary(zinb)
@@ -110,7 +110,7 @@ summary(zinb)
 ```{r}
 #| eval: false
 library(pscl)
-hurdle_poi <- hurdle(y ~ sensationC + sex | sensationC + sex, 
+hurdle_poi <- hurdle(alcohol ~ sensationC + sex | sensationC + sex, 
                      data = dat, 
                      dist = "poisson")
 summary(hurdle_poi)
@@ -122,7 +122,7 @@ summary(hurdle_poi)
 ```{r}
 #| eval: false
 library(pscl)
-hurdle_nb <- hurdle(y ~ sensationC + sex | sensationC + sex, 
+hurdle_nb <- hurdle(alcohol ~ sensationC + sex | sensationC + sex, 
                     data = dat, 
                     dist = "negbin")
 summary(hurdle_nb)
