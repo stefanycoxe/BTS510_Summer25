@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 9: Linear regression – BTS 510 Summer 2025</title>
+<title>Week 13: Survival analysis – BTS 510 Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/09-mats.html">Week 9: Linear regression</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/13-mats.html">Week 13: Survival analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/09-mats.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/09-mats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9: Linear regression</span></a>
   </div>
 </li>
@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/13-mats.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/13-mats.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 13: Survival analysis</span></a>
   </div>
 </li>
@@ -368,9 +368,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/09-mats.html">Week 9: Linear regression</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/00-mats.html">Materials</a></li><li class="breadcrumb-item"><a href="../materials/13-mats.html">Week 13: Survival analysis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 9: Linear regression</h1>
+<h1 class="title">Week 13: Survival analysis</h1>
 </div>
 
 
@@ -390,23 +390,28 @@ ul.task-list li input[type="checkbox"] {
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
-<li><strong>Describe</strong> <em>maximum likelihood estimation</em> for linear regression</li>
-<li><strong>Describe</strong> <em>hypothesis testing</em> for linear regression coefficients, including the sampling distribution used and degrees of freedom</li>
+<li><strong>Conduct</strong> analysis on time-to-event outcomes
+<ul>
+<li>Kaplan-Meier curve, proportional hazards regression</li>
+</ul></li>
+<li><strong>Describe</strong> issues related to time-to-event analysis
+<ul>
+<li>Censoring, proportional hazards, time-varying predictors</li>
+</ul></li>
 </ul>
 </section>
 <section id="before-class-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="before-class-lecture">Before class: Lecture</h2>
 <ul>
-<li><a href="https://youtu.be/SauO09Zh3lM" target="_blank">Lecture 9 - part 1</a></li>
-<li><a href="https://youtu.be/Ozf-3xjOxxw" target="_blank">Lecture 9 - part 2</a></li>
-<li><a href="https://forms.gle/egCSFYHcEeqgx2PYA" target="_blank">Lecture survey</a>: Complete by Wednesday, July 16 at 8pm</li>
-<li><a href="../slides/BTS510-25-9.html" target="_blank">Slides (html)</a></li>
+<li><a href="https://youtu.be/I1Qt71xTy-U" target="_blank">Lecture 13</a></li>
+<li><a href="https://forms.gle/eLSkaqznKnF4W5Ye7" target="_blank">Lecture survey</a>: Complete by Wednesday, August 13 at 8pm</li>
+<li><a href="../slides/BTS510-25-13.html" target="_blank">Slides (html)</a></li>
 </ul>
 </section>
 <section id="during-class-lab" class="level2">
 <h2 class="anchored" data-anchor-id="during-class-lab">During class: Lab</h2>
 <ul>
-<li><a href="../lab/BTS510-25-lab9.html" target="_blank">Lab 9 (html with link to code)</a></li>
+<li><a href="../lab/BTS510-25-lab13.html" target="_blank">Lab 13 (html with link to code)</a></li>
 </ul>
 </section>
 <section id="after-class-assignment" class="level2">

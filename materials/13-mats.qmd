@@ -1,0 +1,24 @@
+---
+title: "Week 13: Survival analysis"
+---
+
+## Learning objectives
+
+* **Conduct** analysis on time-to-event outcomes
+  * Kaplan-Meier curve, proportional hazards regression
+* **Describe** issues related to time-to-event analysis
+  * Censoring, proportional hazards, time-varying predictors
+
+## Before class: Lecture 
+
+* [Lecture 13](https://youtu.be/I1Qt71xTy-U){target="_blank"} 
+* [Lecture survey](https://forms.gle/eLSkaqznKnF4W5Ye7){target="_blank"}: Complete by Wednesday, August 13 at 8pm
+* [Slides (html)](../slides/BTS510-25-13.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 13 (html with link to code)](../lab/BTS510-25-lab13.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

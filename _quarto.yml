@@ -6,7 +6,7 @@ website:
   title: "BTS 510 <br> Summer 2025"
   sidebar:
     logo: "BTS510_25.png"
-    style: "docked" 
+    style: "docked"       
     search: true
     collapse-level: 1 
     contents:
@@ -16,10 +16,10 @@ website:
       - section: "Materials"
         contents:                            
 #          - materials/index.qmd                      
-          - materials/00-mats.qmd           
+          - materials/00-mats.qmd                     
           - materials/01-mats.qmd 
           - materials/02-mats.qmd                        
-          - materials/03-mats.qmd
+          - materials/03-mats.qmd       
           - materials/04-mats.qmd                     
           - materials/05-mats.qmd                     
           - materials/06-mats.qmd          
@@ -29,7 +29,7 @@ website:
           - materials/10-mats.qmd       
           - materials/11-mats.qmd                   
           - materials/12-mats.qmd 
-#          - materials/13-mats.qmd 
+          - materials/13-mats.qmd 
       - section: "Complete labs"
         contents: 
 #          - labs_comp/index.qmd   

@@ -164,6 +164,20 @@ Springer.
 
 ### Survival analysis
 
+* Allison, P. D. (2014). Event history and survival analysis: Regression for longitudinal event data (Vol. 46). SAGE publications.
+
+* Bradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival Analysis Part II: Multivariate data analysis: An introduction to concepts and methods. British Journal of Cancer, 89(3), 431-436.
+
+* Bradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival analysis Part III: Multivariate data analysis: Choosing a model and assessing its adequacy and fit. 89(4), 605-11.
+
+* Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part I: Basic concepts and first analyses. 232-238. ISSN 0007-0920.
+
+* Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part IV: Further concepts and methods in survival analysis. 781-786. ISSN 0007-0920.
+
+* Moore, D. F. (2016). Applied survival analysis using R (Vol. 473, pp. 1-10). Cham: Springer.
+
+* Rai, S., Mishra, P., & Ghoshal, U. C. (2021). Survival analysis: A primer for the clinician scientists. Indian Journal of Gastroenterology, 40(5), 541-549.
+
 
 ## Miscellaneous
     

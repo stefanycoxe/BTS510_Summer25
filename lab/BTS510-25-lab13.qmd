@@ -1,0 +1,108 @@
+---
+title: "BTS 510 Lab 13"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Conduct** analysis on time-to-event outcomes
+  * Kaplan-Meier curve, proportional hazards regression
+* **Describe** issues related to time-to-event analysis
+  * Censoring, proportional hazards, time-varying predictors
+
+## Data 
+
+* `cancer` dataset in **survival** package
+* n = 228 observations on 10 variables
+  * `inst`:	Institution code
+  * `time`:	Survival time in **days**
+  * `status`:	censoring status 1=censored, 2=dead
+  * `age`:	Age in years
+  * `sex`:	Male=1 Female=2
+  * `ph.ecog`:	ECOG performance score as rated by the physician. 0=asymptomatic, 1= symptomatic but completely ambulatory, 2= in bed <50% of the day, 3= in bed > 50% of the day but not bedbound, 4 = bedbound
+  * `ph.karno`:	Karnofsky performance score (bad=0-good=100) rated by physician
+  * `pat.karno`:	Karnofsky performance score as rated by patient
+  * `meal.cal`:	Calories consumed at meals
+  * `wt.loss`:	Weight loss in last six months (pounds)
+
+## Analysis
+
+* Look more carefully at the last analysis from the lecture
+  * `sex` and `age` predict survival time (`time` and `status`)
+
+* Load packages and read in data 
+
+```{r}
+library(survival)
+library(ggsurvfit)
+data(cancer)
+```
+
+* Look at the model
+
+```{r}
+cox2 <- coxph(Surv(time, status) ~ sex + age, data = cancer)
+summary(cox2)
+```
+
+* Does the proportional hazards assumption hold for this model?
+
+```{r}
+cox.zph(cox2)
+```
+
+* `age` is continuous but let's chop it up to look at this effect
+  * `cut()` divides the variable based on the `breaks` and then calls each category by the names in `labels`
+  * 4 values in `breaks` = 3 categories because they're the cut-points, so `-Inf` to 50, 50 to 70, 70 to `Inf`
+
+```{r}
+ggplot(data = cancer, aes(x = age)) +
+  geom_histogram()
+
+cancer <- cancer %>%
+  mutate(age_group = cut(age, 
+                        breaks = c(-Inf, 50, 70, Inf),
+                        labels = c(1, 2, 3)))
+head(cancer)
+```
+
+* Kaplan-Meier curves for each effect (`sex` and `age_group`) separately
+
+```{r}
+sfit_sex <- survfit(Surv(time, status) ~ sex, data = cancer)
+sfit_age <- survfit(Surv(time, status) ~ age_group, data = cancer)
+
+ggsurvfit(sfit_sex) +
+  add_confidence_interval() + add_risktable()
+ggsurvfit(sfit_age) +
+  add_confidence_interval() + add_risktable()
+```
+
+## Tasks
+
+* Select another predictor in the dataset
+* Run a Cox regression model with that predictor
+  * Report hazard ratios and their confidence intervals
+    * Interpret the effects
+  * Is the proportional hazards assumption satisfied?
+    * If not, what are some time-varying covariates you might include?
+* Print Kaplan-Meier curves for the predictor
+  * If it's continuous, chop it up in some way that makes sense to you
+  * Describe what's going on in the plot
